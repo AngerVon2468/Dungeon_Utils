@@ -1,0 +1,10 @@
+{
+	"variants": {
+		"powered=false": {
+			"model": "hyrulecraft_switches:block/yellow_pressure_switch_unpressed"
+		},
+		"powered=true": {
+			"model": "hyrulecraft_switches:block/yellow_pressure_switch_pressed"
+		}
+	}
+}

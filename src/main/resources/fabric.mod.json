@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "hyrulecraft_switches",
+  "version": "${version}",
+  "name": "Hyrulecraft Switches",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": ""
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/hyrulecraft_switches/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "me.ideallykafei.hyrulecraft_switches.HyrulecraftSwitches"
+    ],
+    "client": [
+      "me.ideallykafei.hyrulecraft_switches.HyruleCraftSwitchesClient"
+    ]
+
+  },
+  "mixins": [
+    "hyrulecraft_switches.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.4.0",
+    "fabric": "*",
+    "minecraft": "~1.20.1"
+  }
+}
