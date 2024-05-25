@@ -11,6 +11,7 @@ import net.minecraft.util.math.*;
 import net.minecraft.util.shape.*;
 import net.minecraft.world.*;
 
+import org.hyrulecraft.dungeon_utils.DungeonUtils;
 import org.hyrulecraft.dungeon_utils.sound.SoundInit;
 
 import org.jetbrains.annotations.*;
@@ -29,7 +30,7 @@ public class YellowSwitchBlock extends HorizontalFacingBlock {
     }
 
     @Override
-    public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
+    public VoxelShape getOutlineShape(@NotNull BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
         if (!state.get(IS_STEPPED_ON)) {
             return Stream.of(
                     Block.createCuboidShape(0, 0, 0, 16, 0.35, 16),
@@ -45,6 +46,7 @@ public class YellowSwitchBlock extends HorizontalFacingBlock {
 
         } else {
 
+            DungeonUtils.LOGGER.info("You messed up!");
             return VoxelShapes.fullCube();
 
         }
@@ -87,17 +89,17 @@ public class YellowSwitchBlock extends HorizontalFacingBlock {
     }
 
     @Override
-    public int getWeakRedstonePower(BlockState state, BlockView world, BlockPos pos, Direction direction) {
+    public int getWeakRedstonePower(@NotNull BlockState state, BlockView world, BlockPos pos, Direction direction) {
         return state.get(IS_STEPPED_ON) ? 15 : 0;
     }
 
     @Override
-    public int getStrongRedstonePower(BlockState state, BlockView world, BlockPos pos, Direction direction) {
+    public int getStrongRedstonePower(@NotNull BlockState state, BlockView world, BlockPos pos, Direction direction) {
         return state.get(IS_STEPPED_ON) ? 15 : 0;
     }
 
     @Override
-    public boolean emitsRedstonePower(BlockState state) {
+    public boolean emitsRedstonePower(@NotNull BlockState state) {
         return state.get(IS_STEPPED_ON);
     }
 }
