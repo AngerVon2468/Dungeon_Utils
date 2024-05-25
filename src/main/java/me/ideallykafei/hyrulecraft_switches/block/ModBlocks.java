@@ -1,10 +1,11 @@
 package me.ideallykafei.hyrulecraft_switches.block;
 
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-
+import me.ideallykafei.hyrulecraft_switches.block.blocktype.YellowSwitchBlock;
 import me.ideallykafei.hyrulecraft_switches.HyrulecraftSwitches;
 
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -23,7 +24,7 @@ public class ModBlocks {
                 new BlockItem(block, new FabricItemSettings().maxCount(64)));
     }
 
-    public static final Block YELLOW_SWITCH_BLOCK = registerBlock("y_switch_block", new Block(FabricBlockSettings.create()));
+    public static final Block YELLOW_SWITCH_BLOCK = registerBlock("yellow_switch_block", new YellowSwitchBlock(FabricBlockSettings.create()));
 
     public static void registerModBlocks() {
         HyrulecraftSwitches.LOGGER.info(HyrulecraftSwitches.NAME + " has registered its blocks.");

@@ -1,18 +1,19 @@
 package me.ideallykafei.hyrulecraft_switches.block.blocktype;
 
-import me.ideallykafei.hyrulecraft_switches.HyrulecraftSwitches;
-
 import net.minecraft.block.*;
 import net.minecraft.entity.*;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.*;
 import net.minecraft.util.*;
+import net.minecraft.util.function.BooleanBiFunction;
 import net.minecraft.util.math.*;
 import net.minecraft.util.shape.*;
 import net.minecraft.world.*;
 
 import org.jetbrains.annotations.*;
+
+import java.util.stream.Stream;
 
 public class YellowSwitchBlock extends Block {
 
@@ -27,7 +28,24 @@ public class YellowSwitchBlock extends Block {
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
-        return VoxelShapes.fullCube(); // Change later
+        if (!state.get(IS_STEPPED_ON)) {
+            return Stream.of(
+                    Block.createCuboidShape(0, 0, 0, 16, 0.35, 16),
+                    Block.createCuboidShape(4, -1.9, 4, 12, 6.1, 12),
+                    Block.createCuboidShape(4, 0, 3, 12, 6, 4),
+                    Block.createCuboidShape(3, 0, 4, 5, 6, 12),
+                    Block.createCuboidShape(4, 0, 11, 12, 6, 13),
+                    Block.createCuboidShape(10, 0, 4, 13, 6, 12)
+            ).reduce((v1, v2) -> VoxelShapes.combineAndSimplify(v1, v2, BooleanBiFunction.OR)).get();
+        } else if (state.get(IS_STEPPED_ON)) {
+
+            return Block.createCuboidShape(0, 0, 0, 16, 0.25, 16);
+
+        } else {
+
+            return VoxelShapes.fullCube();
+
+        }
     }
 
     @Override
@@ -51,20 +69,17 @@ public class YellowSwitchBlock extends Block {
     }
 
     @Override
-    public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
+    public void onSteppedOn(@NotNull World world, BlockPos pos, BlockState state, Entity entity) {
         if (!world.getBlockState(pos).get(IS_STEPPED_ON)){
-            // Summoning the Lighting Bolt at the block as a test
-            LightningEntity lightningEntity = (LightningEntity) EntityType.LIGHTNING_BOLT.create(world);
-            lightningEntity.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(pos));
-            world.spawnEntity(lightningEntity);
+
             world.setBlockState(pos, state.with(IS_STEPPED_ON, true));
+
         } else {
 
-            HyrulecraftSwitches.LOGGER.info("lol anti crashing");
+            world.setBlockState(pos, state.with(IS_STEPPED_ON, false));
 
         }
 
-        world.setBlockState(pos, state.with(IS_STEPPED_ON, true));
         super.onSteppedOn(world, pos, state, entity);
     }
 }

@@ -1,0 +1,7 @@
+{
+  "switch": {
+    "category": "player",
+    "subtitle": "hyrulecraft_switches.subtitle.rupee_green",
+    "sounds": [ "hyrulecraft_switches:block/switch" ]
+  }
+}

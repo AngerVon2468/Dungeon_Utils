@@ -4,10 +4,9 @@
   "version": "${version}",
   "name": "Hyrulecraft Switches",
   "description": "",
-  "authors": [],
-  "contact": {
-    "repo": ""
-  },
+  "authors": [
+    "IdeallyKafei"
+  ],
   "license": "All-Rights-Reserved",
   "icon": "assets/hyrulecraft_switches/icon.png",
   "environment": "*",
@@ -18,7 +17,6 @@
     "client": [
       "me.ideallykafei.hyrulecraft_switches.HyruleCraftSwitchesClient"
     ]
-
   },
   "mixins": [
     "hyrulecraft_switches.mixins.json"

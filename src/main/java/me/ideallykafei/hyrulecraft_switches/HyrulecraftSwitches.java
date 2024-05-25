@@ -7,11 +7,13 @@ import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.*;
 
+import us.randos.hyrulecraft_switches.sound.SoundInit;
+
 public class HyrulecraftSwitches implements ModInitializer {
 
-    public static  final String MOD_ID ="hyrulecraft_switches";
+    public static final String MOD_ID ="hyrulecraft_switches";
 
-    public static  final String NAME ="HyruleCraft Switches";
+    public static final String NAME ="HyruleCraft Switches";
 
     public static final Logger LOGGER = LoggerFactory.getLogger(NAME);
 
@@ -24,5 +26,6 @@ public class HyrulecraftSwitches implements ModInitializer {
         ModItemGroups.registerItemGroups();
         ModItems.registerModItems();
         ModBlocks.registerModBlocks();
+        SoundInit.registerDungeonUtilsSounds();
     }
 }
