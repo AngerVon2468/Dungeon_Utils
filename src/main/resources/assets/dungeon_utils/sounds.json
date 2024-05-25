@@ -1,0 +1,7 @@
+{
+  "switch": {
+    "category": "player",
+    "subtitle": "dungeon_utils.subtitle.switch",
+    "sounds": [ "dungeon_utils:block/switch" ]
+  }
+}

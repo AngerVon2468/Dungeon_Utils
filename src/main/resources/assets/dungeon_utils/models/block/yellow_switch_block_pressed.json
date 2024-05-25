@@ -1,0 +1,35 @@
+{
+	"credit": "IdeallyKafei",
+	"textures": {
+		"4": "dungeon_utils:block/yellow_pressure_switch",
+		"particle": "dungeon_utils:block/yellow_pressure_switch"
+	},
+	"elements": [
+		{
+			"name": "top",
+			"from": [4, 0, 4],
+			"to": [12, 0.4, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, -7.6, 0]},
+			"faces": {
+				"north": {"uv": [8, 12, 12, 12.5], "texture": "#4"},
+				"east": {"uv": [8, 13.5, 12, 14], "texture": "#4"},
+				"south": {"uv": [8, 13, 12, 13.5], "texture": "#4"},
+				"west": {"uv": [8, 12.5, 12, 13], "texture": "#4"},
+				"up": {"uv": [8, 16, 0, 8], "texture": "#4"}
+			}
+		},
+		{
+			"name": "base",
+			"from": [0, 0, 0],
+			"to": [16, 0.25, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 8, 0.5], "texture": "#4"},
+				"east": {"uv": [0, 0, 8, 0.5], "texture": "#4"},
+				"south": {"uv": [0, 0, 8, 0.5], "texture": "#4"},
+				"west": {"uv": [0, 0, 8, 0.5], "texture": "#4"},
+				"up": {"uv": [8, 8, 0, 0], "texture": "#4"},
+				"down": {"uv": [8, 8, 0, 16], "texture": "#4"}
+			}
+		}
+	]
+}

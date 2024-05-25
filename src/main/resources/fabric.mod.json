@@ -8,18 +8,18 @@
     "IdeallyKafei"
   ],
   "license": "All-Rights-Reserved",
-  "icon": "assets/hyrulecraft_switches/icon.png",
+  "icon": "assets/dungeon_utils/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "me.ideallykafei.hyrulecraft_switches.HyrulecraftSwitches"
+      "org.hyrulecraft.dungeon_utils.DungeonUtils"
     ],
     "client": [
-      "me.ideallykafei.hyrulecraft_switches.HyruleCraftSwitchesClient"
+      "org.hyrulecraft.dungeon_utils.DungeonUtilsClient"
     ]
   },
   "mixins": [
-    "hyrulecraft_switches.mixins.json"
+    "dungeon_utils.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.4.0",

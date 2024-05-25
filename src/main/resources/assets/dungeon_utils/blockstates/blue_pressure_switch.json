@@ -1,0 +1,10 @@
+{
+	"variants": {
+		"powered=false": {
+			"model": "dungeon_utils:block/blue_pressure_switch_unpressed"
+		},
+		"powered=true": {
+			"model": "dungeon_utils:block/blue_pressure_switch_pressed"
+		}
+	}
+}
