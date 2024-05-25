@@ -1,9 +1,13 @@
 package org.hyrulecraft.dungeon_utils.block.blocktype;
 
 import net.minecraft.block.*;
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.*;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.item.ItemStack;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.stat.Stats;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.*;
 import net.minecraft.util.*;
@@ -94,6 +98,7 @@ public class YellowSwitchBlock extends HorizontalFacingBlock {
 
             entity.playSound(SoundInit.getSWITCH(), 1.0f, 1.0f);
             world.setBlockState(pos, state.with(IS_STEPPED_ON, true));
+            this.updateNeighbors(world, pos);
 
         } else {
 
@@ -111,11 +116,16 @@ public class YellowSwitchBlock extends HorizontalFacingBlock {
 
     @Override
     public int getStrongRedstonePower(@NotNull BlockState state, BlockView world, BlockPos pos, Direction direction) {
-        return state.get(IS_STEPPED_ON) && direction == Direction.DOWN ? 15 : 0;
+        return state.get(IS_STEPPED_ON) ? 15 : 0;
     }
 
     @Override
     public boolean emitsRedstonePower(@NotNull BlockState state) {
         return state.get(IS_STEPPED_ON);
+    }
+
+    protected void updateNeighbors(@NotNull World world, BlockPos pos) {
+        world.updateNeighborsAlways(pos, this);
+        world.updateNeighborsAlways(pos.down(), this);
     }
 }
