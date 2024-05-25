@@ -2,11 +2,15 @@ package org.hyrulecraft.dungeon_utils.block.blocktype;
 
 import net.minecraft.block.*;
 import net.minecraft.entity.*;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.*;
 import net.minecraft.util.*;
 import net.minecraft.util.function.BooleanBiFunction;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.*;
 import net.minecraft.util.shape.*;
 import net.minecraft.world.*;
@@ -18,13 +22,13 @@ import org.jetbrains.annotations.*;
 
 import java.util.stream.Stream;
 
-public class YellowSwitchBlock extends HorizontalFacingBlock {
+public class RustySwitchBlock extends HorizontalFacingBlock {
 
     public static final BooleanProperty IS_STEPPED_ON = BooleanProperty.of("is_stepped_on");
 
     public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
 
-    public YellowSwitchBlock(Settings settings) {
+    public RustySwitchBlock(Settings settings) {
         super(settings);
         this.setDefaultState(this.getStateManager().getDefaultState().with(FACING, Direction.NORTH).with(IS_STEPPED_ON, false));
     }
@@ -73,19 +77,20 @@ public class YellowSwitchBlock extends HorizontalFacingBlock {
     }
 
     @Override
-    public void onSteppedOn(@NotNull World world, BlockPos pos, BlockState state, Entity entity) {
-        if (!world.getBlockState(pos).get(IS_STEPPED_ON)){
+    public ActionResult onUse(@NotNull BlockState state, World world, BlockPos pos, @NotNull PlayerEntity player, Hand hand, @NotNull BlockHitResult hit) {
+        ItemStack stack = player.getStackInHand(hand);
+        if (stack.isOf(Items.NETHER_STAR)) { // Replace with hammer
 
-            entity.playSound(SoundInit.getSWITCH(), 1.0f, 1.0f);
+            player.playSound(SoundInit.getSWITCH(), 1.0f, 1.0f);
             world.setBlockState(pos, state.with(IS_STEPPED_ON, true));
+            return ActionResult.SUCCESS;
 
         } else {
 
             world.setBlockState(pos, state.with(IS_STEPPED_ON, false));
+            return ActionResult.FAIL;
 
         }
-
-        super.onSteppedOn(world, pos, state, entity);
     }
 
     @Override
