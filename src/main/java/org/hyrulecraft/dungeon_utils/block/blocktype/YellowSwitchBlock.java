@@ -3,6 +3,7 @@ package org.hyrulecraft.dungeon_utils.block.blocktype;
 import net.minecraft.block.*;
 import net.minecraft.entity.*;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.*;
 import net.minecraft.util.*;
@@ -70,6 +71,21 @@ public class YellowSwitchBlock extends HorizontalFacingBlock {
     @Override
     protected void appendProperties(@NotNull StateManager.Builder<Block, BlockState> builder) {
         builder.add(new Property[]{FACING, IS_STEPPED_ON});
+    }
+
+    @Override
+    public boolean canPlaceAt(BlockState state, @NotNull WorldView world, @NotNull BlockPos pos) {
+        BlockState blockState = world.getBlockState(pos.down());
+
+        if (!blockState.isOf(Blocks.AIR) && !blockState.isOf(Blocks.GRASS) && !blockState.isIn(BlockTags.FLOWERS) && !blockState.isIn(BlockTags.SMALL_FLOWERS) && !blockState.isIn(BlockTags.TALL_FLOWERS)) {
+
+            return true;
+
+        } else {
+
+            return false;
+
+        }
     }
 
     @Override

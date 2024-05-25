@@ -1,11 +1,11 @@
 package org.hyrulecraft.dungeon_utils.block.blocktype;
 
 import net.minecraft.block.*;
-import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.*;
 import net.minecraft.util.*;
@@ -36,6 +36,7 @@ public class RustySwitchBlock extends HorizontalFacingBlock {
     @Override
     public VoxelShape getOutlineShape(@NotNull BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
         if (!state.get(IS_STEPPED_ON)) {
+
             return Stream.of(
                     Block.createCuboidShape(0, 0, 0, 16, 0.35, 16),
                     Block.createCuboidShape(4, -1.9, 4, 12, 6.1, 12),
@@ -44,6 +45,7 @@ public class RustySwitchBlock extends HorizontalFacingBlock {
                     Block.createCuboidShape(4, 0, 11, 12, 6, 13),
                     Block.createCuboidShape(10, 0, 4, 13, 6, 12)
             ).reduce((v1, v2) -> VoxelShapes.combineAndSimplify(v1, v2, BooleanBiFunction.OR)).get();
+
         } else if (state.get(IS_STEPPED_ON)) {
 
             return Block.createCuboidShape(0, 0, 0, 16, 0.25, 16);
@@ -74,6 +76,21 @@ public class RustySwitchBlock extends HorizontalFacingBlock {
     @Override
     protected void appendProperties(@NotNull StateManager.Builder<Block, BlockState> builder) {
         builder.add(new Property[]{FACING, IS_STEPPED_ON});
+    }
+
+    @Override
+    public boolean canPlaceAt(BlockState state, @NotNull WorldView world, @NotNull BlockPos pos) {
+        BlockState blockState = world.getBlockState(pos.down());
+
+        if (!blockState.isOf(Blocks.AIR) && !blockState.isOf(Blocks.GRASS) && !blockState.isIn(BlockTags.FLOWERS) && !blockState.isIn(BlockTags.SMALL_FLOWERS) && !blockState.isIn(BlockTags.TALL_FLOWERS)) {
+
+            return true;
+
+        } else {
+
+            return false;
+
+        }
     }
 
     @Override
