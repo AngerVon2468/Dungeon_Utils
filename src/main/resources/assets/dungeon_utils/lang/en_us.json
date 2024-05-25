@@ -1,3 +1,5 @@
 {
-  "block.dungeon_utils.yellow_switch_block": "Yellow Switch"
+  "block.dungeon_utils.yellow_switch_block": "Yellow Switch",
+
+  "dungeon_utils.subtitle.switch": "Switch moves"
 }

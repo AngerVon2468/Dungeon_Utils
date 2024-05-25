@@ -11,11 +11,13 @@ import net.minecraft.util.math.*;
 import net.minecraft.util.shape.*;
 import net.minecraft.world.*;
 
+import org.hyrulecraft.dungeon_utils.sound.SoundInit;
+
 import org.jetbrains.annotations.*;
 
 import java.util.stream.Stream;
 
-public class YellowSwitchBlock extends Block {
+public class YellowSwitchBlock extends HorizontalFacingBlock {
 
     public static final BooleanProperty IS_STEPPED_ON = BooleanProperty.of("is_stepped_on");
 
@@ -72,6 +74,7 @@ public class YellowSwitchBlock extends Block {
     public void onSteppedOn(@NotNull World world, BlockPos pos, BlockState state, Entity entity) {
         if (!world.getBlockState(pos).get(IS_STEPPED_ON)){
 
+            entity.playSound(SoundInit.getSWITCH(), 1.0f, 1.0f);
             world.setBlockState(pos, state.with(IS_STEPPED_ON, true));
 
         } else {
@@ -81,5 +84,20 @@ public class YellowSwitchBlock extends Block {
         }
 
         super.onSteppedOn(world, pos, state, entity);
+    }
+
+    @Override
+    public int getWeakRedstonePower(BlockState state, BlockView world, BlockPos pos, Direction direction) {
+        return state.get(IS_STEPPED_ON) ? 15 : 0;
+    }
+
+    @Override
+    public int getStrongRedstonePower(BlockState state, BlockView world, BlockPos pos, Direction direction) {
+        return state.get(IS_STEPPED_ON) ? 15 : 0;
+    }
+
+    @Override
+    public boolean emitsRedstonePower(BlockState state) {
+        return state.get(IS_STEPPED_ON);
     }
 }
