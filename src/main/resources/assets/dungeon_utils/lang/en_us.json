@@ -1,5 +1,10 @@
 {
   "block.dungeon_utils.yellow_switch_block": "Yellow Switch",
 
-  "dungeon_utils.subtitle.switch": "Switch moves"
+  "item.dungeon_utils.megaton_hammer": "Megaton Hammer",
+
+  "dungeon_utils.subtitle.switch": "Switch moves",
+
+  "dungeon_utils.subtitle.hammer_hit": "Hammer hits",
+  "dungeon_utils.subtitle.hammer_swing": "Hammer swings"
 }

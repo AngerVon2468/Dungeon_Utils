@@ -3,5 +3,15 @@
     "category": "player",
     "subtitle": "dungeon_utils.subtitle.switch",
     "sounds": [ "dungeon_utils:block/switch" ]
+  },
+  "hammer_hit": {
+    "category": "player",
+    "subtitle": "dungeon_utils.subtitle.hammer_hit",
+    "sounds": [ "dungeon_utils:item/hammer_hit" ]
+  },
+  "hammer_swing": {
+    "category": "player",
+    "subtitle": "dungeon_utils.subtitle.hammer_swing",
+    "sounds": [ "dungeon_utils:item/hammer_swing" ]
   }
 }
