@@ -1,6 +1,6 @@
 package org.hyrulecraft.dungeon_utils.item.itemtype;
 
-import net.minecraft.block.BlockState;
+import net.minecraft.block.*;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
@@ -33,11 +33,29 @@ public class MegatonHammerItem extends SwordItem {
     @Override
     public ActionResult useOnBlock(@NotNull ItemUsageContext context) {
         assert context.getPlayer() != null;
+        World world = context.getWorld();
+        BlockPos blockpos = context.getBlockPos();
+        BlockState blockState = world.getBlockState(context.getBlockPos());
+        PlayerEntity player = context.getPlayer();
 
-        context.getPlayer().playSound(SoundInit.getHAMMER_HIT(), SoundCategory.PLAYERS, 1.0f, 1.0f);
-        context.getPlayer().getItemCooldownManager().set((ModItems.MEGATON_HAMMER), 20);
+        if (blockState.isOf(Blocks.STONE) && !world.isClient) {
+            player.playSound(SoundInit.getHAMMER_HIT(), SoundCategory.PLAYERS, 1.0f, 1.0f);
+            world.setBlockState(blockpos, Blocks.COBBLESTONE.getDefaultState());
+            player.getItemCooldownManager().set((ModItems.MEGATON_HAMMER), 20);
 
-        return ActionResult.SUCCESS;
+            return ActionResult.SUCCESS;
+        } else if (blockState.isOf(Blocks.STONE_BRICKS) && !world.isClient) {
+            player.playSound(SoundInit.getHAMMER_HIT(), SoundCategory.PLAYERS, 1.0f, 1.0f);
+            world.setBlockState(blockpos, Blocks.CRACKED_STONE_BRICKS.getDefaultState());
+            player.getItemCooldownManager().set((ModItems.MEGATON_HAMMER), 20);
+
+            return ActionResult.SUCCESS;
+        } else {
+            player.playSound(SoundInit.getHAMMER_HIT(), SoundCategory.PLAYERS, 1.0f, 1.0f);
+            player.getItemCooldownManager().set((ModItems.MEGATON_HAMMER), 20);
+
+            return ActionResult.SUCCESS;
+        }
     }
 
     @Override

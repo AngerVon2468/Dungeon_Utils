@@ -96,7 +96,7 @@ public class RustySwitchBlock extends HorizontalFacingBlock {
     @Override
     public ActionResult onUse(@NotNull BlockState state, World world, BlockPos pos, @NotNull PlayerEntity player, Hand hand, @NotNull BlockHitResult hit) {
         ItemStack stack = player.getStackInHand(hand);
-        if (stack.isOf(ModItems.MEGATON_HAMMER)) {
+        if (stack.isOf(ModItems.MEGATON_HAMMER) && !state.get(IS_STEPPED_ON)) {
 
             player.playSound(SoundInit.getHAMMER_HIT(), SoundCategory.PLAYERS, 1.0f, 1.0f);
             player.playSound(SoundInit.getSWITCH(), 1.0f, 1.0f);
@@ -106,7 +106,6 @@ public class RustySwitchBlock extends HorizontalFacingBlock {
 
         } else {
 
-            world.setBlockState(pos, state.with(IS_STEPPED_ON, false));
             return ActionResult.FAIL;
 
         }

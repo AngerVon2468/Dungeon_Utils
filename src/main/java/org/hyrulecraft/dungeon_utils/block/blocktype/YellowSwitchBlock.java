@@ -2,17 +2,22 @@ package org.hyrulecraft.dungeon_utils.block.blocktype;
 
 import net.minecraft.block.*;
 import net.minecraft.entity.*;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.item.ItemStack;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.*;
 import net.minecraft.util.*;
 import net.minecraft.util.function.BooleanBiFunction;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.*;
 import net.minecraft.util.shape.*;
 import net.minecraft.world.*;
 
 import org.hyrulecraft.dungeon_utils.DungeonUtils;
+import org.hyrulecraft.dungeon_utils.item.ModItems;
 import org.hyrulecraft.dungeon_utils.sound.SoundInit;
 
 import org.jetbrains.annotations.*;
@@ -84,6 +89,24 @@ public class YellowSwitchBlock extends HorizontalFacingBlock {
         } else {
 
             return false;
+
+        }
+    }
+
+    @Override
+    public ActionResult onUse(@NotNull BlockState state, World world, BlockPos pos, @NotNull PlayerEntity player, Hand hand, @NotNull BlockHitResult hit) {
+        ItemStack stack = player.getStackInHand(hand);
+        if (stack.isOf(ModItems.MEGATON_HAMMER) && !state.get(IS_STEPPED_ON)) {
+
+            player.playSound(SoundInit.getHAMMER_HIT(), SoundCategory.PLAYERS, 1.0f, 1.0f);
+            player.playSound(SoundInit.getSWITCH(), 1.0f, 1.0f);
+            world.setBlockState(pos, state.with(IS_STEPPED_ON, true));
+            this.updateNeighbors(world, pos);
+            return ActionResult.SUCCESS;
+
+        } else {
+
+            return ActionResult.FAIL;
 
         }
     }

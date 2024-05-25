@@ -8,6 +8,10 @@
     "IdeallyKafei",
     "Mavity The Madity"
   ],
+  "contributors": [
+    "captainlinebeck",
+    "Hyrulecraft"
+  ],
   "license": "All-Rights-Reserved",
   "icon": "assets/dungeon_utils/icon.png",
   "environment": "*",
