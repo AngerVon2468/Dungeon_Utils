@@ -10,9 +10,9 @@ import org.slf4j.*;
 
 public class DungeonUtils implements ModInitializer {
 
-    public static final String MOD_ID ="hyrulecraft_switches";
+    public static final String MOD_ID = "dungeon_utils";
 
-    public static final String NAME ="HyruleCraft Switches";
+    public static final String NAME = "Dungeon Utils";
 
     public static final Logger LOGGER = LoggerFactory.getLogger(NAME);
 

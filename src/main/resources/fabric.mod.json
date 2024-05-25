@@ -1,11 +1,12 @@
 {
   "schemaVersion": 1,
-  "id": "hyrulecraft_switches",
+  "id": "dungeon_utils",
   "version": "${version}",
-  "name": "Hyrulecraft Switches",
+  "name": "Dungeon Utils",
   "description": "",
   "authors": [
-    "IdeallyKafei"
+    "IdeallyKafei",
+    "Mavity The Madity"
   ],
   "license": "All-Rights-Reserved",
   "icon": "assets/dungeon_utils/icon.png",
