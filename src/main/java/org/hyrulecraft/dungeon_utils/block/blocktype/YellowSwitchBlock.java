@@ -1,13 +1,9 @@
 package org.hyrulecraft.dungeon_utils.block.blocktype;
 
 import net.minecraft.block.*;
-import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.*;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.item.ItemStack;
 import net.minecraft.registry.tag.BlockTags;
-import net.minecraft.stat.Stats;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.*;
 import net.minecraft.util.*;

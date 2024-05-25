@@ -2,7 +2,7 @@
 	"credit": "IdeallyKafei",
 	"textures": {
 		"4": "dungeon_utils:block/rusty_pressure_switch",
-		"particle": "dungeon_utils:block/yellow_pressure_switch"
+		"particle": "dungeon_utils:block/rusty_pressure_switch"
 	},
 	"elements": [
 		{
