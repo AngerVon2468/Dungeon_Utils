@@ -1,5 +1,5 @@
 {
-	"credit": "IdeallyKafei",
+	"credit": "Hyrulecraft",
 	"textures": {
 		"4": "dungeon_utils:block/blue_pressure_switch",
 		"particle": "dungeon_utils:block/blue_pressure_switch"
@@ -33,8 +33,8 @@
 		},
 		{
 			"name": "top",
-			"from": [4, 0.1, 4],
-			"to": [12, 0.5, 12],
+			"from": [4, 0, 4],
+			"to": [12, 0.4, 12],
 			"rotation": {"angle": 0, "axis": "y", "origin": [0, -7.6, 0]},
 			"faces": {
 				"north": {"uv": [8, 12, 12, 12.5], "texture": "#4"},
