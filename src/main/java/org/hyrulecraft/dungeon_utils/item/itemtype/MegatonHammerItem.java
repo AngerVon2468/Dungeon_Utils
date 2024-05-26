@@ -32,29 +32,67 @@ public class MegatonHammerItem extends SwordItem {
 
     @Override
     public ActionResult useOnBlock(@NotNull ItemUsageContext context) {
-        assert context.getPlayer() != null;
         World world = context.getWorld();
         BlockPos blockpos = context.getBlockPos();
         BlockState blockState = world.getBlockState(context.getBlockPos());
         PlayerEntity player = context.getPlayer();
+        assert player != null;
 
         if (blockState.isOf(Blocks.STONE) && !world.isClient) {
+
             player.playSound(SoundInit.getHAMMER_HIT(), SoundCategory.PLAYERS, 1.0f, 1.0f);
             world.setBlockState(blockpos, Blocks.COBBLESTONE.getDefaultState());
             player.getItemCooldownManager().set((ModItems.MEGATON_HAMMER), 20);
 
             return ActionResult.SUCCESS;
+
         } else if (blockState.isOf(Blocks.STONE_BRICKS) && !world.isClient) {
+
             player.playSound(SoundInit.getHAMMER_HIT(), SoundCategory.PLAYERS, 1.0f, 1.0f);
             world.setBlockState(blockpos, Blocks.CRACKED_STONE_BRICKS.getDefaultState());
             player.getItemCooldownManager().set((ModItems.MEGATON_HAMMER), 20);
 
             return ActionResult.SUCCESS;
+
+        } else if (blockState.isOf(Blocks.DEEPSLATE_BRICKS) && !world.isClient) {
+
+            player.playSound(SoundInit.getHAMMER_HIT(), SoundCategory.PLAYERS, 1.0f, 1.0f);
+            world.setBlockState(blockpos, Blocks.CRACKED_DEEPSLATE_BRICKS.getDefaultState());
+            player.getItemCooldownManager().set((ModItems.MEGATON_HAMMER), 20);
+
+            return ActionResult.SUCCESS;
+
+        } else if (blockState.isOf(Blocks.DEEPSLATE_TILES) && !world.isClient) {
+
+            player.playSound(SoundInit.getHAMMER_HIT(), SoundCategory.PLAYERS, 1.0f, 1.0f);
+            world.setBlockState(blockpos, Blocks.CRACKED_DEEPSLATE_TILES.getDefaultState());
+            player.getItemCooldownManager().set((ModItems.MEGATON_HAMMER), 20);
+
+            return ActionResult.SUCCESS;
+
+        } else if (blockState.isOf(Blocks.NETHER_BRICKS) && !world.isClient) {
+
+            player.playSound(SoundInit.getHAMMER_HIT(), SoundCategory.PLAYERS, 1.0f, 1.0f);
+            world.setBlockState(blockpos, Blocks.CRACKED_NETHER_BRICKS.getDefaultState());
+            player.getItemCooldownManager().set((ModItems.MEGATON_HAMMER), 20);
+
+            return ActionResult.SUCCESS;
+
+        } else if (blockState.isOf(Blocks.POLISHED_BLACKSTONE_BRICKS) && !world.isClient) {
+
+            player.playSound(SoundInit.getHAMMER_HIT(), SoundCategory.PLAYERS, 1.0f, 1.0f);
+            world.setBlockState(blockpos, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS.getDefaultState());
+            player.getItemCooldownManager().set((ModItems.MEGATON_HAMMER), 20);
+
+            return ActionResult.SUCCESS;
+
         } else {
+
             player.playSound(SoundInit.getHAMMER_HIT(), SoundCategory.PLAYERS, 1.0f, 1.0f);
             player.getItemCooldownManager().set((ModItems.MEGATON_HAMMER), 20);
 
             return ActionResult.SUCCESS;
+
         }
     }
 
