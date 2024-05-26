@@ -2,6 +2,7 @@ package org.hyrulecraft.dungeon_utils;
 
 import org.hyrulecraft.dungeon_utils.item.*;
 import org.hyrulecraft.dungeon_utils.block.ModBlocks;
+import org.hyrulecraft.dungeon_utils.itemgroup.DungeonUtilsItemGroups;
 import org.hyrulecraft.dungeon_utils.sound.SoundInit;
 
 import net.fabricmc.api.ModInitializer;
@@ -22,7 +23,7 @@ public class DungeonUtils implements ModInitializer {
         DungeonUtils.LOGGER.info(DungeonUtils.NAME + " has registered its main class.");
 
         // Initializing classes.
-        ModItemGroups.registerItemGroups();
+        DungeonUtilsItemGroups.registerDungeonUtilsItemGroups();
         ModItems.registerModItems();
         ModBlocks.registerModBlocks();
         SoundInit.registerDungeonUtilsSounds();
