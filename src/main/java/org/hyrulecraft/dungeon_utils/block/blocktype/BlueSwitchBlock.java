@@ -112,6 +112,10 @@ public class BlueSwitchBlock extends HorizontalFacingBlock {
         }
     }
 
+    public static boolean test;
+
+    public static boolean isPlayerOnBlock;
+
     @Override
     public void onSteppedOn(@NotNull World world, BlockPos pos, BlockState state, Entity entity) {
         if (!world.getBlockState(pos).get(IS_STEPPED_ON)){
@@ -120,10 +124,9 @@ public class BlueSwitchBlock extends HorizontalFacingBlock {
             world.setBlockState(pos, state.with(IS_STEPPED_ON, true));
             this.updateNeighbors(world, pos);
 
-        }
+            test = true;
+            isPlayerOnBlock = true;
 
-        if (entity.getBlockPos() == pos) {
-            world.setBlockState(pos, state.with(IS_STEPPED_ON, false));
         }
 
         this.updateNeighbors(world, pos);
@@ -148,5 +151,16 @@ public class BlueSwitchBlock extends HorizontalFacingBlock {
     protected void updateNeighbors(@NotNull World world, BlockPos pos) {
         world.updateNeighborsAlways(pos, this);
         world.updateNeighborsAlways(pos.down(), this);
+    }
+
+    @Override
+    public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+        if (isPlayerOnBlock) {
+            isPlayerOnBlock = false;
+        }
+        if (test && !isPlayerOnBlock) {
+            world.setBlockState(pos, state.with(IS_STEPPED_ON, false));
+            this.updateNeighbors(world, pos);
+        }
     }
 }
