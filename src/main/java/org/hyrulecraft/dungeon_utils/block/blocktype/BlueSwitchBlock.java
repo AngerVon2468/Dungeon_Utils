@@ -23,13 +23,13 @@ import org.jetbrains.annotations.*;
 
 import java.util.stream.Stream;
 
-public class YellowSwitchBlock extends HorizontalFacingBlock {
+public class BlueSwitchBlock extends HorizontalFacingBlock {
 
     public static final BooleanProperty IS_STEPPED_ON = BooleanProperty.of("is_stepped_on");
 
     public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
 
-    public YellowSwitchBlock(Settings settings) {
+    public BlueSwitchBlock(Settings settings) {
         super(settings);
         this.setDefaultState(this.getStateManager().getDefaultState().with(FACING, Direction.NORTH).with(IS_STEPPED_ON, false));
     }
@@ -95,7 +95,7 @@ public class YellowSwitchBlock extends HorizontalFacingBlock {
     @Override
     public ActionResult onUse(@NotNull BlockState state, World world, BlockPos pos, @NotNull PlayerEntity player, Hand hand, @NotNull BlockHitResult hit) {
         ItemStack stack = player.getStackInHand(hand);
-        if (stack.isOf(ModItems.MEGATON_HAMMER) && !state.get(IS_STEPPED_ON)) {
+        if (stack.isOf(ModItems.MEGATON_HAMMER)) {
 
             player.playSound(SoundInit.getHAMMER_HIT(), SoundCategory.PLAYERS, 1.0f, 1.0f);
             player.playSound(SoundInit.getSWITCH(), 1.0f, 1.0f);
@@ -112,16 +112,15 @@ public class YellowSwitchBlock extends HorizontalFacingBlock {
 
     @Override
     public void onSteppedOn(@NotNull World world, BlockPos pos, BlockState state, Entity entity) {
-        if (!world.getBlockState(pos).get(IS_STEPPED_ON)){
+        if (!world.getBlockState(pos).get(IS_STEPPED_ON) && !(entity.getBlockPos() == pos)){
 
             entity.playSound(SoundInit.getSWITCH(), 1.0f, 1.0f);
             world.setBlockState(pos, state.with(IS_STEPPED_ON, true));
             this.updateNeighbors(world, pos);
 
         } else {
-
             world.setBlockState(pos, state.with(IS_STEPPED_ON, false));
-
+            this.updateNeighbors(world, pos);
         }
 
         super.onSteppedOn(world, pos, state, entity);

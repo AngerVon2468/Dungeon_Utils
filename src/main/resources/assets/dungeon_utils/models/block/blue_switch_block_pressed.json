@@ -1,7 +1,8 @@
 {
 	"credit": "IdeallyKafei",
 	"textures": {
-		"4": "dungeon_utils:block/blue_pressure_switch"
+		"4": "dungeon_utils:block/blue_pressure_switch",
+		"particle": "dungeon_utils:block/blue_pressure_switch"
 	},
 	"elements": [
 		{

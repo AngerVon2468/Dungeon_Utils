@@ -26,8 +26,12 @@ public class ModBlocks {
 
     public static final Block YELLOW_SWITCH_BLOCK = registerBlock("yellow_switch_block",
             new YellowSwitchBlock(FabricBlockSettings.create()));
+
     public static final Block RUSTY_SWITCH_BLOCK = registerBlock("rusty_switch_block",
             new RustySwitchBlock(FabricBlockSettings.create()));
+
+    public static final Block BLUE_SWITCH_BLOCK = registerBlock("blue_switch_block",
+            new BlueSwitchBlock(FabricBlockSettings.create()));
 
     public static void registerModBlocks() {
         DungeonUtils.LOGGER.info(DungeonUtils.NAME + " has registered its blocks.");

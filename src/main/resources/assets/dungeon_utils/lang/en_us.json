@@ -1,5 +1,7 @@
 {
   "block.dungeon_utils.yellow_switch_block": "Yellow Switch",
+  "block.dungeon_utils.rusty_switch_block": "Rusty Switch",
+  "block.dungeon_utils.blue_switch_block": "Blue Switch",
 
   "item.dungeon_utils.megaton_hammer": "Megaton Hammer",
 

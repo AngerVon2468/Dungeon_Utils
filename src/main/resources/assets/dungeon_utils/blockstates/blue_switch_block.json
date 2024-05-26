@@ -1,0 +1,34 @@
+{
+	"variants": {
+		"facing=north,is_stepped_on=false": {
+			"model": "dungeon_utils:block/blue_switch_block_unpressed"
+		},
+		"facing=south,is_stepped_on=false": {
+			"model": "dungeon_utils:block/blue_switch_block_unpressed",
+			"y": 180
+		},
+		"facing=west,is_stepped_on=false": {
+			"model": "dungeon_utils:block/blue_switch_block_unpressed",
+			"y": 270
+		},
+		"facing=east,is_stepped_on=false": {
+			"model": "dungeon_utils:block/blue_switch_block_unpressed",
+			"y": 90
+		},
+		"facing=north,is_stepped_on=true": {
+			"model": "dungeon_utils:block/blue_switch_block_pressed"
+		},
+		"facing=south,is_stepped_on=true": {
+			"model": "dungeon_utils:block/blue_switch_block_pressed",
+			"y": 180
+		},
+		"facing=west,is_stepped_on=true": {
+			"model": "dungeon_utils:block/blue_switch_block_pressed",
+			"y": 270
+		},
+		"facing=east,is_stepped_on=true": {
+			"model": "dungeon_utils:block/blue_switch_block_pressed",
+			"y": 90
+		}
+	}
+}
