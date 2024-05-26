@@ -3,7 +3,7 @@
   "id": "dungeon_utils",
   "version": "${version}",
   "name": "Dungeon Utils",
-  "description": "",
+  "description": "Utilities for dungeons.",
   "authors": [
     "IdeallyKafei",
     "Mavity The Madity"
