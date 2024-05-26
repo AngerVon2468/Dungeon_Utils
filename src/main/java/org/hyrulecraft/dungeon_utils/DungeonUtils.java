@@ -12,6 +12,7 @@ import org.hyrulecraft.dungeon_utils.sound.SoundInit;
 
 import org.slf4j.*;
 
+//TODO: Add all dependencies for useful features (Trinkets, Pehkui, Midnightlib, etc...)
 public class DungeonUtils implements ModInitializer {
 
     public static final String MOD_ID = "dungeon_utils";
