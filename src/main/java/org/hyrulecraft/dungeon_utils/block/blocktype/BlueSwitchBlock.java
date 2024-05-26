@@ -4,6 +4,7 @@ import net.minecraft.block.*;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
+import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
@@ -17,6 +18,7 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.*;
 import net.minecraft.world.*;
 
+import net.minecraft.world.event.GameEvent;
 import org.hyrulecraft.dungeon_utils.DungeonUtils;
 import org.hyrulecraft.dungeon_utils.item.ModItems;
 import org.hyrulecraft.dungeon_utils.sound.SoundInit;
@@ -112,27 +114,6 @@ public class BlueSwitchBlock extends HorizontalFacingBlock {
         }
     }
 
-    public static boolean test;
-
-    public static boolean isPlayerOnBlock;
-
-    @Override
-    public void onSteppedOn(@NotNull World world, BlockPos pos, BlockState state, Entity entity) {
-        if (!world.getBlockState(pos).get(IS_STEPPED_ON)){
-
-            entity.playSound(SoundInit.getSWITCH(), 1.0f, 1.0f);
-            world.setBlockState(pos, state.with(IS_STEPPED_ON, true));
-            this.updateNeighbors(world, pos);
-
-            test = true;
-            isPlayerOnBlock = true;
-
-        }
-
-        this.updateNeighbors(world, pos);
-        super.onSteppedOn(world, pos, state, entity);
-    }
-
     @Override
     public int getWeakRedstonePower(@NotNull BlockState state, BlockView world, BlockPos pos, Direction direction) {
         return state.get(IS_STEPPED_ON) ? 15 : 0;
@@ -155,12 +136,67 @@ public class BlueSwitchBlock extends HorizontalFacingBlock {
 
     @Override
     public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        if (isPlayerOnBlock) {
-            isPlayerOnBlock = false;
+        int redstoneOutput = this.getRedstoneOutput(state);
+        if (redstoneOutput > 0) {
+            this.updatePlateState(null, world, pos, state, redstoneOutput);
         }
-        if (test && !isPlayerOnBlock) {
-            world.setBlockState(pos, state.with(IS_STEPPED_ON, false));
+    }
+
+    @Override
+    public void onEntityCollision(BlockState state, @NotNull World world, BlockPos pos, Entity entity) {
+        if (world.isClient) {
+            return;
+        }
+        int redstoneOutput = this.getRedstoneOutput(state);
+        if (redstoneOutput == 0) {
+            this.updatePlateState(entity, world, pos, state, redstoneOutput);
+        }
+    }
+
+    private void updatePlateState(@Nullable Entity entity, World world, BlockPos pos, BlockState state, int output) {
+        int activationFromEntites = this.getRedstoneOutput(world, pos);
+        boolean isActivated = output > 0;
+        boolean willBeActivatedFromEntites = activationFromEntites > 0;
+        if (output != activationFromEntites) {
+            BlockState blockState = this.setRedstoneOutput(state, activationFromEntites);
+            world.playSound(null, pos, SoundInit.getSWITCH(), SoundCategory.PLAYERS, 1.0f, 1.0f);
+            world.setBlockState(pos, blockState, Block.NOTIFY_LISTENERS);
             this.updateNeighbors(world, pos);
+            world.scheduleBlockRerenderIfNeeded(pos, state, blockState);
         }
+        if (!willBeActivatedFromEntites && isActivated) {
+            world.playSound(null, pos, SoundInit.getSWITCH(), SoundCategory.PLAYERS, 1.0f, 1.0f);
+            world.emitGameEvent(entity, GameEvent.BLOCK_DEACTIVATE, pos);
+        } else if (willBeActivatedFromEntites && !isActivated) {
+            world.playSound(null, pos, SoundInit.getSWITCH(), SoundCategory.PLAYERS, 1.0f, 1.0f);
+            world.emitGameEvent(entity, GameEvent.BLOCK_ACTIVATE, pos);
+        }
+        if (willBeActivatedFromEntites) {
+            world.scheduleBlockTick(new BlockPos(pos), this, this.getTickRate());
+        }
+    }
+
+    protected int getTickRate() {
+        return 20;
+    }
+
+    protected int getRedstoneOutput(@NotNull BlockState state) {
+        return state.get(IS_STEPPED_ON) != false ? 15 : 0;
+    }
+
+    protected BlockState setRedstoneOutput(@NotNull BlockState state, int rsOut) {
+        return state.with(IS_STEPPED_ON, rsOut > 0);
+    }
+
+    protected static final Box BOX = new Box(0.0625, 0.0, 0.0625, 0.9375, 0.7, 0.9375);
+    protected int getRedstoneOutput(World world, BlockPos pos) {
+        Class<Entity> entityClass = Entity.class;
+        return getEntityCount(world, BOX.offset(pos), entityClass) > 0 ? 15 : 0;
+    }
+
+    protected static int getEntityCount(@NotNull World world, Box box, Class<? extends Entity> entityClass) {
+        return world.getEntitiesByClass(entityClass, box, EntityPredicates.EXCEPT_SPECTATOR.and((entity) -> {
+            return !entity.canAvoidTraps();
+        })).size();
     }
 }
