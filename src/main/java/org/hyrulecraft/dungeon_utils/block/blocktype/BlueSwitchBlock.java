@@ -5,6 +5,7 @@ import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.*;
@@ -12,6 +13,7 @@ import net.minecraft.util.*;
 import net.minecraft.util.function.BooleanBiFunction;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.*;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.*;
 import net.minecraft.world.*;
 
@@ -118,11 +120,9 @@ public class BlueSwitchBlock extends HorizontalFacingBlock {
             world.setBlockState(pos, state.with(IS_STEPPED_ON, true));
             this.updateNeighbors(world, pos);
 
-        } else {
-            world.setBlockState(pos, state.with(IS_STEPPED_ON, false));
-            this.updateNeighbors(world, pos);
         }
 
+        this.updateNeighbors(world, pos);
         super.onSteppedOn(world, pos, state, entity);
     }
 
