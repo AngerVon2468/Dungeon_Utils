@@ -19,7 +19,7 @@ public class ModItems {
             new MegatonHammerItem(ToolMaterials.IRON, 8, -2, new FabricItemSettings()));
 
     public static final Item LYNEL_BOW = registerItem("lynel_bow",
-            new LynelBowItem(new FabricItemSettings()));
+            new LynelBowItem(new FabricItemSettings().maxDamage(1024)));
 
     public static void registerModItems() {
         DungeonUtils.LOGGER.info(DungeonUtils.NAME + " has registered its items.");
