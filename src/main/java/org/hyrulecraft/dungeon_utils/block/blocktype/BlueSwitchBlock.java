@@ -17,8 +17,8 @@ import net.minecraft.util.math.*;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.*;
 import net.minecraft.world.*;
-
 import net.minecraft.world.event.GameEvent;
+
 import org.hyrulecraft.dungeon_utils.DungeonUtils;
 import org.hyrulecraft.dungeon_utils.item.ModItems;
 import org.hyrulecraft.dungeon_utils.sound.SoundInit;
@@ -85,15 +85,7 @@ public class BlueSwitchBlock extends HorizontalFacingBlock {
     public boolean canPlaceAt(BlockState state, @NotNull WorldView world, @NotNull BlockPos pos) {
         BlockState blockState = world.getBlockState(pos.down());
 
-        if (!blockState.isOf(Blocks.AIR) && !blockState.isOf(Blocks.GRASS) && !blockState.isIn(BlockTags.FLOWERS) && !blockState.isIn(BlockTags.SMALL_FLOWERS) && !blockState.isIn(BlockTags.TALL_FLOWERS)) {
-
-            return true;
-
-        } else {
-
-            return false;
-
-        }
+        return !blockState.isOf(Blocks.AIR) && !blockState.isOf(Blocks.GRASS) && !blockState.isIn(BlockTags.FLOWERS) && !blockState.isIn(BlockTags.SMALL_FLOWERS) && !blockState.isIn(BlockTags.TALL_FLOWERS);
     }
 
     @Override
@@ -181,7 +173,7 @@ public class BlueSwitchBlock extends HorizontalFacingBlock {
     }
 
     protected int getRedstoneOutput(@NotNull BlockState state) {
-        return state.get(IS_STEPPED_ON) != false ? 15 : 0;
+        return state.get(IS_STEPPED_ON) ? 15 : 0;
     }
 
     protected BlockState setRedstoneOutput(@NotNull BlockState state, int rsOut) {

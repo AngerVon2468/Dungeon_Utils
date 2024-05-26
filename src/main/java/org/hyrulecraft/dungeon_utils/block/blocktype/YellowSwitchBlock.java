@@ -81,15 +81,7 @@ public class YellowSwitchBlock extends HorizontalFacingBlock {
     public boolean canPlaceAt(BlockState state, @NotNull WorldView world, @NotNull BlockPos pos) {
         BlockState blockState = world.getBlockState(pos.down());
 
-        if (!blockState.isOf(Blocks.AIR) && !blockState.isOf(Blocks.GRASS) && !blockState.isIn(BlockTags.FLOWERS) && !blockState.isIn(BlockTags.SMALL_FLOWERS) && !blockState.isIn(BlockTags.TALL_FLOWERS)) {
-
-            return true;
-
-        } else {
-
-            return false;
-
-        }
+        return !blockState.isOf(Blocks.AIR) && !blockState.isOf(Blocks.GRASS) && !blockState.isIn(BlockTags.FLOWERS) && !blockState.isIn(BlockTags.SMALL_FLOWERS) && !blockState.isIn(BlockTags.TALL_FLOWERS);
     }
 
     @Override

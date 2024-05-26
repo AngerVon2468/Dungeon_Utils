@@ -10,6 +10,7 @@ import net.minecraft.stat.Stats;
 import net.minecraft.world.World;
 
 public class LynelBowItem extends BowItem {
+
     public LynelBowItem(Settings settings) {
         super(settings);
     }
@@ -49,9 +50,7 @@ public class LynelBowItem extends BowItem {
 
                 playerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
 
-                stack.damage(1, user, (e) -> {
-                    e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND);
-                });
+                stack.damage(1, user, (e) -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
             }
         }
     }
