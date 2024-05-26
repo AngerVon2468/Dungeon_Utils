@@ -9,6 +9,7 @@ import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.*;
 
+// TODO: POTS FROM TLOW WITH LOOT TABLE MODIFIERS
 public class DungeonUtils implements ModInitializer {
 
     public static final String MOD_ID = "dungeon_utils";

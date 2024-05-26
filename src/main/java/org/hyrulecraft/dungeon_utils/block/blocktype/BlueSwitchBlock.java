@@ -114,12 +114,16 @@ public class BlueSwitchBlock extends HorizontalFacingBlock {
 
     @Override
     public void onSteppedOn(@NotNull World world, BlockPos pos, BlockState state, Entity entity) {
-        if (!world.getBlockState(pos).get(IS_STEPPED_ON) && !(entity.getBlockPos() == pos)){
+        if (!world.getBlockState(pos).get(IS_STEPPED_ON)){
 
             entity.playSound(SoundInit.getSWITCH(), 1.0f, 1.0f);
             world.setBlockState(pos, state.with(IS_STEPPED_ON, true));
             this.updateNeighbors(world, pos);
 
+        }
+
+        if (entity.getBlockPos() == pos) {
+            world.setBlockState(pos, state.with(IS_STEPPED_ON, false));
         }
 
         this.updateNeighbors(world, pos);
