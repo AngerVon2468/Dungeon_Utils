@@ -1,15 +1,14 @@
 package org.hyrulecraft.dungeon_utils;
 
+import net.fabricmc.api.ModInitializer;
+
 import org.hyrulecraft.dungeon_utils.item.*;
 import org.hyrulecraft.dungeon_utils.block.ModBlocks;
 import org.hyrulecraft.dungeon_utils.itemgroup.DungeonUtilsItemGroups;
 import org.hyrulecraft.dungeon_utils.sound.SoundInit;
 
-import net.fabricmc.api.ModInitializer;
-
 import org.slf4j.*;
 
-// TODO: POTS FROM TLOW WITH LOOT TABLE MODIFIERS
 public class DungeonUtils implements ModInitializer {
 
     public static final String MOD_ID = "dungeon_utils";
