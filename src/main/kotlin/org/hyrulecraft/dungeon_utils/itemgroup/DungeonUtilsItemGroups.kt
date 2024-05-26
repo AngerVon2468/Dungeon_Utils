@@ -9,7 +9,7 @@ import net.minecraft.util.Identifier
 import org.hyrulecraft.dungeon_utils.DungeonUtils.*
 
 import org.hyrulecraft.dungeon_utils.block.ModBlocks.*
-import org.hyrulecraft.dungeon_utils.item.ModItems.MEGATON_HAMMER
+import org.hyrulecraft.dungeon_utils.item.ModItems.*
 
 class DungeonUtilsItemGroups {
 
@@ -19,10 +19,11 @@ class DungeonUtilsItemGroups {
             Registries.ITEM_GROUP, Identifier(MOD_ID, "dungeon_utils"),
             FabricItemGroup.builder().displayName(Text.translatable("tab.dungeon_utils.dungeon_utils"))
                 .icon { ItemStack(YELLOW_SWITCH_BLOCK) }.entries { displayContext, entries ->
+                    entries.add(MEGATON_HAMMER)
+                    entries.add(LYNEL_BOW)
                     entries.add(YELLOW_SWITCH_BLOCK)
                     entries.add(RUSTY_SWITCH_BLOCK)
                     entries.add(BLUE_SWITCH_BLOCK)
-                    entries.add(MEGATON_HAMMER)
                 }.build()
         )
 

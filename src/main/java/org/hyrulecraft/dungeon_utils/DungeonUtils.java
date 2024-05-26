@@ -2,6 +2,9 @@ package org.hyrulecraft.dungeon_utils;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.minecraft.client.item.ModelPredicateProviderRegistry;
+import net.minecraft.util.Identifier;
+
 import org.hyrulecraft.dungeon_utils.item.*;
 import org.hyrulecraft.dungeon_utils.block.ModBlocks;
 import org.hyrulecraft.dungeon_utils.itemgroup.DungeonUtilsItemGroups;
@@ -27,5 +30,16 @@ public class DungeonUtils implements ModInitializer {
         ModItems.registerModItems();
         ModBlocks.registerModBlocks();
         SoundInit.registerDungeonUtilsSounds();
+
+        // To do with bows.
+        ModelPredicateProviderRegistry.register(ModItems.LYNEL_BOW, new Identifier("pull"), (stack, world, entity, seed) -> {
+            if (entity == null) {
+                return 0.0f;
+            }
+            if (entity.getActiveItem() != stack) {
+                return 0.0f;
+            }
+            return (float)(stack.getMaxUseTime() - entity.getItemUseTimeLeft()) / 20.0f;
+        });
     }
 }

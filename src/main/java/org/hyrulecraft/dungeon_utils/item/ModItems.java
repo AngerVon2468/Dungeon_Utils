@@ -6,7 +6,7 @@ import net.minecraft.item.*;
 import net.minecraft.registry.*;
 import net.minecraft.util.Identifier;
 
-import org.hyrulecraft.dungeon_utils.item.itemtype.MegatonHammerItem;
+import org.hyrulecraft.dungeon_utils.item.itemtype.*;
 import org.hyrulecraft.dungeon_utils.DungeonUtils;
 
 public class ModItems {
@@ -17,6 +17,9 @@ public class ModItems {
 
     public static final Item MEGATON_HAMMER = registerItem("megaton_hammer",
             new MegatonHammerItem(ToolMaterials.IRON, 8, -2, new FabricItemSettings()));
+
+    public static final Item LYNEL_BOW = registerItem("lynel_bow",
+            new LynelBowItem(new FabricItemSettings()));
 
     public static void registerModItems() {
         DungeonUtils.LOGGER.info(DungeonUtils.NAME + " has registered its items.");
