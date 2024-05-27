@@ -8,6 +8,7 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.*;
 import net.minecraft.world.World;
 
+import org.hyrulecraft.dungeon_utils.config.DungeonUtilsConfig;
 import org.hyrulecraft.dungeon_utils.item.ModItems;
 
 import org.jetbrains.annotations.NotNull;
@@ -29,7 +30,7 @@ public class RevalisGaleItem extends TrinketItem {
 
         if (!stack.hasNbt() && !user.getItemCooldownManager().isCoolingDown(ModItems.REVALIS_GALE)) {
 
-            user.setVelocity(0, 1.5, 0);
+            user.setVelocity(0, DungeonUtilsConfig.revalisGaleHeight, 0);
             /*
             user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 20 * 10, 0));
             */
@@ -38,7 +39,7 @@ public class RevalisGaleItem extends TrinketItem {
 
         } else if (stack.getNbt().contains /* NullPointerException is handled by the previous statement. IntelliJ just doesn't understand. */ ("dungeon_utils.revalis_gale.usage_two") && !user.getItemCooldownManager().isCoolingDown(ModItems.REVALIS_GALE)) {
 
-            user.setVelocity(0, 1.5, 0);
+            user.setVelocity(0, DungeonUtilsConfig.revalisGaleHeight, 0);
             /*
             user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 20 * 10, 0));
             */
@@ -47,7 +48,7 @@ public class RevalisGaleItem extends TrinketItem {
 
         } else if (stack.getNbt().contains("dungeon_utils.revalis_gale.usage_three") && !user.getItemCooldownManager().isCoolingDown(ModItems.REVALIS_GALE)) {
 
-            user.setVelocity(0, 1.5, 0);
+            user.setVelocity(0, DungeonUtilsConfig.revalisGaleHeight, 0);
             /*
             user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 20 * 10, 0));
             */

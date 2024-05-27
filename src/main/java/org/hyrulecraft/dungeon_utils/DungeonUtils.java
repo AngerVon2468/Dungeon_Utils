@@ -1,10 +1,13 @@
 package org.hyrulecraft.dungeon_utils;
 
+import eu.midnightdust.lib.config.MidnightConfig;
+
 import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.util.Identifier;
 
+import org.hyrulecraft.dungeon_utils.config.DungeonUtilsConfig;
 import org.hyrulecraft.dungeon_utils.item.*;
 import org.hyrulecraft.dungeon_utils.block.ModBlocks;
 import org.hyrulecraft.dungeon_utils.itemgroup.DungeonUtilsItemGroups;
@@ -42,5 +45,8 @@ public class DungeonUtils implements ModInitializer {
             }
             return (float)(stack.getMaxUseTime() - entity.getItemUseTimeLeft()) / 20.0f;
         });
+
+        // Config
+        MidnightConfig.init(DungeonUtils.MOD_ID, DungeonUtilsConfig.class);
     }
 }

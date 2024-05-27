@@ -3,7 +3,7 @@
   "id": "dungeon_utils",
   "version": "${version}",
   "name": "Dungeon Utils",
-  "description": "Utilities for dungeons.",
+  "description": "Utilities for dungeons alongside other fun Zelda mechanics and items.",
   "authors": [
     "IdeallyKafei",
     "Mavity The Madity"
@@ -21,6 +21,9 @@
     ],
     "client": [
       "org.hyrulecraft.dungeon_utils.DungeonUtilsClient"
+    ],
+    "server": [
+      "org.hyrulecraft.dungeon_utils.DungeonUtilsServer"
     ]
   },
   "mixins": [
