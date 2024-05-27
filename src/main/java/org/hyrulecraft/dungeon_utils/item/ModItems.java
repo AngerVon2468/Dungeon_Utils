@@ -21,6 +21,9 @@ public class ModItems {
     public static final Item LYNEL_BOW = registerItem("lynel_bow",
             new LynelBowItem(new FabricItemSettings().maxDamage(1024)));
 
+    public static final Item REVALIS_GALE = registerItem("revalis_gale",
+            new RevalisGaleItem(new FabricItemSettings().maxDamage(0).maxCount(1)));
+
     public static void registerModItems() {
         DungeonUtils.LOGGER.info(DungeonUtils.NAME + " has registered its items.");
     }

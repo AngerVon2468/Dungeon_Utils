@@ -55,8 +55,7 @@ public class BlueSwitchBlock extends HorizontalFacingBlock {
 
         } else {
 
-            DungeonUtils.LOGGER.info("You messed up!");
-            return VoxelShapes.fullCube();
+            throw new RuntimeException("A fatal error occurred whilst making the outline and physical shape of the Blue Switch Block");
 
         }
     }
