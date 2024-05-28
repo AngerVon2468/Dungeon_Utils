@@ -1,9 +1,8 @@
-package org.hyrulecraft.dungeon_utils.item.itemtype;
+package org.hyrulecraft.dungeon_utils.item.itemtype.champion.ability.revali;
 
 import dev.emi.trinkets.api.TrinketItem;
 
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
+import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.*;
 import net.minecraft.entity.player.PlayerEntity;
@@ -14,7 +13,6 @@ import net.minecraft.util.*;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 
-import org.hyrulecraft.dungeon_utils.DungeonUtils;
 import org.hyrulecraft.dungeon_utils.config.DungeonUtilsConfig;
 import org.hyrulecraft.dungeon_utils.item.ModItems;
 import org.hyrulecraft.dungeon_utils.sound.SoundInit;
@@ -61,7 +59,6 @@ public class RevalisGaleItem extends TrinketItem {
         if (!stack.hasNbt() && !user.getItemCooldownManager().isCoolingDown(ModItems.REVALIS_GALE) && !blockState.isOf(Blocks.AIR)) {
 
             user.setVelocity(0, DungeonUtilsConfig.revalisGaleHeight, 0);
-            DungeonUtils.LOGGER.info("case 1");
             if (DungeonUtilsConfig.shouldAddSlowFalling) {
                 user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 20, 0));
             }
@@ -71,7 +68,6 @@ public class RevalisGaleItem extends TrinketItem {
         } else if (stack.hasNbt() && stack.getNbt().contains("dungeon_utils.revalis_gale.usage_two") && !user.getItemCooldownManager().isCoolingDown(ModItems.REVALIS_GALE) && !blockState.isOf(Blocks.AIR)) {
 
             user.setVelocity(0, DungeonUtilsConfig.revalisGaleHeight, 0);
-            DungeonUtils.LOGGER.info("case 2");
             if (DungeonUtilsConfig.shouldAddSlowFalling) {
                 user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 20, 0));
             }
@@ -81,7 +77,6 @@ public class RevalisGaleItem extends TrinketItem {
         } else if (stack.hasNbt() && stack.getNbt().contains("dungeon_utils.revalis_gale.usage_three") && !user.getItemCooldownManager().isCoolingDown(ModItems.REVALIS_GALE) && !blockState.isOf(Blocks.AIR)) {
 
             user.setVelocity(0, DungeonUtilsConfig.revalisGaleHeight, 0);
-            DungeonUtils.LOGGER.info("case 3");
             if (DungeonUtilsConfig.shouldAddSlowFalling) {
                 user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 20, 0));
             }
@@ -101,7 +96,7 @@ public class RevalisGaleItem extends TrinketItem {
     }
 
     
-    private void addAntiSpam(@NotNull PlayerEntity player) {
+    public void addAntiSpam(@NotNull PlayerEntity player) {
         ItemStack stack = player.getStackInHand(player.getActiveHand());
 
         NbtCompound nbtData = new NbtCompound();
@@ -110,7 +105,7 @@ public class RevalisGaleItem extends TrinketItem {
         stack.setNbt(nbtData);
     }
 
-    private void addSecondUsage(@NotNull PlayerEntity player) {
+    public void addSecondUsage(@NotNull PlayerEntity player) {
         ItemStack stack = player.getStackInHand(player.getActiveHand());
 
         NbtCompound nbtData = new NbtCompound();
@@ -119,7 +114,7 @@ public class RevalisGaleItem extends TrinketItem {
         stack.setNbt(nbtData);
     }
 
-    private void addThirdUsage(@NotNull PlayerEntity player) {
+    public void addThirdUsage(@NotNull PlayerEntity player) {
         ItemStack stack = player.getStackInHand(player.getActiveHand());
 
         NbtCompound nbtData = new NbtCompound();

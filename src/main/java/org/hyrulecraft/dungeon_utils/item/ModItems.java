@@ -8,6 +8,7 @@ import net.minecraft.util.Identifier;
 
 import org.hyrulecraft.dungeon_utils.item.itemtype.*;
 import org.hyrulecraft.dungeon_utils.DungeonUtils;
+import org.hyrulecraft.dungeon_utils.item.itemtype.champion.ability.revali.*;
 
 public class ModItems {
 
@@ -23,6 +24,9 @@ public class ModItems {
 
     public static final Item REVALIS_GALE = registerItem("revalis_gale",
             new RevalisGaleItem(new FabricItemSettings().maxDamage(0).maxCount(1)));
+
+    public static final Item REVALIS_GALE_PLUS = registerItem("revalis_gale_plus",
+            new RevalisGalePlusItem(new FabricItemSettings().maxDamage(0).maxCount(1)));
 
     public static void registerModItems() {
         DungeonUtils.LOGGER.info(DungeonUtils.NAME + " has registered its items.");
