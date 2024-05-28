@@ -2,6 +2,8 @@ package org.hyrulecraft.dungeon_utils.item.itemtype;
 
 import dev.emi.trinkets.api.TrinketItem;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.*;
 import net.minecraft.entity.player.PlayerEntity;
@@ -9,8 +11,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.*;
+import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 
+import org.hyrulecraft.dungeon_utils.DungeonUtils;
 import org.hyrulecraft.dungeon_utils.config.DungeonUtilsConfig;
 import org.hyrulecraft.dungeon_utils.item.ModItems;
 import org.hyrulecraft.dungeon_utils.sound.SoundInit;
@@ -28,20 +32,23 @@ public class RevalisGaleItem extends TrinketItem {
         return true;
     }
 
-    boolean isCooldowned = true;
-
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         if (entity instanceof PlayerEntity player) {
-            ItemStack stack1 = player.getStackInHand(player.getActiveHand());
 
-            if (!player.getItemCooldownManager().isCoolingDown(ModItems.REVALIS_GALE) && isCooldowned) {
+            if (!stack.hasNbt()) {
+
+                // Why are we still here... just to suffer?
+
+            } else if (!player.getItemCooldownManager().isCoolingDown(ModItems.REVALIS_GALE) && stack.getNbt().contains("dungeon_utils.revalis_gale.anti_spam") && stack.isOf(ModItems.REVALIS_GALE)) {
+
                 player.playSound(SoundInit.getREVALIS_GALE_RECHANGE(), SoundCategory.PLAYERS, 1f, 1f);
-                isCooldowned = false;
-            } else if (player.getItemCooldownManager().isCoolingDown(ModItems.REVALIS_GALE) && !isCooldowned) {
-                isCooldowned = true;
-            } else if (!player.getItemCooldownManager().isCoolingDown(ModItems.REVALIS_GALE) && !isCooldowned) {
-                isCooldowned = false;
+                stack.removeSubNbt("dungeon_utils.revalis_gale.anti_spam");
+
+            } else if (player.getItemCooldownManager().isCoolingDown(ModItems.REVALIS_GALE) && !stack.getNbt().contains("dungeon_utils.revalis_gale.anti_spam") && stack.isOf(ModItems.REVALIS_GALE)) {
+
+                addAntiSpam(player);
+
             }
         }
     }
@@ -49,33 +56,37 @@ public class RevalisGaleItem extends TrinketItem {
     @Override
     public TypedActionResult<ItemStack> use(@NotNull World world, @NotNull PlayerEntity user, @NotNull Hand hand) {
         ItemStack stack = user.getStackInHand(hand);
+        BlockState blockState = world.getBlockState(user.getBlockPos().offset(Direction.DOWN, 1));
 
-        if (!stack.hasNbt() && !user.getItemCooldownManager().isCoolingDown(ModItems.REVALIS_GALE)) {
+        if (!stack.hasNbt() && !user.getItemCooldownManager().isCoolingDown(ModItems.REVALIS_GALE)/* && !blockState.isOf(Blocks.AIR) && !world.isClient*/) {
 
             user.setVelocity(0, DungeonUtilsConfig.revalisGaleHeight, 0);
+            DungeonUtils.LOGGER.info("case 1");
             if (DungeonUtilsConfig.shouldAddSlowFalling) {
                 user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 20, 0));
             }
             addSecondUsage(user);
             return TypedActionResult.consume(stack);
 
-        } else if (stack.getNbt().contains /* NullPointerException is handled by the previous statement. IntelliJ just doesn't understand. */ ("dungeon_utils.revalis_gale.usage_two") && !user.getItemCooldownManager().isCoolingDown(ModItems.REVALIS_GALE)) {
+        } else if (stack.hasNbt() && stack.getNbt().contains("dungeon_utils.revalis_gale.usage_two") && !user.getItemCooldownManager().isCoolingDown(ModItems.REVALIS_GALE)/* && !blockState.isOf(Blocks.AIR) && !world.isClient*/) {
 
             user.setVelocity(0, DungeonUtilsConfig.revalisGaleHeight, 0);
+            DungeonUtils.LOGGER.info("case 2");
             if (DungeonUtilsConfig.shouldAddSlowFalling) {
                 user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 20, 0));
             }
             addThirdUsage(user);
             return TypedActionResult.consume(stack);
 
-        } else if (stack.getNbt().contains("dungeon_utils.revalis_gale.usage_three") && !user.getItemCooldownManager().isCoolingDown(ModItems.REVALIS_GALE)) {
+        } else if (stack.hasNbt() && stack.getNbt().contains("dungeon_utils.revalis_gale.usage_three") && !user.getItemCooldownManager().isCoolingDown(ModItems.REVALIS_GALE)/* && !blockState.isOf(Blocks.AIR) && !world.isClient*/) {
 
             user.setVelocity(0, DungeonUtilsConfig.revalisGaleHeight, 0);
+            DungeonUtils.LOGGER.info("case 3");
             if (DungeonUtilsConfig.shouldAddSlowFalling) {
                 user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 20, 0));
             }
-            user.getItemCooldownManager().set((ModItems.REVALIS_GALE), ( 20 * 60 ) /* The twenty times sixty should make it work in mins not seconds */ * 6 /* This six is the amount of minutes we want to set the cool down to */);
-            stack.removeSubNbt("dungeon_utils.revalis_gale.usage_three");
+            user.getItemCooldownManager().set((ModItems.REVALIS_GALE), ( 20 * 60 ) * 6);
+            addAntiSpam(user);
             return TypedActionResult.consume(stack);
 
         } else if (user.getItemCooldownManager().isCoolingDown(ModItems.REVALIS_GALE)) {
@@ -84,21 +95,20 @@ public class RevalisGaleItem extends TrinketItem {
 
         } else {
 
-            throw new RuntimeException("A fatal error occurred whilst using Revali's Gale.");
+            return TypedActionResult.fail(stack); // Can't have a runtime exception here anymore due to the nature of the if statement logic.
 
         }
     }
 
-    /*
-    private void addFirstUsage(@NotNull PlayerEntity player) {
+    
+    private void addAntiSpam(@NotNull PlayerEntity player) {
         ItemStack stack = player.getStackInHand(player.getActiveHand());
 
         NbtCompound nbtData = new NbtCompound();
-        nbtData.putString("dungeon_utils.revalis_gale.usage_one", "one");
+        nbtData.putString("dungeon_utils.revalis_gale.anti_spam", "anti_spam");
 
         stack.setNbt(nbtData);
     }
-    */ // No longer needed, but will leave here just in case.
 
     private void addSecondUsage(@NotNull PlayerEntity player) {
         ItemStack stack = player.getStackInHand(player.getActiveHand());
