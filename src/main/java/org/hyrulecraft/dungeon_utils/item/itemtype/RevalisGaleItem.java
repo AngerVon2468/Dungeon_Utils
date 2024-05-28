@@ -13,8 +13,8 @@ import net.minecraft.world.World;
 
 import org.hyrulecraft.dungeon_utils.config.DungeonUtilsConfig;
 import org.hyrulecraft.dungeon_utils.item.ModItems;
-
 import org.hyrulecraft.dungeon_utils.sound.SoundInit;
+
 import org.jetbrains.annotations.NotNull;
 
 public class RevalisGaleItem extends TrinketItem {
@@ -28,13 +28,20 @@ public class RevalisGaleItem extends TrinketItem {
         return true;
     }
 
+    boolean isCooldowned = true;
+
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         if (entity instanceof PlayerEntity player) {
             ItemStack stack1 = player.getStackInHand(player.getActiveHand());
 
-            if (player.getItemCooldownManager().getCooldownProgress(ModItems.REVALIS_GALE, 20f) == ( ( 20 * 60 ) * 6 ) - 1) {
+            if (!player.getItemCooldownManager().isCoolingDown(ModItems.REVALIS_GALE) && isCooldowned) {
                 player.playSound(SoundInit.getREVALIS_GALE_RECHANGE(), SoundCategory.PLAYERS, 1f, 1f);
+                isCooldowned = false;
+            } else if (player.getItemCooldownManager().isCoolingDown(ModItems.REVALIS_GALE) && !isCooldowned) {
+                isCooldowned = true;
+            } else if (!player.getItemCooldownManager().isCoolingDown(ModItems.REVALIS_GALE) && !isCooldowned) {
+                isCooldowned = false;
             }
         }
     }
