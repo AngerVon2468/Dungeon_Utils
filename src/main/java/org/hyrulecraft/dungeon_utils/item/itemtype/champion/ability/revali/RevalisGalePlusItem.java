@@ -12,8 +12,8 @@ import net.minecraft.world.World;
 
 import org.hyrulecraft.dungeon_utils.config.DungeonUtilsConfig;
 import org.hyrulecraft.dungeon_utils.item.ModItems;
-
 import org.hyrulecraft.dungeon_utils.sound.SoundInit;
+
 import org.jetbrains.annotations.NotNull;
 
 // TODO: Fix third person hand rotation on the model, it's the wrong way.

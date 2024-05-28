@@ -13,6 +13,13 @@
 
   "dungeon_utils.subtitle.switch": "Switch moves",
 
+  "dungeon_utils.subtitle.revalis_gale_recharge": "Revali's Gale is now ready",
+
   "dungeon_utils.subtitle.hammer_hit": "Hammer hits",
-  "dungeon_utils.subtitle.hammer_swing": "Hammer swings"
+  "dungeon_utils.subtitle.hammer_swing": "Hammer swings",
+
+  "titlescreen.mavity_lib.bottom_left": "Dungeon Utils v1.0.0 BETA",
+  "titlescreen.mavity_lib.bottom_right": "",
+  "titlescreen.mavity_lib.top_left": "",
+  "titlescreen.mavity_lib.top_right": ""
 }
