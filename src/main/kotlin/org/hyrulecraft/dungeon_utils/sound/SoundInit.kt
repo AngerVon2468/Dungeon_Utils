@@ -16,6 +16,8 @@ class SoundInit {
 
         @JvmStatic val HAMMER_SWING = register("hammer_swing")
 
+        @JvmStatic val REVALIS_GALE_RECHANGE = register("revalis_gale_recharge")
+
         @JvmStatic
         fun register(id: String?): SoundEvent? {
             val sound = SoundEvent.of(Identifier(MOD_ID, id))

@@ -13,5 +13,10 @@
     "category": "player",
     "subtitle": "dungeon_utils.subtitle.hammer_swing",
     "sounds": [ "dungeon_utils:item/hammer_swing" ]
+  },
+  "revalis_gale_recharge": {
+    "category": "player",
+    "subtitle": "dungeon_utils.subtitle.revalis_gale_recharge",
+    "sounds": [ "dungeon_utils:voice/revalis_gale_recharge" ]
   }
 }
