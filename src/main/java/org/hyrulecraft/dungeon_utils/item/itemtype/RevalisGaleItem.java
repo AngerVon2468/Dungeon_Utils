@@ -58,7 +58,7 @@ public class RevalisGaleItem extends TrinketItem {
         ItemStack stack = user.getStackInHand(hand);
         BlockState blockState = world.getBlockState(user.getBlockPos().offset(Direction.DOWN, 1));
 
-        if (!stack.hasNbt() && !user.getItemCooldownManager().isCoolingDown(ModItems.REVALIS_GALE)/* && !blockState.isOf(Blocks.AIR) && !world.isClient*/) {
+        if (!stack.hasNbt() && !user.getItemCooldownManager().isCoolingDown(ModItems.REVALIS_GALE) && !blockState.isOf(Blocks.AIR)) {
 
             user.setVelocity(0, DungeonUtilsConfig.revalisGaleHeight, 0);
             DungeonUtils.LOGGER.info("case 1");
@@ -68,7 +68,7 @@ public class RevalisGaleItem extends TrinketItem {
             addSecondUsage(user);
             return TypedActionResult.consume(stack);
 
-        } else if (stack.hasNbt() && stack.getNbt().contains("dungeon_utils.revalis_gale.usage_two") && !user.getItemCooldownManager().isCoolingDown(ModItems.REVALIS_GALE)/* && !blockState.isOf(Blocks.AIR) && !world.isClient*/) {
+        } else if (stack.hasNbt() && stack.getNbt().contains("dungeon_utils.revalis_gale.usage_two") && !user.getItemCooldownManager().isCoolingDown(ModItems.REVALIS_GALE) && !blockState.isOf(Blocks.AIR)) {
 
             user.setVelocity(0, DungeonUtilsConfig.revalisGaleHeight, 0);
             DungeonUtils.LOGGER.info("case 2");
@@ -78,7 +78,7 @@ public class RevalisGaleItem extends TrinketItem {
             addThirdUsage(user);
             return TypedActionResult.consume(stack);
 
-        } else if (stack.hasNbt() && stack.getNbt().contains("dungeon_utils.revalis_gale.usage_three") && !user.getItemCooldownManager().isCoolingDown(ModItems.REVALIS_GALE)/* && !blockState.isOf(Blocks.AIR) && !world.isClient*/) {
+        } else if (stack.hasNbt() && stack.getNbt().contains("dungeon_utils.revalis_gale.usage_three") && !user.getItemCooldownManager().isCoolingDown(ModItems.REVALIS_GALE) && !blockState.isOf(Blocks.AIR)) {
 
             user.setVelocity(0, DungeonUtilsConfig.revalisGaleHeight, 0);
             DungeonUtils.LOGGER.info("case 3");
