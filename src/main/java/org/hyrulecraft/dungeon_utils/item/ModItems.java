@@ -8,6 +8,7 @@ import net.minecraft.util.Identifier;
 
 import org.hyrulecraft.dungeon_utils.item.itemtype.*;
 import org.hyrulecraft.dungeon_utils.DungeonUtils;
+import org.hyrulecraft.dungeon_utils.item.itemtype.champion.ability.mipha.MiphasGraceItem;
 import org.hyrulecraft.dungeon_utils.item.itemtype.champion.ability.revali.*;
 
 public class ModItems {
@@ -22,11 +23,18 @@ public class ModItems {
     public static final Item LYNEL_BOW = registerItem("lynel_bow",
             new LynelBowItem(new FabricItemSettings().maxDamage(1024)));
 
+    // Champion Abilities
+
+    private static final FabricItemSettings CHAMPION_ABILITY = new FabricItemSettings().maxDamage(0).maxCount(1);
+
     public static final Item REVALIS_GALE = registerItem("revalis_gale",
-            new RevalisGaleItem(new FabricItemSettings().maxDamage(0).maxCount(1)));
+            new RevalisGaleItem(CHAMPION_ABILITY));
 
     public static final Item REVALIS_GALE_PLUS = registerItem("revalis_gale_plus",
-            new RevalisGalePlusItem(new FabricItemSettings().maxDamage(0).maxCount(1)));
+            new RevalisGalePlusItem(CHAMPION_ABILITY));
+
+    public static final Item MIPHAS_GRACE = registerItem("miphas_grace",
+            new MiphasGraceItem(CHAMPION_ABILITY));
 
     public static void registerModItems() {
         DungeonUtils.LOGGER.info(DungeonUtils.NAME + " has registered its items.");

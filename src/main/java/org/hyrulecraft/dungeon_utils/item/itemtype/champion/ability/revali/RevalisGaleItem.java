@@ -95,7 +95,6 @@ public class RevalisGaleItem extends TrinketItem {
         }
     }
 
-    
     public void addAntiSpam(@NotNull PlayerEntity player) {
         ItemStack stack = player.getStackInHand(player.getActiveHand());
 
