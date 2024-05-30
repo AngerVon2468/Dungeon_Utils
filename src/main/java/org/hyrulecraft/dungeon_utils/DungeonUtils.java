@@ -12,11 +12,11 @@ import org.hyrulecraft.dungeon_utils.item.*;
 import org.hyrulecraft.dungeon_utils.block.ModBlocks;
 import org.hyrulecraft.dungeon_utils.itemgroup.DungeonUtilsItemGroups;
 import org.hyrulecraft.dungeon_utils.sound.SoundInit;
-import org.hyrulecraft.dungeon_utils.util.event.EventCallbacks;
+import org.hyrulecraft.dungeon_utils.util.event.MiphasGraceCallback;
 
 import org.slf4j.*;
 
-//TODO: Add all dependencies for useful features (Trinkets, Pehkui, Midnightlib, etc...)
+// TODO: Divine beast structures && wild kass npc
 public class DungeonUtils implements ModInitializer {
 
     public static final String MOD_ID = "dungeon_utils";
@@ -36,7 +36,7 @@ public class DungeonUtils implements ModInitializer {
         ModBlocks.registerModBlocks();
         SoundInit.registerDungeonUtilsSounds();
 
-        EventCallbacks.allowDeathEvent();
+        MiphasGraceCallback.allowDeathEvent();
 
         // To do with bows.
         ModelPredicateProviderRegistry.register(ModItems.LYNEL_BOW, new Identifier("pull"), (stack, world, entity, seed) -> {
