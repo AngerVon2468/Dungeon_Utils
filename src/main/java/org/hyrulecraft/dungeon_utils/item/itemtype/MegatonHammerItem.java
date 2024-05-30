@@ -34,7 +34,7 @@ public class MegatonHammerItem extends SwordItem {
     public ActionResult useOnBlock(@NotNull ItemUsageContext context) {
         World world = context.getWorld();
         BlockPos blockpos = context.getBlockPos();
-        BlockState blockState = world.getBlockState(context.getBlockPos());
+        BlockState blockState = world.getBlockState(blockpos);
         PlayerEntity player = context.getPlayer();
         assert player != null;
 

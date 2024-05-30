@@ -14,9 +14,14 @@
   "dungeon_utils.subtitle.switch": "Switch moves",
 
   "dungeon_utils.subtitle.revalis_gale_recharge": "Revali's Gale is now ready",
+  "dungeon_utils.subtitle.miphas_grace_recharge": "Mipha's Grace is ready",
+
+  "dungeon_utils.subtitle.it_is_my_pleasure": "It is my pleasure",
 
   "dungeon_utils.subtitle.hammer_hit": "Hammer hits",
   "dungeon_utils.subtitle.hammer_swing": "Hammer swings",
+
+  "dungeon_utils.subtitle.start_game": "Game starts",
 
   "titlescreen.mavity_lib.bottom_left": "Dungeon Utils v1.0.0 BETA",
   "titlescreen.mavity_lib.bottom_right": "",

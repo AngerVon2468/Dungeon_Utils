@@ -35,7 +35,7 @@
     "sounds": [ "dungeon_utils:event/game/start_game" ]
   },
   "get_standard": {
-    "category": "player",
+    "category": "music",
     "subtitle": "dungeon_utils.subtitle.get_standard",
     "sounds": [ "dungeon_utils:event/get/get_standard" ]
   },
