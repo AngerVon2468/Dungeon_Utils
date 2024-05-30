@@ -4,10 +4,13 @@ import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.sound.SoundCategory;
+
 import org.hyrulecraft.dungeon_utils.item.ModItems;
+import org.hyrulecraft.dungeon_utils.sound.SoundInit;
 import org.hyrulecraft.dungeon_utils.util.InventoryUtil;
+
 import org.jetbrains.annotations.NotNull;
 
 public class MiphasGraceCallback {
@@ -23,6 +26,7 @@ public class MiphasGraceCallback {
                     if (!stack.hasNbt()) {
 
                         player.setHealth(20.0f);
+                        player.playSound(SoundInit.getIT_IS_MY_PLEASURE(), SoundCategory.PLAYERS, 1f, 1f);
                         addIsUsed(player);
                         player.getItemCooldownManager().set((ModItems.MIPHAS_GRACE), ( 20 * 60 ) * 24);
                         return false;

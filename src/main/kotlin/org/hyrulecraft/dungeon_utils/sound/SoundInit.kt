@@ -18,6 +18,22 @@ class SoundInit {
 
         @JvmStatic val REVALIS_GALE_RECHANGE = register("revalis_gale_recharge")
 
+        @JvmStatic val MIPHAS_GRACE_RECHARGE = register("miphas_grace_recharge")
+
+        @JvmStatic val IT_IS_MY_PLEASURE = register("it_is_my_pleasure")
+
+        @JvmStatic val START_GAME = register("start_game")
+
+        @JvmStatic val GET_STANDARD = register("get_standard")
+
+        @JvmStatic val GET_DELUXE = register("get_deluxe")
+
+        @JvmStatic val GET_HEART = register("get_heart")
+
+        @JvmStatic val PARRY = register("parry")
+
+        @JvmStatic val KASS_ONE = register("kass_one")
+
         @JvmStatic
         fun register(id: String?): SoundEvent? {
             val sound = SoundEvent.of(Identifier(MOD_ID, id))

@@ -17,6 +17,46 @@
   "revalis_gale_recharge": {
     "category": "player",
     "subtitle": "dungeon_utils.subtitle.revalis_gale_recharge",
-    "sounds": [ "dungeon_utils:voice/revalis_gale_recharge" ]
+    "sounds": [ "dungeon_utils:voice/recharge/revalis_gale_recharge" ]
+  },
+  "miphas_grace_recharge": {
+    "category": "player",
+    "subtitle": "dungeon_utils.subtitle.miphas_grace_recharge",
+    "sounds": [ "dungeon_utils:voice/recharge/miphas_grace_recharge" ]
+  },
+  "it_is_my_pleasure": {
+    "category": "player",
+    "subtitle": "dungeon_utils.subtitle.it_is_my_pleasure",
+    "sounds": [ "dungeon_utils:voice/use/it_is_my_pleasure" ]
+  },
+  "start_game": {
+    "category": "player",
+    "subtitle": "dungeon_utils.subtitle.start_game",
+    "sounds": [ "dungeon_utils:event/game/start_game" ]
+  },
+  "get_standard": {
+    "category": "player",
+    "subtitle": "dungeon_utils.subtitle.get_standard",
+    "sounds": [ "dungeon_utils:event/get/get_standard" ]
+  },
+  "get_deluxe": {
+    "category": "player",
+    "subtitle": "dungeon_utils.subtitle.get_deluxe",
+    "sounds": [ "dungeon_utils:event/get/get_deluxe" ]
+  },
+  "get_heart": {
+    "category": "player",
+    "subtitle": "dungeon_utils.subtitle.get_heart",
+    "sounds": [ "dungeon_utils:event/get/get_heart" ]
+  },
+  "parry": {
+    "category": "player",
+    "subtitle": "dungeon_utils.subtitle.parry",
+    "sounds": [ "dungeon_utils:event/use/parry" ]
+  },
+  "kass_one": {
+    "category": "player",
+    "subtitle": "dungeon_utils.subtitle.kass_one",
+    "sounds": [ "dungeon_utils:music/kass/kass_one" ]
   }
 }
