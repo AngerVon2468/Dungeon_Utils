@@ -12,6 +12,7 @@ import org.hyrulecraft.dungeon_utils.item.*;
 import org.hyrulecraft.dungeon_utils.block.ModBlocks;
 import org.hyrulecraft.dungeon_utils.itemgroup.DungeonUtilsItemGroups;
 import org.hyrulecraft.dungeon_utils.sound.SoundInit;
+import org.hyrulecraft.dungeon_utils.util.event.EventCallbacks;
 
 import org.slf4j.*;
 
@@ -34,6 +35,8 @@ public class DungeonUtils implements ModInitializer {
         ModItems.registerModItems();
         ModBlocks.registerModBlocks();
         SoundInit.registerDungeonUtilsSounds();
+
+        EventCallbacks.allowDeathEvent();
 
         // To do with bows.
         ModelPredicateProviderRegistry.register(ModItems.LYNEL_BOW, new Identifier("pull"), (stack, world, entity, seed) -> {
