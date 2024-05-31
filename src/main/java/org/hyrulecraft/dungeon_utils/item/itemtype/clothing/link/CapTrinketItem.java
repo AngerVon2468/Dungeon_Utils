@@ -28,8 +28,11 @@ import wiiu.mavity.mavity_lib.config.MavityLibConfig;
 import java.util.*;
 
 public class CapTrinketItem extends TrinketItem implements TrinketRenderer {
+
     private static final Identifier TEXTURE = new Identifier(DungeonUtils.MOD_ID, "textures/item/trinkets/link_cap.png");
+
     private BipedEntityModel<LivingEntity> model;
+
     public CapTrinketItem(Settings settings) {
         super(settings);
     }

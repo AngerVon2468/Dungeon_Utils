@@ -14,6 +14,7 @@ public class LinkCapModel extends BipedEntityModel<LivingEntity> {
         this.setVisible(false);
         this.head.visible = true;
     }
+
     public static TexturedModelData getTexturedModelData() {
         ModelData modelData = BipedEntityModel.getModelData(Dilation.NONE, 0f);
         ModelPartData modelPartData = modelData.getRoot();
