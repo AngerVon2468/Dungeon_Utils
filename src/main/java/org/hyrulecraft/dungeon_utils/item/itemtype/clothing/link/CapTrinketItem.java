@@ -1,7 +1,5 @@
 package org.hyrulecraft.dungeon_utils.item.itemtype.clothing.link;
 
-import com.google.common.collect.Multimap;
-
 import dev.emi.trinkets.api.*;
 import dev.emi.trinkets.api.client.TrinketRenderer;
 
@@ -12,7 +10,6 @@ import net.minecraft.client.render.*;
 import net.minecraft.client.render.entity.model.*;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.attribute.*;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
