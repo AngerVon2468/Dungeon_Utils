@@ -37,7 +37,7 @@ public class DungeonUtils implements ModInitializer {
 
         // Events
         MiphasGraceCallback.allowDeathEvent();
-        LoadWorldEvent.titleScreenLoadedEvent();
+        LoadWorldScreenEvent.titleScreenLoadedEvent();
 
         // To do with bows.
         ModelPredicateProviderRegistry.register(ModItems.LYNEL_BOW, new Identifier("pull"), (stack, world, entity, seed) -> {

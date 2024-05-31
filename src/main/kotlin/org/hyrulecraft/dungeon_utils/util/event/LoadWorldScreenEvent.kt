@@ -8,7 +8,7 @@ import net.minecraft.sound.SoundCategory
 import org.hyrulecraft.dungeon_utils.DungeonUtils
 import org.hyrulecraft.dungeon_utils.sound.SoundInit.Companion.START_GAME
 
-class LoadWorldEvent {
+class LoadWorldScreenEvent {
 
     companion object {
 
