@@ -6,11 +6,11 @@
   "description": "Utilities for dungeons alongside other fun Zelda mechanics and items.",
   "authors": [
     "IdeallyKafei",
-    "Mavity The Madity"
-  ],
-  "contributors": [
+    "Mavity The Madity",
     "captainlinebeck",
     "Hyrulecraft"
+  ],
+  "contributors": [
   ],
   "license": "All-Rights-Reserved",
   "icon": "assets/dungeon_utils/icon.png",
