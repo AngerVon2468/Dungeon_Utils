@@ -8,8 +8,6 @@ import net.minecraft.client.gui.screen.LevelLoadingScreen
 import net.minecraft.sound.SoundCategory
 import net.minecraft.util.Identifier
 
-import org.hyrulecraft.dungeon_utils.DungeonUtils
-
 class LoadLoadWorldScreenCallback {
 
     companion object {
@@ -22,7 +20,6 @@ class LoadLoadWorldScreenCallback {
 
                 if (screen is LevelLoadingScreen) {
 
-                    DungeonUtils.LOGGER.info("Loading screen lol")
                     START_GAME_CLIP?.play();
 
                 }
