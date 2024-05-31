@@ -18,6 +18,8 @@ import org.hyrulecraft.dungeon_utils.util.event.*;
 
 import org.slf4j.*;
 
+// TODO: Use player animator or something similar to make the paraglider look better whilst being used. Also adjust paraglider movement variables.
+// TODO: Add climbing! (use a keybind or something idk)
 public class DungeonUtils implements ModInitializer {
 
     public static final String MOD_ID = "dungeon_utils";
