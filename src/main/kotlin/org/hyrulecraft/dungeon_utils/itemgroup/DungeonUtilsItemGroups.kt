@@ -20,7 +20,8 @@ class DungeonUtilsItemGroups {
             FabricItemGroup.builder().displayName(Text.translatable("tab.dungeon_utils.dungeon_utils"))
                 .icon { ItemStack(YELLOW_SWITCH_BLOCK) }.entries { displayContext, entries ->
                     entries.add(MEGATON_HAMMER)
-                    entries.add(LYNEL_BOW)
+                    entries.add(LYNEL_BOW_FIVE_X)
+                    entries.add(LYNEL_BOW_THREE_X)
                     entries.add(YELLOW_SWITCH_BLOCK)
                     entries.add(RUSTY_SWITCH_BLOCK)
                     entries.add(BLUE_SWITCH_BLOCK)

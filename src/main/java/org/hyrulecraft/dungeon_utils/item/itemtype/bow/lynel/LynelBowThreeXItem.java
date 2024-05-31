@@ -1,4 +1,4 @@
-package org.hyrulecraft.dungeon_utils.item.itemtype;
+package org.hyrulecraft.dungeon_utils.item.itemtype.bow.lynel;
 
 import net.minecraft.enchantment.*;
 import net.minecraft.entity.*;
@@ -9,9 +9,9 @@ import net.minecraft.sound.*;
 import net.minecraft.stat.Stats;
 import net.minecraft.world.World;
 
-public class LynelBowItem extends BowItem {
+public class LynelBowThreeXItem extends BowItem {
 
-    public LynelBowItem(Settings settings) {
+    public LynelBowThreeXItem(Settings settings) {
         super(settings);
     }
 
@@ -26,7 +26,7 @@ public class LynelBowItem extends BowItem {
             float arrowVelocity = getPullProgress(charge);
             if (arrowVelocity >= 0.1) {
                 if (!world.isClient) {
-                    int arrowCount = 5; // Number of arrows to shoot
+                    int arrowCount = 3; // Number of arrows to shoot
                     for (int i = 0; i < arrowCount; i++) {
                         ArrowItem arrowItem = (ArrowItem)(arrowStack.getItem() instanceof ArrowItem ? arrowStack.getItem() : Items.ARROW);
                         PersistentProjectileEntity arrowEntity = arrowItem.createArrow(world, arrowStack, user);

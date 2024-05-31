@@ -8,6 +8,7 @@ import net.minecraft.util.Identifier;
 
 import org.hyrulecraft.dungeon_utils.item.itemtype.*;
 import org.hyrulecraft.dungeon_utils.DungeonUtils;
+import org.hyrulecraft.dungeon_utils.item.itemtype.bow.lynel.*;
 import org.hyrulecraft.dungeon_utils.item.itemtype.champion.ability.mipha.*;
 import org.hyrulecraft.dungeon_utils.item.itemtype.champion.ability.revali.*;
 import org.hyrulecraft.dungeon_utils.item.itemtype.clothing.link.CapTrinketItem;
@@ -24,8 +25,11 @@ public class ModItems {
     public static final Item MEGATON_HAMMER = registerItem("megaton_hammer",
             new MegatonHammerItem(ToolMaterials.IRON, 8, -2, new FabricItemSettings()));
 
-    public static final Item LYNEL_BOW = registerItem("lynel_bow",
-            new LynelBowItem(new FabricItemSettings().maxDamage(1024)));
+    public static final Item LYNEL_BOW_FIVE_X = registerItem("lynel_bow_five_x",
+            new LynelBowFiveXItem(new FabricItemSettings().maxDamage(1024)));
+
+    public static final Item LYNEL_BOW_THREE_X = registerItem("lynel_bow_three_x",
+            new LynelBowThreeXItem(new FabricItemSettings().maxDamage(1024)));
 
     // Champion Abilities
 

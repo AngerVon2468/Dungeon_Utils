@@ -42,7 +42,16 @@ public class DungeonUtils implements ModInitializer {
         LoadLoadWorldScreenCallback.loadLoadWorldScreenEvent();
 
         // To do with bows.
-        ModelPredicateProviderRegistry.register(ModItems.LYNEL_BOW, new Identifier("pull"), (stack, world, entity, seed) -> {
+        ModelPredicateProviderRegistry.register(ModItems.LYNEL_BOW_FIVE_X, new Identifier("pull"), (stack, world, entity, seed) -> {
+            if (entity == null) {
+                return 0.0f;
+            }
+            if (entity.getActiveItem() != stack) {
+                return 0.0f;
+            }
+            return (float)(stack.getMaxUseTime() - entity.getItemUseTimeLeft()) / 20.0f;
+        });
+        ModelPredicateProviderRegistry.register(ModItems.LYNEL_BOW_THREE_X, new Identifier("pull"), (stack, world, entity, seed) -> {
             if (entity == null) {
                 return 0.0f;
             }
