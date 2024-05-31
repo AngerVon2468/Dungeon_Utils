@@ -1,19 +1,20 @@
 package org.hyrulecraft.dungeon_utils.util.event
 
+import de.keksuccino.auudio.audio.AudioClip
+
 import net.fabricmc.fabric.api.client.screen.v1.ScreenEvents.AFTER_INIT
 
 import net.minecraft.client.gui.screen.LevelLoadingScreen
-import net.minecraft.sound.MusicSound
+import net.minecraft.sound.SoundCategory
+import net.minecraft.util.Identifier
 
 import org.hyrulecraft.dungeon_utils.DungeonUtils
-import org.hyrulecraft.dungeon_utils.sound.SoundInit
 
 class LoadWorldScreenEvent {
 
     companion object {
 
-        /*val MENU: MusicSound = MusicSound(SoundInit.START_GAME, 1, 2, true)*/
-
+        var START_GAME_CLIP: AudioClip? = AudioClip.buildInternalClip(Identifier("dungeon_utils", "sounds/event/game/start_game.ogg"), SoundCategory.MUSIC)
 
         @JvmStatic
         fun titleScreenLoadedEvent() {
@@ -22,9 +23,7 @@ class LoadWorldScreenEvent {
                 if (screen is LevelLoadingScreen) {
 
                     DungeonUtils.LOGGER.info("Loading screen lol")
-
-
-                    // Figure out how to play the sound!!
+                    START_GAME_CLIP?.play();
 
                 }
 

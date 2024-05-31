@@ -73,6 +73,8 @@ dependencies {
 
     // Curse Maven Mavity Lib
     modImplementation "curse.maven:mavity_lib-1016352:${project.mavity_lib_version_curseforge}"
+
+    modImplementation "curse.maven:auudio-fabric-613072:4581988"
 }
 
 processResources {
