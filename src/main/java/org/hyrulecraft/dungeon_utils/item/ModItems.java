@@ -10,6 +10,7 @@ import org.hyrulecraft.dungeon_utils.item.itemtype.*;
 import org.hyrulecraft.dungeon_utils.DungeonUtils;
 import org.hyrulecraft.dungeon_utils.item.itemtype.champion.ability.mipha.*;
 import org.hyrulecraft.dungeon_utils.item.itemtype.champion.ability.revali.*;
+import org.hyrulecraft.dungeon_utils.item.itemtype.clothing.link.CapTrinketItem;
 
 public class ModItems {
 
@@ -38,6 +39,11 @@ public class ModItems {
 
     public static final Item MIPHAS_GRACE_PLUS = registerItem("miphas_grace_plus",
             new MiphasGracePlusItem(CHAMPION_ABILITY));
+
+    // Clothing
+
+    public static final Item LINK_CAP = registerItem("link_cap",
+            new CapTrinketItem(new FabricItemSettings()));
 
     public static void registerModItems() {
         DungeonUtils.LOGGER.info(DungeonUtils.NAME + " has registered its items.");
