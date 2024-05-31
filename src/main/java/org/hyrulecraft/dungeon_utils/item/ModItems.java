@@ -18,6 +18,9 @@ public class ModItems {
         return Registry.register(Registries.ITEM, new Identifier(DungeonUtils.MOD_ID, name), item);
     }
 
+    public static final Item PARAGLIDER = registerItem("paraglider",
+            new ParagliderTrinketItem(new FabricItemSettings().maxCount(1).maxDamage(0)));
+
     public static final Item MEGATON_HAMMER = registerItem("megaton_hammer",
             new MegatonHammerItem(ToolMaterials.IRON, 8, -2, new FabricItemSettings()));
 
