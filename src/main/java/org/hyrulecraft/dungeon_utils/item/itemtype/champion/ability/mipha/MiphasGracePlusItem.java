@@ -12,10 +12,15 @@ import org.hyrulecraft.dungeon_utils.item.ModItems;
 import org.hyrulecraft.dungeon_utils.sound.SoundInit;
 import org.hyrulecraft.dungeon_utils.util.event.MiphasGraceCallback;
 
-public class MiphasGracePlusItem extends MiphasGraceItem {
+public class MiphasGracePlusItem extends TrinketItem {
 
     public MiphasGracePlusItem(Settings settings) {
         super(settings);
+    }
+
+    @Override
+    public boolean hasGlint(ItemStack stack) {
+        return true;
     }
 
     @Override

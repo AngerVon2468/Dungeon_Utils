@@ -20,9 +20,8 @@ public class MiphasGraceCallback {
 
             if (entity instanceof PlayerEntity player) {
 
-                ItemStack stack = player.getInventory().getStack(InventoryUtil.getFirstInventoryIndex(player, ModItems.MIPHAS_GRACE));
-                ItemStack stack2 = player.getInventory().getStack(InventoryUtil.getFirstInventoryIndex(player, ModItems.MIPHAS_GRACE_PLUS));
                 if (InventoryUtil.hasPlayerStackInInventory(player, ModItems.MIPHAS_GRACE) && !player.getItemCooldownManager().isCoolingDown(ModItems.MIPHAS_GRACE)) {
+                    ItemStack stack = player.getInventory().getStack(InventoryUtil.getFirstInventoryIndex(player, ModItems.MIPHAS_GRACE));
 
                     if (!stack.hasNbt()) {
 
@@ -38,7 +37,10 @@ public class MiphasGraceCallback {
 
                     }
 
-                } else if (InventoryUtil.hasPlayerStackInInventory(player, ModItems.MIPHAS_GRACE_PLUS) && !player.getItemCooldownManager().isCoolingDown(ModItems.MIPHAS_GRACE_PLUS)) {
+                }
+
+                if (InventoryUtil.hasPlayerStackInInventory(player, ModItems.MIPHAS_GRACE_PLUS) && !player.getItemCooldownManager().isCoolingDown(ModItems.MIPHAS_GRACE_PLUS)) {
+                    ItemStack stack2 = player.getInventory().getStack(InventoryUtil.getFirstInventoryIndex(player, ModItems.MIPHAS_GRACE_PLUS));
 
                     if (!stack2.hasNbt()) {
 
