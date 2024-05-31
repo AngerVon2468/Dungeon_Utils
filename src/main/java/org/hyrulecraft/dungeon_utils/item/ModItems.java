@@ -8,7 +8,7 @@ import net.minecraft.util.Identifier;
 
 import org.hyrulecraft.dungeon_utils.item.itemtype.*;
 import org.hyrulecraft.dungeon_utils.DungeonUtils;
-import org.hyrulecraft.dungeon_utils.item.itemtype.champion.ability.mipha.MiphasGraceItem;
+import org.hyrulecraft.dungeon_utils.item.itemtype.champion.ability.mipha.*;
 import org.hyrulecraft.dungeon_utils.item.itemtype.champion.ability.revali.*;
 
 public class ModItems {
@@ -35,6 +35,9 @@ public class ModItems {
 
     public static final Item MIPHAS_GRACE = registerItem("miphas_grace",
             new MiphasGraceItem(CHAMPION_ABILITY));
+
+    public static final Item MIPHAS_GRACE_PLUS = registerItem("miphas_grace_plus",
+            new MiphasGracePlusItem(CHAMPION_ABILITY));
 
     public static void registerModItems() {
         DungeonUtils.LOGGER.info(DungeonUtils.NAME + " has registered its items.");

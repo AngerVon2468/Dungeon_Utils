@@ -16,7 +16,7 @@ class SoundInit {
 
         @JvmStatic val HAMMER_SWING = register("hammer_swing")
 
-        @JvmStatic val REVALIS_GALE_RECHANGE = register("revalis_gale_recharge")
+        @JvmStatic val REVALIS_GALE_RECHARGE = register("revalis_gale_recharge")
 
         @JvmStatic val MIPHAS_GRACE_RECHARGE = register("miphas_grace_recharge")
 

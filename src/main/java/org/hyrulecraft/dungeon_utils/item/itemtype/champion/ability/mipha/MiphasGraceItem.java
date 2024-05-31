@@ -19,6 +19,11 @@ public class MiphasGraceItem extends TrinketItem {
     }
 
     @Override
+    public boolean hasGlint(ItemStack stack) {
+        return true;
+    }
+
+    @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         if (entity instanceof PlayerEntity player) {
 

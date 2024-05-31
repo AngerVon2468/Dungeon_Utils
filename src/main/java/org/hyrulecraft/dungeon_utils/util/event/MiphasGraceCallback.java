@@ -21,6 +21,7 @@ public class MiphasGraceCallback {
             if (entity instanceof PlayerEntity player) {
 
                 ItemStack stack = player.getInventory().getStack(InventoryUtil.getFirstInventoryIndex(player, ModItems.MIPHAS_GRACE));
+                ItemStack stack2 = player.getInventory().getStack(InventoryUtil.getFirstInventoryIndex(player, ModItems.MIPHAS_GRACE_PLUS));
                 if (InventoryUtil.hasPlayerStackInInventory(player, ModItems.MIPHAS_GRACE) && !player.getItemCooldownManager().isCoolingDown(ModItems.MIPHAS_GRACE)) {
 
                     if (!stack.hasNbt()) {
@@ -29,6 +30,22 @@ public class MiphasGraceCallback {
                         player.playSound(SoundInit.getIT_IS_MY_PLEASURE(), SoundCategory.PLAYERS, 1f, 1f);
                         addIsUsed(player);
                         player.getItemCooldownManager().set((ModItems.MIPHAS_GRACE), ( 20 * 60 ) * 24);
+                        return false;
+
+                    } else {
+
+                        return true;
+
+                    }
+
+                } else if (InventoryUtil.hasPlayerStackInInventory(player, ModItems.MIPHAS_GRACE_PLUS) && !player.getItemCooldownManager().isCoolingDown(ModItems.MIPHAS_GRACE_PLUS)) {
+
+                    if (!stack2.hasNbt()) {
+
+                        player.setHealth(20.0f);
+                        player.playSound(SoundInit.getIT_IS_MY_PLEASURE(), SoundCategory.PLAYERS, 1f, 1f);
+                        addIsUsedPlus(player);
+                        player.getItemCooldownManager().set((ModItems.MIPHAS_GRACE_PLUS), ( 20 * 60 ) * 8);
                         return false;
 
                     } else {
@@ -54,6 +71,15 @@ public class MiphasGraceCallback {
 
     public static void addIsUsed(@NotNull PlayerEntity player) {
         ItemStack stack = player.getInventory().getStack(InventoryUtil.getFirstInventoryIndex(player, ModItems.MIPHAS_GRACE));
+
+        NbtCompound nbtData = new NbtCompound();
+        nbtData.putString("dungeon_utils.miphas_gale.is_used", "is_used");
+
+        stack.setNbt(nbtData);
+    }
+
+    public static void addIsUsedPlus(@NotNull PlayerEntity player) {
+        ItemStack stack = player.getInventory().getStack(InventoryUtil.getFirstInventoryIndex(player, ModItems.MIPHAS_GRACE_PLUS));
 
         NbtCompound nbtData = new NbtCompound();
         nbtData.putString("dungeon_utils.miphas_gale.is_used", "is_used");

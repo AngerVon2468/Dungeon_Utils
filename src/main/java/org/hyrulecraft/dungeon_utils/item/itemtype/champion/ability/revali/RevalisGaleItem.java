@@ -40,7 +40,7 @@ public class RevalisGaleItem extends TrinketItem {
 
             } else if (!player.getItemCooldownManager().isCoolingDown(ModItems.REVALIS_GALE) && stack.getNbt().contains("dungeon_utils.revalis_gale.anti_spam") && stack.isOf(ModItems.REVALIS_GALE)) {
 
-                player.playSound(SoundInit.getREVALIS_GALE_RECHANGE(), SoundCategory.PLAYERS, 1f, 1f);
+                player.playSound(SoundInit.getREVALIS_GALE_RECHARGE(), SoundCategory.PLAYERS, 1f, 1f);
                 stack.removeSubNbt("dungeon_utils.revalis_gale.anti_spam");
 
             } else if (player.getItemCooldownManager().isCoolingDown(ModItems.REVALIS_GALE) && !stack.getNbt().contains("dungeon_utils.revalis_gale.anti_spam") && stack.isOf(ModItems.REVALIS_GALE)) {

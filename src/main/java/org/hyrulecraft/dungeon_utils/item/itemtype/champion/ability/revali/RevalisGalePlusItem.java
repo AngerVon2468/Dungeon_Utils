@@ -16,7 +16,6 @@ import org.hyrulecraft.dungeon_utils.sound.SoundInit;
 
 import org.jetbrains.annotations.NotNull;
 
-// TODO: Fix third person hand rotation on the model, it's the wrong way.
 public class RevalisGalePlusItem extends RevalisGaleItem {
 
     public RevalisGalePlusItem(Settings settings) {
@@ -33,7 +32,7 @@ public class RevalisGalePlusItem extends RevalisGaleItem {
 
             } else if (!player.getItemCooldownManager().isCoolingDown(ModItems.REVALIS_GALE_PLUS) && stack.getNbt().contains("dungeon_utils.revalis_gale.anti_spam") && stack.isOf(ModItems.REVALIS_GALE_PLUS)) {
 
-                player.playSound(SoundInit.getREVALIS_GALE_RECHANGE(), SoundCategory.PLAYERS, 1f, 1f);
+                player.playSound(SoundInit.getREVALIS_GALE_RECHARGE(), SoundCategory.PLAYERS, 1f, 1f);
                 stack.removeSubNbt("dungeon_utils.revalis_gale.anti_spam");
 
             } else if (player.getItemCooldownManager().isCoolingDown(ModItems.REVALIS_GALE_PLUS) && !stack.getNbt().contains("dungeon_utils.revalis_gale.anti_spam") && stack.isOf(ModItems.REVALIS_GALE_PLUS)) {
