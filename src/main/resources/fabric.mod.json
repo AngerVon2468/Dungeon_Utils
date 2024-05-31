@@ -3,12 +3,12 @@
   "id": "dungeon_utils",
   "version": "${version}",
   "name": "Dungeon Utils",
-  "description": "Utilities for dungeons alongside other fun Zelda mechanics and items.",
+  "description": "Utilities for dungeons alongside other fun Zelda mechanics, items and blocks.",
   "authors": [
     "IdeallyKafei",
     "Mavity The Madity",
     "captainlinebeck",
-    "Hyrulecraft"
+    "HyruleCraft"
   ],
   "contributors": [
   ],

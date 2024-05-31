@@ -37,11 +37,6 @@ public class CapTrinketItem extends TrinketItem implements TrinketRenderer {
         super(settings);
     }
 
-    public Multimap<EntityAttribute, EntityAttributeModifier> getModifiers(ItemStack stack, SlotReference slot, LivingEntity entity, UUID uuid) {
-        var modifiers = super.getModifiers(stack, slot, entity, uuid);
-        return modifiers;
-    }
-
     @Override
     public void tick(ItemStack stack, SlotReference slot, LivingEntity entity) {
     }
