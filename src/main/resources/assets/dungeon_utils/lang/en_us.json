@@ -6,10 +6,18 @@
   "item.dungeon_utils.megaton_hammer": "Megaton Hammer",
   "item.dungeon_utils.lynel_bow": "Lynel Bow (5x)",
 
+  "item.dungeon_utils.link_cap": "Link's Cap",
+
   "item.dungeon_utils.revalis_gale": "Revali's Gale",
   "item.dungeon_utils.revalis_gale_plus": "Revali's Gale +",
+  "item.dungeon_utils.miphas_grace": "Mipha's Grace",
+  "item.dungeon_utils.miphas_grace_plus": "Mipha's Grace +",
+
+  "tooltip.dungeon_utils.cap_trinket_one": "",
 
   "tab.dungeon_utils.dungeon_utils": "Dungeon Utils",
+  "tab.dungeon_utils.champion_abilities": "Champion Abilities",
+  "tab.dungeon_utils.clothing": "Clothing",
 
   "dungeon_utils.subtitle.switch": "Switch moves",
 

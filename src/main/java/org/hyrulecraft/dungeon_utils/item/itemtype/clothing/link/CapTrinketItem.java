@@ -19,7 +19,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 
 import org.hyrulecraft.dungeon_utils.DungeonUtils;
-import org.hyrulecraft.dungeon_utils.model.cap.LinkCapModel;
+import org.hyrulecraft.dungeon_utils.model.clothing.LinkCapModel;
 
 import org.jetbrains.annotations.*;
 
