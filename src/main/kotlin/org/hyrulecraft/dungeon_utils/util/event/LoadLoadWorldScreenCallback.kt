@@ -10,14 +10,14 @@ import net.minecraft.util.Identifier
 
 import org.hyrulecraft.dungeon_utils.DungeonUtils
 
-class LoadWorldScreenEvent {
+class LoadLoadWorldScreenCallback {
 
     companion object {
 
         var START_GAME_CLIP: AudioClip? = AudioClip.buildInternalClip(Identifier("dungeon_utils", "sounds/event/game/start_game.ogg"), SoundCategory.MUSIC)
 
         @JvmStatic
-        fun titleScreenLoadedEvent() {
+        fun loadLoadWorldScreenEvent() {
             AFTER_INIT.register { client, screen, scaledWidth, scaledHeight ->
 
                 if (screen is LevelLoadingScreen) {
