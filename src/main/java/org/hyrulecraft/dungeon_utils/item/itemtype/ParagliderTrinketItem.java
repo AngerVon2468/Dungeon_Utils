@@ -18,14 +18,15 @@ public class ParagliderTrinketItem extends TrinketItem {
         super(settings);
     }
 
-    @Override
+    @Override // TODO: Switch to inventoryTick?
     public TypedActionResult<ItemStack> use(@NotNull World world, @NotNull PlayerEntity user, @NotNull Hand hand) {
         ItemStack stack = user.getStackInHand(hand);
         BlockState blockState = world.getBlockState(user.getBlockPos().offset(Direction.DOWN, 1));
 
         if (blockState.isOf(Blocks.AIR)) {
 
-            user.setNoGravity(true); // TODO: Adjust values
+            /*
+            user.setNoGravity(true); // TODO: Make better system
             if (user.getHorizontalFacing() == Direction.NORTH) {
                 user.addVelocity(0, -0.02,-0.2);
             }
@@ -38,9 +39,14 @@ public class ParagliderTrinketItem extends TrinketItem {
             if (user.getHorizontalFacing() == Direction.WEST) {
                 user.addVelocity(-0.2, -0.02,0);
             }
+            */
 
         } else {
+
+            /*
             user.setNoGravity(false);
+            */
+
         }
         return TypedActionResult.pass(stack);
     }
