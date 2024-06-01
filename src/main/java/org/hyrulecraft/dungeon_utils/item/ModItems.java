@@ -22,6 +22,9 @@ public class ModItems {
     public static final Item PARAGLIDER = registerItem("paraglider",
             new ParagliderTrinketItem(new FabricItemSettings().maxCount(1).maxDamage(0)));
 
+    public static final Item MOGMA_MITTS = registerItem("mogma_mitts",
+            new MogmaMittsItem(new FabricItemSettings().maxCount(1).maxDamage(0)));
+
     public static final Item MEGATON_HAMMER = registerItem("megaton_hammer",
             new MegatonHammerItem(ToolMaterials.IRON, 8, -2, new FabricItemSettings()));
 
