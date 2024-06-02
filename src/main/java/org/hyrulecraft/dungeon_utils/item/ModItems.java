@@ -11,6 +11,7 @@ import org.hyrulecraft.dungeon_utils.DungeonUtils;
 import org.hyrulecraft.dungeon_utils.item.itemtype.bow.lynel.*;
 import org.hyrulecraft.dungeon_utils.item.itemtype.champion.ability.mipha.*;
 import org.hyrulecraft.dungeon_utils.item.itemtype.champion.ability.revali.*;
+import org.hyrulecraft.dungeon_utils.item.itemtype.clothing.glove.MogmaMittsItem;
 import org.hyrulecraft.dungeon_utils.item.itemtype.clothing.link.CapTrinketItem;
 
 public class ModItems {

@@ -1,4 +1,4 @@
-package org.hyrulecraft.dungeon_utils.item.itemtype;
+package org.hyrulecraft.dungeon_utils.item.itemtype.clothing.glove;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
