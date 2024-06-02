@@ -30,6 +30,9 @@ class DungeonUtilsItemGroups {
                     entries.add(MIPHAS_GRACE)
                     entries.add(MIPHAS_GRACE_PLUS)
                     entries.add(LINK_CAP)
+                    entries.add(MOGMA_MITTS)
+                    entries.add(CLIMBING_GLOVES)
+                    entries.add(PARAGLIDER)
                 }.build()
         )
 
@@ -49,6 +52,22 @@ class DungeonUtilsItemGroups {
             FabricItemGroup.builder().displayName(Text.translatable("tab.dungeon_utils.clothing"))
                 .icon { ItemStack(LINK_CAP) }.entries { displayContext, entries ->
                     entries.add(LINK_CAP)
+                    entries.add(MOGMA_MITTS)
+                    entries.add(CLIMBING_GLOVES)
+                }.build()
+        )
+
+        val WEAPONRY = Registry.register(
+            Registries.ITEM_GROUP, Identifier(MOD_ID, "weaponry"),
+            FabricItemGroup.builder().displayName(Text.translatable("tab.dungeon_utils.weaponry"))
+                .icon { ItemStack(MEGATON_HAMMER) }.entries { displayContext, entries ->
+                    entries.add(MEGATON_HAMMER)
+                    entries.add(LYNEL_BOW_FIVE_X)
+                    entries.add(LYNEL_BOW_THREE_X)
+                    entries.add(REVALIS_GALE)
+                    entries.add(REVALIS_GALE_PLUS)
+                    entries.add(MIPHAS_GRACE)
+                    entries.add(MIPHAS_GRACE_PLUS)
                 }.build()
         )
 

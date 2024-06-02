@@ -11,7 +11,7 @@ import org.hyrulecraft.dungeon_utils.DungeonUtils;
 import org.hyrulecraft.dungeon_utils.item.itemtype.bow.lynel.*;
 import org.hyrulecraft.dungeon_utils.item.itemtype.champion.ability.mipha.*;
 import org.hyrulecraft.dungeon_utils.item.itemtype.champion.ability.revali.*;
-import org.hyrulecraft.dungeon_utils.item.itemtype.clothing.glove.MogmaMittsItem;
+import org.hyrulecraft.dungeon_utils.item.itemtype.clothing.glove.*;
 import org.hyrulecraft.dungeon_utils.item.itemtype.clothing.link.CapTrinketItem;
 
 public class ModItems {
@@ -25,6 +25,9 @@ public class ModItems {
 
     public static final Item MOGMA_MITTS = registerItem("mogma_mitts",
             new MogmaMittsItem(new FabricItemSettings().maxCount(1).maxDamage(0)));
+
+    public static final Item CLIMBING_GLOVES = registerItem("climbing_gloves",
+            new ClimbingGlovesItem(new FabricItemSettings().maxCount(1).maxDamage(0)));
 
     public static final Item MEGATON_HAMMER = registerItem("megaton_hammer",
             new MegatonHammerItem(ToolMaterials.IRON, 8, -2, new FabricItemSettings()));
