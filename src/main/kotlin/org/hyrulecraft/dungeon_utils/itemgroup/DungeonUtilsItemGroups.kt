@@ -33,6 +33,9 @@ class DungeonUtilsItemGroups {
                     entries.add(MOGMA_MITTS)
                     entries.add(CLIMBING_GLOVES)
                     entries.add(PARAGLIDER)
+                    entries.add(KOKIRI_SWORD)
+                    entries.add(RAZOR_SWORD)
+                    entries.add(GILDED_SWORD)
                 }.build()
         )
 
@@ -60,7 +63,10 @@ class DungeonUtilsItemGroups {
         val WEAPONRY = Registry.register(
             Registries.ITEM_GROUP, Identifier(MOD_ID, "weaponry"),
             FabricItemGroup.builder().displayName(Text.translatable("tab.dungeon_utils.weaponry"))
-                .icon { ItemStack(MEGATON_HAMMER) }.entries { displayContext, entries ->
+                .icon { ItemStack(KOKIRI_SWORD) }.entries { displayContext, entries ->
+                    entries.add(KOKIRI_SWORD)
+                    entries.add(RAZOR_SWORD)
+                    entries.add(GILDED_SWORD)
                     entries.add(MEGATON_HAMMER)
                     entries.add(LYNEL_BOW_FIVE_X)
                     entries.add(LYNEL_BOW_THREE_X)

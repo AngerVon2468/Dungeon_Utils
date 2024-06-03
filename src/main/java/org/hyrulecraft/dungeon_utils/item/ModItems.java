@@ -54,10 +54,17 @@ public class ModItems {
     public static final Item MIPHAS_GRACE_PLUS = registerItem("miphas_grace_plus",
             new MiphasGracePlusItem(CHAMPION_ABILITY));
 
-    // Clothing
-
     public static final Item LINK_CAP = registerItem("link_cap",
             new CapTrinketItem(new FabricItemSettings()));
+
+    public static final Item KOKIRI_SWORD = registerItem("kokiri_sword",
+            new SwordItem(ToolMaterials.IRON, 3, -3.0f, new FabricItemSettings().maxDamage(200)));
+
+    public static final Item RAZOR_SWORD = registerItem("razor_sword",
+            new SwordItem(ToolMaterials.IRON, 6, -2.5f, new FabricItemSettings().maxDamage(400)));
+
+    public static final Item GILDED_SWORD = registerItem("gilded_sword",
+            new SwordItem(ToolMaterials.IRON, 10, -2.0f, new FabricItemSettings().maxDamage(700)));
 
     public static void registerModItems() {
         DungeonUtils.LOGGER.info(DungeonUtils.NAME + " has registered its items.");
