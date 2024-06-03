@@ -2,18 +2,13 @@ package org.hyrulecraft.dungeon_utils.util.event;
 
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 
-import net.minecraft.block.Blocks;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
-import org.hyrulecraft.dungeon_utils.config.DungeonUtilsConfig;
 import org.hyrulecraft.dungeon_utils.item.ModItems;
 import org.hyrulecraft.dungeon_utils.sound.SoundInit;
 import org.hyrulecraft.dungeon_utils.util.InventoryUtil;
@@ -35,7 +30,6 @@ public class ChampionEventCallbacks {
                     if (!stack.hasNbt()) {
 
                         player.setHealth(20.0f);
-                        addParticlesToWorld(player, player.getWorld()); // This doesn't work as the World call doesn't seem to work right.
                         player.playSound(SoundInit.getIT_IS_MY_PLEASURE(), SoundCategory.PLAYERS, 1f, 1f);
                         addIsUsed(player);
                         player.getItemCooldownManager().set((ModItems.MIPHAS_GRACE), ( 20 * 60 ) * 24);
@@ -55,7 +49,6 @@ public class ChampionEventCallbacks {
                     if (!stack2.hasNbt()) {
 
                         player.setHealth(20.0f);
-                        addParticlesToWorld(player, player.getWorld()); // This doesn't work as the World call doesn't seem to work right.
                         player.playSound(SoundInit.getIT_IS_MY_PLEASURE(), SoundCategory.PLAYERS, 1f, 1f);
                         addIsUsedPlus(player);
                         player.getItemCooldownManager().set((ModItems.MIPHAS_GRACE_PLUS), ( 20 * 60 ) * 8);
