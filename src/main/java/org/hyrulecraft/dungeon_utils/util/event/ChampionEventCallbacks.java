@@ -2,13 +2,18 @@ package org.hyrulecraft.dungeon_utils.util.event;
 
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 
+import net.minecraft.block.Blocks;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundCategory;
-
+import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
+
+import org.hyrulecraft.dungeon_utils.config.DungeonUtilsConfig;
 import org.hyrulecraft.dungeon_utils.item.ModItems;
 import org.hyrulecraft.dungeon_utils.sound.SoundInit;
 import org.hyrulecraft.dungeon_utils.util.InventoryUtil;
@@ -17,7 +22,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
 
-public class MiphasGraceCallback {
+public class ChampionEventCallbacks {
 
     public static void allowDeathEvent() {
         ServerLivingEntityEvents.ALLOW_DEATH.register( (entity, damageSource, damageAmount) -> {
@@ -77,6 +82,52 @@ public class MiphasGraceCallback {
         });
     }
 
+    public static void allowDamageEvent() {
+        ServerLivingEntityEvents.ALLOW_DAMAGE.register( (entity, source, amount) -> {
+            if (entity instanceof PlayerEntity player) {
+
+                if (InventoryUtil.hasPlayerStackInInventory(player, ModItems.DARUKS_PROTECTION) && !player.getItemCooldownManager().isCoolingDown(ModItems.DARUKS_PROTECTION)) {
+                    ItemStack stack = player.getInventory().getStack(InventoryUtil.getFirstInventoryIndex(player, ModItems.DARUKS_PROTECTION));
+
+                    if (!stack.hasNbt()) {
+
+                        player.playSound(SoundInit.getIT_IS_MY_PLEASURE(), SoundCategory.PLAYERS, 1f, 1f);
+                        addSecondUsage(player);
+                        return false;
+
+                    } else if (stack.hasNbt() && stack.getNbt().contains("dungeon_utils.daruks_protection.usage_two") && !player.getItemCooldownManager().isCoolingDown(ModItems.DARUKS_PROTECTION)) {
+
+                        player.playSound(SoundInit.getIT_IS_MY_PLEASURE(), SoundCategory.PLAYERS, 1f, 1f);
+                        addThirdUsage(player);
+                        return false;
+
+                    } else if (stack.hasNbt() && stack.getNbt().contains("dungeon_utils.daruks_protection.usage_three") && !player.getItemCooldownManager().isCoolingDown(ModItems.DARUKS_PROTECTION)) {
+
+                        player.playSound(SoundInit.getIT_IS_MY_PLEASURE(), SoundCategory.PLAYERS, 1f, 1f);
+                        addAntiSpam(player);
+                        player.getItemCooldownManager().set((ModItems.DARUKS_PROTECTION), ( 20 * 60 ) * 18);
+                        return false;
+
+                    } else {
+
+                        return true;
+
+                    }
+
+                } else {
+
+                    return true;
+
+                }
+
+            } else {
+
+                return true;
+
+            }
+        });
+    }
+
     public static void addIsUsed(@NotNull PlayerEntity player) {
         ItemStack stack = player.getInventory().getStack(InventoryUtil.getFirstInventoryIndex(player, ModItems.MIPHAS_GRACE));
 
@@ -91,6 +142,35 @@ public class MiphasGraceCallback {
 
         NbtCompound nbtData = new NbtCompound();
         nbtData.putString("dungeon_utils.miphas_gale.is_used", "is_used");
+
+        stack.setNbt(nbtData);
+    }
+
+    //
+
+    public static void addAntiSpam(@NotNull PlayerEntity player) {
+        ItemStack stack = player.getInventory().getStack(InventoryUtil.getFirstInventoryIndex(player, ModItems.DARUKS_PROTECTION));
+
+        NbtCompound nbtData = new NbtCompound();
+        nbtData.putString("dungeon_utils.daruks_protection.anti_spam", "anti_spam");
+
+        stack.setNbt(nbtData);
+    }
+
+    public static void addSecondUsage(@NotNull PlayerEntity player) {
+        ItemStack stack = player.getInventory().getStack(InventoryUtil.getFirstInventoryIndex(player, ModItems.DARUKS_PROTECTION));
+
+        NbtCompound nbtData = new NbtCompound();
+        nbtData.putString("dungeon_utils.daruks_protection.usage_two", "two");
+
+        stack.setNbt(nbtData);
+    }
+
+    public static void addThirdUsage(@NotNull PlayerEntity player) {
+        ItemStack stack = player.getInventory().getStack(InventoryUtil.getFirstInventoryIndex(player, ModItems.DARUKS_PROTECTION));
+
+        NbtCompound nbtData = new NbtCompound();
+        nbtData.putString("dungeon_utils.daruks_protection.usage_three", "three");
 
         stack.setNbt(nbtData);
     }

@@ -38,7 +38,8 @@ public class DungeonUtils implements ModInitializer {
         SoundInit.registerDungeonUtilsSounds();
 
         // Events
-        MiphasGraceCallback.allowDeathEvent();
+        ChampionEventCallbacks.allowDeathEvent();
+        ChampionEventCallbacks.allowDamageEvent();
         LoadLoadWorldScreenCallback.loadLoadWorldScreenEvent();
 
         // To do with bows.

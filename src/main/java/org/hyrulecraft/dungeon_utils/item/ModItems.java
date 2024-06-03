@@ -6,13 +6,14 @@ import net.minecraft.item.*;
 import net.minecraft.registry.*;
 import net.minecraft.util.Identifier;
 
-import org.hyrulecraft.dungeon_utils.item.itemtype.*;
 import org.hyrulecraft.dungeon_utils.DungeonUtils;
+import org.hyrulecraft.dungeon_utils.item.itemtype.*;
 import org.hyrulecraft.dungeon_utils.item.itemtype.bow.lynel.*;
+import org.hyrulecraft.dungeon_utils.item.itemtype.champion.ability.daruk.*;
 import org.hyrulecraft.dungeon_utils.item.itemtype.champion.ability.mipha.*;
 import org.hyrulecraft.dungeon_utils.item.itemtype.champion.ability.revali.*;
 import org.hyrulecraft.dungeon_utils.item.itemtype.clothing.glove.*;
-import org.hyrulecraft.dungeon_utils.item.itemtype.clothing.link.CapTrinketItem;
+import org.hyrulecraft.dungeon_utils.item.itemtype.clothing.link.*;
 
 public class ModItems {
 
@@ -53,6 +54,9 @@ public class ModItems {
 
     public static final Item MIPHAS_GRACE_PLUS = registerItem("miphas_grace_plus",
             new MiphasGracePlusItem(CHAMPION_ABILITY));
+
+    public static final Item DARUKS_PROTECTION = registerItem("daruks_protection",
+            new DaruksProtectionItem(CHAMPION_ABILITY));
 
     public static final Item LINK_CAP = registerItem("link_cap",
             new CapTrinketItem(new FabricItemSettings()));
