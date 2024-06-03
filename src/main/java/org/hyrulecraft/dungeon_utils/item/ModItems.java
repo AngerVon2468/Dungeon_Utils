@@ -58,6 +58,8 @@ public class ModItems {
     public static final Item DARUKS_PROTECTION = registerItem("daruks_protection",
             new DaruksProtectionItem(CHAMPION_ABILITY));
 
+    //
+
     public static final Item LINK_CAP = registerItem("link_cap",
             new CapTrinketItem(new FabricItemSettings()));
 

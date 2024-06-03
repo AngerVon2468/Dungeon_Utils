@@ -29,6 +29,7 @@ class DungeonUtilsItemGroups {
                     entries.add(REVALIS_GALE_PLUS)
                     entries.add(MIPHAS_GRACE)
                     entries.add(MIPHAS_GRACE_PLUS)
+                    entries.add(DARUKS_PROTECTION)
                     entries.add(LINK_CAP)
                     entries.add(MOGMA_MITTS)
                     entries.add(CLIMBING_GLOVES)
@@ -47,10 +48,11 @@ class DungeonUtilsItemGroups {
                     entries.add(REVALIS_GALE_PLUS)
                     entries.add(MIPHAS_GRACE)
                     entries.add(MIPHAS_GRACE_PLUS)
+                    entries.add(DARUKS_PROTECTION)
                 }.build()
         )
 
-        val CLOTHNG = Registry.register(
+        val CLOTHING = Registry.register(
             Registries.ITEM_GROUP, Identifier(MOD_ID, "clothing"),
             FabricItemGroup.builder().displayName(Text.translatable("tab.dungeon_utils.clothing"))
                 .icon { ItemStack(LINK_CAP) }.entries { displayContext, entries ->
@@ -74,6 +76,7 @@ class DungeonUtilsItemGroups {
                     entries.add(REVALIS_GALE_PLUS)
                     entries.add(MIPHAS_GRACE)
                     entries.add(MIPHAS_GRACE_PLUS)
+                    entries.add(DARUKS_PROTECTION)
                 }.build()
         )
 
