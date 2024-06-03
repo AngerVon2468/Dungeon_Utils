@@ -37,7 +37,7 @@ public class DungeonUtils implements ModInitializer {
         ModBlocks.registerModBlocks();
         SoundInit.registerDungeonUtilsSounds();
 
-        // Events
+        // Events.
         ChampionEventCallbacks.allowDeathEvent();
         ChampionEventCallbacks.allowDamageEvent();
         LoadLoadWorldScreenCallback.loadLoadWorldScreenEvent();
@@ -62,10 +62,10 @@ public class DungeonUtils implements ModInitializer {
             return (float)(stack.getMaxUseTime() - entity.getItemUseTimeLeft()) / 20.0f;
         });
 
-        // Config
+        // Config.
         MidnightConfig.init(DungeonUtils.MOD_ID, DungeonUtilsConfig.class);
 
-        // Trinket Render
+        // Trinket Render.
         TrinketRendererRegistry.registerRenderer(ModItems.LINK_CAP, (TrinketRenderer) ModItems.LINK_CAP);
     }
 }
