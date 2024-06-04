@@ -7,7 +7,7 @@ import eu.midnightdust.lib.config.MidnightConfig;
 import net.fabricmc.api.ModInitializer;
 
 import org.hyrulecraft.dungeon_utils.config.DungeonUtilsConfig;
-import org.hyrulecraft.dungeon_utils.item.*;
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems;
 import org.hyrulecraft.dungeon_utils.block.DungeonUtilsBlocks;
 import org.hyrulecraft.dungeon_utils.itemgroup.DungeonUtilsItemGroups;
 import org.hyrulecraft.dungeon_utils.sound.DungeonUtilsSounds;
