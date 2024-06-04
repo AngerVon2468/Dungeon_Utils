@@ -24,6 +24,9 @@
     ],
     "server": [
       "org.hyrulecraft.dungeon_utils.DungeonUtilsServer"
+    ],
+    "fabric-datagen": [
+      "org.hyrulecraft.dungeon_utils.DungeonUtilsDataGenerator"
     ]
   },
   "mixins": [
