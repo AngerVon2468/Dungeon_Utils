@@ -1,17 +1,19 @@
 package org.hyrulecraft.dungeon_utils.item.itemtype.champion.ability.daruk;
 
+import dev.emi.trinkets.api.TrinketItem;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.world.World;
+
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems;
 import org.hyrulecraft.dungeon_utils.sound.DungeonUtilsSounds;
 import org.hyrulecraft.dungeon_utils.util.event.ChampionEventCallbacks;
 
 
-public class DaruksProtectionItem extends Item {
+public class DaruksProtectionItem extends TrinketItem {
 
     public DaruksProtectionItem(Settings settings) {
         super(settings);
