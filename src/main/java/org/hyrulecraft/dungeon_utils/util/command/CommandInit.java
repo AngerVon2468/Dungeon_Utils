@@ -1,10 +1,10 @@
-package org.hyrulecraft.dungeon_utils.util.keybind;
+package org.hyrulecraft.dungeon_utils.util.command;
 
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.text.Text;
+import net.minecraft.text.*;
 
 import org.hyrulecraft.dungeon_utils.DungeonUtils;
 
@@ -58,7 +58,17 @@ public class CommandInit {
 
                         ServerPlayerEntity serverPlayer = context.getSource().getPlayer();
                         ItemStack stack = serverPlayer.getStackInHand(serverPlayer.getActiveHand());
-                        stack.decrement(stack.getCount());
+
+                        if (!stack.isEmpty()) {
+
+                            stack.decrement(stack.getCount());
+
+                        } else {
+
+                            context.getSource().sendFeedback(() -> Text.literal("You have no items in your hand!"), false);
+
+                        }
+
 
                     } else {
 
@@ -77,6 +87,24 @@ public class CommandInit {
                 .executes(context -> {
 
                     context.getSource().sendFeedback(() -> Text.literal("WiiU"), false);
+                    return 1;
+
+                })));
+    }
+
+    public static void discordCommand() {
+        CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> dispatcher.register(CommandManager.literal("hc_discord")
+                .executes(context -> {
+
+                    context.getSource().sendFeedback(() -> Text.literal("HyruleCraft Discord link!").styled(style ->
+                            style.withHoverEvent(
+                                    new HoverEvent(
+                                            HoverEvent.Action.SHOW_TEXT,
+                                            Text.literal("https://discord.gg/qscBaKdwaT")
+                                    )
+                            ).withClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://discord.gg/qscBaKdwaT"))
+                    ), false);
+
                     return 1;
 
                 })));
