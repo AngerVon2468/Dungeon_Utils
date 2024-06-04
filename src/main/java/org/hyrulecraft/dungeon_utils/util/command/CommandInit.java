@@ -17,15 +17,15 @@ public class CommandInit {
                     if (context.getSource().isExecutedByPlayer()) {
 
                         context.getSource().getPlayer().kill();
+                        return 1;
 
                     } else {
 
                         context.getSource().sendFeedback(() -> Text.literal("Command was run by an non-player source."), true);
                         DungeonUtils.LOGGER.error("Command was run by an non-player source.");
+                        return -1;
 
                     }
-
-                    return 1;
 
                 })));
     }
@@ -37,15 +37,15 @@ public class CommandInit {
                     if (context.getSource().isExecutedByPlayer()) {
 
                         context.getSource().getPlayer().kill();
+                        return 1;
 
                     } else {
 
                         context.getSource().sendFeedback(() -> Text.literal("Command was run by an non-player source."), true);
                         DungeonUtils.LOGGER.error("Command was run by an non-player source.");
+                        return -1;
 
                     }
-
-                    return 1;
 
                 })));
     }
@@ -63,27 +63,27 @@ public class CommandInit {
                         if (!stack.isEmpty()) {
 
                             stack.decrement(stack.getCount());
+                            return 1;
 
                         } else {
 
                             context.getSource().sendFeedback(() -> Text.literal("You have no items in your hand!"), false);
+                            return -1;
 
                         }
-
 
                     } else {
 
                         context.getSource().sendFeedback(() -> Text.literal("Command was run by an non-player source."), true);
                         DungeonUtils.LOGGER.error("Command was run by an non-player source.");
+                        return -1;
 
                     }
-
-                    return 1;
 
                 })));
     }
 
-    public static void wiiuCommand() {
+    public static void wiiu() {
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> dispatcher.register(CommandManager.literal("wiiu")
                 .executes(context -> {
 
@@ -93,7 +93,7 @@ public class CommandInit {
                 })));
     }
 
-    public static void discordCommand() {
+    public static void hcDiscord() {
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> dispatcher.register(CommandManager.literal("hc_discord")
                 .executes(context -> {
 

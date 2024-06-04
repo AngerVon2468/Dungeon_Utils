@@ -15,8 +15,8 @@ public class UtilCollector {
         CommandInit.kys();
         CommandInit.suicide();
         CommandInit.trashHand();
-        CommandInit.wiiuCommand();
-        CommandInit.discordCommand();
+        CommandInit.wiiu();
+        CommandInit.hcDiscord();
     }
 
     public static void registerAllUtilClassesInClient() {
