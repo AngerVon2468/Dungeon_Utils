@@ -6,9 +6,6 @@ import eu.midnightdust.lib.config.MidnightConfig;
 
 import net.fabricmc.api.ModInitializer;
 
-import net.minecraft.client.item.ModelPredicateProviderRegistry;
-import net.minecraft.util.Identifier;
-
 import org.hyrulecraft.dungeon_utils.config.DungeonUtilsConfig;
 import org.hyrulecraft.dungeon_utils.item.*;
 import org.hyrulecraft.dungeon_utils.block.ModBlocks;
@@ -37,26 +34,6 @@ public class DungeonUtils implements ModInitializer {
         ModBlocks.registerModBlocks();
         SoundInit.registerDungeonUtilsSounds();
         UtilCollector.registerAllUtilClasses();
-
-        // To do with bows.
-        ModelPredicateProviderRegistry.register(ModItems.LYNEL_BOW_FIVE_X, new Identifier("pull"), (stack, world, entity, seed) -> {
-            if (entity == null) {
-                return 0.0f;
-            }
-            if (entity.getActiveItem() != stack) {
-                return 0.0f;
-            }
-            return (float)(stack.getMaxUseTime() - entity.getItemUseTimeLeft()) / 20.0f;
-        });
-        ModelPredicateProviderRegistry.register(ModItems.LYNEL_BOW_THREE_X, new Identifier("pull"), (stack, world, entity, seed) -> {
-            if (entity == null) {
-                return 0.0f;
-            }
-            if (entity.getActiveItem() != stack) {
-                return 0.0f;
-            }
-            return (float)(stack.getMaxUseTime() - entity.getItemUseTimeLeft()) / 20.0f;
-        });
 
         // Config.
         MidnightConfig.init(DungeonUtils.MOD_ID, DungeonUtilsConfig.class);

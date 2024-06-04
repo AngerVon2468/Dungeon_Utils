@@ -57,6 +57,7 @@ public class CommandInit {
                     if (context.getSource().isExecutedByPlayer()) {
 
                         ServerPlayerEntity serverPlayer = context.getSource().getPlayer();
+                        assert serverPlayer != null;
                         ItemStack stack = serverPlayer.getStackInHand(serverPlayer.getActiveHand());
 
                         if (!stack.isEmpty()) {

@@ -10,7 +10,6 @@ public class UtilCollector {
         // Events.
         ChampionEventCallbacks.allowDeathEvent();
         ChampionEventCallbacks.allowDamageEvent();
-        LoadScreenCallback.loadScreenEvent();
 
         // Commands.
         CommandInit.kys();
@@ -18,5 +17,11 @@ public class UtilCollector {
         CommandInit.trashHand();
         CommandInit.wiiuCommand();
         CommandInit.discordCommand();
+    }
+
+    public static void registerAllUtilClassesInClient() {
+
+        // Events.
+        LoadScreenCallback.loadScreenEvent();
     }
 }
