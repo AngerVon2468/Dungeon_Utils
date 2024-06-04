@@ -10,7 +10,7 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.*;
 import net.minecraft.world.World;
 
-import org.hyrulecraft.dungeon_utils.item.ModItems;
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -27,7 +27,7 @@ public class MogmaMittsItem extends Item {
         assert player != null;
         ItemStack stack = player.getStackInHand(player.getActiveHand());
 
-        if (stack.isOf(ModItems.MOGMA_MITTS)) {
+        if (stack.isOf(DungeonUtilsItems.MOGMA_MITTS)) {
 
             player.setNoGravity(true);
             player.noClip = true;
@@ -50,7 +50,7 @@ public class MogmaMittsItem extends Item {
             ItemStack stack2 = player.getStackInHand(player.getActiveHand());
             BlockState blockState = world.getBlockState(player.getBlockPos());
 
-            if (stack2.isOf(ModItems.MOGMA_MITTS)) {
+            if (stack2.isOf(DungeonUtilsItems.MOGMA_MITTS)) {
 
                 player.noClip = true;
                 player.setOnGround(false);

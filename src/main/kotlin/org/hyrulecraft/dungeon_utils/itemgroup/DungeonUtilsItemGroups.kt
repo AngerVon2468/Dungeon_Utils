@@ -8,8 +8,8 @@ import net.minecraft.text.Text
 import net.minecraft.util.Identifier
 import org.hyrulecraft.dungeon_utils.DungeonUtils.*
 
-import org.hyrulecraft.dungeon_utils.block.ModBlocks.*
-import org.hyrulecraft.dungeon_utils.item.ModItems.*
+import org.hyrulecraft.dungeon_utils.block.DungeonUtilsBlocks.*
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.*
 
 class DungeonUtilsItemGroups {
 

@@ -14,9 +14,8 @@ import net.minecraft.util.math.*;
 import net.minecraft.util.shape.*;
 import net.minecraft.world.*;
 
-import org.hyrulecraft.dungeon_utils.DungeonUtils;
-import org.hyrulecraft.dungeon_utils.item.ModItems;
-import org.hyrulecraft.dungeon_utils.sound.SoundInit;
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems;
+import org.hyrulecraft.dungeon_utils.sound.DungeonUtilsSounds;
 
 import org.jetbrains.annotations.*;
 
@@ -87,10 +86,10 @@ public class RustySwitchBlock extends HorizontalFacingBlock {
     @Override
     public ActionResult onUse(@NotNull BlockState state, World world, BlockPos pos, @NotNull PlayerEntity player, Hand hand, @NotNull BlockHitResult hit) {
         ItemStack stack = player.getStackInHand(hand);
-        if (stack.isOf(ModItems.MEGATON_HAMMER) && !state.get(IS_STEPPED_ON)) {
+        if (stack.isOf(DungeonUtilsItems.MEGATON_HAMMER) && !state.get(IS_STEPPED_ON)) {
 
-            player.playSound(SoundInit.getHAMMER_HIT(), SoundCategory.PLAYERS, 1.0f, 1.0f);
-            player.playSound(SoundInit.getSWITCH(), 1.0f, 1.0f);
+            player.playSound(DungeonUtilsSounds.getHAMMER_HIT(), SoundCategory.PLAYERS, 1.0f, 1.0f);
+            player.playSound(DungeonUtilsSounds.getSWITCH(), 1.0f, 1.0f);
             world.setBlockState(pos, state.with(IS_STEPPED_ON, true));
             this.updateNeighbors(world, pos);
             return ActionResult.SUCCESS;

@@ -6,7 +6,7 @@ import net.minecraft.registry.*
 import net.minecraft.sound.SoundEvent
 import net.minecraft.util.Identifier
 
-class SoundInit {
+class DungeonUtilsSounds {
 
     companion object {
 

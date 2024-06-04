@@ -11,7 +11,7 @@ import net.minecraft.item.*;
 import net.minecraft.registry.*;
 import net.minecraft.util.Identifier;
 
-public class ModBlocks {
+public class DungeonUtilsBlocks {
 
     public static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

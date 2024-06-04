@@ -8,9 +8,9 @@ import net.fabricmc.api.ModInitializer;
 
 import org.hyrulecraft.dungeon_utils.config.DungeonUtilsConfig;
 import org.hyrulecraft.dungeon_utils.item.*;
-import org.hyrulecraft.dungeon_utils.block.ModBlocks;
+import org.hyrulecraft.dungeon_utils.block.DungeonUtilsBlocks;
 import org.hyrulecraft.dungeon_utils.itemgroup.DungeonUtilsItemGroups;
-import org.hyrulecraft.dungeon_utils.sound.SoundInit;
+import org.hyrulecraft.dungeon_utils.sound.DungeonUtilsSounds;
 import org.hyrulecraft.dungeon_utils.util.UtilCollector;
 
 import org.slf4j.*;
@@ -30,15 +30,15 @@ public class DungeonUtils implements ModInitializer {
 
         // Initializing classes.
         DungeonUtilsItemGroups.registerDungeonUtilsItemGroups();
-        ModItems.registerModItems();
-        ModBlocks.registerModBlocks();
-        SoundInit.registerDungeonUtilsSounds();
+        DungeonUtilsItems.registerModItems();
+        DungeonUtilsBlocks.registerModBlocks();
+        DungeonUtilsSounds.registerDungeonUtilsSounds();
         UtilCollector.registerAllUtilClasses();
 
         // Config.
         MidnightConfig.init(DungeonUtils.MOD_ID, DungeonUtilsConfig.class);
 
         // Trinket Render.
-        TrinketRendererRegistry.registerRenderer(ModItems.LINK_CAP, (TrinketRenderer) ModItems.LINK_CAP);
+        TrinketRendererRegistry.registerRenderer(DungeonUtilsItems.LINK_CAP, (TrinketRenderer) DungeonUtilsItems.LINK_CAP);
     }
 }

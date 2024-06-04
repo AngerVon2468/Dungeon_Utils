@@ -19,9 +19,8 @@ import net.minecraft.util.shape.*;
 import net.minecraft.world.*;
 import net.minecraft.world.event.GameEvent;
 
-import org.hyrulecraft.dungeon_utils.DungeonUtils;
-import org.hyrulecraft.dungeon_utils.item.ModItems;
-import org.hyrulecraft.dungeon_utils.sound.SoundInit;
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems;
+import org.hyrulecraft.dungeon_utils.sound.DungeonUtilsSounds;
 
 import org.jetbrains.annotations.*;
 
@@ -90,10 +89,10 @@ public class BlueSwitchBlock extends HorizontalFacingBlock {
     @Override
     public ActionResult onUse(@NotNull BlockState state, World world, BlockPos pos, @NotNull PlayerEntity player, Hand hand, @NotNull BlockHitResult hit) {
         ItemStack stack = player.getStackInHand(hand);
-        if (stack.isOf(ModItems.MEGATON_HAMMER)) {
+        if (stack.isOf(DungeonUtilsItems.MEGATON_HAMMER)) {
 
-            player.playSound(SoundInit.getHAMMER_HIT(), SoundCategory.PLAYERS, 1.0f, 1.0f);
-            player.playSound(SoundInit.getSWITCH(), 1.0f, 1.0f);
+            player.playSound(DungeonUtilsSounds.getHAMMER_HIT(), SoundCategory.PLAYERS, 1.0f, 1.0f);
+            player.playSound(DungeonUtilsSounds.getSWITCH(), 1.0f, 1.0f);
             world.setBlockState(pos, state.with(IS_STEPPED_ON, true));
             this.updateNeighbors(world, pos);
             return ActionResult.SUCCESS;
@@ -150,16 +149,16 @@ public class BlueSwitchBlock extends HorizontalFacingBlock {
         boolean willBeActivatedFromEntites = activationFromEntites > 0;
         if (output != activationFromEntites) {
             BlockState blockState = this.setRedstoneOutput(state, activationFromEntites);
-            world.playSound(null, pos, SoundInit.getSWITCH(), SoundCategory.PLAYERS, 1.0f, 1.0f);
+            world.playSound(null, pos, DungeonUtilsSounds.getSWITCH(), SoundCategory.PLAYERS, 1.0f, 1.0f);
             world.setBlockState(pos, blockState, Block.NOTIFY_LISTENERS);
             this.updateNeighbors(world, pos);
             world.scheduleBlockRerenderIfNeeded(pos, state, blockState);
         }
         if (!willBeActivatedFromEntites && isActivated) {
-            world.playSound(null, pos, SoundInit.getSWITCH(), SoundCategory.PLAYERS, 1.0f, 1.0f);
+            world.playSound(null, pos, DungeonUtilsSounds.getSWITCH(), SoundCategory.PLAYERS, 1.0f, 1.0f);
             world.emitGameEvent(entity, GameEvent.BLOCK_DEACTIVATE, pos);
         } else if (willBeActivatedFromEntites && !isActivated) {
-            world.playSound(null, pos, SoundInit.getSWITCH(), SoundCategory.PLAYERS, 1.0f, 1.0f);
+            world.playSound(null, pos, DungeonUtilsSounds.getSWITCH(), SoundCategory.PLAYERS, 1.0f, 1.0f);
             world.emitGameEvent(entity, GameEvent.BLOCK_ACTIVATE, pos);
         }
         if (willBeActivatedFromEntites) {

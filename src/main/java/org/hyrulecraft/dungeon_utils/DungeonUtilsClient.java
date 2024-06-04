@@ -5,7 +5,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.util.Identifier;
 
-import org.hyrulecraft.dungeon_utils.item.ModItems;
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems;
 import org.hyrulecraft.dungeon_utils.util.UtilCollector;
 
 public class DungeonUtilsClient implements ClientModInitializer {
@@ -19,7 +19,7 @@ public class DungeonUtilsClient implements ClientModInitializer {
         UtilCollector.registerAllUtilClassesInClient();
 
         // To do with bows.
-        ModelPredicateProviderRegistry.register(ModItems.LYNEL_BOW_FIVE_X, new Identifier("pull"), (stack, world, entity, seed) -> {
+        ModelPredicateProviderRegistry.register(DungeonUtilsItems.LYNEL_BOW_FIVE_X, new Identifier("pull"), (stack, world, entity, seed) -> {
             if (entity == null) {
                 return 0.0f;
             }
@@ -28,7 +28,7 @@ public class DungeonUtilsClient implements ClientModInitializer {
             }
             return (float)(stack.getMaxUseTime() - entity.getItemUseTimeLeft()) / 20.0f;
         });
-        ModelPredicateProviderRegistry.register(ModItems.LYNEL_BOW_THREE_X, new Identifier("pull"), (stack, world, entity, seed) -> {
+        ModelPredicateProviderRegistry.register(DungeonUtilsItems.LYNEL_BOW_THREE_X, new Identifier("pull"), (stack, world, entity, seed) -> {
             if (entity == null) {
                 return 0.0f;
             }

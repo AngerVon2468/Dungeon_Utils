@@ -15,7 +15,7 @@ import org.hyrulecraft.dungeon_utils.item.itemtype.champion.ability.revali.*;
 import org.hyrulecraft.dungeon_utils.item.itemtype.clothing.glove.*;
 import org.hyrulecraft.dungeon_utils.item.itemtype.clothing.link.*;
 
-public class ModItems {
+public class DungeonUtilsItems {
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(DungeonUtils.MOD_ID, name), item);
