@@ -41,7 +41,7 @@ public class MiphasGraceItem extends TrinketItem {
                 ChampionEventCallbacks.addIsUsed(player);
 
             }
-            ChampionEventCallbacks.addParticlesToWorld(player, world);
+            ChampionEventCallbacks.addParticlesToWorld(player, world); // TODO: Figure out the logic for this
         }
     }
 }

@@ -15,6 +15,7 @@ import org.hyrulecraft.dungeon_utils.block.ModBlocks;
 import org.hyrulecraft.dungeon_utils.itemgroup.DungeonUtilsItemGroups;
 import org.hyrulecraft.dungeon_utils.sound.SoundInit;
 import org.hyrulecraft.dungeon_utils.util.event.*;
+import org.hyrulecraft.dungeon_utils.util.keybind.CommandInit;
 
 import org.slf4j.*;
 
@@ -41,6 +42,12 @@ public class DungeonUtils implements ModInitializer {
         ChampionEventCallbacks.allowDeathEvent();
         ChampionEventCallbacks.allowDamageEvent();
         LoadLoadWorldScreenCallback.loadLoadWorldScreenEvent();
+
+        // Commands.
+        CommandInit.kys();
+        CommandInit.suicide();
+        CommandInit.trashHand();
+        CommandInit.wiiuCommand();
 
         // To do with bows.
         ModelPredicateProviderRegistry.register(ModItems.LYNEL_BOW_FIVE_X, new Identifier("pull"), (stack, world, entity, seed) -> {
