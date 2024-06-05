@@ -19,6 +19,7 @@ public class DungeonUtilsClient implements ClientModInitializer {
         UtilCollector.registerAllUtilClassesInClient();
 
         // To do with bows.
+        // TODO: FIX THIS IT IS BROKEN
         ModelPredicateProviderRegistry.register(DungeonUtilsItems.LYNEL_BOW_FIVE_X, new Identifier("pull"), (stack, world, entity, seed) -> {
             if (entity == null) {
                 return 0.0f;

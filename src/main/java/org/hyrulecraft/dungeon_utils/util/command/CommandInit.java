@@ -1,6 +1,7 @@
 package org.hyrulecraft.dungeon_utils.util.command;
 
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.network.ServerPlayerEntity;
