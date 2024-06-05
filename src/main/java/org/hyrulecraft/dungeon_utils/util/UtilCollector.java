@@ -17,7 +17,6 @@ public class UtilCollector {
         CommandInit.trashHand();
         CommandInit.wiiu();
         CommandInit.hcDiscord();
-        CommandInit.rtp();
     }
 
     public static void registerAllUtilClassesInClient() {
