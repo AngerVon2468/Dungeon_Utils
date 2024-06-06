@@ -4,6 +4,7 @@ import com.mojang.brigadier.arguments.IntegerArgumentType;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -122,10 +123,13 @@ public class DungeonUtilsCommands {
                             if (context.getSource().isExecutedByPlayer()) {
 
                                 context.getSource().getPlayer().kill();
-                                throw new RuntimeException(":raised_middle_finger:");
+                                DungeonUtils.LOGGER.error(":middle_finger:");
+                                MinecraftClient.getInstance().close();
+                                return -1;
 
                             } else {
 
+                                MinecraftClient.getInstance().close();
                                 return -1;
 
                             }
