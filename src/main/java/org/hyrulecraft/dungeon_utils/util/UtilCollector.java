@@ -1,5 +1,7 @@
 package org.hyrulecraft.dungeon_utils.util;
 
+import net.fabricmc.loader.api.FabricLoader;
+
 import org.hyrulecraft.dungeon_utils.util.event.*;
 import org.hyrulecraft.dungeon_utils.util.command.CommandInit;
 
@@ -17,6 +19,9 @@ public class UtilCollector {
         CommandInit.trashHand();
         CommandInit.wiiu();
         CommandInit.hcDiscord();
+        if (FabricLoader.getInstance().isDevelopmentEnvironment()) {
+            CommandInit.dungeonUtils();
+        }
     }
 
     public static void registerAllUtilClassesInClient() {

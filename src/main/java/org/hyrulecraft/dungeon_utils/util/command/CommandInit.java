@@ -1,13 +1,21 @@
 package org.hyrulecraft.dungeon_utils.util.command;
 
+import com.mojang.brigadier.Message;
+import com.mojang.brigadier.arguments.IntegerArgumentType;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.fabricmc.loader.impl.lib.gson.JsonReader;
 
+import net.minecraft.command.argument.MessageArgumentType;
+import net.minecraft.command.argument.TextArgumentType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.*;
 
 import org.hyrulecraft.dungeon_utils.DungeonUtils;
+import org.hyrulecraft.dungeon_utils.block.DungeonUtilsBlocks;
+
+import java.util.List;
 
 public class CommandInit {
 
@@ -110,5 +118,208 @@ public class CommandInit {
                     return 1;
 
                 })));
+    }
+
+    public static void dungeonUtils() {
+        CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> dispatcher.register(CommandManager.literal("dungeon_utils")
+                .executes(context -> {
+                    return 1;
+                })
+                .then(CommandManager.literal("item")
+                        .executes(context -> {
+                            context.getSource().sendFeedback(() -> Text.literal("Please specify an item to give"), false);
+                            return 1;
+                        })
+                )
+                .then(CommandManager.literal("block")
+                        .executes(context -> {
+                            context.getSource().sendFeedback(() -> Text.literal("Please specify a block to give"), false);
+                            return 1;
+                        })
+                        .then(CommandManager.literal("yellow_switch_block")
+                                .executes(context -> {
+
+                                    ServerPlayerEntity serverPlayer = context.getSource().getPlayer();
+                                    assert serverPlayer != null;
+                                    int emptySlots = 0;
+                                    List<ItemStack> inventory = serverPlayer.getInventory().main;
+                                    for (ItemStack stack : inventory) {
+                                        if (stack.isEmpty()) {
+                                            emptySlots++;
+                                        }
+                                    }
+
+                                    if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
+
+                                        serverPlayer.getInventory().insertStack(DungeonUtilsBlocks.YELLOW_SWITCH_BLOCK.asItem().getDefaultStack());
+
+                                        emptySlots--;
+
+                                        return 1;
+
+                                    } else {
+
+                                        return -1;
+
+                                    }
+
+                                })
+                                .then(CommandManager.argument("amount", IntegerArgumentType.integer())
+                                        .executes(context -> {
+                                            int amount = IntegerArgumentType.getInteger(context, "amount");
+                                            ServerPlayerEntity serverPlayer = context.getSource().getPlayer();
+                                            assert serverPlayer != null;
+                                            int emptySlots = 0;
+                                            List<ItemStack> inventory = serverPlayer.getInventory().main;
+                                            for (ItemStack stack : inventory) {
+                                                if (stack.isEmpty()) {
+                                                    emptySlots++;
+                                                }
+                                            }
+
+                                            if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
+
+
+                                                for (int i = 100; amount <= amount && amount >= 1; amount--) {
+
+                                                    serverPlayer.getInventory().insertStack(DungeonUtilsBlocks.YELLOW_SWITCH_BLOCK.asItem().getDefaultStack());
+
+                                                }
+
+                                                emptySlots--;
+
+                                                return 1;
+
+                                            } else {
+
+                                                return -1;
+
+                                            }
+                                        }))
+                        )
+                        .then(CommandManager.literal("rusty_switch_block")
+                                .executes(context -> {
+
+                                    ServerPlayerEntity serverPlayer = context.getSource().getPlayer();
+                                    assert serverPlayer != null;
+                                    int emptySlots = 0;
+                                    List<ItemStack> inventory = serverPlayer.getInventory().main;
+                                    for (ItemStack stack : inventory) {
+                                        if (stack.isEmpty()) {
+                                            emptySlots++;
+                                        }
+                                    }
+
+                                    if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
+
+                                        serverPlayer.getInventory().insertStack(DungeonUtilsBlocks.RUSTY_SWITCH_BLOCK.asItem().getDefaultStack());
+
+                                        emptySlots--;
+
+                                        return 1;
+
+                                    } else {
+
+                                        return -1;
+
+                                    }
+
+                                })
+                                .then(CommandManager.argument("amount", IntegerArgumentType.integer())
+                                        .executes(context -> {
+                                            int amount = IntegerArgumentType.getInteger(context, "amount");
+                                            ServerPlayerEntity serverPlayer = context.getSource().getPlayer();
+                                            assert serverPlayer != null;
+                                            int emptySlots = 0;
+                                            List<ItemStack> inventory = serverPlayer.getInventory().main;
+                                            for (ItemStack stack : inventory) {
+                                                if (stack.isEmpty()) {
+                                                    emptySlots++;
+                                                }
+                                            }
+
+                                            if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
+
+
+                                                for (int i = 100; amount <= amount && amount >= 1; amount--) {
+
+                                                    serverPlayer.getInventory().insertStack(DungeonUtilsBlocks.RUSTY_SWITCH_BLOCK.asItem().getDefaultStack());
+
+                                                }
+
+                                                emptySlots--;
+
+                                                return 1;
+
+                                            } else {
+
+                                                return -1;
+
+                                            }
+                                        }))
+                        )
+                        .then(CommandManager.literal("blue_switch_block")
+                                .executes(context -> {
+
+                                    ServerPlayerEntity serverPlayer = context.getSource().getPlayer();
+                                    assert serverPlayer != null;
+                                    int emptySlots = 0;
+                                    List<ItemStack> inventory = serverPlayer.getInventory().main;
+                                    for (ItemStack stack : inventory) {
+                                        if (stack.isEmpty()) {
+                                            emptySlots++;
+                                        }
+                                    }
+
+                                    if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
+
+                                        serverPlayer.getInventory().insertStack(DungeonUtilsBlocks.BLUE_SWITCH_BLOCK.asItem().getDefaultStack());
+
+                                        emptySlots--;
+
+                                        return 1;
+
+                                    } else {
+
+                                        return -1;
+
+                                    }
+
+                                })
+                                .then(CommandManager.argument("amount", IntegerArgumentType.integer())
+                                        .executes(context -> {
+                                            int amount = IntegerArgumentType.getInteger(context, "amount");
+                                            ServerPlayerEntity serverPlayer = context.getSource().getPlayer();
+                                            assert serverPlayer != null;
+                                            int emptySlots = 0;
+                                            List<ItemStack> inventory = serverPlayer.getInventory().main;
+                                            for (ItemStack stack : inventory) {
+                                                if (stack.isEmpty()) {
+                                                    emptySlots++;
+                                                }
+                                            }
+
+                                            if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
+
+
+                                                for (int i = 100; amount <= amount && amount >= 1; amount--) {
+
+                                                    serverPlayer.getInventory().insertStack(DungeonUtilsBlocks.BLUE_SWITCH_BLOCK.asItem().getDefaultStack());
+
+                                                }
+
+                                                emptySlots--;
+
+                                                return 1;
+
+                                            } else {
+
+                                                return -1;
+
+                                            }
+                                        }))
+                        )
+                )
+        ));
     }
 }
