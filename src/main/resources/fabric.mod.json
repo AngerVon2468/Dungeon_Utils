@@ -33,6 +33,7 @@
   "mixins": [
     "dungeon_utils.mixins.json"
   ],
+  "accessWidener" : "dungeon_utils.accesswidener",
   "depends": {
     "fabricloader": ">=0.8.0",
     "fabric": "*",

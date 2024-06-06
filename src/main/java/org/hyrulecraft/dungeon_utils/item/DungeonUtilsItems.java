@@ -39,8 +39,6 @@ public class DungeonUtilsItems {
     public static final Item LYNEL_BOW_THREE_X = registerItem("lynel_bow_three_x",
             new LynelBowThreeXItem(new FabricItemSettings().maxDamage(1024)));
 
-    // Champion Abilities
-
     private static final FabricItemSettings CHAMPION_ABILITY = new FabricItemSettings().maxDamage(0).maxCount(1);
 
     public static final Item REVALIS_GALE = registerItem("revalis_gale",
@@ -57,8 +55,6 @@ public class DungeonUtilsItems {
 
     public static final Item DARUKS_PROTECTION = registerItem("daruks_protection",
             new DaruksProtectionItem(CHAMPION_ABILITY));
-
-    //
 
     public static final Item LINK_CAP = registerItem("link_cap",
             new CapTrinketItem(new FabricItemSettings()));
