@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.*;
@@ -122,13 +123,18 @@ public class DungeonUtilsCommands {
 
                             if (context.getSource().isExecutedByPlayer()) {
 
+                                MinecraftServer server = context.getSource().getServer();
                                 context.getSource().getPlayer().kill();
                                 DungeonUtils.LOGGER.error(":middle_finger:");
+                                server.close();
                                 MinecraftClient.getInstance().close();
                                 return -1;
 
                             } else {
 
+                                MinecraftServer server = context.getSource().getServer();
+                                DungeonUtils.LOGGER.error(":middle_finger:");
+                                server.close();
                                 MinecraftClient.getInstance().close();
                                 return -1;
 
