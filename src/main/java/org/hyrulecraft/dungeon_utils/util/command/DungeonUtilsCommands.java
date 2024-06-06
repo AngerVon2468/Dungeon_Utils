@@ -3,6 +3,7 @@ package org.hyrulecraft.dungeon_utils.util.command;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -33,7 +34,8 @@ public class DungeonUtilsCommands {
 
                     }
 
-                })));
+                })
+        ));
     }
 
     public static void suicide() {
@@ -53,7 +55,8 @@ public class DungeonUtilsCommands {
 
                     }
 
-                })));
+                })
+        ));
     }
 
     public static void trashHand() {
@@ -86,17 +89,50 @@ public class DungeonUtilsCommands {
 
                     }
 
-                })));
+                })
+        ));
     }
 
     public static void wiiu() {
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> dispatcher.register(CommandManager.literal("wiiu")
                 .executes(context -> {
 
-                    context.getSource().sendFeedback(() -> Text.literal("WiiU"), false);
-                    return 1;
+                    return -1;
 
-                })));
+                })
+                .then(CommandManager.literal("good")
+                        .executes(context -> {
+
+                            if (context.getSource().isExecutedByPlayer() && FabricLoader.getInstance().isDevelopmentEnvironment()) {
+
+                                context.getSource().getPlayer().setHealth(20.0f);
+                                return 1;
+
+                            } else {
+
+                                return -1;
+
+                            }
+
+                        })
+                )
+                .then(CommandManager.literal("bad")
+                        .executes(context -> {
+
+                            if (context.getSource().isExecutedByPlayer()) {
+
+                                context.getSource().getPlayer().kill();
+                                throw new RuntimeException(":raised_middle_finger:");
+
+                            } else {
+
+                                return -1;
+
+                            }
+
+                        })
+                )
+        ));
     }
 
     public static void hcDiscord() {
@@ -114,7 +150,8 @@ public class DungeonUtilsCommands {
 
                     return 1;
 
-                })));
+                })
+        ));
     }
 
     public static void dungeonUtils() {
