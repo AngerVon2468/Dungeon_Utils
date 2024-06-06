@@ -3,7 +3,7 @@ package org.hyrulecraft.dungeon_utils.util;
 import net.fabricmc.loader.api.FabricLoader;
 
 import org.hyrulecraft.dungeon_utils.util.event.*;
-import org.hyrulecraft.dungeon_utils.util.command.CommandInit;
+import org.hyrulecraft.dungeon_utils.util.command.DungeonUtilsCommands;
 
 public class UtilCollector {
 
@@ -14,13 +14,13 @@ public class UtilCollector {
         ChampionEventCallbacks.allowDamageEvent();
 
         // Commands.
-        CommandInit.kys();
-        CommandInit.suicide();
-        CommandInit.trashHand();
-        CommandInit.wiiu();
-        CommandInit.hcDiscord();
+        DungeonUtilsCommands.kys();
+        DungeonUtilsCommands.suicide();
+        DungeonUtilsCommands.trashHand();
+        DungeonUtilsCommands.wiiu();
+        DungeonUtilsCommands.hcDiscord();
         if (FabricLoader.getInstance().isDevelopmentEnvironment()) {
-            CommandInit.dungeonUtils();
+            DungeonUtilsCommands.dungeonUtils();
         }
     }
 

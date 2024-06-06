@@ -14,7 +14,7 @@ import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems;
 
 import java.util.List;
 
-public class CommandInit {
+public class DungeonUtilsCommands {
 
     public static void kys() {
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> dispatcher.register(CommandManager.literal("kys")
