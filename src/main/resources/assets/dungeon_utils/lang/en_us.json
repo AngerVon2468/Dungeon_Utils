@@ -3,6 +3,8 @@
   "block.dungeon_utils.rusty_switch_block": "Rusty Switch",
   "block.dungeon_utils.blue_switch_block": "Blue Switch",
 
+  "block.dungeon_utils.pedestal_block": "Sword Pedestal",
+
   "item.dungeon_utils.megaton_hammer": "Megaton Hammer",
   "item.dungeon_utils.lynel_bow_five_x": "Lynel Bow (5x)",
   "item.dungeon_utils.lynel_bow_three_x": "Lynel Bow (3x)",
@@ -10,6 +12,8 @@
   "item.dungeon_utils.kokiri_sword": "Kokiri Sword",
   "item.dungeon_utils.razor_sword": "Razor Sword",
   "item.dungeon_utils.gilded_sword": "Gilded Sword",
+  "item.dungeon_utils.the_master_sword": "The Master Sword",
+  "item.dungeon_utils.the_master_sword_awakened": "The Awakened Master Sword",
 
   "item.dungeon_utils.paraglider": "Paraglider",
 

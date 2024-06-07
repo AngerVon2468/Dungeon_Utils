@@ -30,21 +30,24 @@ public class PedestalBlock extends HorizontalFacingBlock {
         this.setDefaultState(this.getStateManager().getDefaultState().with(FACING, Direction.NORTH).with(ITEM, 1));
     }
 
-    /*
+
     @Override
     public VoxelShape getOutlineShape(@NotNull BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
-        if (!state.get(IS_STEPPED_ON)) {
+        if (state.get(ITEM) == 2 || state.get(ITEM) == 3) {
             return Stream.of(
-                    Block.createCuboidShape(0, 0, 0, 16, 0.35, 16),
-                    Block.createCuboidShape(4, -1.9, 4, 12, 6.1, 12),
-                    Block.createCuboidShape(4, 0, 3, 12, 6, 4),
-                    Block.createCuboidShape(3, 0, 4, 5, 6, 12),
-                    Block.createCuboidShape(4, 0, 11, 12, 6, 13),
-                    Block.createCuboidShape(10, 0, 4, 13, 6, 12)
+                    Block.createCuboidShape(3, 0, 5, 13, 4, 11),
+                    Block.createCuboidShape(6, 4, 7.676780000000001, 10, 15, 8.67678),
+                    Block.createCuboidShape(4, 15, 7.676780000000001, 5, 16, 8.67678),
+                    Block.createCuboidShape(11, 15, 7.676780000000001, 12, 16, 8.67678),
+                    Block.createCuboidShape(4, 16, 7.676780000000001, 12, 19, 8.67678),
+                    Block.createCuboidShape(12, 14, 7.676780000000001, 14, 18, 8.67678),
+                    Block.createCuboidShape(6.5, 19, 7.676780000000001, 9.5, 26, 8.67678),
+                    Block.createCuboidShape(2, 14, 7.676780000000001, 4, 18, 8.67678),
+                    Block.createCuboidShape(7, 15, 7.676780000000001, 9, 16, 8.67678)
             ).reduce((v1, v2) -> VoxelShapes.combineAndSimplify(v1, v2, BooleanBiFunction.OR)).get();
-        } else if (state.get(IS_STEPPED_ON)) {
+        } else if (state.get(ITEM) == 1) {
 
-            return Block.createCuboidShape(0, 0, 0, 16, 0.25, 16);
+            return Block.createCuboidShape(3, 0, 5, 13, 4, 11);
 
         } else {
 
@@ -52,7 +55,7 @@ public class PedestalBlock extends HorizontalFacingBlock {
 
         }
     }
-    */
+
 
     @Override
     public ActionResult onUse(@NotNull BlockState state, World world, BlockPos pos, @NotNull PlayerEntity player, Hand hand, @NotNull BlockHitResult hit) {
@@ -62,7 +65,9 @@ public class PedestalBlock extends HorizontalFacingBlock {
 
             player.playSound(SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, SoundCategory.PLAYERS, 1.0f, 1.0f);
             world.setBlockState(pos, state.with(ITEM, 2).with(FACING, player.getHorizontalFacing().getOpposite()));
-            stack.decrement(1);
+            if (!player.isCreative()) {
+                stack.decrement(1);
+            }
             return ActionResult.SUCCESS;
 
         } else if (state.get(ITEM) == 2) {
@@ -76,7 +81,9 @@ public class PedestalBlock extends HorizontalFacingBlock {
 
             player.playSound(SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, SoundCategory.PLAYERS, 1.0f, 1.0f);
             world.setBlockState(pos, state.with(ITEM, 3).with(FACING, player.getHorizontalFacing().getOpposite()));
-            stack.decrement(1);
+            if (!player.isCreative()) {
+                stack.decrement(1);
+            }
             return ActionResult.SUCCESS;
 
         } else if (state.get(ITEM) == 3) {
