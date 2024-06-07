@@ -12,8 +12,9 @@ import net.minecraft.world.World
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems
 import org.hyrulecraft.dungeon_utils.sound.DungeonUtilsSounds
 
-class MegatonHammerItem(toolMaterial: ToolMaterial?, attackDamage: Int, attackSpeed: Float, settings: Settings?) :
-    SwordItem(toolMaterial, attackDamage, attackSpeed, settings) {
+class MegatonHammerItem(toolMaterial: ToolMaterial?, attackDamage: Int, attackSpeed: Float, settings: Settings?) : SwordItem
+    (toolMaterial, attackDamage, attackSpeed, settings) {
+
     override fun use(world: World, user: PlayerEntity, hand: Hand): TypedActionResult<ItemStack> {
 
         val stack = user.getStackInHand(hand)
