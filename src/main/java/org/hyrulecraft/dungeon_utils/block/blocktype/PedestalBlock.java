@@ -2,11 +2,9 @@ package org.hyrulecraft.dungeon_utils.block.blocktype;
 
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
+import net.minecraft.item.*;
 import net.minecraft.registry.tag.BlockTags;
-import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.*;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.*;
 import net.minecraft.util.*;
@@ -17,7 +15,6 @@ import net.minecraft.util.shape.*;
 import net.minecraft.world.*;
 
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems;
-import org.hyrulecraft.dungeon_utils.sound.DungeonUtilsSounds;
 import org.jetbrains.annotations.*;
 
 import java.util.stream.Stream;
@@ -61,25 +58,32 @@ public class PedestalBlock extends HorizontalFacingBlock {
     public ActionResult onUse(@NotNull BlockState state, World world, BlockPos pos, @NotNull PlayerEntity player, Hand hand, @NotNull BlockHitResult hit) {
         ItemStack stack = player.getStackInHand(hand);
 
-        if (stack.isOf(Items.STICK) && state.get(ITEM) == 1) {
+        if (stack.isOf(DungeonUtilsItems.THE_MASTER_SWORD) && state.get(ITEM) == 1) {
 
-            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategory.PLAYERS, 1.0f, 1.0f);
-            player.playSound(DungeonUtilsSounds.SWITCH, SoundCategory.PLAYERS, 1.0f, 1.0f);
-            world.setBlockState(pos, state.with(ITEM, 2));
+            player.playSound(SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, SoundCategory.PLAYERS, 1.0f, 1.0f);
+            world.setBlockState(pos, state.with(ITEM, 2).with(FACING, player.getHorizontalFacing().getOpposite()));
+            stack.decrement(1);
             return ActionResult.SUCCESS;
 
-        } else if (stack.isOf(Items.STICK) && state.get(ITEM) == 2) {
+        } else if (state.get(ITEM) == 2) {
 
-            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategory.PLAYERS, 1.0f, 1.0f);
-            player.playSound(DungeonUtilsSounds.SWITCH, SoundCategory.PLAYERS, 1.0f, 1.0f);
-            world.setBlockState(pos, state.with(ITEM, 3));
+            player.playSound(SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, SoundCategory.PLAYERS, 1.0f, 1.0f);
+            world.setBlockState(pos, state.with(ITEM, 1).with(FACING, player.getHorizontalFacing().getOpposite()));
+            player.getInventory().insertStack(DungeonUtilsItems.THE_MASTER_SWORD.getDefaultStack());
             return ActionResult.SUCCESS;
 
-        } else if (stack.isOf(Items.STICK) && state.get(ITEM) == 3) {
+        } if (stack.isOf(DungeonUtilsItems.THE_MASTER_SWORD_AWAKENED) && state.get(ITEM) == 1) {
 
-            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategory.PLAYERS, 1.0f, 1.0f);
-            player.playSound(DungeonUtilsSounds.SWITCH, SoundCategory.PLAYERS, 1.0f, 1.0f);
-            world.setBlockState(pos, state.with(ITEM, 1));
+            player.playSound(SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, SoundCategory.PLAYERS, 1.0f, 1.0f);
+            world.setBlockState(pos, state.with(ITEM, 3).with(FACING, player.getHorizontalFacing().getOpposite()));
+            stack.decrement(1);
+            return ActionResult.SUCCESS;
+
+        } else if (state.get(ITEM) == 3) {
+
+            player.playSound(SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, SoundCategory.PLAYERS, 1.0f, 1.0f);
+            world.setBlockState(pos, state.with(ITEM, 1).with(FACING, player.getHorizontalFacing().getOpposite()));
+            player.getInventory().insertStack(DungeonUtilsItems.THE_MASTER_SWORD_AWAKENED.getDefaultStack());
             return ActionResult.SUCCESS;
 
         } else {
@@ -92,7 +96,7 @@ public class PedestalBlock extends HorizontalFacingBlock {
 
     @Override
     public @Nullable BlockState getPlacementState(@NotNull ItemPlacementContext ctx) {
-        return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing());
+        return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing().getOpposite());
     }
 
     @Override

@@ -1,48 +1,48 @@
 {
     "variants": {
         "facing=north,item=1": {
-            "model": "dungeon_utils:block/blue_switch_block_unpressed"
+            "model": "dungeon_utils:block/pedestal_block"
         },
         "facing=south,item=1": {
-            "model": "dungeon_utils:block/blue_switch_block_unpressed",
+            "model": "dungeon_utils:block/pedestal_block",
             "y": 180
         },
         "facing=west,item=1": {
-            "model": "dungeon_utils:block/blue_switch_block_unpressed",
+            "model": "dungeon_utils:block/pedestal_block",
             "y": 270
         },
         "facing=east,item=1": {
-            "model": "dungeon_utils:block/blue_switch_block_unpressed",
+            "model": "dungeon_utils:block/pedestal_block",
             "y": 90
         },
         "facing=north,item=2": {
-            "model": "dungeon_utils:block/rusty_switch_block_unpressed"
+            "model": "dungeon_utils:block/master_sword_pedestal"
         },
         "facing=south,item=2": {
-            "model": "dungeon_utils:block/rusty_switch_block_unpressed",
+            "model": "dungeon_utils:block/master_sword_pedestal",
             "y": 180
         },
         "facing=west,item=2": {
-            "model": "dungeon_utils:block/rusty_switch_block_unpressed",
+            "model": "dungeon_utils:block/master_sword_pedestal",
             "y": 270
         },
         "facing=east,item=2": {
-            "model": "dungeon_utils:block/rusty_switch_block_unpressed",
+            "model": "dungeon_utils:block/master_sword_pedestal",
             "y": 90
         },
         "facing=north,item=3": {
-            "model": "dungeon_utils:block/yellow_switch_block_unpressed"
+            "model": "dungeon_utils:block/master_sword_pedestal_awakened"
         },
         "facing=south,item=3": {
-            "model": "dungeon_utils:block/yellow_switch_block_unpressed",
+            "model": "dungeon_utils:block/master_sword_pedestal_awakened",
             "y": 180
         },
         "facing=west,item=3": {
-            "model": "dungeon_utils:block/yellow_switch_block_unpressed",
+            "model": "dungeon_utils:block/master_sword_pedestal_awakened",
             "y": 270
         },
         "facing=east,item=3": {
-            "model": "dungeon_utils:block/yellow_switch_block_unpressed",
+            "model": "dungeon_utils:block/master_sword_pedestal_awakened",
             "y": 90
         }
     }

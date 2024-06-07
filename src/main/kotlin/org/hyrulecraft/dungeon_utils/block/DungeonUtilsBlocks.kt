@@ -24,19 +24,19 @@ object DungeonUtilsBlocks {
 
     @JvmField
     val YELLOW_SWITCH_BLOCK = registerBlock("yellow_switch_block",
-        YellowSwitchBlock(FabricBlockSettings.create()))
+        YellowSwitchBlock(FabricBlockSettings.create().nonOpaque()))
 
     @JvmField
     val RUSTY_SWITCH_BLOCK = registerBlock("rusty_switch_block",
-        RustySwitchBlock(FabricBlockSettings.create()))
+        RustySwitchBlock(FabricBlockSettings.create().nonOpaque()))
 
     @JvmField
     val BLUE_SWITCH_BLOCK = registerBlock("blue_switch_block",
-        BlueSwitchBlock(FabricBlockSettings.create()))
+        BlueSwitchBlock(FabricBlockSettings.create().nonOpaque()))
 
     @JvmField
     val PEDESTAL_BLOCK = registerBlock("pedestal_block",
-        PedestalBlock(FabricBlockSettings.create()))
+        PedestalBlock(FabricBlockSettings.create().nonOpaque()))
 
     @JvmStatic
     fun registerModBlocks() {

@@ -1,0 +1,21 @@
+{
+	"texture_size": [32, 32],
+	"textures": {
+		"1": "dungeon_utils:block/pedestal"
+	},
+	"elements": [
+		{
+			"from": [3, 0, 5],
+			"to": [13, 4, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 0, 7]},
+			"faces": {
+				"north": {"uv": [4.75, 0, 10, 2.25], "texture": "#1"},
+				"east": {"uv": [5, 4, 8, 6], "texture": "#1"},
+				"south": {"uv": [5, 2, 10, 4], "texture": "#1"},
+				"west": {"uv": [0, 6, 3, 8], "texture": "#1"},
+				"up": {"uv": [5, 3, 0, 0], "texture": "#1"},
+				"down": {"uv": [5, 3, 0, 6], "texture": "#1"}
+			}
+		}
+	]
+}
