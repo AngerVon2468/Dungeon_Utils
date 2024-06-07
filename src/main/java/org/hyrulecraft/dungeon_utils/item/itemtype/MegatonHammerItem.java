@@ -24,7 +24,7 @@ public class MegatonHammerItem extends SwordItem {
     public TypedActionResult<ItemStack> use(World world, @NotNull PlayerEntity user, Hand hand) {
         ItemStack stack = user.getStackInHand(hand);
 
-        user.playSound(DungeonUtilsSounds.getHAMMER_SWING(), SoundCategory.PLAYERS, 1.0f, 1.0f);
+        user.playSound(DungeonUtilsSounds.HAMMER_SWING, SoundCategory.PLAYERS, 1.0f, 1.0f);
         user.getItemCooldownManager().set((DungeonUtilsItems.MEGATON_HAMMER), 20);
 
         return TypedActionResult.success(stack);
@@ -40,7 +40,7 @@ public class MegatonHammerItem extends SwordItem {
 
         if (blockState.isOf(Blocks.STONE) && !world.isClient) {
 
-            player.playSound(DungeonUtilsSounds.getHAMMER_HIT(), SoundCategory.PLAYERS, 1.0f, 1.0f);
+            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategory.PLAYERS, 1.0f, 1.0f);
             world.setBlockState(blockpos, Blocks.COBBLESTONE.getDefaultState());
             player.getItemCooldownManager().set((DungeonUtilsItems.MEGATON_HAMMER), 20);
 
@@ -48,7 +48,7 @@ public class MegatonHammerItem extends SwordItem {
 
         } else if (blockState.isOf(Blocks.STONE_BRICKS) && !world.isClient) {
 
-            player.playSound(DungeonUtilsSounds.getHAMMER_HIT(), SoundCategory.PLAYERS, 1.0f, 1.0f);
+            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategory.PLAYERS, 1.0f, 1.0f);
             world.setBlockState(blockpos, Blocks.CRACKED_STONE_BRICKS.getDefaultState());
             player.getItemCooldownManager().set((DungeonUtilsItems.MEGATON_HAMMER), 20);
 
@@ -56,7 +56,7 @@ public class MegatonHammerItem extends SwordItem {
 
         } else if (blockState.isOf(Blocks.DEEPSLATE_BRICKS) && !world.isClient) {
 
-            player.playSound(DungeonUtilsSounds.getHAMMER_HIT(), SoundCategory.PLAYERS, 1.0f, 1.0f);
+            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategory.PLAYERS, 1.0f, 1.0f);
             world.setBlockState(blockpos, Blocks.CRACKED_DEEPSLATE_BRICKS.getDefaultState());
             player.getItemCooldownManager().set((DungeonUtilsItems.MEGATON_HAMMER), 20);
 
@@ -64,7 +64,7 @@ public class MegatonHammerItem extends SwordItem {
 
         } else if (blockState.isOf(Blocks.DEEPSLATE_TILES) && !world.isClient) {
 
-            player.playSound(DungeonUtilsSounds.getHAMMER_HIT(), SoundCategory.PLAYERS, 1.0f, 1.0f);
+            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategory.PLAYERS, 1.0f, 1.0f);
             world.setBlockState(blockpos, Blocks.CRACKED_DEEPSLATE_TILES.getDefaultState());
             player.getItemCooldownManager().set((DungeonUtilsItems.MEGATON_HAMMER), 20);
 
@@ -72,7 +72,7 @@ public class MegatonHammerItem extends SwordItem {
 
         } else if (blockState.isOf(Blocks.NETHER_BRICKS) && !world.isClient) {
 
-            player.playSound(DungeonUtilsSounds.getHAMMER_HIT(), SoundCategory.PLAYERS, 1.0f, 1.0f);
+            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategory.PLAYERS, 1.0f, 1.0f);
             world.setBlockState(blockpos, Blocks.CRACKED_NETHER_BRICKS.getDefaultState());
             player.getItemCooldownManager().set((DungeonUtilsItems.MEGATON_HAMMER), 20);
 
@@ -80,7 +80,7 @@ public class MegatonHammerItem extends SwordItem {
 
         } else if (blockState.isOf(Blocks.POLISHED_BLACKSTONE_BRICKS) && !world.isClient) {
 
-            player.playSound(DungeonUtilsSounds.getHAMMER_HIT(), SoundCategory.PLAYERS, 1.0f, 1.0f);
+            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategory.PLAYERS, 1.0f, 1.0f);
             world.setBlockState(blockpos, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS.getDefaultState());
             player.getItemCooldownManager().set((DungeonUtilsItems.MEGATON_HAMMER), 20);
 
@@ -88,7 +88,7 @@ public class MegatonHammerItem extends SwordItem {
 
         } else {
 
-            player.playSound(DungeonUtilsSounds.getHAMMER_HIT(), SoundCategory.PLAYERS, 1.0f, 1.0f);
+            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategory.PLAYERS, 1.0f, 1.0f);
             player.getItemCooldownManager().set((DungeonUtilsItems.MEGATON_HAMMER), 20);
 
             return ActionResult.SUCCESS;
@@ -99,7 +99,7 @@ public class MegatonHammerItem extends SwordItem {
     @Override
     public ActionResult useOnEntity(ItemStack stack, @NotNull PlayerEntity user, @NotNull LivingEntity entity, Hand hand) {
         entity.damage(user.getDamageSources().playerAttack(user), 8.0F);
-        user.playSound(DungeonUtilsSounds.getHAMMER_HIT(), SoundCategory.PLAYERS, 1.0f, 1.0f);
+        user.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategory.PLAYERS, 1.0f, 1.0f);
         user.getItemCooldownManager().set((DungeonUtilsItems.MEGATON_HAMMER), 20);
         return ActionResult.SUCCESS;
     }

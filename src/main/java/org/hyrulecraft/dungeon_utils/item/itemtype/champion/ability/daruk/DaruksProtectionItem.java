@@ -34,7 +34,7 @@ public class DaruksProtectionItem extends TrinketItem {
 
             } else if (!player.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.DARUKS_PROTECTION) && stack.getNbt().contains("dungeon_utils.daruks_protection.anti_spam") && stack.isOf(DungeonUtilsItems.DARUKS_PROTECTION)) {
 
-                player.playSound(DungeonUtilsSounds.getREVALIS_GALE_RECHARGE(), SoundCategory.PLAYERS, 1f, 1f);
+                player.playSound(DungeonUtilsSounds.REVALIS_GALE_RECHARGE, SoundCategory.PLAYERS, 1f, 1f);
                 stack.removeSubNbt("dungeon_utils.daruks_protection.anti_spam");
 
             } else if (player.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.DARUKS_PROTECTION) && !stack.getNbt().contains("dungeon_utils.daruks_protection.anti_spam") && stack.isOf(DungeonUtilsItems.DARUKS_PROTECTION)) {

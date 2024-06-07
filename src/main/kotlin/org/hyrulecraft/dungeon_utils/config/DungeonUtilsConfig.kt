@@ -1,11 +1,12 @@
-package org.hyrulecraft.dungeon_utils.config;
+package org.hyrulecraft.dungeon_utils.config
 
-import eu.midnightdust.lib.config.MidnightConfig;
+import eu.midnightdust.lib.config.MidnightConfig
 
-public class DungeonUtilsConfig extends MidnightConfig {
+object DungeonUtilsConfig : MidnightConfig() {
 
-    @Entry(category = "settings") public static double revalisGaleHeight = 1.5;
+    @JvmField
+    @Entry(category = "settings") var revalisGaleHeight = 1.5
 
-    @Entry(category = "settings") public static boolean shouldAddSlowFalling = true;
-
+    @JvmField
+    @Entry(category = "settings") var shouldAddSlowFalling = true
 }

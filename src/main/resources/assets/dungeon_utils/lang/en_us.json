@@ -44,5 +44,9 @@
   "titlescreen.mavity_lib.bottom_left": "Dungeon Utils v1.0.0 BETA",
   "titlescreen.mavity_lib.bottom_right": "",
   "titlescreen.mavity_lib.top_left": "",
-  "titlescreen.mavity_lib.top_right": ""
+  "titlescreen.mavity_lib.top_right": "",
+
+  "dungeon_utils.midnightconfig.title": "Dungeon Utils Settings",
+  "dungeon_utils.midnightconfig.revalisGaleHeight": "Revali's Gale Height:",
+  "dungeon_utils.midnightconfig.shouldAddSlowFalling": "Slow Falling At Revali's Gale Peak:"
 }

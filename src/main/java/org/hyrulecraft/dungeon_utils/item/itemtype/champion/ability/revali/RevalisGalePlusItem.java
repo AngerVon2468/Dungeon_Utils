@@ -32,7 +32,7 @@ public class RevalisGalePlusItem extends RevalisGaleItem {
 
             } else if (!player.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.REVALIS_GALE_PLUS) && stack.getNbt().contains("dungeon_utils.revalis_gale.anti_spam") && stack.isOf(DungeonUtilsItems.REVALIS_GALE_PLUS)) {
 
-                player.playSound(DungeonUtilsSounds.getREVALIS_GALE_RECHARGE(), SoundCategory.PLAYERS, 1f, 1f);
+                player.playSound(DungeonUtilsSounds.REVALIS_GALE_RECHARGE, SoundCategory.PLAYERS, 1f, 1f);
                 stack.removeSubNbt("dungeon_utils.revalis_gale.anti_spam");
 
             } else if (player.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.REVALIS_GALE_PLUS) && !stack.getNbt().contains("dungeon_utils.revalis_gale.anti_spam") && stack.isOf(DungeonUtilsItems.REVALIS_GALE_PLUS)) {

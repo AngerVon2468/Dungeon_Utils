@@ -87,8 +87,8 @@ public class YellowSwitchBlock extends HorizontalFacingBlock {
         ItemStack stack = player.getStackInHand(hand);
         if (stack.isOf(DungeonUtilsItems.MEGATON_HAMMER) && !state.get(IS_STEPPED_ON)) {
 
-            player.playSound(DungeonUtilsSounds.getHAMMER_HIT(), SoundCategory.PLAYERS, 1.0f, 1.0f);
-            player.playSound(DungeonUtilsSounds.getSWITCH(), 1.0f, 1.0f);
+            player.playSound(DungeonUtilsSounds.SWITCH, SoundCategory.PLAYERS, 1.0f, 1.0f);
+            player.playSound(DungeonUtilsSounds.SWITCH, 1.0f, 1.0f);
             world.setBlockState(pos, state.with(IS_STEPPED_ON, true));
             this.updateNeighbors(world, pos);
             return ActionResult.SUCCESS;
@@ -104,7 +104,7 @@ public class YellowSwitchBlock extends HorizontalFacingBlock {
     public void onSteppedOn(@NotNull World world, BlockPos pos, BlockState state, Entity entity) {
         if (!world.getBlockState(pos).get(IS_STEPPED_ON)){
 
-            entity.playSound(DungeonUtilsSounds.getSWITCH(), 1.0f, 1.0f);
+            entity.playSound(DungeonUtilsSounds.SWITCH, 1.0f, 1.0f);
             world.setBlockState(pos, state.with(IS_STEPPED_ON, true));
             this.updateNeighbors(world, pos);
 

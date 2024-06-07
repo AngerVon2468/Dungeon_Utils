@@ -6,10 +6,26 @@ import net.minecraft.item.ItemStack
 import net.minecraft.registry.*
 import net.minecraft.text.Text
 import net.minecraft.util.Identifier
-import org.hyrulecraft.dungeon_utils.DungeonUtils.*
 
-import org.hyrulecraft.dungeon_utils.block.DungeonUtilsBlocks.*
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.*
+import org.hyrulecraft.dungeon_utils.DungeonUtils.*
+import org.hyrulecraft.dungeon_utils.block.DungeonUtilsBlocks.BLUE_SWITCH_BLOCK
+import org.hyrulecraft.dungeon_utils.block.DungeonUtilsBlocks.RUSTY_SWITCH_BLOCK
+import org.hyrulecraft.dungeon_utils.block.DungeonUtilsBlocks.YELLOW_SWITCH_BLOCK
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.CLIMBING_GLOVES
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.DARUKS_PROTECTION
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.GILDED_SWORD
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.KOKIRI_SWORD
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.LINK_CAP
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.LYNEL_BOW_FIVE_X
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.LYNEL_BOW_THREE_X
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.MEGATON_HAMMER
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.MIPHAS_GRACE
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.MIPHAS_GRACE_PLUS
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.MOGMA_MITTS
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.PARAGLIDER
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.RAZOR_SWORD
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.REVALIS_GALE
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.REVALIS_GALE_PLUS
 
 class DungeonUtilsItemGroups {
 

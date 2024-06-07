@@ -33,7 +33,7 @@ public class MiphasGraceItem extends TrinketItem {
 
             } else if (!player.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.MIPHAS_GRACE) && stack.getNbt().contains("dungeon_utils.miphas_gale.is_used") && stack.isOf(DungeonUtilsItems.MIPHAS_GRACE)) {
 
-                player.playSound(DungeonUtilsSounds.getMIPHAS_GRACE_RECHARGE(), SoundCategory.PLAYERS, 1f, 1f);
+                player.playSound(DungeonUtilsSounds.MIPHAS_GRACE_RECHARGE, SoundCategory.PLAYERS, 1f, 1f);
                 stack.removeSubNbt("dungeon_utils.miphas_gale.is_used");
 
             } else if (player.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.MIPHAS_GRACE) && !stack.getNbt().contains("dungeon_utils.miphas_gale.is_used") && stack.isOf(DungeonUtilsItems.MIPHAS_GRACE)) {
