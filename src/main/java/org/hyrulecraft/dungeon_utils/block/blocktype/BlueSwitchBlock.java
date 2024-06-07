@@ -92,7 +92,7 @@ public class BlueSwitchBlock extends HorizontalFacingBlock {
         if (stack.isOf(DungeonUtilsItems.MEGATON_HAMMER)) {
 
             player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategory.PLAYERS, 1.0f, 1.0f);
-            player.playSound(DungeonUtilsSounds.SWITCH, 1.0f, 1.0f);
+            player.playSound(DungeonUtilsSounds.SWITCH, SoundCategory.PLAYERS, 1.0f, 1.0f);
             world.setBlockState(pos, state.with(IS_STEPPED_ON, true));
             this.updateNeighbors(world, pos);
             return ActionResult.SUCCESS;

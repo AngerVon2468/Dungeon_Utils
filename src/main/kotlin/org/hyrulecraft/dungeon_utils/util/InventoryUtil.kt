@@ -1,31 +1,28 @@
-package org.hyrulecraft.dungeon_utils.util;
+package org.hyrulecraft.dungeon_utils.util
 
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.*;
+import net.minecraft.entity.player.PlayerEntity
+import net.minecraft.item.Item
 
-import org.jetbrains.annotations.NotNull;
-
-public class InventoryUtil {
-
-    public static boolean hasPlayerStackInInventory(@NotNull PlayerEntity player, Item item) {
-        for(int i = 0; i < player.getInventory().size(); i++) {
-            ItemStack currentStack = player.getInventory().getStack(i);
-            if (!currentStack.isEmpty() && currentStack.isOf(item)) {
-                return true;
+object InventoryUtil {
+    @JvmStatic
+    fun hasPlayerStackInInventory(player: PlayerEntity, item: Item?): Boolean {
+        for (i in 0 until player.inventory.size()) {
+            val currentStack = player.inventory.getStack(i)
+            if (!currentStack.isEmpty && currentStack.isOf(item)) {
+                return true
             }
         }
-
-        return false;
+        return false
     }
 
-    public static int getFirstInventoryIndex(@NotNull PlayerEntity player, Item item) {
-        for(int i = 0; i < player.getInventory().size(); i++) {
-            ItemStack currentStack = player.getInventory().getStack(i);
-            if (!currentStack.isEmpty() && currentStack.isOf(item)) {
-                return i;
+    @JvmStatic
+    fun getFirstInventoryIndex(player: PlayerEntity, item: Item?): Int {
+        for (i in 0 until player.inventory.size()) {
+            val currentStack = player.inventory.getStack(i)
+            if (!currentStack.isEmpty && currentStack.isOf(item)) {
+                return i
             }
         }
-
-        return -1;
+        return -1
     }
 }
