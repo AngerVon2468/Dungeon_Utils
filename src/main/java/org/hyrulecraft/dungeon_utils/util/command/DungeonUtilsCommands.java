@@ -1089,6 +1089,128 @@ public class DungeonUtilsCommands {
                                             }
                                         }))
                         )
+                        .then(CommandManager.literal("the_master_sword")
+                                .executes(context -> {
+
+                                    ServerPlayerEntity serverPlayer = context.getSource().getPlayer();
+                                    assert serverPlayer != null;
+                                    int emptySlots = 0;
+                                    List<ItemStack> inventory = serverPlayer.getInventory().main;
+                                    for (ItemStack stack : inventory) {
+                                        if (stack.isEmpty()) {
+                                            emptySlots++;
+                                        }
+                                    }
+
+                                    if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
+
+                                        serverPlayer.getInventory().insertStack(DungeonUtilsItems.THE_MASTER_SWORD.asItem().getDefaultStack());
+
+                                        emptySlots--;
+
+                                        return 1;
+
+                                    } else {
+
+                                        return -1;
+
+                                    }
+
+                                })
+                                .then(CommandManager.argument("amount", IntegerArgumentType.integer())
+                                        .executes(context -> {
+                                            int amount = IntegerArgumentType.getInteger(context, "amount");
+                                            ServerPlayerEntity serverPlayer = context.getSource().getPlayer();
+                                            assert serverPlayer != null;
+                                            int emptySlots = 0;
+                                            List<ItemStack> inventory = serverPlayer.getInventory().main;
+                                            for (ItemStack stack : inventory) {
+                                                if (stack.isEmpty()) {
+                                                    emptySlots++;
+                                                }
+                                            }
+
+                                            if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
+
+
+                                                for (int i = 100; amount <= amount && amount >= 1; amount--) {
+
+                                                    serverPlayer.getInventory().insertStack(DungeonUtilsItems.THE_MASTER_SWORD.asItem().getDefaultStack());
+
+                                                }
+
+                                                emptySlots--;
+
+                                                return 1;
+
+                                            } else {
+
+                                                return -1;
+
+                                            }
+                                        }))
+                        )
+                        .then(CommandManager.literal("the_master_sword_awakened")
+                                .executes(context -> {
+
+                                    ServerPlayerEntity serverPlayer = context.getSource().getPlayer();
+                                    assert serverPlayer != null;
+                                    int emptySlots = 0;
+                                    List<ItemStack> inventory = serverPlayer.getInventory().main;
+                                    for (ItemStack stack : inventory) {
+                                        if (stack.isEmpty()) {
+                                            emptySlots++;
+                                        }
+                                    }
+
+                                    if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
+
+                                        serverPlayer.getInventory().insertStack(DungeonUtilsItems.THE_MASTER_SWORD_AWAKENED.asItem().getDefaultStack());
+
+                                        emptySlots--;
+
+                                        return 1;
+
+                                    } else {
+
+                                        return -1;
+
+                                    }
+
+                                })
+                                .then(CommandManager.argument("amount", IntegerArgumentType.integer())
+                                        .executes(context -> {
+                                            int amount = IntegerArgumentType.getInteger(context, "amount");
+                                            ServerPlayerEntity serverPlayer = context.getSource().getPlayer();
+                                            assert serverPlayer != null;
+                                            int emptySlots = 0;
+                                            List<ItemStack> inventory = serverPlayer.getInventory().main;
+                                            for (ItemStack stack : inventory) {
+                                                if (stack.isEmpty()) {
+                                                    emptySlots++;
+                                                }
+                                            }
+
+                                            if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
+
+
+                                                for (int i = 100; amount <= amount && amount >= 1; amount--) {
+
+                                                    serverPlayer.getInventory().insertStack(DungeonUtilsItems.THE_MASTER_SWORD_AWAKENED.asItem().getDefaultStack());
+
+                                                }
+
+                                                emptySlots--;
+
+                                                return 1;
+
+                                            } else {
+
+                                                return -1;
+
+                                            }
+                                        }))
+                        )
                 )
                 .then(CommandManager.literal("block")
                         .executes(context -> {
@@ -1264,6 +1386,67 @@ public class DungeonUtilsCommands {
                                                 for (int i = 100; amount <= amount && amount >= 1; amount--) {
 
                                                     serverPlayer.getInventory().insertStack(DungeonUtilsBlocks.BLUE_SWITCH_BLOCK.asItem().getDefaultStack());
+
+                                                }
+
+                                                emptySlots--;
+
+                                                return 1;
+
+                                            } else {
+
+                                                return -1;
+
+                                            }
+                                        }))
+                        )
+                        .then(CommandManager.literal("pedestal_block")
+                                .executes(context -> {
+
+                                    ServerPlayerEntity serverPlayer = context.getSource().getPlayer();
+                                    assert serverPlayer != null;
+                                    int emptySlots = 0;
+                                    List<ItemStack> inventory = serverPlayer.getInventory().main;
+                                    for (ItemStack stack : inventory) {
+                                        if (stack.isEmpty()) {
+                                            emptySlots++;
+                                        }
+                                    }
+
+                                    if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
+
+                                        serverPlayer.getInventory().insertStack(DungeonUtilsBlocks.PEDESTAL_BLOCK.asItem().getDefaultStack());
+
+                                        emptySlots--;
+
+                                        return 1;
+
+                                    } else {
+
+                                        return -1;
+
+                                    }
+
+                                })
+                                .then(CommandManager.argument("amount", IntegerArgumentType.integer())
+                                        .executes(context -> {
+                                            int amount = IntegerArgumentType.getInteger(context, "amount");
+                                            ServerPlayerEntity serverPlayer = context.getSource().getPlayer();
+                                            assert serverPlayer != null;
+                                            int emptySlots = 0;
+                                            List<ItemStack> inventory = serverPlayer.getInventory().main;
+                                            for (ItemStack stack : inventory) {
+                                                if (stack.isEmpty()) {
+                                                    emptySlots++;
+                                                }
+                                            }
+
+                                            if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
+
+
+                                                for (int i = 100; amount <= amount && amount >= 1; amount--) {
+
+                                                    serverPlayer.getInventory().insertStack(DungeonUtilsBlocks.PEDESTAL_BLOCK.asItem().getDefaultStack());
 
                                                 }
 
