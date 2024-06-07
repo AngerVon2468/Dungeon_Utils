@@ -34,6 +34,10 @@ object DungeonUtilsBlocks {
     val BLUE_SWITCH_BLOCK = registerBlock("blue_switch_block",
         BlueSwitchBlock(FabricBlockSettings.create()))
 
+    @JvmField
+    val PEDESTAL_BLOCK = registerBlock("pedestal_block",
+        PedestalBlock(FabricBlockSettings.create()))
+
     @JvmStatic
     fun registerModBlocks() {
         DungeonUtils.LOGGER.info(DungeonUtils.NAME + " has registered its blocks.")

@@ -1,0 +1,49 @@
+{
+    "variants": {
+        "facing=north,item=1": {
+            "model": "dungeon_utils:block/blue_switch_block_unpressed"
+        },
+        "facing=south,item=1": {
+            "model": "dungeon_utils:block/blue_switch_block_unpressed",
+            "y": 180
+        },
+        "facing=west,item=1": {
+            "model": "dungeon_utils:block/blue_switch_block_unpressed",
+            "y": 270
+        },
+        "facing=east,item=1": {
+            "model": "dungeon_utils:block/blue_switch_block_unpressed",
+            "y": 90
+        },
+        "facing=north,item=2": {
+            "model": "dungeon_utils:block/rusty_switch_block_unpressed"
+        },
+        "facing=south,item=2": {
+            "model": "dungeon_utils:block/rusty_switch_block_unpressed",
+            "y": 180
+        },
+        "facing=west,item=2": {
+            "model": "dungeon_utils:block/rusty_switch_block_unpressed",
+            "y": 270
+        },
+        "facing=east,item=2": {
+            "model": "dungeon_utils:block/rusty_switch_block_unpressed",
+            "y": 90
+        },
+        "facing=north,item=3": {
+            "model": "dungeon_utils:block/yellow_switch_block_unpressed"
+        },
+        "facing=south,item=3": {
+            "model": "dungeon_utils:block/yellow_switch_block_unpressed",
+            "y": 180
+        },
+        "facing=west,item=3": {
+            "model": "dungeon_utils:block/yellow_switch_block_unpressed",
+            "y": 270
+        },
+        "facing=east,item=3": {
+            "model": "dungeon_utils:block/yellow_switch_block_unpressed",
+            "y": 90
+        }
+    }
+}
