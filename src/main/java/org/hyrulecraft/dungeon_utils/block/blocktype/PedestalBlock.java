@@ -64,7 +64,7 @@ public class PedestalBlock extends HorizontalFacingBlock {
         if (stack.isOf(DungeonUtilsItems.THE_MASTER_SWORD) && state.get(ITEM) == 1) {
 
             player.playSound(SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, SoundCategory.PLAYERS, 1.0f, 1.0f);
-            world.setBlockState(pos, state.with(ITEM, 2).with(FACING, player.getHorizontalFacing().getOpposite()));
+            world.setBlockState(pos, state.with(ITEM, 2));
             if (!player.isCreative()) {
                 stack.decrement(1);
             }
@@ -73,14 +73,14 @@ public class PedestalBlock extends HorizontalFacingBlock {
         } else if (state.get(ITEM) == 2) {
 
             player.playSound(SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, SoundCategory.PLAYERS, 1.0f, 1.0f);
-            world.setBlockState(pos, state.with(ITEM, 1).with(FACING, player.getHorizontalFacing().getOpposite()));
+            world.setBlockState(pos, state.with(ITEM, 1));
             player.getInventory().insertStack(DungeonUtilsItems.THE_MASTER_SWORD.getDefaultStack());
             return ActionResult.SUCCESS;
 
         } if (stack.isOf(DungeonUtilsItems.THE_MASTER_SWORD_AWAKENED) && state.get(ITEM) == 1) {
 
             player.playSound(SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, SoundCategory.PLAYERS, 1.0f, 1.0f);
-            world.setBlockState(pos, state.with(ITEM, 3).with(FACING, player.getHorizontalFacing().getOpposite()));
+            world.setBlockState(pos, state.with(ITEM, 3));
             if (!player.isCreative()) {
                 stack.decrement(1);
             }
@@ -89,7 +89,7 @@ public class PedestalBlock extends HorizontalFacingBlock {
         } else if (state.get(ITEM) == 3) {
 
             player.playSound(SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, SoundCategory.PLAYERS, 1.0f, 1.0f);
-            world.setBlockState(pos, state.with(ITEM, 1).with(FACING, player.getHorizontalFacing().getOpposite()));
+            world.setBlockState(pos, state.with(ITEM, 1));
             player.getInventory().insertStack(DungeonUtilsItems.THE_MASTER_SWORD_AWAKENED.getDefaultStack());
             return ActionResult.SUCCESS;
 
