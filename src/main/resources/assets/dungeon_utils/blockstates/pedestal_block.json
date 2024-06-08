@@ -44,6 +44,36 @@
         "facing=east,item=3": {
             "model": "dungeon_utils:block/master_sword_pedestal_awakened",
             "y": 90
+        },
+        "facing=north,item=4": {
+            "model": "dungeon_utils:block/diamond_sword_pedestal"
+        },
+        "facing=south,item=4": {
+            "model": "dungeon_utils:block/diamond_sword_pedestal",
+            "y": 180
+        },
+        "facing=west,item=4": {
+            "model": "dungeon_utils:block/diamond_sword_pedestal",
+            "y": 270
+        },
+        "facing=east,item=4": {
+            "model": "dungeon_utils:block/diamond_sword_pedestal",
+            "y": 90
+        },
+        "facing=north,item=5": {
+            "model": "dungeon_utils:block/netherite_sword_pedestal"
+        },
+        "facing=south,item=5": {
+            "model": "dungeon_utils:block/netherite_sword_pedestal",
+            "y": 180
+        },
+        "facing=west,item=5": {
+            "model": "dungeon_utils:block/netherite_sword_pedestal",
+            "y": 270
+        },
+        "facing=east,item=5": {
+            "model": "dungeon_utils:block/netherite_sword_pedestal",
+            "y": 90
         }
     }
 }

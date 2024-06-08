@@ -68,10 +68,10 @@ object DungeonUtilsItems {
     val GILDED_SWORD = registerItem("gilded_sword", SwordItem(ToolMaterials.IRON, 10, -2.0f, FabricItemSettings().maxDamage(700)))
 
     @JvmField
-    val THE_MASTER_SWORD = registerItem("the_master_sword", SwordItem(ToolMaterials.DIAMOND, 12, -2.2f, FabricItemSettings().maxDamage(1024)))
+    val THE_MASTER_SWORD = registerItem("the_master_sword", SwordItem(ToolMaterials.DIAMOND, 12, -2.6f, FabricItemSettings().maxDamage(1024)))
 
     @JvmField
-    val THE_MASTER_SWORD_AWAKENED = registerItem("the_master_sword_awakened", SwordItem(ToolMaterials.DIAMOND, 14, -2.4f, FabricItemSettings().maxDamage(2048)))
+    val THE_MASTER_SWORD_AWAKENED = registerItem("the_master_sword_awakened", SwordItem(ToolMaterials.DIAMOND, 14, -2.8f, FabricItemSettings().maxDamage(2048)))
 
     @JvmStatic
     fun registerModItems() {
