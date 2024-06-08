@@ -30,7 +30,6 @@ public class PedestalBlock extends HorizontalFacingBlock {
         this.setDefaultState(this.getStateManager().getDefaultState().with(FACING, Direction.NORTH).with(ITEM, 1));
     }
 
-
     @Override
     public VoxelShape getOutlineShape(@NotNull BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
         if ((state.get(ITEM) == 2 || state.get(ITEM) == 3) && (state.get(FACING) == Direction.NORTH || state.get(FACING) == Direction.SOUTH)) {
@@ -101,7 +100,6 @@ public class PedestalBlock extends HorizontalFacingBlock {
 
         }
     }
-
 
     @Override
     public ActionResult onUse(@NotNull BlockState state, World world, BlockPos pos, @NotNull PlayerEntity player, Hand hand, @NotNull BlockHitResult hit) {
