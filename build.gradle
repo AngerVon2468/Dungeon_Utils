@@ -21,6 +21,7 @@ repositories {
     // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
     // See https://docs.gradle.org/current/userguide/declaring_repositories.html
     // for more information about repositories.
+    maven { url = 'https://jitpack.io'}
     maven { url = "https://api.modrinth.com/maven" }
     maven { url = "https://maven.terraformersmc.com/releases/" }
     maven { url = "https://maven.ladysnake.org/releases" }
@@ -79,6 +80,11 @@ dependencies {
     modImplementation "curse.maven:mavity_lib-1016352:${project.mavity_lib_version_curseforge}"
 
     modImplementation "curse.maven:auudio-fabric-613072:4581988"
+
+    modImplementation "com.github.CrimsonDawn45:Fabric-Shield-Lib:v${project.fabric_shield_lib_version}"
+    include "com.github.CrimsonDawn45:Fabric-Shield-Lib:v${project.fabric_shield_lib_version}"
+
+    modImplementation "com.github.Chocohead:Fabric-ASM:v${project.fabricasm_version}"
 }
 
 processResources {
