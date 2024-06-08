@@ -17,10 +17,10 @@ public class UtilCollector {
         DungeonUtilsCommands.kys();
         DungeonUtilsCommands.suicide();
         DungeonUtilsCommands.trashHand();
-        DungeonUtilsCommands.wiiu();
         DungeonUtilsCommands.hcDiscord();
         if (FabricLoader.getInstance().isDevelopmentEnvironment()) {
             DungeonUtilsCommands.dungeonUtils();
+            DungeonUtilsCommands.wiiu();
         }
     }
 

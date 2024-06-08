@@ -18,5 +18,22 @@
 				"down": {"uv": [5, 3, 0, 6], "texture": "#1"}
 			}
 		}
-	]
+	],
+	"display": {
+		"firstperson_righthand": {
+			"rotation": [0, 180, 0],
+			"translation": [0, 9.5, -1]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 180, 0],
+			"translation": [0, 9.5, -1]
+		},
+		"ground": {
+			"translation": [0, 8.5, 0]
+		},
+		"gui": {
+			"rotation": [0, 180, 0],
+			"translation": [0, 5, 0]
+		}
+	}
 }
