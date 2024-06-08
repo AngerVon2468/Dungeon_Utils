@@ -55,8 +55,8 @@ class DungeonUtilsItemGroups {
                     entries.add(KOKIRI_SWORD)
                     entries.add(RAZOR_SWORD)
                     entries.add(GILDED_SWORD)
-                    entries.add(THE_MASTER_SWORD);
-                    entries.add(THE_MASTER_SWORD_AWAKENED);
+                    entries.add(THE_MASTER_SWORD)
+                    entries.add(THE_MASTER_SWORD_AWAKENED)
                 }.build()
         )
 
@@ -89,8 +89,8 @@ class DungeonUtilsItemGroups {
                     entries.add(KOKIRI_SWORD)
                     entries.add(RAZOR_SWORD)
                     entries.add(GILDED_SWORD)
-                    entries.add(THE_MASTER_SWORD);
-                    entries.add(THE_MASTER_SWORD_AWAKENED);
+                    entries.add(THE_MASTER_SWORD)
+                    entries.add(THE_MASTER_SWORD_AWAKENED)
                     entries.add(MEGATON_HAMMER)
                     entries.add(LYNEL_BOW_FIVE_X)
                     entries.add(LYNEL_BOW_THREE_X)
