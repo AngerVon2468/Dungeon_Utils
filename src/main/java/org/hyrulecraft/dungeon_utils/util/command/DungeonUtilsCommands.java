@@ -218,7 +218,7 @@ public class DungeonUtilsCommands {
                                             if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
 
 
-                                                for (int i = 100; amount <= amount && amount >= 1; amount--) {
+                                                for (int i = 100; amount >= 1; amount--) {
 
                                                     serverPlayer.getInventory().insertStack(DungeonUtilsItems.PARAGLIDER.asItem().getDefaultStack());
 
@@ -279,7 +279,7 @@ public class DungeonUtilsCommands {
                                             if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
 
 
-                                                for (int i = 100; amount <= amount && amount >= 1; amount--) {
+                                                for (int i = 100; amount >= 1; amount--) {
 
                                                     serverPlayer.getInventory().insertStack(DungeonUtilsItems.MOGMA_MITTS.asItem().getDefaultStack());
 
@@ -340,7 +340,7 @@ public class DungeonUtilsCommands {
                                             if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
 
 
-                                                for (int i = 100; amount <= amount && amount >= 1; amount--) {
+                                                for (int i = 100; amount >= 1; amount--) {
 
                                                     serverPlayer.getInventory().insertStack(DungeonUtilsItems.CLIMBING_GLOVES.asItem().getDefaultStack());
 
@@ -401,7 +401,7 @@ public class DungeonUtilsCommands {
                                             if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
 
 
-                                                for (int i = 100; amount <= amount && amount >= 1; amount--) {
+                                                for (int i = 100; amount >= 1; amount--) {
 
                                                     serverPlayer.getInventory().insertStack(DungeonUtilsItems.MEGATON_HAMMER.asItem().getDefaultStack());
 
@@ -462,7 +462,7 @@ public class DungeonUtilsCommands {
                                             if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
 
 
-                                                for (int i = 100; amount <= amount && amount >= 1; amount--) {
+                                                for (int i = 100; amount >= 1; amount--) {
 
                                                     serverPlayer.getInventory().insertStack(DungeonUtilsItems.LYNEL_BOW_FIVE_X.asItem().getDefaultStack());
 
@@ -523,7 +523,7 @@ public class DungeonUtilsCommands {
                                             if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
 
 
-                                                for (int i = 100; amount <= amount && amount >= 1; amount--) {
+                                                for (int i = 100; amount >= 1; amount--) {
 
                                                     serverPlayer.getInventory().insertStack(DungeonUtilsItems.LYNEL_BOW_THREE_X.asItem().getDefaultStack());
 
@@ -584,7 +584,7 @@ public class DungeonUtilsCommands {
                                             if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
 
 
-                                                for (int i = 100; amount <= amount && amount >= 1; amount--) {
+                                                for (int i = 100; amount >= 1; amount--) {
 
                                                     serverPlayer.getInventory().insertStack(DungeonUtilsItems.REVALIS_GALE.asItem().getDefaultStack());
 
@@ -645,7 +645,7 @@ public class DungeonUtilsCommands {
                                             if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
 
 
-                                                for (int i = 100; amount <= amount && amount >= 1; amount--) {
+                                                for (int i = 100; amount >= 1; amount--) {
 
                                                     serverPlayer.getInventory().insertStack(DungeonUtilsItems.REVALIS_GALE_PLUS.asItem().getDefaultStack());
 
@@ -706,7 +706,7 @@ public class DungeonUtilsCommands {
                                             if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
 
 
-                                                for (int i = 100; amount <= amount && amount >= 1; amount--) {
+                                                for (int i = 100; amount >= 1; amount--) {
 
                                                     serverPlayer.getInventory().insertStack(DungeonUtilsItems.MIPHAS_GRACE.asItem().getDefaultStack());
 
@@ -767,7 +767,7 @@ public class DungeonUtilsCommands {
                                             if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
 
 
-                                                for (int i = 100; amount <= amount && amount >= 1; amount--) {
+                                                for (int i = 100; amount >= 1; amount--) {
 
                                                     serverPlayer.getInventory().insertStack(DungeonUtilsItems.MIPHAS_GRACE_PLUS.asItem().getDefaultStack());
 
@@ -828,7 +828,7 @@ public class DungeonUtilsCommands {
                                             if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
 
 
-                                                for (int i = 100; amount <= amount && amount >= 1; amount--) {
+                                                for (int i = 100; amount >= 1; amount--) {
 
                                                     serverPlayer.getInventory().insertStack(DungeonUtilsItems.DARUKS_PROTECTION.asItem().getDefaultStack());
 
@@ -889,7 +889,7 @@ public class DungeonUtilsCommands {
                                             if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
 
 
-                                                for (int i = 100; amount <= amount && amount >= 1; amount--) {
+                                                for (int i = 100; amount >= 1; amount--) {
 
                                                     serverPlayer.getInventory().insertStack(DungeonUtilsItems.LINK_CAP.asItem().getDefaultStack());
 
@@ -950,7 +950,7 @@ public class DungeonUtilsCommands {
                                             if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
 
 
-                                                for (int i = 100; amount <= amount && amount >= 1; amount--) {
+                                                for (int i = 100; amount >= 1; amount--) {
 
                                                     serverPlayer.getInventory().insertStack(DungeonUtilsItems.KOKIRI_SWORD.asItem().getDefaultStack());
 
@@ -1011,7 +1011,7 @@ public class DungeonUtilsCommands {
                                             if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
 
 
-                                                for (int i = 100; amount <= amount && amount >= 1; amount--) {
+                                                for (int i = 100; amount >= 1; amount--) {
 
                                                     serverPlayer.getInventory().insertStack(DungeonUtilsItems.RAZOR_SWORD.asItem().getDefaultStack());
 
@@ -1072,7 +1072,7 @@ public class DungeonUtilsCommands {
                                             if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
 
 
-                                                for (int i = 100; amount <= amount && amount >= 1; amount--) {
+                                                for (int i = 100; amount >= 1; amount--) {
 
                                                     serverPlayer.getInventory().insertStack(DungeonUtilsItems.GILDED_SWORD.asItem().getDefaultStack());
 
@@ -1133,7 +1133,7 @@ public class DungeonUtilsCommands {
                                             if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
 
 
-                                                for (int i = 100; amount <= amount && amount >= 1; amount--) {
+                                                for (int i = 100; amount >= 1; amount--) {
 
                                                     serverPlayer.getInventory().insertStack(DungeonUtilsItems.THE_MASTER_SWORD.asItem().getDefaultStack());
 
@@ -1194,7 +1194,7 @@ public class DungeonUtilsCommands {
                                             if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
 
 
-                                                for (int i = 100; amount <= amount && amount >= 1; amount--) {
+                                                for (int i = 100; amount >= 1; amount--) {
 
                                                     serverPlayer.getInventory().insertStack(DungeonUtilsItems.THE_MASTER_SWORD_AWAKENED.asItem().getDefaultStack());
 
@@ -1261,7 +1261,7 @@ public class DungeonUtilsCommands {
                                             if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
 
 
-                                                for (int i = 100; amount <= amount && amount >= 1; amount--) {
+                                                for (int i = 100; amount >= 1; amount--) {
 
                                                     serverPlayer.getInventory().insertStack(DungeonUtilsBlocks.YELLOW_SWITCH_BLOCK.asItem().getDefaultStack());
 
@@ -1322,7 +1322,7 @@ public class DungeonUtilsCommands {
                                             if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
 
 
-                                                for (int i = 100; amount <= amount && amount >= 1; amount--) {
+                                                for (int i = 100; amount >= 1; amount--) {
 
                                                     serverPlayer.getInventory().insertStack(DungeonUtilsBlocks.RUSTY_SWITCH_BLOCK.asItem().getDefaultStack());
 
@@ -1383,7 +1383,7 @@ public class DungeonUtilsCommands {
                                             if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
 
 
-                                                for (int i = 100; amount <= amount && amount >= 1; amount--) {
+                                                for (int i = 100; amount >= 1; amount--) {
 
                                                     serverPlayer.getInventory().insertStack(DungeonUtilsBlocks.BLUE_SWITCH_BLOCK.asItem().getDefaultStack());
 
@@ -1444,7 +1444,7 @@ public class DungeonUtilsCommands {
                                             if (context.getSource().isExecutedByPlayer() && emptySlots >= 1) {
 
 
-                                                for (int i = 100; amount <= amount && amount >= 1; amount--) {
+                                                for (int i = 100; amount >= 1; amount--) {
 
                                                     serverPlayer.getInventory().insertStack(DungeonUtilsBlocks.PEDESTAL_BLOCK.asItem().getDefaultStack());
 
