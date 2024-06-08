@@ -37,28 +37,24 @@ public class PedestalBlock extends HorizontalFacingBlock {
 
             return Stream.of(
                     Block.createCuboidShape(3, 0, 5, 13, 4, 11),
-                    Block.createCuboidShape(5.75, 4, 7.676780000000001, 10.25, 15, 8.67678),
-                    Block.createCuboidShape(6.5, 19, 7.676780000000001, 9.5, 26, 8.67678),
-                    Block.createCuboidShape(4, 15.75, 7.676780000000001, 12, 19, 8.67678),
-                    Block.createCuboidShape(4, 14.75, 7.676780000000001, 5, 15.75, 8.67678),
-                    Block.createCuboidShape(12, 14.25, 7.676780000000001, 13.75, 17.75, 8.67678),
-                    Block.createCuboidShape(11, 14.75, 7.676780000000001, 12, 15.75, 8.67678),
-                    Block.createCuboidShape(2.25, 14.25, 7.676780000000001, 4, 17.75, 8.67678),
-                    Block.createCuboidShape(6.5, 15, 7.676780000000001, 9.5, 15.75, 8.67678)
+                    Block.createCuboidShape(5.901902961143721, 3.4748753210580663, 7.5267800000000005, 10.15190296114372, 14.474875321058066, 8.52678),
+                    Block.createCuboidShape(6.401902961143721, 14.474875321058066, 7.5267800000000005, 9.65190296114372, 15.474875321058066, 8.52678),
+                    Block.createCuboidShape(4.651902961143721, 15.474875321058065, 7.5267800000000005, 11.40190296114372, 18.974875321058065, 8.52678),
+                    Block.createCuboidShape(11.40190296114372, 14.474875321058065, 7.5267800000000005, 13.65190296114372, 18.474875321058065, 8.52678),
+                    Block.createCuboidShape(2.401902961143721, 14.474875321058065, 7.5267800000000005, 4.651902961143721, 18.474875321058065, 8.52678),
+                    Block.createCuboidShape(6.401902961143721, 18.974875321058065, 7.5267800000000005, 9.65190296114372, 25.974875321058065, 8.52678)
             ).reduce((v1, v2) -> VoxelShapes.combineAndSimplify(v1, v2, BooleanBiFunction.OR)).get();
 
         } else if ((state.get(ITEM) == 2 || state.get(ITEM) == 3) && (state.get(FACING) == Direction.EAST || state.get(FACING) == Direction.WEST)) {
 
             return Stream.of(
-                    Block.createCuboidShape(4.91161, 0, 3.0883900000000004, 10.91161, 4, 13.08839),
-                    Block.createCuboidShape(7.58839, 4, 5.83839, 8.58839, 15, 10.33839),
-                    Block.createCuboidShape(7.58839, 19, 6.58839, 8.58839, 26, 9.58839),
-                    Block.createCuboidShape(7.58839, 15.75, 4.08839, 8.58839, 19, 12.08839),
-                    Block.createCuboidShape(7.58839, 14.75, 11.08839, 8.58839, 15.75, 12.08839),
-                    Block.createCuboidShape(7.58839, 14.25, 2.3383900000000004, 8.58839, 17.75, 4.08839),
-                    Block.createCuboidShape(7.58839, 14.75, 4.08839, 8.58839, 15.75, 5.08839),
-                    Block.createCuboidShape(7.58839, 14.25, 12.08839, 8.58839, 17.75, 13.83839),
-                    Block.createCuboidShape(7.58839, 15, 6.58839, 8.58839, 15.75, 9.58839)
+                    Block.createCuboidShape(5.01351296114372, 0, 3.040292961143722, 11.01351296114372, 4, 13.040292961143722),
+                    Block.createCuboidShape(7.54029296114372, 3.4748753210580663, 5.888390000000001, 8.54029296114372, 14.474875321058066, 10.138390000000001),
+                    Block.createCuboidShape(7.54029296114372, 14.474875321058066, 6.388390000000001, 8.54029296114372, 15.474875321058066, 9.638390000000001),
+                    Block.createCuboidShape(7.54029296114372, 15.474875321058065, 4.638390000000001, 8.54029296114372, 18.974875321058065, 11.388390000000001),
+                    Block.createCuboidShape(7.54029296114372, 14.474875321058065, 2.388390000000001, 8.54029296114372, 18.474875321058065, 4.638390000000001),
+                    Block.createCuboidShape(7.54029296114372, 14.474875321058065, 11.388390000000001, 8.54029296114372, 18.474875321058065, 13.638390000000001),
+                    Block.createCuboidShape(7.54029296114372, 18.974875321058065, 6.388390000000001, 8.54029296114372, 25.974875321058065, 9.638390000000001)
             ).reduce((v1, v2) -> VoxelShapes.combineAndSimplify(v1, v2, BooleanBiFunction.OR)).get();
 
         } else if ((state.get(ITEM) == 4 || state.get(ITEM) == 5) && (state.get(FACING) == Direction.NORTH || state.get(FACING) == Direction.SOUTH)) {
