@@ -2,25 +2,20 @@
   "block.dungeon_utils.yellow_switch_block": "Yellow Switch",
   "block.dungeon_utils.rusty_switch_block": "Rusty Switch",
   "block.dungeon_utils.blue_switch_block": "Blue Switch",
-
   "block.dungeon_utils.pedestal_block": "Sword Pedestal",
 
   "item.dungeon_utils.megaton_hammer": "Megaton Hammer",
   "item.dungeon_utils.lynel_bow_five_x": "Lynel Bow (5x)",
   "item.dungeon_utils.lynel_bow_three_x": "Lynel Bow (3x)",
-
   "item.dungeon_utils.kokiri_sword": "Kokiri Sword",
   "item.dungeon_utils.razor_sword": "Razor Sword",
   "item.dungeon_utils.gilded_sword": "Gilded Sword",
   "item.dungeon_utils.the_master_sword": "The Master Sword",
   "item.dungeon_utils.the_master_sword_awakened": "The Awakened Master Sword",
-
   "item.dungeon_utils.the_hylian_shield": "The Hylian Shield",
-
+  "item.dungeon_utils.heart_container": "Heart Container",
   "item.dungeon_utils.paraglider": "Paraglider",
-
   "item.dungeon_utils.link_cap": "Link's Cap",
-
   "item.dungeon_utils.revalis_gale": "Revali's Gale",
   "item.dungeon_utils.revalis_gale_plus": "Revali's Gale +",
   "item.dungeon_utils.miphas_grace": "Mipha's Grace",
@@ -36,15 +31,11 @@
   "tab.dungeon_utils.weaponry": "Weaponry",
 
   "dungeon_utils.subtitle.switch": "Switch moves",
-
   "dungeon_utils.subtitle.revalis_gale_recharge": "Revali's Gale is now ready",
   "dungeon_utils.subtitle.miphas_grace_recharge": "Mipha's Grace is ready",
-
   "dungeon_utils.subtitle.it_is_my_pleasure": "It is my pleasure",
-
   "dungeon_utils.subtitle.hammer_hit": "Hammer hits",
   "dungeon_utils.subtitle.hammer_swing": "Hammer swings",
-
   "dungeon_utils.subtitle.start_game": "Game starts",
 
   "titlescreen.mavity_lib.bottom_left": "Dungeon Utils v1.0.0 BETA",

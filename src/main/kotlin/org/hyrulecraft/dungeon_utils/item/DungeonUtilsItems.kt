@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.minecraft.item.*
 import net.minecraft.registry.*
 import net.minecraft.util.Identifier
+import net.minecraft.util.Rarity
 
 import org.hyrulecraft.dungeon_utils.DungeonUtils
 import org.hyrulecraft.dungeon_utils.item.itemtype.*
@@ -77,6 +78,9 @@ object DungeonUtilsItems {
 
     @JvmField val THE_HYLIAN_SHIELD = registerItem("the_hylian_shield",
         FabricShieldItem(FabricItemSettings().maxDamage(8192), 10, 100, Items.NETHERITE_BLOCK))
+
+    @JvmField
+    val HEART_CONTAINER = registerItem("heart_container", HeartContainerItem(FabricItemSettings().maxCount(1).maxDamage(0)))
 
     @JvmStatic
     fun registerModItems() {
