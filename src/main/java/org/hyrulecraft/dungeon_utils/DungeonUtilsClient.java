@@ -29,6 +29,12 @@ public class DungeonUtilsClient implements ClientModInitializer {
             }
             return (float)(stack.getMaxUseTime() - entity.getItemUseTimeLeft()) / 20.0f;
         });
+        ModelPredicateProviderRegistry.register(DungeonUtilsItems.LYNEL_BOW_FIVE_X, new Identifier("pulling"), (stack, world, entity, seed) -> {
+            if (entity == null) {
+                return 0.0F;
+            }
+            return entity.isUsingItem() && entity.getActiveItem() == stack ? 1.0F : 0.0F;
+        });
         ModelPredicateProviderRegistry.register(DungeonUtilsItems.LYNEL_BOW_THREE_X, new Identifier("pull"), (stack, world, entity, seed) -> {
             if (entity == null) {
                 return 0.0f;
@@ -37,6 +43,12 @@ public class DungeonUtilsClient implements ClientModInitializer {
                 return 0.0f;
             }
             return (float)(stack.getMaxUseTime() - entity.getItemUseTimeLeft()) / 20.0f;
+        });
+        ModelPredicateProviderRegistry.register(DungeonUtilsItems.LYNEL_BOW_THREE_X, new Identifier("pulling"), (stack, world, entity, seed) -> {
+            if (entity == null) {
+                return 0.0F;
+            }
+            return entity.isUsingItem() && entity.getActiveItem() == stack ? 1.0F : 0.0F;
         });
     }
 }
