@@ -7,7 +7,6 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.minecraft.item.*
 import net.minecraft.registry.*
 import net.minecraft.util.Identifier
-import net.minecraft.util.Rarity
 
 import org.hyrulecraft.dungeon_utils.DungeonUtils
 import org.hyrulecraft.dungeon_utils.item.itemtype.*
