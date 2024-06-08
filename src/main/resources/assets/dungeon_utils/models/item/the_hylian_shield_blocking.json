@@ -1,10 +1,10 @@
 {
 	"textures": {
-		"0": "dungeon_utils:item/shield/htexture",
-		"1": "dungeon_utils:item/shield/htexture1",
-		"2": "dungeon_utils:item/shield/htexture2",
-		"3": "dungeon_utils:item/shield/htexture3",
-		"particle": "dungeon_utils:item/shield/htexture"
+		"0": "dungeon_utils:item/shield/hylian_shield/htexture",
+		"1": "dungeon_utils:item/shield/hylian_shield/htexture1",
+		"2": "dungeon_utils:item/shield/hylian_shield/htexture2",
+		"3": "dungeon_utils:item/shield/hylian_shield/htexture3",
+		"particle": "dungeon_utils:item/shield/hylian_shield/htexture"
 	},
 	"elements": [
 		{

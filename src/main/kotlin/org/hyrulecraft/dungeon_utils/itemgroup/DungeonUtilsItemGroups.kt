@@ -14,6 +14,8 @@ import org.hyrulecraft.dungeon_utils.block.DungeonUtilsBlocks.YELLOW_SWITCH_BLOC
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.CLIMBING_GLOVES
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.DARUKS_PROTECTION
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.GILDED_SWORD
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.HEART_CONTAINER
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.KOKIRI_SHIELD
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.KOKIRI_SWORD
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.LINK_CAP
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.LYNEL_BOW_FIVE_X
@@ -26,6 +28,7 @@ import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.PARAGLIDER
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.RAZOR_SWORD
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.REVALIS_GALE
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.REVALIS_GALE_PLUS
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.THE_HYLIAN_SHIELD
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.THE_MASTER_SWORD
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.THE_MASTER_SWORD_AWAKENED
 
@@ -57,6 +60,9 @@ class DungeonUtilsItemGroups {
                     entries.add(GILDED_SWORD)
                     entries.add(THE_MASTER_SWORD)
                     entries.add(THE_MASTER_SWORD_AWAKENED)
+                    entries.add(THE_HYLIAN_SHIELD)
+                    entries.add(KOKIRI_SHIELD)
+                    entries.add(HEART_CONTAINER)
                 }.build()
         )
 
@@ -87,10 +93,12 @@ class DungeonUtilsItemGroups {
             FabricItemGroup.builder().displayName(Text.translatable("tab.dungeon_utils.weaponry"))
                 .icon { ItemStack(KOKIRI_SWORD) }.entries { displayContext, entries ->
                     entries.add(KOKIRI_SWORD)
+                    entries.add(KOKIRI_SHIELD)
                     entries.add(RAZOR_SWORD)
                     entries.add(GILDED_SWORD)
                     entries.add(THE_MASTER_SWORD)
                     entries.add(THE_MASTER_SWORD_AWAKENED)
+                    entries.add(THE_HYLIAN_SHIELD)
                     entries.add(MEGATON_HAMMER)
                     entries.add(LYNEL_BOW_FIVE_X)
                     entries.add(LYNEL_BOW_THREE_X)

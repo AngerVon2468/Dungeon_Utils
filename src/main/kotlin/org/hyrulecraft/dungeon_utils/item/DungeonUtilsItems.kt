@@ -79,6 +79,9 @@ object DungeonUtilsItems {
     @JvmField val THE_HYLIAN_SHIELD = registerItem("the_hylian_shield",
         FabricShieldItem(FabricItemSettings().maxDamage(8192), 10, 100, Items.NETHERITE_BLOCK))
 
+    @JvmField val KOKIRI_SHIELD = registerItem("kokiri_shield",
+        FabricShieldItem(FabricItemSettings().maxDamage(500), 25, 5, Items.OAK_PLANKS))
+
     @JvmField
     val HEART_CONTAINER = registerItem("heart_container", HeartContainerItem(FabricItemSettings().maxCount(1).maxDamage(0)))
 
