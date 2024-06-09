@@ -1,14 +1,15 @@
 package org.hyrulecraft.dungeon_utils.item.itemtype;
 
 import net.minecraft.block.*;
-import net.minecraft.entity.Entity;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.entity.effect.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.util.*;
-import net.minecraft.util.math.Direction;
+import net.minecraft.util.hit.*;
+import net.minecraft.util.math.*;
 import net.minecraft.world.World;
 
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems;
 import org.jetbrains.annotations.NotNull;
 
 public class HookshotItem extends Item {
@@ -18,48 +19,52 @@ public class HookshotItem extends Item {
     }
 
     @Override
-    public void inventoryTick(ItemStack stack, @NotNull World world, @NotNull Entity entity, int slot, boolean selected) {
-        BlockState state = world.getBlockState(entity.getBlockPos().offset(Direction.DOWN, 1));
-
-        if (entity instanceof PlayerEntity user) {
-
-            if ((state.isOf(Blocks.AIR) || state.isOf(Blocks.CAVE_AIR) || state.isOf(Blocks.VOID_AIR)) && user.getStackInHand(user.getActiveHand()).isOf(DungeonUtilsItems.HOOKSHOT)) {
-
-                entity.setNoGravity(true);
-
-            } else {
-
-                entity.setNoGravity(false);
-
-            }
-
-        }
-
-    }
-
-    @Override
     public TypedActionResult<ItemStack> use(@NotNull World world, @NotNull PlayerEntity user, @NotNull Hand hand) {
         ItemStack stack = user.getStackInHand(hand);
 
-        if (user.getHorizontalFacing() == Direction.NORTH) {
+        MinecraftClient client = MinecraftClient.getInstance();
+        double maxReach = 20; // The farthest target the cameraEntity can detect
+        float tickDelta = 1.0F; // Used for tracking animation progress; no tracking is 1.0F
+        boolean includeFluids = false; // Whether to detect fluids as blocks
 
-            user.addVelocity(0, -0,-0.3);
+        HitResult hit = client.cameraEntity.raycast(maxReach, tickDelta, includeFluids);
 
-        }
-        if (user.getHorizontalFacing() == Direction.SOUTH) {
+        switch(hit.getType()) {
+            case MISS:
+                // nothing near enough
+                break;
+            case BLOCK:
+                BlockHitResult blockHit = (BlockHitResult) hit;
+                BlockPos blockPos = blockHit.getBlockPos();
+                BlockState blockState = client.world.getBlockState(blockPos);
+                Block block = blockState.getBlock();
 
-            user.addVelocity(0, -0,0.3);
+                if (user.getHorizontalFacing() == Direction.NORTH && blockState.isOf(Blocks.STONE)) {
 
-        }
-        if (user.getHorizontalFacing() == Direction.EAST) {
+                    user.addVelocity(0, 0.13,-0.4);
+                    user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 10, 255));
 
-            user.addVelocity(0.3, -0,0);
+                }
+                if (user.getHorizontalFacing() == Direction.SOUTH && blockState.isOf(Blocks.STONE)) {
 
-        }
-        if (user.getHorizontalFacing() == Direction.WEST) {
+                    user.addVelocity(0, 0.13,0.4);
+                    user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 10, 255));
 
-            user.addVelocity(-0.3, -0,0);
+                }
+                if (user.getHorizontalFacing() == Direction.EAST && blockState.isOf(Blocks.STONE)) {
 
+                    user.addVelocity(0.4, 0.13,0);
+                    user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 10, 255));
+
+                }
+                if (user.getHorizontalFacing() == Direction.WEST && blockState.isOf(Blocks.STONE)) {
+
+                    user.addVelocity(-0.4, 0.13,0);
+                    user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 10, 255));
+
+                }
+
+                break;
         }
 
         return TypedActionResult.consume(stack);
