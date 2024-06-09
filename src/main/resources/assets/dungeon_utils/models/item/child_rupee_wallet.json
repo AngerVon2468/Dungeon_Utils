@@ -1,0 +1,206 @@
+{
+	"textures": {
+		"0": "dungeon_utils:item/rupee/wallet/child_rupee_wallet",
+		"particle": "dungeon_utils:item/rupee/wallet/child_rupee_wallet"
+	},
+	"elements": [
+		{
+			"name": "child_rupee_wallet_0",
+			"from": [10, 11, 7.5],
+			"to": [11, 15, 8.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 8]},
+			"faces": {
+				"north": {"uv": [11, 1, 10, 5], "texture": "#0"},
+				"east": {"uv": [10, 1, 11, 5], "texture": "#0"},
+				"south": {"uv": [10, 1, 11, 5], "texture": "#0"},
+				"west": {"uv": [10, 1, 11, 5], "texture": "#0"},
+				"up": {"uv": [10, 1, 11, 2], "texture": "#0"},
+				"down": {"uv": [10, 4, 11, 5], "texture": "#0"}
+			}
+		},
+		{
+			"name": "child_rupee_wallet_1",
+			"from": [5, 11, 7.5],
+			"to": [6, 14, 8.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 8]},
+			"faces": {
+				"north": {"uv": [6, 2, 5, 5], "texture": "#0"},
+				"east": {"uv": [5, 2, 6, 5], "texture": "#0"},
+				"south": {"uv": [5, 2, 6, 5], "texture": "#0"},
+				"west": {"uv": [5, 2, 6, 5], "texture": "#0"},
+				"up": {"uv": [5, 2, 6, 3], "texture": "#0"},
+				"down": {"uv": [5, 4, 6, 5], "texture": "#0"}
+			}
+		},
+		{
+			"name": "child_rupee_wallet_2",
+			"from": [7, 1, 7.5],
+			"to": [10, 14, 8.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 8]},
+			"faces": {
+				"north": {"uv": [10, 2, 7, 15], "texture": "#0"},
+				"east": {"uv": [9, 2, 10, 15], "texture": "#0"},
+				"south": {"uv": [7, 2, 10, 15], "texture": "#0"},
+				"west": {"uv": [7, 2, 8, 15], "texture": "#0"},
+				"up": {"uv": [7, 2, 10, 3], "texture": "#0"},
+				"down": {"uv": [7, 14, 10, 15], "texture": "#0"}
+			}
+		},
+		{
+			"name": "child_rupee_wallet_3",
+			"from": [11, 12, 7.5],
+			"to": [12, 14, 8.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 8]},
+			"faces": {
+				"north": {"uv": [12, 2, 11, 4], "texture": "#0"},
+				"east": {"uv": [11, 2, 12, 4], "texture": "#0"},
+				"south": {"uv": [11, 2, 12, 4], "texture": "#0"},
+				"west": {"uv": [11, 2, 12, 4], "texture": "#0"},
+				"up": {"uv": [11, 2, 12, 3], "texture": "#0"},
+				"down": {"uv": [11, 3, 12, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "child_rupee_wallet_4",
+			"from": [4, 12, 7.5],
+			"to": [5, 13, 8.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 8]},
+			"faces": {
+				"north": {"uv": [5, 3, 4, 4], "texture": "#0"},
+				"east": {"uv": [4, 3, 5, 4], "texture": "#0"},
+				"south": {"uv": [4, 3, 5, 4], "texture": "#0"},
+				"west": {"uv": [4, 3, 5, 4], "texture": "#0"},
+				"up": {"uv": [4, 3, 5, 4], "texture": "#0"},
+				"down": {"uv": [4, 3, 5, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "child_rupee_wallet_5",
+			"from": [6, 1, 7.5],
+			"to": [7, 13, 8.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 8]},
+			"faces": {
+				"north": {"uv": [7, 3, 6, 15], "texture": "#0"},
+				"east": {"uv": [6, 3, 7, 15], "texture": "#0"},
+				"south": {"uv": [6, 3, 7, 15], "texture": "#0"},
+				"west": {"uv": [6, 3, 7, 15], "texture": "#0"},
+				"up": {"uv": [6, 3, 7, 4], "texture": "#0"},
+				"down": {"uv": [6, 14, 7, 15], "texture": "#0"}
+			}
+		},
+		{
+			"name": "child_rupee_wallet_6",
+			"from": [5, 1, 7.5],
+			"to": [6, 10, 8.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 8]},
+			"faces": {
+				"north": {"uv": [6, 6, 5, 15], "texture": "#0"},
+				"east": {"uv": [5, 6, 6, 15], "texture": "#0"},
+				"south": {"uv": [5, 6, 6, 15], "texture": "#0"},
+				"west": {"uv": [5, 6, 6, 15], "texture": "#0"},
+				"up": {"uv": [5, 6, 6, 7], "texture": "#0"},
+				"down": {"uv": [5, 14, 6, 15], "texture": "#0"}
+			}
+		},
+		{
+			"name": "child_rupee_wallet_7",
+			"from": [10, 1, 7.5],
+			"to": [11, 10, 8.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 8]},
+			"faces": {
+				"north": {"uv": [11, 6, 10, 15], "texture": "#0"},
+				"east": {"uv": [10, 6, 11, 15], "texture": "#0"},
+				"south": {"uv": [10, 6, 11, 15], "texture": "#0"},
+				"west": {"uv": [10, 6, 11, 15], "texture": "#0"},
+				"up": {"uv": [10, 6, 11, 7], "texture": "#0"},
+				"down": {"uv": [10, 14, 11, 15], "texture": "#0"}
+			}
+		},
+		{
+			"name": "child_rupee_wallet_8",
+			"from": [4, 2, 7.5],
+			"to": [5, 9, 8.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 8]},
+			"faces": {
+				"north": {"uv": [5, 7, 4, 14], "texture": "#0"},
+				"east": {"uv": [4, 7, 5, 14], "texture": "#0"},
+				"south": {"uv": [4, 7, 5, 14], "texture": "#0"},
+				"west": {"uv": [4, 7, 5, 14], "texture": "#0"},
+				"up": {"uv": [4, 7, 5, 8], "texture": "#0"},
+				"down": {"uv": [4, 13, 5, 14], "texture": "#0"}
+			}
+		},
+		{
+			"name": "child_rupee_wallet_9",
+			"from": [11, 2, 7.5],
+			"to": [12, 9, 8.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 8]},
+			"faces": {
+				"north": {"uv": [12, 7, 11, 14], "texture": "#0"},
+				"east": {"uv": [11, 7, 12, 14], "texture": "#0"},
+				"south": {"uv": [11, 7, 12, 14], "texture": "#0"},
+				"west": {"uv": [11, 7, 12, 14], "texture": "#0"},
+				"up": {"uv": [11, 7, 12, 8], "texture": "#0"},
+				"down": {"uv": [11, 13, 12, 14], "texture": "#0"}
+			}
+		},
+		{
+			"name": "child_rupee_wallet_10",
+			"from": [3, 4, 7.5],
+			"to": [4, 8, 8.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 8]},
+			"faces": {
+				"north": {"uv": [4, 8, 3, 12], "texture": "#0"},
+				"east": {"uv": [3, 8, 4, 12], "texture": "#0"},
+				"south": {"uv": [3, 8, 4, 12], "texture": "#0"},
+				"west": {"uv": [3, 8, 4, 12], "texture": "#0"},
+				"up": {"uv": [3, 8, 4, 9], "texture": "#0"},
+				"down": {"uv": [3, 11, 4, 12], "texture": "#0"}
+			}
+		},
+		{
+			"name": "child_rupee_wallet_11",
+			"from": [12, 4, 7.5],
+			"to": [13, 8, 8.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 8]},
+			"faces": {
+				"north": {"uv": [13, 8, 12, 12], "texture": "#0"},
+				"east": {"uv": [12, 8, 13, 12], "texture": "#0"},
+				"south": {"uv": [12, 8, 13, 12], "texture": "#0"},
+				"west": {"uv": [12, 8, 13, 12], "texture": "#0"},
+				"up": {"uv": [12, 8, 13, 9], "texture": "#0"},
+				"down": {"uv": [12, 11, 13, 12], "texture": "#0"}
+			}
+		}
+	],
+	"gui_light": "front",
+	"display": {
+		"thirdperson_righthand": {
+			"scale": [0.75, 0.75, 0.75]
+		},
+		"thirdperson_lefthand": {
+			"scale": [0.75, 0.75, 0.75]
+		},
+		"firstperson_righthand": {
+			"translation": [2, 2, 0]
+		},
+		"firstperson_lefthand": {
+			"translation": [2, 2, 0]
+		},
+		"ground": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"fixed": {
+			"rotation": [0, 180, 0]
+		}
+	},
+	"groups": [
+		{
+			"name": "child_rupee_wallet",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"nbt": "{}",
+			"children": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+		}
+	]
+}

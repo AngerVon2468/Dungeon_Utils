@@ -17,6 +17,7 @@ import org.hyrulecraft.dungeon_utils.item.itemtype.champion.ability.mipha.*
 import org.hyrulecraft.dungeon_utils.item.itemtype.champion.ability.revali.*
 import org.hyrulecraft.dungeon_utils.item.itemtype.clothing.glove.*
 import org.hyrulecraft.dungeon_utils.item.itemtype.clothing.link.CapTrinketItem
+import org.hyrulecraft.dungeon_utils.item.itemtype.rupee.ChildRupeeWalletItem
 
 object DungeonUtilsItems {
 
@@ -93,6 +94,15 @@ object DungeonUtilsItems {
 
     @JvmField
     val SHADOW_MASTER_SWORD = registerItem("shadow_master_sword", SwordItem(ToolMaterials.DIAMOND, 12, -1.8f, FabricItemSettings().maxDamage(2048)))
+
+    @JvmField
+    val CHILD_RUPEE_WALLET = registerItem("child_rupee_wallet", ChildRupeeWalletItem(FabricItemSettings().maxCount(1).maxDamage(0)))
+
+    @JvmField
+    val GREEN_RUPEE = registerItem("green_rupee", Item(FabricItemSettings().maxCount(64)))
+
+    @JvmField
+    val BLUE_RUPEE = registerItem("blue_rupee", Item(FabricItemSettings().maxCount(64)))
 
     @JvmStatic
     fun registerModItems() {

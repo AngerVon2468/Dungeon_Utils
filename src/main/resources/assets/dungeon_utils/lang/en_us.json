@@ -28,6 +28,7 @@
   "item.dungeon_utils.shadow_hylian_shield": "Shadow Hylian Shield",
 
   "tooltip.dungeon_utils.cap_trinket_one": "",
+  "tooltip.dungeon_utils.rupee_amount": "Rupees: ",
 
   "tab.dungeon_utils.dungeon_utils": "Dungeon Utils",
   "tab.dungeon_utils.champion_abilities": "Champion Abilities",
