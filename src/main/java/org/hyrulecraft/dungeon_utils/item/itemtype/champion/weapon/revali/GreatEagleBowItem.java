@@ -1,4 +1,4 @@
-package org.hyrulecraft.dungeon_utils.item.itemtype.bow;
+package org.hyrulecraft.dungeon_utils.item.itemtype.champion.weapon.revali;
 
 import net.minecraft.enchantment.*;
 import net.minecraft.entity.*;

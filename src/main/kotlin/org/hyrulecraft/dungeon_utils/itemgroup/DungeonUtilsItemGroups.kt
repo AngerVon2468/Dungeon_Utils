@@ -28,6 +28,8 @@ import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.PARAGLIDER
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.RAZOR_SWORD
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.REVALIS_GALE
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.REVALIS_GALE_PLUS
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.SHADOW_HYLIAN_SHIELD
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.SHADOW_MASTER_SWORD
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.THE_HYLIAN_SHIELD
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.THE_MASTER_SWORD
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.THE_MASTER_SWORD_AWAKENED
@@ -63,6 +65,8 @@ class DungeonUtilsItemGroups {
                     entries.add(THE_HYLIAN_SHIELD)
                     entries.add(KOKIRI_SHIELD)
                     entries.add(HEART_CONTAINER)
+                    entries.add(SHADOW_MASTER_SWORD)
+                    entries.add(SHADOW_HYLIAN_SHIELD)
                 }.build()
         )
 
@@ -99,6 +103,8 @@ class DungeonUtilsItemGroups {
                     entries.add(THE_MASTER_SWORD)
                     entries.add(THE_MASTER_SWORD_AWAKENED)
                     entries.add(THE_HYLIAN_SHIELD)
+                    entries.add(SHADOW_MASTER_SWORD)
+                    entries.add(SHADOW_HYLIAN_SHIELD)
                     entries.add(MEGATON_HAMMER)
                     entries.add(LYNEL_BOW_FIVE_X)
                     entries.add(LYNEL_BOW_THREE_X)

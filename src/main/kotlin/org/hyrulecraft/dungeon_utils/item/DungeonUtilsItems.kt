@@ -10,7 +10,7 @@ import net.minecraft.util.Identifier
 
 import org.hyrulecraft.dungeon_utils.DungeonUtils
 import org.hyrulecraft.dungeon_utils.item.itemtype.*
-import org.hyrulecraft.dungeon_utils.item.itemtype.bow.GreatEagleBowItem
+import org.hyrulecraft.dungeon_utils.item.itemtype.champion.weapon.revali.GreatEagleBowItem
 import org.hyrulecraft.dungeon_utils.item.itemtype.bow.lynel.*
 import org.hyrulecraft.dungeon_utils.item.itemtype.champion.ability.daruk.DaruksProtectionItem
 import org.hyrulecraft.dungeon_utils.item.itemtype.champion.ability.mipha.*
@@ -87,6 +87,12 @@ object DungeonUtilsItems {
 
     @JvmField
     val GREAT_EAGLE_BOW = registerItem("great_eagle_bow", GreatEagleBowItem(FabricItemSettings().maxDamage(1500)))
+
+    @JvmField val SHADOW_HYLIAN_SHIELD = registerItem("shadow_hylian_shield",
+        FabricShieldItem(FabricItemSettings().maxDamage(8192), 10, 100, Items.NETHERITE_BLOCK))
+
+    @JvmField
+    val SHADOW_MASTER_SWORD = registerItem("shadow_master_sword", SwordItem(ToolMaterials.DIAMOND, 12, -1.8f, FabricItemSettings().maxDamage(2048)))
 
     @JvmStatic
     fun registerModItems() {
