@@ -33,6 +33,8 @@ public abstract class AbstractRupeeWalletItem extends Item {
     public TypedActionResult<ItemStack> use(@NotNull World world, @NotNull PlayerEntity user, @NotNull Hand hand) {
         ItemStack stack = user.getStackInHand(hand);
 
+        // TODO: Fix this.
+
         if (InventoryUtil.hasPlayerStackInInventory(user, DungeonUtilsItems.GREEN_RUPEE)) {
 
             ItemStack stack2 = user.getInventory().getStack(InventoryUtil.getFirstInventoryIndex(user, DungeonUtilsItems.GREEN_RUPEE));
