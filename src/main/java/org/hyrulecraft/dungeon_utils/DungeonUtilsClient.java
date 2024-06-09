@@ -67,5 +67,12 @@ public class DungeonUtilsClient implements ClientModInitializer {
             }
             return entity.isUsingItem() && entity.getActiveItem() == stack ? 1.0F : 0.0F;
         });
+        // Hookshot
+        ModelPredicateProviderRegistry.register(DungeonUtilsItems.HOOKSHOT, new Identifier("launched"), (stack, world, entity, seed) -> {
+            if (entity == null) {
+                return 0.0F;
+            }
+            return entity.isUsingItem() && entity.getActiveItem() == stack ? 1.0F : 0.0F;
+        });
     }
 }

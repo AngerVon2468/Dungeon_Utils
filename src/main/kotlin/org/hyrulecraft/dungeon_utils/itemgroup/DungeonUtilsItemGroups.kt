@@ -11,9 +11,12 @@ import org.hyrulecraft.dungeon_utils.DungeonUtils.*
 import org.hyrulecraft.dungeon_utils.block.DungeonUtilsBlocks.BLUE_SWITCH_BLOCK
 import org.hyrulecraft.dungeon_utils.block.DungeonUtilsBlocks.RUSTY_SWITCH_BLOCK
 import org.hyrulecraft.dungeon_utils.block.DungeonUtilsBlocks.YELLOW_SWITCH_BLOCK
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.BLUE_RUPEE
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.CHILD_RUPEE_WALLET
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.CLIMBING_GLOVES
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.DARUKS_PROTECTION
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.GILDED_SWORD
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.GREEN_RUPEE
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.HEART_CONTAINER
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.KOKIRI_SHIELD
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.KOKIRI_SWORD
@@ -67,6 +70,9 @@ class DungeonUtilsItemGroups {
                     entries.add(HEART_CONTAINER)
                     entries.add(SHADOW_MASTER_SWORD)
                     entries.add(SHADOW_HYLIAN_SHIELD)
+                    entries.add(CHILD_RUPEE_WALLET)
+                    entries.add(GREEN_RUPEE)
+                    entries.add(BLUE_RUPEE)
                 }.build()
         )
 

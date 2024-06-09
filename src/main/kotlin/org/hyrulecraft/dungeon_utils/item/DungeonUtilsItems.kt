@@ -104,6 +104,9 @@ object DungeonUtilsItems {
     @JvmField
     val BLUE_RUPEE = registerItem("blue_rupee", Item(FabricItemSettings().maxCount(64)))
 
+    @JvmField
+    val HOOKSHOT = registerItem("hookshot", HookshotItem(FabricItemSettings().maxCount(64)))
+
     @JvmStatic
     fun registerModItems() {
         DungeonUtils.LOGGER.info(DungeonUtils.NAME + " has registered its items.")

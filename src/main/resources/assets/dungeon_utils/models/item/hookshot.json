@@ -1,0 +1,14 @@
+{
+	"parent": "minecraft:item/handheld_rod",
+	"textures": {
+		"layer0": "dungeon_utils:item/hookshot"
+	},
+	"overrides": [
+		{
+			"predicate": {
+				"launched": 1
+			},
+			"model": "dungeon_utils:item/hookshot_launched"
+		}
+	]
+}
