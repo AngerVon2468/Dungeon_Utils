@@ -10,6 +10,7 @@ import net.minecraft.util.Identifier
 
 import org.hyrulecraft.dungeon_utils.DungeonUtils
 import org.hyrulecraft.dungeon_utils.item.itemtype.*
+import org.hyrulecraft.dungeon_utils.item.itemtype.bow.GreatEagleBowItem
 import org.hyrulecraft.dungeon_utils.item.itemtype.bow.lynel.*
 import org.hyrulecraft.dungeon_utils.item.itemtype.champion.ability.daruk.DaruksProtectionItem
 import org.hyrulecraft.dungeon_utils.item.itemtype.champion.ability.mipha.*
@@ -70,10 +71,10 @@ object DungeonUtilsItems {
     val GILDED_SWORD = registerItem("gilded_sword", SwordItem(ToolMaterials.IRON, 10, -2.0f, FabricItemSettings().maxDamage(700)))
 
     @JvmField
-    val THE_MASTER_SWORD = registerItem("the_master_sword", SwordItem(ToolMaterials.DIAMOND, 12, -2.6f, FabricItemSettings().maxDamage(2048)))
+    val THE_MASTER_SWORD = registerItem("the_master_sword", SwordItem(ToolMaterials.DIAMOND, 12, -1.8f, FabricItemSettings().maxDamage(2048)))
 
     @JvmField
-    val THE_MASTER_SWORD_AWAKENED = registerItem("the_master_sword_awakened", SwordItem(ToolMaterials.DIAMOND, 14, -2.8f, FabricItemSettings().maxDamage(4096)))
+    val THE_MASTER_SWORD_AWAKENED = registerItem("the_master_sword_awakened", SwordItem(ToolMaterials.DIAMOND, 14, -1.8f, FabricItemSettings().maxDamage(4096)))
 
     @JvmField val THE_HYLIAN_SHIELD = registerItem("the_hylian_shield",
         FabricShieldItem(FabricItemSettings().maxDamage(8192), 10, 100, Items.NETHERITE_BLOCK))
@@ -83,6 +84,9 @@ object DungeonUtilsItems {
 
     @JvmField
     val HEART_CONTAINER = registerItem("heart_container", HeartContainerItem(FabricItemSettings().maxCount(1).maxDamage(0)))
+
+    @JvmField
+    val GREAT_EAGLE_BOW = registerItem("great_eagle_bow", GreatEagleBowItem(FabricItemSettings().maxDamage(1500)))
 
     @JvmStatic
     fun registerModItems() {

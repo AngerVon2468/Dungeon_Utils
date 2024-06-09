@@ -1,7 +1,7 @@
 {
 	"textures": {
-		"0": "dungeon_utils:item/lynel_bow_five_x_pulling_2",
-		"particle": "dungeon_utils:item/lynel_bow_five_x_pulling_2"
+		"0": "dungeon_utils:item/bow/lynel/lynel_bow_five_x_pulling_2",
+		"particle": "dungeon_utils:item/bow/lynel/lynel_bow_five_x_pulling_2"
 	},
 	"elements": [
 		{

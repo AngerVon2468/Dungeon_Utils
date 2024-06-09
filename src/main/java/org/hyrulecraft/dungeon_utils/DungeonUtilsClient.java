@@ -19,7 +19,7 @@ public class DungeonUtilsClient implements ClientModInitializer {
         UtilCollector.registerAllUtilClassesInClient();
 
         // To do with bows.
-        // TODO: FIX THIS IT IS BROKEN
+        // Lynel Bow 5x
         ModelPredicateProviderRegistry.register(DungeonUtilsItems.LYNEL_BOW_FIVE_X, new Identifier("pull"), (stack, world, entity, seed) -> {
             if (entity == null) {
                 return 0.0f;
@@ -35,6 +35,7 @@ public class DungeonUtilsClient implements ClientModInitializer {
             }
             return entity.isUsingItem() && entity.getActiveItem() == stack ? 1.0F : 0.0F;
         });
+        // Lynel Bow 3x
         ModelPredicateProviderRegistry.register(DungeonUtilsItems.LYNEL_BOW_THREE_X, new Identifier("pull"), (stack, world, entity, seed) -> {
             if (entity == null) {
                 return 0.0f;
@@ -45,6 +46,22 @@ public class DungeonUtilsClient implements ClientModInitializer {
             return (float)(stack.getMaxUseTime() - entity.getItemUseTimeLeft()) / 20.0f;
         });
         ModelPredicateProviderRegistry.register(DungeonUtilsItems.LYNEL_BOW_THREE_X, new Identifier("pulling"), (stack, world, entity, seed) -> {
+            if (entity == null) {
+                return 0.0F;
+            }
+            return entity.isUsingItem() && entity.getActiveItem() == stack ? 1.0F : 0.0F;
+        });
+        // Great Eagle Bow
+        ModelPredicateProviderRegistry.register(DungeonUtilsItems.GREAT_EAGLE_BOW, new Identifier("pull"), (stack, world, entity, seed) -> {
+            if (entity == null) {
+                return 0.0f;
+            }
+            if (entity.getActiveItem() != stack) {
+                return 0.0f;
+            }
+            return (float)(stack.getMaxUseTime() - entity.getItemUseTimeLeft()) / 20.0f;
+        });
+        ModelPredicateProviderRegistry.register(DungeonUtilsItems.GREAT_EAGLE_BOW, new Identifier("pulling"), (stack, world, entity, seed) -> {
             if (entity == null) {
                 return 0.0F;
             }

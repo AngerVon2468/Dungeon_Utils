@@ -1,7 +1,7 @@
 {
 	"textures": {
-		"0": "dungeon_utils:item/lynel_bow_fire_x",
-		"particle": "dungeon_utils:item/lynel_bow_fire_x"
+		"0": "dungeon_utils:item/bow/lynel/lynel_bow_fire_x",
+		"particle": "dungeon_utils:item/bow/lynel/lynel_bow_fire_x"
 	},
 	"elements": [
 		{
