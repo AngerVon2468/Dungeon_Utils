@@ -85,6 +85,7 @@ dependencies {
     include "com.github.CrimsonDawn45:Fabric-Shield-Lib:v${project.fabric_shield_lib_version}"
 
     modImplementation "com.github.Chocohead:Fabric-ASM:v${project.fabricasm_version}"
+    include "com.github.Chocohead:Fabric-ASM:v${project.fabricasm_version}"
 }
 
 processResources {
