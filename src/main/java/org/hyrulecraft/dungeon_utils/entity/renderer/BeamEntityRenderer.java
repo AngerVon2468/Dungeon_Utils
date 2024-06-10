@@ -10,6 +10,8 @@ import net.minecraft.util.math.RotationAxis;
 import org.hyrulecraft.dungeon_utils.DungeonUtils;
 import org.hyrulecraft.dungeon_utils.entity.BeamEntity;
 
+import org.jetbrains.annotations.NotNull;
+
 import org.joml.*;
 
 public class BeamEntityRenderer<T extends Entity> extends EntityRenderer<BeamEntity> {
@@ -19,7 +21,7 @@ public class BeamEntityRenderer<T extends Entity> extends EntityRenderer<BeamEnt
     }
 
     @Override
-    public void render(BeamEntity entity, float yaw, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light) {
+    public void render(@NotNull BeamEntity entity, float yaw, float tickDelta, @NotNull MatrixStack matrices, @NotNull VertexConsumerProvider vertexConsumers, int light) {
         matrices.push();
 
         matrices.multiply(RotationAxis.NEGATIVE_X.rotationDegrees(90f));
@@ -30,10 +32,10 @@ public class BeamEntityRenderer<T extends Entity> extends EntityRenderer<BeamEnt
         MatrixStack.Entry matrixEntry = matrices.peek();
         Matrix4f modelMatrix = matrixEntry.getPositionMatrix();
         Matrix3f normalMatrix = matrixEntry.getNormalMatrix();
-        vertexConsumer.vertex(modelMatrix, -0.25f,  0.25f, 0.0f).color(255, 255, 255, 255).texture(0.0f, 1.0f).overlay(OverlayTexture.DEFAULT_UV).light(light).normal(normalMatrix, 0, 1, 0).next();
-        vertexConsumer.vertex(modelMatrix,  0.25f,  0.25f, 0.0f).color(255, 255, 255, 255).texture(1.0f, 1.0f).overlay(OverlayTexture.DEFAULT_UV).light(light).normal(normalMatrix, 0, 1, 0).next();
-        vertexConsumer.vertex(modelMatrix,  0.25f, -0.25f, 0.0f).color(255, 255, 255, 255).texture(1.0f, 0.0f).overlay(OverlayTexture.DEFAULT_UV).light(light).normal(normalMatrix, 0, 1, 0).next();
-        vertexConsumer.vertex(modelMatrix, -0.25f, -0.25f, 0.0f).color(255, 255, 255, 255).texture(0.0f, 0.0f).overlay(OverlayTexture.DEFAULT_UV).light(light).normal(normalMatrix, 0, 1, 0).next();
+        vertexConsumer.vertex(modelMatrix, -0.25f,  0.25f, 0.0f).color(255, 255, 255, 255).texture(0.0f, 1.0f).overlay(OverlayTexture.DEFAULT_UV).light(1500).normal(normalMatrix, 0, 1, 0).next();
+        vertexConsumer.vertex(modelMatrix,  0.25f,  0.25f, 0.0f).color(255, 255, 255, 255).texture(1.0f, 1.0f).overlay(OverlayTexture.DEFAULT_UV).light(1500).normal(normalMatrix, 0, 1, 0).next();
+        vertexConsumer.vertex(modelMatrix,  0.25f, -0.25f, 0.0f).color(255, 255, 255, 255).texture(1.0f, 0.0f).overlay(OverlayTexture.DEFAULT_UV).light(1500).normal(normalMatrix, 0, 1, 0).next();
+        vertexConsumer.vertex(modelMatrix, -0.25f, -0.25f, 0.0f).color(255, 255, 255, 255).texture(0.0f, 0.0f).overlay(OverlayTexture.DEFAULT_UV).light(1500).normal(normalMatrix, 0, 1, 0).next();
 
         matrices.pop();
         super.render(entity, yaw, tickDelta, matrices, vertexConsumers, light);
