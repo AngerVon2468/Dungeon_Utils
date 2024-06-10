@@ -2,6 +2,7 @@ package org.hyrulecraft.dungeon_utils.item.itemtype;
 
 import net.minecraft.block.*;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
@@ -34,9 +35,12 @@ public class HookshotItem extends Item {
 
         switch(hit.getType()) {
             case MISS:
+
                 // nothing near enough
+
                 break;
             case BLOCK:
+
                 BlockHitResult blockHit = (BlockHitResult) hit;
                 BlockPos blockPos = blockHit.getBlockPos();
                 BlockState blockState = client.world.getBlockState(blockPos);
@@ -64,6 +68,41 @@ public class HookshotItem extends Item {
 
                     user.addVelocity(-0.4, 0.14,0);
                     user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 10, 255));
+
+                }
+
+                break;
+            case ENTITY:
+
+                EntityHitResult entityHit = (EntityHitResult) hit;
+                Entity entity = entityHit.getEntity();
+
+                if (entity instanceof PlayerEntity player) {
+
+                    if (user.getHorizontalFacing() == Direction.NORTH) {
+
+                        user.addVelocity(0, 0.14,-0.4);
+                        user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 10, 255));
+
+                    }
+                    if (user.getHorizontalFacing() == Direction.SOUTH) {
+
+                        user.addVelocity(0, 0.14,0.4);
+                        user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 10, 255));
+
+                    }
+                    if (user.getHorizontalFacing() == Direction.EAST) {
+
+                        user.addVelocity(0.4, 0.14,0);
+                        user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 10, 255));
+
+                    }
+                    if (user.getHorizontalFacing() == Direction.WEST) {
+
+                        user.addVelocity(-0.4, 0.14,0);
+                        user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 10, 255));
+
+                    }
 
                 }
 
