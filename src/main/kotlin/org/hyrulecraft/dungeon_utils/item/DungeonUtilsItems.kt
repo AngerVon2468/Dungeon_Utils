@@ -72,10 +72,10 @@ object DungeonUtilsItems {
     val GILDED_SWORD = registerItem("gilded_sword", SwordItem(ToolMaterials.IRON, 10, -2.0f, FabricItemSettings().maxDamage(700)))
 
     @JvmField
-    val THE_MASTER_SWORD = registerItem("the_master_sword", SwordItem(ToolMaterials.DIAMOND, 12, -1.8f, FabricItemSettings().maxDamage(2048)))
+    val THE_MASTER_SWORD = registerItem("the_master_sword", MasterSwordItem(ToolMaterials.DIAMOND, 12, -1.8f, FabricItemSettings().maxDamage(2048)))
 
     @JvmField
-    val THE_MASTER_SWORD_AWAKENED = registerItem("the_master_sword_awakened", SwordItem(ToolMaterials.DIAMOND, 14, -1.8f, FabricItemSettings().maxDamage(4096)))
+    val THE_MASTER_SWORD_AWAKENED = registerItem("the_master_sword_awakened", MasterSwordItem(ToolMaterials.DIAMOND, 14, -1.8f, FabricItemSettings().maxDamage(4096)))
 
     @JvmField val THE_HYLIAN_SHIELD = registerItem("the_hylian_shield",
         FabricShieldItem(FabricItemSettings().maxDamage(8192), 10, 100, Items.NETHERITE_BLOCK))

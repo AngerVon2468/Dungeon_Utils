@@ -22,7 +22,8 @@ public class BeamEntityRenderer<T extends Entity> extends EntityRenderer<BeamEnt
     public void render(BeamEntity entity, float yaw, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light) {
         matrices.push();
 
-        matrices.multiply(RotationAxis.NEGATIVE_X.rotationDegrees(90.0f));
+        matrices.multiply(RotationAxis.NEGATIVE_X.rotationDegrees(90f));
+        matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(entity.getYaw()));
         matrices.scale(2.0f, -2.0f, 2.0f);
 
         VertexConsumer vertexConsumer = vertexConsumers.getBuffer(RenderLayer.getEntityTranslucent(getTexture(entity)));
