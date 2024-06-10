@@ -10,10 +10,10 @@ import org.hyrulecraft.dungeon_utils.DungeonUtils;
 
 public class DungeonUtilsEntities {
 
-    public static final EntityType<BeamEntity> BEAM = Registry.register(
+    public static final EntityType<MasterSwordBeamEntity> MASTER_SWORD_BEAM = Registry.register(
             Registries.ENTITY_TYPE,
-            new Identifier(DungeonUtils.MOD_ID, "beam"),
-            FabricEntityTypeBuilder.create(SpawnGroup.MISC, BeamEntity::new)
+            new Identifier(DungeonUtils.MOD_ID, "master_sword_beam"),
+            FabricEntityTypeBuilder.create(SpawnGroup.MISC, MasterSwordBeamEntity::new)
                     .dimensions(EntityDimensions.fixed(1,0.1f))
                     .build()
     );

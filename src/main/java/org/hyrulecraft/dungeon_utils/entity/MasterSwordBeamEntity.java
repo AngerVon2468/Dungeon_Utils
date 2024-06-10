@@ -10,9 +10,9 @@ import net.minecraft.util.hit.*;
 import net.minecraft.util.math.*;
 import net.minecraft.world.World;
 
-public class BeamEntity extends ProjectileEntity {
+public class MasterSwordBeamEntity extends ProjectileEntity {
 
-    public BeamEntity(EntityType<? extends ProjectileEntity> entityType, World world) {
+    public MasterSwordBeamEntity(EntityType<? extends ProjectileEntity> entityType, World world) {
         super(entityType, world);
     }
 
@@ -65,7 +65,7 @@ public class BeamEntity extends ProjectileEntity {
 
         Entity wiiu = entityHitResult.getEntity();
         if (this.getOwner() instanceof PlayerEntity player) {
-            wiiu.damage(wiiu.getDamageSources().playerAttack(player), 4);
+            wiiu.damage(wiiu.getDamageSources().playerAttack(player), 10);
         }
     }
 

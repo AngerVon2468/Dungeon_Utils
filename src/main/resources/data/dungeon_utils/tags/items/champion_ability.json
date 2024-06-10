@@ -1,0 +1,10 @@
+{
+    "replace": false,
+    "values": [
+        "dungeon_utils:revalis_gale",
+        "dungeon_utils:revalis_gale_plus",
+        "dungeon_utils:miphas_grace",
+        "dungeon_utils:miphas_grace_plus",
+        "dungeon_utils:daruks_protection"
+    ]
+}

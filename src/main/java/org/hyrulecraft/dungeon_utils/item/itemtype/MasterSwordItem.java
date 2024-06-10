@@ -22,13 +22,13 @@ public class MasterSwordItem extends SwordItem {
 
         if (user.isSneaking()) {
 
-            BeamEntity beamEntity = DungeonUtilsEntities.BEAM.create(world);
-            beamEntity.setOwner(user);
-            beamEntity.setPosition(user.getX(), user.getY() + user.getEyeHeight(user.getPose()), user.getZ());
+            MasterSwordBeamEntity masterSwordBeamEntity = DungeonUtilsEntities.MASTER_SWORD_BEAM.create(world);
+            masterSwordBeamEntity.setOwner(user);
+            masterSwordBeamEntity.setPosition(user.getX(), user.getY() + user.getEyeHeight(user.getPose()), user.getZ());
             Vec3d vec3d = user.getRotationVec(1.0f);
-            beamEntity.setVelocity(vec3d.x, vec3d.y, vec3d.z, 0.5f, 0.0f);
-            beamEntity.setYaw(user.getHeadYaw());
-            world.spawnEntity(beamEntity);
+            masterSwordBeamEntity.setVelocity(vec3d.x, vec3d.y, vec3d.z, 0.5f, 0.0f);
+            masterSwordBeamEntity.setYaw(user.getHeadYaw());
+            world.spawnEntity(masterSwordBeamEntity);
 
         }
 

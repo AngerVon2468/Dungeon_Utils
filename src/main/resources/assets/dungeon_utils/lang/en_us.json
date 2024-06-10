@@ -45,6 +45,8 @@
   "dungeon_utils.subtitle.hammer_swing": "Hammer swings",
   "dungeon_utils.subtitle.start_game": "Game starts",
 
+  "entity.dungeon_utils.master_sword_beam": "Master Sword Beam",
+
   "titlescreen.mavity_lib.bottom_left": "Dungeon Utils v1.0.0 BETA",
   "titlescreen.mavity_lib.bottom_right": "",
   "titlescreen.mavity_lib.top_left": "",
