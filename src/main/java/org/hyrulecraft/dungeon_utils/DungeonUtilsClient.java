@@ -2,9 +2,12 @@ package org.hyrulecraft.dungeon_utils;
 
 import net.fabricmc.api.ClientModInitializer;
 
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.util.Identifier;
 
+import org.hyrulecraft.dungeon_utils.entity.DungeonUtilsEntities;
+import org.hyrulecraft.dungeon_utils.entity.renderer.BeamEntityRenderer;
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems;
 import org.hyrulecraft.dungeon_utils.util.UtilCollector;
 
@@ -17,6 +20,8 @@ public class DungeonUtilsClient implements ClientModInitializer {
 
         // Initializing classes.
         UtilCollector.registerAllUtilClassesInClient();
+
+        EntityRendererRegistry.register(DungeonUtilsEntities.BEAM, BeamEntityRenderer::new);
 
         // To do with bows.
         // Lynel Bow 5x

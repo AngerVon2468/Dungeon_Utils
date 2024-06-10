@@ -7,6 +7,7 @@ import eu.midnightdust.lib.config.MidnightConfig;
 import net.fabricmc.api.ModInitializer;
 
 import org.hyrulecraft.dungeon_utils.config.DungeonUtilsConfig;
+import org.hyrulecraft.dungeon_utils.entity.DungeonUtilsEntities;
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems;
 import org.hyrulecraft.dungeon_utils.block.DungeonUtilsBlocks;
 import org.hyrulecraft.dungeon_utils.itemgroup.DungeonUtilsItemGroups;
@@ -36,6 +37,7 @@ public class DungeonUtils implements ModInitializer {
         DungeonUtilsSounds.registerDungeonUtilsSounds();
         DungeonUtilsTags.registerDungeonUtilsTags();
         UtilCollector.registerAllUtilClasses();
+        DungeonUtilsEntities.registerDungeonUtilsEntities();
 
         // Config.
         MidnightConfig.init(DungeonUtils.MOD_ID, DungeonUtilsConfig.class);
