@@ -9,4 +9,7 @@ object DungeonUtilsConfig : MidnightConfig() {
 
     @JvmField
     @Entry(category = "settings") var shouldAddSlowFalling = true
+
+    @JvmField
+    @Entry(category = "settings", min = 20.0, max = 1000.0) var hookShotRange = 20;
 }

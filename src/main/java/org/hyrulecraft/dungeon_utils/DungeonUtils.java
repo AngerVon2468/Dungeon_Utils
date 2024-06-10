@@ -11,6 +11,7 @@ import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems;
 import org.hyrulecraft.dungeon_utils.block.DungeonUtilsBlocks;
 import org.hyrulecraft.dungeon_utils.itemgroup.DungeonUtilsItemGroups;
 import org.hyrulecraft.dungeon_utils.sound.DungeonUtilsSounds;
+import org.hyrulecraft.dungeon_utils.tags.DungeonUtilsTags;
 import org.hyrulecraft.dungeon_utils.util.UtilCollector;
 
 import org.slf4j.*;
@@ -33,6 +34,7 @@ public class DungeonUtils implements ModInitializer {
         DungeonUtilsItems.registerModItems();
         DungeonUtilsBlocks.registerModBlocks();
         DungeonUtilsSounds.registerDungeonUtilsSounds();
+        DungeonUtilsTags.registerDungeonUtilsTags();
         UtilCollector.registerAllUtilClasses();
 
         // Config.

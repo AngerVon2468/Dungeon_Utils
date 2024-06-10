@@ -26,6 +26,8 @@
   "item.dungeon_utils.great_eagle_bow": "Great Eagle Bow",
   "item.dungeon_utils.shadow_master_sword": "Shadow Master Sword",
   "item.dungeon_utils.shadow_hylian_shield": "Shadow Hylian Shield",
+  "item.dungeon_utils.hookshot": "Hookshot",
+  "item.dungeon_utils.child_rupee_wallet": "Child Rupee Wallet (BROKEN, DO NOT USE)",
 
   "tooltip.dungeon_utils.cap_trinket_one": "",
   "tooltip.dungeon_utils.rupee_amount": "Rupees: ",
@@ -50,5 +52,6 @@
 
   "dungeon_utils.midnightconfig.title": "Dungeon Utils Settings",
   "dungeon_utils.midnightconfig.revalisGaleHeight": "Revali's Gale Height:",
+  "dungeon_utils.midnightconfig.hookShotRange": "Hookshot Range (Max 1000):",
   "dungeon_utils.midnightconfig.shouldAddSlowFalling": "Slow Falling At Revali's Gale Peak:"
 }
