@@ -17,7 +17,7 @@ public class DungeonUtilsEntities {
             Registries.ENTITY_TYPE,
             new Identifier(DungeonUtils.MOD_ID, "beam"),
             FabricEntityTypeBuilder.create(SpawnGroup.MISC, BeamEntity::new)
-                    .dimensions(EntityDimensions.fixed(0.5f,0.1f))
+                    .dimensions(EntityDimensions.fixed(1,0.1f))
                     .build()
     );
 

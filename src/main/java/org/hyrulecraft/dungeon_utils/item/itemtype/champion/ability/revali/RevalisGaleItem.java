@@ -65,7 +65,7 @@ public class RevalisGaleItem extends TrinketItem {
             addSecondUsage(user);
             return TypedActionResult.consume(stack);
 
-        } else if (stack.hasNbt() && stack.getNbt().contains("dungeon_utils.revalis_gale.usage_two") && !user.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.REVALIS_GALE) && !blockState.isOf(Blocks.AIR)) {
+        } else if (stack.getNbt().contains("dungeon_utils.revalis_gale.usage_two") && !user.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.REVALIS_GALE) && !blockState.isOf(Blocks.AIR)) {
 
             user.setVelocity(0, DungeonUtilsConfig.revalisGaleHeight, 0);
             if (DungeonUtilsConfig.shouldAddSlowFalling) {
@@ -74,7 +74,7 @@ public class RevalisGaleItem extends TrinketItem {
             addThirdUsage(user);
             return TypedActionResult.consume(stack);
 
-        } else if (stack.hasNbt() && stack.getNbt().contains("dungeon_utils.revalis_gale.usage_three") && !user.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.REVALIS_GALE) && !blockState.isOf(Blocks.AIR)) {
+        } else if (stack.getNbt().contains("dungeon_utils.revalis_gale.usage_three") && !user.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.REVALIS_GALE) && !blockState.isOf(Blocks.AIR)) {
 
             user.setVelocity(0, DungeonUtilsConfig.revalisGaleHeight, 0);
             if (DungeonUtilsConfig.shouldAddSlowFalling) {
