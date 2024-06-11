@@ -13,6 +13,8 @@ public class DungeonUtilsTags {
     public static class Blocks {
 
         public static final TagKey<Block> HOOKSHOT = TagKey.of(RegistryKeys.BLOCK, new Identifier(DungeonUtils.MOD_ID, "hookshot"));
+
+        public static final TagKey<Block> ACCEPTABLE_CRATE_BLOCK = TagKey.of(RegistryKeys.BLOCK, new Identifier(DungeonUtils.MOD_ID, "acceptable_crate_block"));
     }
 
     public static class Items {

@@ -1,0 +1,10 @@
+{
+    "replace": false,
+    "values": [
+        "minecraft:air",
+        "minecraft:tall_grass",
+        "minecraft:grass",
+        "dungeon_utils:yellow_switch_block",
+        "dungeon_utils:blue_switch_block"
+    ]
+}
