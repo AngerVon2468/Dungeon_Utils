@@ -14,7 +14,15 @@ public class DungeonUtilsEntities {
             Registries.ENTITY_TYPE,
             new Identifier(DungeonUtils.MOD_ID, "master_sword_beam"),
             FabricEntityTypeBuilder.create(SpawnGroup.MISC, MasterSwordBeamEntity::new)
-                    .dimensions(EntityDimensions.fixed(1,0.1f))
+                    .dimensions(EntityDimensions.fixed(1f,0.1f))
+                    .build()
+    );
+
+    public static final EntityType<CrateEntity> CRATE = Registry.register(
+            Registries.ENTITY_TYPE,
+            new Identifier(DungeonUtils.MOD_ID, "crate"),
+            FabricEntityTypeBuilder.create(SpawnGroup.MISC, CrateEntity::new)
+                    .dimensions(EntityDimensions.fixed(1f,1f))
                     .build()
     );
 

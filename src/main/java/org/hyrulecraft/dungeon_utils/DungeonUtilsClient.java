@@ -1,13 +1,15 @@
 package org.hyrulecraft.dungeon_utils;
 
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.util.Identifier;
 
 import org.hyrulecraft.dungeon_utils.entity.DungeonUtilsEntities;
-import org.hyrulecraft.dungeon_utils.entity.renderer.MasterSwordBeamEntityRenderer;
+import org.hyrulecraft.dungeon_utils.entity.model.CrateEntityModel;
+import org.hyrulecraft.dungeon_utils.entity.renderer.*;
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems;
 import org.hyrulecraft.dungeon_utils.util.UtilCollector;
 
@@ -21,7 +23,9 @@ public class DungeonUtilsClient implements ClientModInitializer {
         // Initializing classes.
         UtilCollector.registerAllUtilClassesInClient();
 
+        EntityModelLayerRegistry.registerModelLayer(CrateEntityModel.LAYER_LOCATION, CrateEntityModel::getTexturedModelData);
         EntityRendererRegistry.register(DungeonUtilsEntities.MASTER_SWORD_BEAM, MasterSwordBeamEntityRenderer::new);
+        EntityRendererRegistry.register(DungeonUtilsEntities.CRATE, CrateEntityRenderer::new);
 
         // To do with bows.
         // Lynel Bow 5x
