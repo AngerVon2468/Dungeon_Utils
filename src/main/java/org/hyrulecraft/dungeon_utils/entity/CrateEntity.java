@@ -1,7 +1,6 @@
 package org.hyrulecraft.dungeon_utils.entity;
 
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
+import net.minecraft.block.*;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
@@ -44,7 +43,6 @@ public class CrateEntity extends Entity {
             BlockState stateSouth = world.getBlockState(this.getBlockPos().offset(Direction.SOUTH, 1));
             BlockState stateEast = world.getBlockState(this.getBlockPos().offset(Direction.EAST, 1));
             BlockState stateWest = world.getBlockState(this.getBlockPos().offset(Direction.WEST, 1));
-
             if (user.getMovementDirection() == Direction.NORTH && stateNorth.isIn(DungeonUtilsTags.Blocks.ACCEPTABLE_CRATE_BLOCK)) {
 
                 this.setPos(this.getX(), this.getY(), this.getZ() - 1);
@@ -81,7 +79,6 @@ public class CrateEntity extends Entity {
             world.setBlockState(this.getBlockPos(), Blocks.AIR.getDefaultState());
 
         }
-
 
     }
 
