@@ -1,6 +1,7 @@
 package org.hyrulecraft.dungeon_utils.entity;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
@@ -73,6 +74,14 @@ public class CrateEntity extends Entity {
             this.setPos(this.getX(), this.getY() - 1, this.getZ());
 
         }
+
+        BlockState state = this.getBlockStateAtPos();
+        if (state.isIn(DungeonUtilsTags.Blocks.ACCEPTABLE_CRATE_BLOCK)) {
+
+            world.setBlockState(this.getBlockPos(), Blocks.AIR.getDefaultState());
+
+        }
+
 
     }
 

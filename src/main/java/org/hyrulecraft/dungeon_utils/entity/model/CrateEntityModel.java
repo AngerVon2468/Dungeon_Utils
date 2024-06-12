@@ -1,5 +1,7 @@
 package org.hyrulecraft.dungeon_utils.entity.model;
 
+import net.fabricmc.api.*;
+
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.*;
@@ -11,6 +13,7 @@ import org.hyrulecraft.dungeon_utils.entity.CrateEntity;
 
 import org.jetbrains.annotations.NotNull;
 
+@Environment(EnvType.CLIENT)
 public class CrateEntityModel<T extends CrateEntity> extends EntityModel<CrateEntity> {
 
 	public static final EntityModelLayer LAYER_LOCATION = new EntityModelLayer(new Identifier(DungeonUtils.MOD_ID, "crate"), "main");

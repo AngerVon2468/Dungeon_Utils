@@ -1,5 +1,7 @@
 package org.hyrulecraft.dungeon_utils.entity.renderer;
 
+import net.fabricmc.api.*;
+
 import net.minecraft.client.render.*;
 import net.minecraft.client.render.entity.*;
 import net.minecraft.client.util.math.MatrixStack;
@@ -14,6 +16,7 @@ import org.jetbrains.annotations.NotNull;
 
 import org.joml.*;
 
+@Environment(EnvType.CLIENT)
 public class MasterSwordBeamEntityRenderer<T extends Entity> extends EntityRenderer<MasterSwordBeamEntity> {
 
     public MasterSwordBeamEntityRenderer(EntityRendererFactory.Context ctx) {
