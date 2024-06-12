@@ -5,8 +5,7 @@ import net.fabricmc.api.*;
 import net.minecraft.client.render.*;
 import net.minecraft.client.render.entity.*;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.RotationAxis;
@@ -51,11 +50,11 @@ public class MasterSwordBeamEntityRenderer<T extends Entity> extends EntityRende
     public Identifier getTexture(@NotNull MasterSwordBeamEntity beam) {
 
         Entity owner = beam.getOwner();
-        if (owner instanceof PlayerEntity user && user.getEquippedStack(EquipmentSlot.MAINHAND).isOf(DungeonUtilsItems.THE_MASTER_SWORD_AWAKENED)) {
+        if (owner instanceof PlayerEntity pOwner && pOwner.getEquippedStack(EquipmentSlot.MAINHAND).isOf(DungeonUtilsItems.THE_MASTER_SWORD_AWAKENED)) {
 
             return new Identifier(DungeonUtils.MOD_ID, "textures/item/rupee/blue_rupee.png");
 
-        } else if (owner instanceof PlayerEntity user && user.getEquippedStack(EquipmentSlot.MAINHAND).isOf(DungeonUtilsItems.THE_MASTER_SWORD)) {
+        } else if (owner instanceof PlayerEntity pOwner && pOwner.getEquippedStack(EquipmentSlot.MAINHAND).isOf(DungeonUtilsItems.THE_MASTER_SWORD)) {
 
             return new Identifier(DungeonUtils.MOD_ID, "textures/item/rupee/green_rupee.png");
 
