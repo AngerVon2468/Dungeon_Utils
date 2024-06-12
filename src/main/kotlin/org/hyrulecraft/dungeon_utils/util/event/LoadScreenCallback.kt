@@ -8,11 +8,13 @@ import net.minecraft.client.gui.screen.*
 import net.minecraft.sound.SoundCategory
 import net.minecraft.util.Identifier
 
+import org.hyrulecraft.dungeon_utils.DungeonUtils
+
 class LoadScreenCallback {
 
     companion object {
 
-        var START_GAME_CLIP: AudioClip? = AudioClip.buildInternalClip(Identifier("dungeon_utils", "sounds/event/game/start_game.ogg"), SoundCategory.MUSIC)
+        var START_GAME_CLIP: AudioClip? = AudioClip.buildInternalClip(Identifier(DungeonUtils.MOD_ID, "sounds/event/game/start_game.ogg"), SoundCategory.MUSIC)
 
         @JvmStatic
         fun loadScreenEvent() {
