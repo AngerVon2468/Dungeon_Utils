@@ -16,6 +16,7 @@ import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.CHILD_RUPEE_WALLET
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.CLIMBING_GLOVES
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.DARUKS_PROTECTION
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.GILDED_SWORD
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.GREAT_EAGLE_BOW
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.GREEN_RUPEE
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.HEART_CONTAINER
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.KOKIRI_SHIELD
@@ -48,6 +49,7 @@ class DungeonUtilsItemGroups {
                     entries.add(MEGATON_HAMMER)
                     entries.add(LYNEL_BOW_FIVE_X)
                     entries.add(LYNEL_BOW_THREE_X)
+                    entries.add(GREAT_EAGLE_BOW)
                     entries.add(YELLOW_SWITCH_BLOCK)
                     entries.add(RUSTY_SWITCH_BLOCK)
                     entries.add(BLUE_SWITCH_BLOCK)
@@ -114,6 +116,7 @@ class DungeonUtilsItemGroups {
                     entries.add(MEGATON_HAMMER)
                     entries.add(LYNEL_BOW_FIVE_X)
                     entries.add(LYNEL_BOW_THREE_X)
+                    entries.add(GREAT_EAGLE_BOW)
                     entries.add(REVALIS_GALE)
                     entries.add(REVALIS_GALE_PLUS)
                     entries.add(MIPHAS_GRACE)

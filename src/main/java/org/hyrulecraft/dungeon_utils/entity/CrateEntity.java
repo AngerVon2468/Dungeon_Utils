@@ -11,7 +11,7 @@ import org.hyrulecraft.dungeon_utils.tags.DungeonUtilsTags;
 
 public class CrateEntity extends Entity {
 
-    public CrateEntity(EntityType<?> type, World world) {
+    public CrateEntity(EntityType<? extends Entity> type, World world) {
         super(type, world);
     }
 
@@ -81,6 +81,11 @@ public class CrateEntity extends Entity {
 
         }
 
+    }
+
+    @Override
+    public boolean canHit() {
+        return !this.isRemoved();
     }
 
     @Override

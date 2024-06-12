@@ -2,8 +2,7 @@ package org.hyrulecraft.dungeon_utils.entity;
 
 import net.minecraft.block.*;
 import net.minecraft.block.entity.*;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
+import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.*;
 import net.minecraft.util.hit.*;
