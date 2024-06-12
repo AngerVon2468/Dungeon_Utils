@@ -46,6 +46,8 @@
   "dungeon_utils.subtitle.start_game": "Game starts",
 
   "entity.dungeon_utils.master_sword_beam": "Master Sword Beam",
+  "entity.dungeon_utils.crate": "Crate",
+  "entity.dungeon_utils.iron_crate": "Iron Crate",
 
   "titlescreen.mavity_lib.bottom_left": "Dungeon Utils v1.0.0 BETA",
   "titlescreen.mavity_lib.bottom_right": "",

@@ -6,11 +6,14 @@ import net.minecraft.client.render.*;
 import net.minecraft.client.render.entity.*;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.RotationAxis;
 
 import org.hyrulecraft.dungeon_utils.DungeonUtils;
 import org.hyrulecraft.dungeon_utils.entity.MasterSwordBeamEntity;
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -24,14 +27,14 @@ public class MasterSwordBeamEntityRenderer<T extends Entity> extends EntityRende
     }
 
     @Override
-    public void render(@NotNull MasterSwordBeamEntity entity, float yaw, float tickDelta, @NotNull MatrixStack matrices, @NotNull VertexConsumerProvider vertexConsumers, int light) {
+    public void render(@NotNull MasterSwordBeamEntity beam, float yaw, float tickDelta, @NotNull MatrixStack matrices, @NotNull VertexConsumerProvider vertexConsumers, int light) {
         matrices.push();
 
         matrices.multiply(RotationAxis.NEGATIVE_X.rotationDegrees(-90f));
-        matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(-entity.getYaw()));
+        matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(-beam.getYaw()));
         matrices.scale(2.0f, 2.0f, 2.0f);
 
-        VertexConsumer vertexConsumer = vertexConsumers.getBuffer(RenderLayer.getEntityTranslucent(getTexture(entity)));
+        VertexConsumer vertexConsumer = vertexConsumers.getBuffer(RenderLayer.getEntityTranslucent(getTexture(beam)));
         MatrixStack.Entry matrixEntry = matrices.peek();
         Matrix4f modelMatrix = matrixEntry.getPositionMatrix();
         Matrix3f normalMatrix = matrixEntry.getNormalMatrix();
@@ -41,11 +44,25 @@ public class MasterSwordBeamEntityRenderer<T extends Entity> extends EntityRende
         vertexConsumer.vertex(modelMatrix, -0.25f, -0.25f, 0.0f).color(255, 255, 255, 255).texture(0.0f, 0.0f).overlay(OverlayTexture.DEFAULT_UV).light(light).normal(normalMatrix, 0, 1, 0).next();
 
         matrices.pop();
-        super.render(entity, yaw, tickDelta, matrices, vertexConsumers, light);
+        super.render(beam, yaw, tickDelta, matrices, vertexConsumers, light);
     }
 
     @Override
-    public Identifier getTexture(MasterSwordBeamEntity entity) {
-        return new Identifier(DungeonUtils.MOD_ID, "textures/item/rupee/green_rupee.png");
+    public Identifier getTexture(@NotNull MasterSwordBeamEntity beam) {
+
+        Entity owner = beam.getOwner();
+        if (owner instanceof PlayerEntity user && user.getEquippedStack(EquipmentSlot.MAINHAND).isOf(DungeonUtilsItems.THE_MASTER_SWORD_AWAKENED)) {
+
+            return new Identifier(DungeonUtils.MOD_ID, "textures/item/rupee/blue_rupee.png");
+
+        } else if (owner instanceof PlayerEntity user && user.getEquippedStack(EquipmentSlot.MAINHAND).isOf(DungeonUtilsItems.THE_MASTER_SWORD)) {
+
+            return new Identifier(DungeonUtils.MOD_ID, "textures/item/rupee/green_rupee.png");
+
+        } else {
+
+            return new Identifier(DungeonUtils.MOD_ID, "textures/item/rupee/rupoor.png");
+
+        }
     }
 }
