@@ -4,6 +4,7 @@ import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.Item
 
 object InventoryUtil {
+
     @JvmStatic
     fun hasPlayerStackInInventory(player: PlayerEntity, item: Item?): Boolean {
         for (i in 0 until player.inventory.size()) {

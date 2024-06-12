@@ -45,22 +45,22 @@ public class CrateEntity extends Entity {
             BlockState stateWest = world.getBlockState(this.getBlockPos().offset(Direction.WEST, 1));
             if (user.getMovementDirection() == Direction.NORTH && stateNorth.isIn(DungeonUtilsTags.Blocks.ACCEPTABLE_CRATE_BLOCK)) {
 
-                this.setPos(this.getX(), this.getY(), this.getZ() - 1);
+                this.setPosition(this.getX(), this.getY(), this.getZ() - 1);
 
             }
             if (user.getMovementDirection() == Direction.SOUTH && stateSouth.isIn(DungeonUtilsTags.Blocks.ACCEPTABLE_CRATE_BLOCK)) {
 
-                this.setPos(this.getX(), this.getY(), this.getZ() + 1);
+                this.setPosition(this.getX(), this.getY(), this.getZ() + 1);
 
             }
             if (user.getMovementDirection() == Direction.EAST && stateEast.isIn(DungeonUtilsTags.Blocks.ACCEPTABLE_CRATE_BLOCK)) {
 
-                this.setPos(this.getX() + 1, this.getY(), this.getZ());
+                this.setPosition(this.getX() + 1, this.getY(), this.getZ());
 
             }
             if (user.getMovementDirection() == Direction.WEST && stateWest.isIn(DungeonUtilsTags.Blocks.ACCEPTABLE_CRATE_BLOCK)) {
 
-                this.setPos(this.getX() - 1, this.getY(), this.getZ());
+                this.setPosition(this.getX() - 1, this.getY(), this.getZ());
 
             }
 
@@ -69,7 +69,7 @@ public class CrateEntity extends Entity {
         BlockState stateDown = world.getBlockState(this.getBlockPos().offset(Direction.DOWN, 1));
         if (stateDown.isIn(DungeonUtilsTags.Blocks.ACCEPTABLE_CRATE_BLOCK)) {
 
-            this.setPos(this.getX(), this.getY() - 1, this.getZ());
+            this.setPosition(this.getX(), this.getY() - 1, this.getZ());
 
         }
 

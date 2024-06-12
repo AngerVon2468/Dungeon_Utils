@@ -25,14 +25,14 @@ public class CrateEntityRenderer<T extends Entity> extends EntityRenderer<CrateE
     }
 
     @Override
-    public void render(@NotNull CrateEntity entity, float yaw, float tickDelta, @NotNull MatrixStack matrices, @NotNull VertexConsumerProvider vertexConsumers, int light) {
-        super.render(entity, yaw, tickDelta, matrices, vertexConsumers, light);
-        VertexConsumer vertexConsumer = vertexConsumers.getBuffer(this.entityModel.getLayer(getTexture(entity)));
+    public void render(@NotNull CrateEntity crate, float yaw, float tickDelta, @NotNull MatrixStack matrices, @NotNull VertexConsumerProvider vertexConsumers, int light) {
+        super.render(crate, yaw, tickDelta, matrices, vertexConsumers, light);
+        VertexConsumer vertexConsumer = vertexConsumers.getBuffer(this.entityModel.getLayer(getTexture(crate)));
         this.entityModel.render(matrices, vertexConsumer, light, OverlayTexture.DEFAULT_UV, 1.0F, 1.0F, 1.0F, 1.0F);
     }
 
     @Override
-    public Identifier getTexture(CrateEntity entity) {
+    public Identifier getTexture(CrateEntity crate) {
         return new Identifier(DungeonUtils.MOD_ID, "textures/block/crate.png");
     }
 }
