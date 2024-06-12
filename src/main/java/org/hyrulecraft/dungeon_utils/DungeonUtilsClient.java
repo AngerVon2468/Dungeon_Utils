@@ -22,11 +22,24 @@ public class DungeonUtilsClient implements ClientModInitializer {
         // Initializing classes.
         UtilCollector.registerAllUtilClassesInClient();
 
+        DungeonUtilsClient.registerEntityModelLayers();
+        DungeonUtilsClient.registerEntityRenderers();
+        DungeonUtilsClient.registerModelPredicates();
+    }
+
+    public static void registerEntityModelLayers() {
+
         EntityModelLayerRegistry.registerModelLayer(CrateEntityModel.LAYER_LOCATION, CrateEntityModel::getTexturedModelData);
+    }
+
+    public static void registerEntityRenderers() {
+
         EntityRendererRegistry.register(DungeonUtilsEntities.MASTER_SWORD_BEAM, MasterSwordBeamEntityRenderer::new);
         EntityRendererRegistry.register(DungeonUtilsEntities.CRATE, CrateEntityRenderer::new);
+    }
 
-        // To do with bows.
+    public static void registerModelPredicates() {
+
         // Lynel Bow 5x
         ModelPredicateProviderRegistry.register(DungeonUtilsItems.LYNEL_BOW_FIVE_X, new Identifier("pull"), (stack, world, entity, seed) -> {
             if (entity == null) {
