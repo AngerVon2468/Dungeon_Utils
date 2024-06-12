@@ -1,5 +1,7 @@
 package org.hyrulecraft.dungeon_utils;
 
+import dev.emi.trinkets.api.client.*;
+
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.*;
 
@@ -25,6 +27,9 @@ public class DungeonUtilsClient implements ClientModInitializer {
         DungeonUtilsClient.registerEntityModelLayers();
         DungeonUtilsClient.registerEntityRenderers();
         DungeonUtilsClient.registerModelPredicates();
+
+        // Trinket Render.
+        TrinketRendererRegistry.registerRenderer(DungeonUtilsItems.LINK_CAP, (TrinketRenderer) DungeonUtilsItems.LINK_CAP);
     }
 
     public static void registerEntityModelLayers() {

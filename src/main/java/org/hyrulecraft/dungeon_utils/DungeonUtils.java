@@ -1,7 +1,5 @@
 package org.hyrulecraft.dungeon_utils;
 
-import dev.emi.trinkets.api.client.*;
-
 import eu.midnightdust.lib.config.MidnightConfig;
 
 import net.fabricmc.api.ModInitializer;
@@ -41,8 +39,5 @@ public class DungeonUtils implements ModInitializer {
 
         // Config.
         MidnightConfig.init(DungeonUtils.MOD_ID, DungeonUtilsConfig.class);
-
-        // Trinket Render.
-        TrinketRendererRegistry.registerRenderer(DungeonUtilsItems.LINK_CAP, (TrinketRenderer) DungeonUtilsItems.LINK_CAP);
     }
 }
