@@ -4,7 +4,7 @@ import net.minecraft.block.*;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.*;
 import net.minecraft.world.World;
 
 import org.hyrulecraft.dungeon_utils.tags.DungeonUtilsTags;
@@ -35,14 +35,15 @@ public class CrateEntity extends Entity {
         super.tick();
 
         World world = this.getWorld();
+        BlockPos blockPos = this.getBlockPos();
 
         PlayerEntity user = world.getClosestPlayer(this.getX(), this.getY(), this.getZ(), 1, false);
         if (user != null && user.isSneaking()) {
 
-            BlockState stateNorth = world.getBlockState(this.getBlockPos().offset(Direction.NORTH, 1));
-            BlockState stateSouth = world.getBlockState(this.getBlockPos().offset(Direction.SOUTH, 1));
-            BlockState stateEast = world.getBlockState(this.getBlockPos().offset(Direction.EAST, 1));
-            BlockState stateWest = world.getBlockState(this.getBlockPos().offset(Direction.WEST, 1));
+            BlockState stateNorth = world.getBlockState(blockPos.offset(Direction.NORTH, 1));
+            BlockState stateSouth = world.getBlockState(blockPos.offset(Direction.SOUTH, 1));
+            BlockState stateEast = world.getBlockState(blockPos.offset(Direction.EAST, 1));
+            BlockState stateWest = world.getBlockState(blockPos.offset(Direction.WEST, 1));
             if (user.getMovementDirection() == Direction.NORTH && stateNorth.isIn(DungeonUtilsTags.Blocks.ACCEPTABLE_CRATE_BLOCK)) {
 
                 this.setPosition(this.getX(), this.getY(), this.getZ() - 1);
@@ -66,7 +67,7 @@ public class CrateEntity extends Entity {
 
         }
 
-        BlockState stateDown = world.getBlockState(this.getBlockPos().offset(Direction.DOWN, 1));
+        BlockState stateDown = world.getBlockState(blockPos.offset(Direction.DOWN, 1));
         if (stateDown.isIn(DungeonUtilsTags.Blocks.ACCEPTABLE_CRATE_BLOCK)) {
 
             this.setPosition(this.getX(), this.getY() - 1, this.getZ());
@@ -76,7 +77,7 @@ public class CrateEntity extends Entity {
         BlockState state = this.getBlockStateAtPos();
         if (state.isIn(DungeonUtilsTags.Blocks.ACCEPTABLE_CRATE_BLOCK)) {
 
-            world.setBlockState(this.getBlockPos(), Blocks.AIR.getDefaultState());
+            world.setBlockState(blockPos, Blocks.AIR.getDefaultState());
 
         }
 
