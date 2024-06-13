@@ -13,11 +13,11 @@ import org.hyrulecraft.dungeon_utils.block.blocktype.*
 
 object DungeonUtilsBlocks {
 
-    fun registerBlock(name: String?, block: Block?): Block? { registerBlockItem(name, block)
+    private fun registerBlock(name: String?, block: Block?): Block? { registerBlockItem(name, block)
         return Registry.register(Registries.BLOCK, Identifier(DungeonUtils.MOD_ID, name), block)
     }
 
-    fun registerBlockItem(name: String?, block: Block?): Item {
+    private fun registerBlockItem(name: String?, block: Block?): Item {
         return Registry.register(Registries.ITEM, Identifier(DungeonUtils.MOD_ID, name),
             BlockItem(block, FabricItemSettings().maxCount(64)))
     }
