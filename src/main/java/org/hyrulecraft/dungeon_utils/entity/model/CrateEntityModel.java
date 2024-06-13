@@ -18,16 +18,16 @@ public class CrateEntityModel<T extends CrateEntity> extends EntityModel<CrateEn
 
 	public static final EntityModelLayer LAYER_LOCATION = new EntityModelLayer(new Identifier(DungeonUtils.MOD_ID, "crate"), "main");
 
-	private final ModelPart bb_main;
+	private final ModelPart main;
 
 	public CrateEntityModel(@NotNull ModelPart root) {
-		this.bb_main = root.getChild("bb_main");
+		this.main = root.getChild("main");
 	}
 
 	public static @NotNull TexturedModelData getTexturedModelData() {
 		ModelData modelData = new ModelData();
 		ModelPartData modelPartData = modelData.getRoot();
-		ModelPartData bb_main = modelPartData.addChild("bb_main", ModelPartBuilder.create().uv(0, 0).cuboid(-8.0f, -24.0f, -8.0f, 16.0f, 16.0f, 16.0f, new Dilation(0.0f)), ModelTransform.pivot(0.0f, 24.0f, 0.0f));
+		ModelPartData main = modelPartData.addChild("main", ModelPartBuilder.create().uv(0, 0).cuboid(-8.0f, -24.0f, -8.0f, 16.0f, 16.0f, 16.0f, new Dilation(0.0f)), ModelTransform.pivot(0.0f, 24.0f, 0.0f));
 		return TexturedModelData.of(modelData, 64, 64);
 	}
 
@@ -37,6 +37,6 @@ public class CrateEntityModel<T extends CrateEntity> extends EntityModel<CrateEn
 
 	@Override
 	public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, float red, float green, float blue, float alpha) {
-		bb_main.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
+		main.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
 	}
 }
