@@ -1,5 +1,4 @@
 {
-	"credit": "Made with Blockbench",
 	"textures": {
 		"0": "dungeon_utils:item/megaton_hammer",
 		"particle": "dungeon_utils:item/megaton_hammer"

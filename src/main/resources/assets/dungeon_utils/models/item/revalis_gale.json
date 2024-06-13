@@ -1,5 +1,4 @@
 {
-	"credit": "Made with Blockbench",
 	"textures": {
 		"0": "dungeon_utils:item/revalis_gale",
 		"particle": "dungeon_utils:item/revalis_gale"
