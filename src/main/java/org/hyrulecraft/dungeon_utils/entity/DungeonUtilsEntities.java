@@ -15,6 +15,7 @@ public class DungeonUtilsEntities {
             new Identifier(DungeonUtils.MOD_ID, "master_sword_beam"),
             FabricEntityTypeBuilder.create(SpawnGroup.MISC, MasterSwordBeamEntity::new)
                     .dimensions(EntityDimensions.fixed(1f,0.1f))
+                    .fireImmune()
                     .build()
     );
 
@@ -23,6 +24,7 @@ public class DungeonUtilsEntities {
             new Identifier(DungeonUtils.MOD_ID, "crate"),
             FabricEntityTypeBuilder.create(SpawnGroup.MISC, CrateEntity::new)
                     .dimensions(EntityDimensions.fixed(1f,1f))
+                    .fireImmune()
                     .build()
     );
 
