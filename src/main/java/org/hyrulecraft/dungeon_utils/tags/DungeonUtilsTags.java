@@ -19,6 +19,8 @@ public class DungeonUtilsTags {
 
     public static class Items {
 
+        public static final TagKey<Item> BOW = TagKey.of(RegistryKeys.ITEM, new Identifier(DungeonUtils.MOD_ID, "bow"));
+
         public static final TagKey<Item> CHAMPION_ABILITY = TagKey.of(RegistryKeys.ITEM, new Identifier(DungeonUtils.MOD_ID, "champion_ability"));
     }
 

@@ -9,7 +9,9 @@ import net.minecraft.sound.*;
 import net.minecraft.stat.Stats;
 import net.minecraft.world.World;
 
-public class LynelBowThreeXItem extends BowItem {
+import org.hyrulecraft.dungeon_utils.item.itemtype.bow.AbstractBulletTimeBowItem;
+
+public class LynelBowThreeXItem extends AbstractBulletTimeBowItem {
 
     public LynelBowThreeXItem(Settings settings) {
         super(settings);
@@ -31,6 +33,8 @@ public class LynelBowThreeXItem extends BowItem {
                         ArrowItem arrowItem = (ArrowItem)(arrowStack.getItem() instanceof ArrowItem ? arrowStack.getItem() : Items.ARROW);
                         PersistentProjectileEntity arrowEntity = arrowItem.createArrow(world, arrowStack, user);
                         arrowEntity.setVelocity(user, user.getPitch(), user.getYaw() + i * 10 - (arrowCount - 1) * 5, 0.0F, arrowVelocity * 3.0F, 1.0F);
+
+                        arrowEntity.pickupType = PersistentProjectileEntity.PickupPermission.CREATIVE_ONLY;
 
                         if (arrowVelocity == 1.0F) {
                             arrowEntity.setCritical(true);
