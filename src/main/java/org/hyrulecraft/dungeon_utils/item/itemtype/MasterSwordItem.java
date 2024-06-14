@@ -7,6 +7,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 import org.hyrulecraft.dungeon_utils.entity.*;
+import org.hyrulecraft.dungeon_utils.event.MasterSwordSummonsBeamCallback;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -23,11 +24,14 @@ public class MasterSwordItem extends SwordItem {
         if (user.isSneaking()) {
 
             MasterSwordBeamEntity masterSwordBeamEntity = DungeonUtilsEntities.MASTER_SWORD_BEAM.create(world);
-            masterSwordBeamEntity.setOwner(user);
-            masterSwordBeamEntity.setPosition(user.getX(), user.getY() + user.getEyeHeight(user.getPose()), user.getZ());
-            Vec3d vec3d = user.getRotationVec(1.0f);
-            masterSwordBeamEntity.setVelocity(vec3d.x, vec3d.y, vec3d.z, 0.5f, 0.0f);
-            masterSwordBeamEntity.setYaw(user.getHeadYaw());
+            if (MasterSwordSummonsBeamCallback.BEFORE_APPLY_PROPERTIES.invoker().beforeApplyProperties(user, masterSwordBeamEntity)) {
+                masterSwordBeamEntity.setOwner(user);
+                masterSwordBeamEntity.setPosition(user.getX(), user.getY() + user.getEyeHeight(user.getPose()), user.getZ());
+                Vec3d vec3d = user.getRotationVec(1.0f);
+                masterSwordBeamEntity.setVelocity(vec3d.x, vec3d.y, vec3d.z, 0.5f, 0.0f);
+                masterSwordBeamEntity.setYaw(user.getHeadYaw());
+            }
+            MasterSwordSummonsBeamCallback.BEFORE_SUMMON.invoker().beforeSummon(user, masterSwordBeamEntity);
             world.spawnEntity(masterSwordBeamEntity);
 
         }

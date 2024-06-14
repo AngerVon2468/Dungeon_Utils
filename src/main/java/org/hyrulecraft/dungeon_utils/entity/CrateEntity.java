@@ -42,7 +42,6 @@ public class CrateEntity extends Entity {
 
             Vec3d playerPos = user.getBlockPos().toCenterPos();
             Vec3d cratePos = this.getBlockPos().toCenterPos();
-
             BlockState stateNorth = world.getBlockState(blockPos.offset(Direction.NORTH, 1));
             BlockState stateSouth = world.getBlockState(blockPos.offset(Direction.SOUTH, 1));
             BlockState stateEast = world.getBlockState(blockPos.offset(Direction.EAST, 1));
