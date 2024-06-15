@@ -6,7 +6,7 @@ import net.minecraft.entity.player.PlayerEntity;
 
 import org.hyrulecraft.dungeon_utils.entity.MasterSwordBeamEntity;
 
-public class MasterSwordSummonsBeamCallback {
+public class MasterSwordBeamCallbacks {
 
     /**
      * Callback for editing the master sword beam from The Master Sword. <br>
