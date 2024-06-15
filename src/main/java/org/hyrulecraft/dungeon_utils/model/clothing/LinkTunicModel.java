@@ -13,8 +13,10 @@ public class LinkTunicModel extends BipedEntityModel<LivingEntity> {
 		super(root);
 		this.setVisible(false);
 		this.body.visible = true;
+		/*
 		this.rightArm.visible = true;
 		this.leftArm.visible = true;
+		*/
 	}
 
 	public static TexturedModelData getTexturedModelData() { // TODO: fix the arms, use the .bbmodel and compare to the new one
