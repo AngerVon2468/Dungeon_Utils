@@ -25,6 +25,8 @@ public class DungeonUtilsEntities {
             FabricEntityTypeBuilder.create(SpawnGroup.MISC, CrateEntity::new)
                     .dimensions(EntityDimensions.fixed(1f,1f))
                     .fireImmune()
+                    .trackRangeBlocks(5000)
+                    .spawnableFarFromPlayer()
                     .build()
     );
 
