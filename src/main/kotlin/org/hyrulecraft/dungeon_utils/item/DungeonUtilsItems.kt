@@ -17,6 +17,7 @@ import org.hyrulecraft.dungeon_utils.item.itemtype.champion.ability.mipha.*
 import org.hyrulecraft.dungeon_utils.item.itemtype.champion.ability.revali.*
 import org.hyrulecraft.dungeon_utils.item.itemtype.clothing.glove.*
 import org.hyrulecraft.dungeon_utils.item.itemtype.clothing.link.CapTrinketItem
+import org.hyrulecraft.dungeon_utils.item.itemtype.clothing.link.TunicTrinketItem
 import org.hyrulecraft.dungeon_utils.item.itemtype.rupee.ChildRupeeWalletItem
 
 object DungeonUtilsItems {
@@ -61,6 +62,9 @@ object DungeonUtilsItems {
 
     @JvmField
     val LINK_CAP = registerItem("link_cap", CapTrinketItem(FabricItemSettings().maxCount(1).maxDamage(0)))
+
+    @JvmField
+    val LINK_TUNIC = registerItem("link_tunic", TunicTrinketItem(FabricItemSettings().maxCount(1).maxDamage(0)))
 
     @JvmField
     val KOKIRI_SWORD = registerItem("kokiri_sword", SwordItem(ToolMaterials.IRON, 3, -3.0f, FabricItemSettings().maxDamage(200)))

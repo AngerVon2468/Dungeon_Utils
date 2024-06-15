@@ -30,6 +30,7 @@
   "item.dungeon_utils.child_rupee_wallet": "Child Rupee Wallet (BROKEN, DO NOT USE)",
 
   "tooltip.dungeon_utils.cap_trinket_one": "",
+  "tooltip.dungeon_utils.tunic_trinket_one": "",
   "tooltip.dungeon_utils.rupee_amount": "Rupees: ",
 
   "tab.dungeon_utils.dungeon_utils": "Dungeon Utils",

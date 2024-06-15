@@ -2,7 +2,7 @@
 // Exported for Minecraft version 1.17+ for Yarn
 // Paste this class into your mod and generate all required imports
 
-package org.hyrulecraft.dungeon_utils.model.cap;
+package org.hyrulecraft.dungeon_utils.model.blockbench;
 
 import net.fabricmc.api.*;
 

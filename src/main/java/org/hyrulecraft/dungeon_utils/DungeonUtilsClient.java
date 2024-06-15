@@ -30,6 +30,7 @@ public class DungeonUtilsClient implements ClientModInitializer {
 
         // Trinket Render.
         TrinketRendererRegistry.registerRenderer(DungeonUtilsItems.LINK_CAP, (TrinketRenderer) DungeonUtilsItems.LINK_CAP);
+        TrinketRendererRegistry.registerRenderer(DungeonUtilsItems.LINK_TUNIC, (TrinketRenderer) DungeonUtilsItems.LINK_TUNIC);
     }
 
     public static void registerEntityModelLayers() {
