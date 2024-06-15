@@ -46,25 +46,25 @@ public class CrateEntity extends Entity {
             BlockState stateSouth = world.getBlockState(blockPos.offset(Direction.SOUTH, 1));
             BlockState stateEast = world.getBlockState(blockPos.offset(Direction.EAST, 1));
             BlockState stateWest = world.getBlockState(blockPos.offset(Direction.WEST, 1));
-            if (user.getMovementDirection() == Direction.NORTH && stateNorth.isIn(DungeonUtilsTags.Blocks.ACCEPTABLE_CRATE_BLOCK) && playerPos.x == cratePos.x && playerPos.z >= cratePos.z) {
+            if (user.getMovementDirection() == Direction.NORTH && stateNorth.isIn(DungeonUtilsTags.Blocks.ACCEPTABLE_CRATE_BLOCK) && caseNorth(playerPos.x, cratePos.x, playerPos.z, cratePos.z)) {
 
                 this.setPosition(this.getX(), this.getY(), this.getZ() - 1);
                 this.setYaw(-180f);
 
             }
-            if (user.getMovementDirection() == Direction.SOUTH && stateSouth.isIn(DungeonUtilsTags.Blocks.ACCEPTABLE_CRATE_BLOCK) && playerPos.x == cratePos.x && playerPos.z <= cratePos.z) {
+            if (user.getMovementDirection() == Direction.SOUTH && stateSouth.isIn(DungeonUtilsTags.Blocks.ACCEPTABLE_CRATE_BLOCK) && caseSouth(playerPos.x, cratePos.x, playerPos.z, cratePos.z)) {
 
                 this.setPosition(this.getX(), this.getY(), this.getZ() + 1);
                 this.setYaw(0f);
 
             }
-            if (user.getMovementDirection() == Direction.EAST && stateEast.isIn(DungeonUtilsTags.Blocks.ACCEPTABLE_CRATE_BLOCK) && playerPos.z == cratePos.z && playerPos.x <= cratePos.x) {
+            if (user.getMovementDirection() == Direction.EAST && stateEast.isIn(DungeonUtilsTags.Blocks.ACCEPTABLE_CRATE_BLOCK) && caseEast(playerPos.x, cratePos.x, playerPos.z, cratePos.z)) {
 
                 this.setPosition(this.getX() + 1, this.getY(), this.getZ());
                 this.setYaw(-90f);
 
             }
-            if (user.getMovementDirection() == Direction.WEST && stateWest.isIn(DungeonUtilsTags.Blocks.ACCEPTABLE_CRATE_BLOCK) && playerPos.z == cratePos.z && playerPos.x >= cratePos.x) {
+            if (user.getMovementDirection() == Direction.WEST && stateWest.isIn(DungeonUtilsTags.Blocks.ACCEPTABLE_CRATE_BLOCK) && caseWest(playerPos.x, cratePos.x, playerPos.z, cratePos.z)) {
 
                 this.setPosition(this.getX() - 1, this.getY(), this.getZ());
                 this.setYaw(90f);
@@ -87,6 +87,22 @@ public class CrateEntity extends Entity {
 
         }
 
+    }
+
+    public boolean caseNorth(double pX, double cX, double pZ, double cZ) {
+        return (pX == cX && pZ >= cZ);
+    }
+
+    public boolean caseSouth(double pX, double cX, double pZ, double cZ) {
+        return (pX == cX && pZ <= cZ);
+    }
+
+    public boolean caseEast(double pX, double cX, double pZ, double cZ) {
+        return (pZ == cZ && pX <= cX);
+    }
+
+    public boolean caseWest(double pX, double cX, double pZ, double cZ) {
+        return (pZ == cZ && pX >= cX);
     }
 
     @Override
