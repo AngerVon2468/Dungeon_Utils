@@ -77,25 +77,27 @@ public class HookshotItem extends Item {
 
                 EntityHitResult entityHit = (EntityHitResult) hit;
                 Entity entity = entityHit.getEntity();
-                if (user.getHorizontalFacing() == Direction.NORTH) {
+                Vec3d userPos = user.getBlockPos().toCenterPos();
+                Vec3d entityPos = entity.getBlockPos().toCenterPos();
+                if (user.getHorizontalFacing() == Direction.NORTH && DirectionCheckUtil.caseNorth(userPos.x, entityPos.x, userPos.z, entityPos.z)) {
 
                     user.addVelocity(0, 0.14,-0.4);
                     user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 10, 255));
 
                 }
-                if (user.getHorizontalFacing() == Direction.SOUTH) {
+                if (user.getHorizontalFacing() == Direction.SOUTH && DirectionCheckUtil.caseSouth(userPos.x, entityPos.x, userPos.z, entityPos.z)) {
 
                     user.addVelocity(0, 0.14,0.4);
                     user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 10, 255));
 
                 }
-                if (user.getHorizontalFacing() == Direction.EAST) {
+                if (user.getHorizontalFacing() == Direction.EAST && DirectionCheckUtil.caseEast(userPos.x, entityPos.x, userPos.z, entityPos.z)) {
 
                     user.addVelocity(0.4, 0.14,0);
                     user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 10, 255));
 
                 }
-                if (user.getHorizontalFacing() == Direction.WEST) {
+                if (user.getHorizontalFacing() == Direction.WEST && DirectionCheckUtil.caseWest(userPos.x, entityPos.x, userPos.z, entityPos.z)) {
 
                     user.addVelocity(-0.4, 0.14,0);
                     user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 10, 255));
