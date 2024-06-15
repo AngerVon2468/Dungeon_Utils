@@ -24,11 +24,15 @@ public class DungeonUtilsClient implements ClientModInitializer {
         // Initializing classes.
         UtilCollector.registerAllUtilClassesInClient();
 
+        // Rendering and models.
         DungeonUtilsClient.registerEntityModelLayers();
         DungeonUtilsClient.registerEntityRenderers();
         DungeonUtilsClient.registerModelPredicates();
+        DungeonUtilsClient.registerTrinketRenderers();
+    }
 
-        // Trinket Render.
+    public static void registerTrinketRenderers() {
+
         TrinketRendererRegistry.registerRenderer(DungeonUtilsItems.LINK_CAP, (TrinketRenderer) DungeonUtilsItems.LINK_CAP);
         TrinketRendererRegistry.registerRenderer(DungeonUtilsItems.LINK_TUNIC, (TrinketRenderer) DungeonUtilsItems.LINK_TUNIC);
     }
