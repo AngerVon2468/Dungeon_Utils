@@ -25,10 +25,10 @@ public class DungeonUtilsClient implements ClientModInitializer {
         UtilCollector.registerAllUtilClassesInClient();
 
         // Rendering and models.
+        DungeonUtilsClient.registerTrinketRenderers();
         DungeonUtilsClient.registerEntityModelLayers();
         DungeonUtilsClient.registerEntityRenderers();
         DungeonUtilsClient.registerModelPredicates();
-        DungeonUtilsClient.registerTrinketRenderers();
     }
 
     public static void registerTrinketRenderers() {
