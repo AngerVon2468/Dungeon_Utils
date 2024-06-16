@@ -15,6 +15,7 @@ import org.hyrulecraft.dungeon_utils.util.UtilCollector;
 
 import org.slf4j.*;
 
+// TODO: Fix all wide skin textures.
 public class DungeonUtils implements ModInitializer {
 
     public static final String MOD_ID = "dungeon_utils";
