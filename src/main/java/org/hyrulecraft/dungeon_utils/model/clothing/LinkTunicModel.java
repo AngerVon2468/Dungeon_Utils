@@ -13,13 +13,9 @@ public class LinkTunicModel extends BipedEntityModel<LivingEntity> {
 		super(root);
 		this.setVisible(false);
 		this.body.visible = true;
-		/*
-		this.rightArm.visible = true;
-		this.leftArm.visible = true;
-		*/
 	}
 
-	public static TexturedModelData getTexturedModelData() { // TODO: fix the arms, use the .bbmodel and compare to the new one
+	public static TexturedModelData getTexturedModelData() { // TODO: fix the arms, currently using a mix of this model and an armour chestplate.
 		ModelData modelData = BipedEntityModel.getModelData(Dilation.NONE, 0f);
 		ModelPartData modelPartData = modelData.getRoot();
 		ModelPartData body = modelPartData.addChild("body", ModelPartBuilder.create().uv(40, 16).cuboid(-4.0F, 3.0F, -2.1F, 8.0F, 8.0F, 0.0F, new Dilation(0.0F))
