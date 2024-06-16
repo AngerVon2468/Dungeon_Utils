@@ -28,5 +28,6 @@ public class UtilCollector {
 
         // Events.
         LoadScreenCallback.loadScreenEvent();
+        ClientSendMessageCallbacks.onSendClientMessage();
     }
 }
