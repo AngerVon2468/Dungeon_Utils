@@ -4,6 +4,8 @@ import com.github.crimsondawn45.fabricshieldlib.lib.`object`.FabricShieldItem
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 
+import net.lightglow.cosmlib.common.item.ClothingItem
+
 import net.minecraft.item.*
 import net.minecraft.registry.*
 import net.minecraft.util.Identifier
@@ -114,6 +116,21 @@ object DungeonUtilsItems {
 
     @JvmField
     val HOOKSHOT = registerItem("hookshot", HookshotItem(FabricItemSettings().maxCount(1)))
+
+    @JvmField
+    val TOTK_LINK = registerItem("totk_link", ClothingItem(DungeonUtils.MOD_ID, "totk_link", true, FabricItemSettings().maxCount(1).maxDamage(0)))
+
+    @JvmField
+    val BOTW_LINK = registerItem("botw_link", ClothingItem(DungeonUtils.MOD_ID, "botw_link", true, FabricItemSettings().maxCount(1).maxDamage(0)))
+
+    @JvmField
+    val SHADOW_LINK = registerItem("shadow_link", ClothingItem(DungeonUtils.MOD_ID, "shadow_link", true, FabricItemSettings().maxCount(1).maxDamage(0)))
+
+    @JvmField
+    val ADULT_LINK = registerItem("adult_link", ClothingItem(DungeonUtils.MOD_ID, "adult_link", true, FabricItemSettings().maxCount(1).maxDamage(0)))
+
+    @JvmField
+    val YOUNG_LINK = registerItem("young_link", ClothingItem(DungeonUtils.MOD_ID, "young_link", true, FabricItemSettings().maxCount(1).maxDamage(0)))
 
     @JvmStatic
     fun registerModItems() {

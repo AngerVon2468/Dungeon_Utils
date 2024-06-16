@@ -11,7 +11,9 @@ import org.hyrulecraft.dungeon_utils.DungeonUtils.*
 import org.hyrulecraft.dungeon_utils.block.DungeonUtilsBlocks.BLUE_SWITCH_BLOCK
 import org.hyrulecraft.dungeon_utils.block.DungeonUtilsBlocks.RUSTY_SWITCH_BLOCK
 import org.hyrulecraft.dungeon_utils.block.DungeonUtilsBlocks.YELLOW_SWITCH_BLOCK
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.ADULT_LINK
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.BLUE_RUPEE
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.BOTW_LINK
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.CHILD_RUPEE_WALLET
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.CLIMBING_GLOVES
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.DARUKS_PROTECTION
@@ -35,10 +37,13 @@ import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.RAZOR_SWORD
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.REVALIS_GALE
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.REVALIS_GALE_PLUS
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.SHADOW_HYLIAN_SHIELD
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.SHADOW_LINK
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.SHADOW_MASTER_SWORD
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.THE_HYLIAN_SHIELD
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.THE_MASTER_SWORD
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.THE_MASTER_SWORD_AWAKENED
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.TOTK_LINK
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.YOUNG_LINK
 
 class DungeonUtilsItemGroups {
 
@@ -103,6 +108,11 @@ class DungeonUtilsItemGroups {
                     entries.add(LINK_SLEEVES)
                     entries.add(MOGMA_MITTS)
                     entries.add(CLIMBING_GLOVES)
+                    entries.add(TOTK_LINK)
+                    entries.add(BOTW_LINK)
+                    entries.add(SHADOW_LINK)
+                    entries.add(ADULT_LINK)
+                    entries.add(YOUNG_LINK)
                 }.build()
         )
 

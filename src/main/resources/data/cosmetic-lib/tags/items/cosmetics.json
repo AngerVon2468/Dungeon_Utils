@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "dungeon_utils:totk_link",
+    "dungeon_utils:botw_link",
+    "dungeon_utils:shadow_link",
+    "dungeon_utils:adult_link",
+    "dungeon_utils:young_link"
+  ]
+}
