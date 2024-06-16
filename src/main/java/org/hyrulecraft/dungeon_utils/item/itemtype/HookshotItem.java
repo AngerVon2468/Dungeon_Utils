@@ -47,25 +47,25 @@ public class HookshotItem extends Item {
                 BlockState blockState = world.getBlockState(blockPos);
                 Vec3d playerPos = user.getBlockPos().toCenterPos();
                 Vec3d hookshotBlockPos = blockHit.getBlockPos().toCenterPos();
-                if (user.getHorizontalFacing() == Direction.NORTH && blockState.isIn(DungeonUtilsTags.Blocks.HOOKSHOT) && DirectionCheckUtil.caseNorth(playerPos.x, hookshotBlockPos.x, playerPos.z, hookshotBlockPos.z)) {
+                if (user.getHorizontalFacing() == Direction.NORTH && blockState.isIn(DungeonUtilsTags.Blocks.HOOKSHOT) && DirectionCheckUtil.facingNorth(playerPos.x, hookshotBlockPos.x, playerPos.z, hookshotBlockPos.z)) {
 
                     user.addVelocity(0, 0.14,-0.4);
                     user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 10, 255));
 
                 }
-                if (user.getHorizontalFacing() == Direction.SOUTH && blockState.isIn(DungeonUtilsTags.Blocks.HOOKSHOT) && DirectionCheckUtil.caseSouth(playerPos.x, hookshotBlockPos.x, playerPos.z, hookshotBlockPos.z)) {
+                if (user.getHorizontalFacing() == Direction.SOUTH && blockState.isIn(DungeonUtilsTags.Blocks.HOOKSHOT) && DirectionCheckUtil.facingSouth(playerPos.x, hookshotBlockPos.x, playerPos.z, hookshotBlockPos.z)) {
 
                     user.addVelocity(0, 0.14,0.4);
                     user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 10, 255));
 
                 }
-                if (user.getHorizontalFacing() == Direction.EAST && blockState.isIn(DungeonUtilsTags.Blocks.HOOKSHOT) && DirectionCheckUtil.caseEast(playerPos.x, hookshotBlockPos.x, playerPos.z, hookshotBlockPos.z)) {
+                if (user.getHorizontalFacing() == Direction.EAST && blockState.isIn(DungeonUtilsTags.Blocks.HOOKSHOT) && DirectionCheckUtil.facingEast(playerPos.x, hookshotBlockPos.x, playerPos.z, hookshotBlockPos.z)) {
 
                     user.addVelocity(0.4, 0.14,0);
                     user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 10, 255));
 
                 }
-                if (user.getHorizontalFacing() == Direction.WEST && blockState.isIn(DungeonUtilsTags.Blocks.HOOKSHOT) && DirectionCheckUtil.caseWest(playerPos.x, hookshotBlockPos.x, playerPos.z, hookshotBlockPos.z)) {
+                if (user.getHorizontalFacing() == Direction.WEST && blockState.isIn(DungeonUtilsTags.Blocks.HOOKSHOT) && DirectionCheckUtil.facingWest(playerPos.x, hookshotBlockPos.x, playerPos.z, hookshotBlockPos.z)) {
 
                     user.addVelocity(-0.4, 0.14,0);
                     user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 10, 255));
@@ -79,25 +79,25 @@ public class HookshotItem extends Item {
                 Entity entity = entityHit.getEntity();
                 Vec3d userPos = user.getBlockPos().toCenterPos();
                 Vec3d entityPos = entity.getBlockPos().toCenterPos();
-                if (user.getHorizontalFacing() == Direction.NORTH && DirectionCheckUtil.caseNorth(userPos.x, entityPos.x, userPos.z, entityPos.z)) {
+                if (user.getHorizontalFacing() == Direction.NORTH && DirectionCheckUtil.facingNorth(userPos.x, entityPos.x, userPos.z, entityPos.z)) {
 
                     user.addVelocity(0, 0.14,-0.4);
                     user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 10, 255));
 
                 }
-                if (user.getHorizontalFacing() == Direction.SOUTH && DirectionCheckUtil.caseSouth(userPos.x, entityPos.x, userPos.z, entityPos.z)) {
+                if (user.getHorizontalFacing() == Direction.SOUTH && DirectionCheckUtil.facingSouth(userPos.x, entityPos.x, userPos.z, entityPos.z)) {
 
                     user.addVelocity(0, 0.14,0.4);
                     user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 10, 255));
 
                 }
-                if (user.getHorizontalFacing() == Direction.EAST && DirectionCheckUtil.caseEast(userPos.x, entityPos.x, userPos.z, entityPos.z)) {
+                if (user.getHorizontalFacing() == Direction.EAST && DirectionCheckUtil.facingEast(userPos.x, entityPos.x, userPos.z, entityPos.z)) {
 
                     user.addVelocity(0.4, 0.14,0);
                     user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 10, 255));
 
                 }
-                if (user.getHorizontalFacing() == Direction.WEST && DirectionCheckUtil.caseWest(userPos.x, entityPos.x, userPos.z, entityPos.z)) {
+                if (user.getHorizontalFacing() == Direction.WEST && DirectionCheckUtil.facingWest(userPos.x, entityPos.x, userPos.z, entityPos.z)) {
 
                     user.addVelocity(-0.4, 0.14,0);
                     user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 10, 255));

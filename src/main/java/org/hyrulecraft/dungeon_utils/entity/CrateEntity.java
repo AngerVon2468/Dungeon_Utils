@@ -47,25 +47,25 @@ public class CrateEntity extends Entity {
             BlockState stateSouth = world.getBlockState(blockPos.offset(Direction.SOUTH, 1));
             BlockState stateEast = world.getBlockState(blockPos.offset(Direction.EAST, 1));
             BlockState stateWest = world.getBlockState(blockPos.offset(Direction.WEST, 1));
-            if (user.getMovementDirection() == Direction.NORTH && stateNorth.isIn(DungeonUtilsTags.Blocks.ACCEPTABLE_CRATE_BLOCK) && DirectionCheckUtil.caseNorth(playerPos.x, cratePos.x, playerPos.z, cratePos.z)) {
+            if (user.getMovementDirection() == Direction.NORTH && stateNorth.isIn(DungeonUtilsTags.Blocks.ACCEPTABLE_CRATE_BLOCK) && DirectionCheckUtil.facingNorth(playerPos.x, cratePos.x, playerPos.z, cratePos.z)) {
 
                 this.setPosition(this.getX(), this.getY(), this.getZ() - 1);
                 this.setYaw(-180f);
 
             }
-            if (user.getMovementDirection() == Direction.SOUTH && stateSouth.isIn(DungeonUtilsTags.Blocks.ACCEPTABLE_CRATE_BLOCK) && DirectionCheckUtil.caseSouth(playerPos.x, cratePos.x, playerPos.z, cratePos.z)) {
+            if (user.getMovementDirection() == Direction.SOUTH && stateSouth.isIn(DungeonUtilsTags.Blocks.ACCEPTABLE_CRATE_BLOCK) && DirectionCheckUtil.facingSouth(playerPos.x, cratePos.x, playerPos.z, cratePos.z)) {
 
                 this.setPosition(this.getX(), this.getY(), this.getZ() + 1);
                 this.setYaw(0f);
 
             }
-            if (user.getMovementDirection() == Direction.EAST && stateEast.isIn(DungeonUtilsTags.Blocks.ACCEPTABLE_CRATE_BLOCK) && DirectionCheckUtil.caseEast(playerPos.x, cratePos.x, playerPos.z, cratePos.z)) {
+            if (user.getMovementDirection() == Direction.EAST && stateEast.isIn(DungeonUtilsTags.Blocks.ACCEPTABLE_CRATE_BLOCK) && DirectionCheckUtil.facingEast(playerPos.x, cratePos.x, playerPos.z, cratePos.z)) {
 
                 this.setPosition(this.getX() + 1, this.getY(), this.getZ());
                 this.setYaw(-90f);
 
             }
-            if (user.getMovementDirection() == Direction.WEST && stateWest.isIn(DungeonUtilsTags.Blocks.ACCEPTABLE_CRATE_BLOCK) && DirectionCheckUtil.caseWest(playerPos.x, cratePos.x, playerPos.z, cratePos.z)) {
+            if (user.getMovementDirection() == Direction.WEST && stateWest.isIn(DungeonUtilsTags.Blocks.ACCEPTABLE_CRATE_BLOCK) && DirectionCheckUtil.facingWest(playerPos.x, cratePos.x, playerPos.z, cratePos.z)) {
 
                 this.setPosition(this.getX() - 1, this.getY(), this.getZ());
                 this.setYaw(90f);
