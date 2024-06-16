@@ -34,10 +34,6 @@ public class CapTrinketItem extends TrinketItem implements TrinketRenderer {
         super(settings);
     }
 
-    @Override
-    public void tick(ItemStack stack, SlotReference slot, LivingEntity entity) {
-    }
-
     @Environment(EnvType.CLIENT)
     @Override
     public void render(ItemStack stack, SlotReference slotReference, EntityModel<? extends LivingEntity> contextModel, MatrixStack matrices, @NotNull VertexConsumerProvider vertexConsumers, int light, LivingEntity entity, float limbAngle, float limbDistance, float tickDelta, float animationProgress, float headYaw, float headPitch) {
@@ -57,17 +53,9 @@ public class CapTrinketItem extends TrinketItem implements TrinketRenderer {
         return this.model;
     }
 
-    @Override
-    public void onEquip(ItemStack stack, SlotReference slot, LivingEntity entity) {
-    }
-
-    @Override
-    public void onUnequip(ItemStack stack, SlotReference slot, LivingEntity entity) {
-    }
-
     @Environment(EnvType.CLIENT)
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext options) {
-        if (MavityLibConfig.showTooltips == true) {
+        if (MavityLibConfig.showTooltips) {
             tooltip.add(Text.translatable("tooltip.dungeon_utils.cap_trinket_one"));
             super.appendTooltip(stack, world, tooltip, options);
         }
