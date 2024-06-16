@@ -22,6 +22,8 @@ import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.HEART_CONTAINER
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.KOKIRI_SHIELD
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.KOKIRI_SWORD
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.LINK_CAP
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.LINK_SLEEVES
+import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.LINK_TUNIC
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.LYNEL_BOW_FIVE_X
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.LYNEL_BOW_THREE_X
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.MEGATON_HAMMER
@@ -59,6 +61,8 @@ class DungeonUtilsItemGroups {
                     entries.add(MIPHAS_GRACE_PLUS)
                     entries.add(DARUKS_PROTECTION)
                     entries.add(LINK_CAP)
+                    entries.add(LINK_TUNIC)
+                    entries.add(LINK_SLEEVES)
                     entries.add(MOGMA_MITTS)
                     entries.add(CLIMBING_GLOVES)
                     entries.add(PARAGLIDER)
@@ -95,6 +99,8 @@ class DungeonUtilsItemGroups {
             FabricItemGroup.builder().displayName(Text.translatable("tab.dungeon_utils.clothing"))
                 .icon { ItemStack(LINK_CAP) }.entries { displayContext, entries ->
                     entries.add(LINK_CAP)
+                    entries.add(LINK_TUNIC)
+                    entries.add(LINK_SLEEVES)
                     entries.add(MOGMA_MITTS)
                     entries.add(CLIMBING_GLOVES)
                 }.build()

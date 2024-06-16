@@ -9,6 +9,7 @@ import net.minecraft.registry.*
 import net.minecraft.util.Identifier
 
 import org.hyrulecraft.dungeon_utils.DungeonUtils
+import org.hyrulecraft.dungeon_utils.item.armour.LinkArmourMaterials
 import org.hyrulecraft.dungeon_utils.item.itemtype.*
 import org.hyrulecraft.dungeon_utils.item.itemtype.champion.weapon.revali.GreatEagleBowItem
 import org.hyrulecraft.dungeon_utils.item.itemtype.bow.lynel.*
@@ -65,6 +66,9 @@ object DungeonUtilsItems {
 
     @JvmField
     val LINK_TUNIC = registerItem("link_tunic", TunicTrinketItem(FabricItemSettings().maxCount(1).maxDamage(0)))
+
+    @JvmField
+    val LINK_SLEEVES = registerItem("link_sleeves", ArmorItem(LinkArmourMaterials.LINK_ARMOUR_MATERIAL, ArmorItem.Type.CHESTPLATE, FabricItemSettings().maxCount(1).maxDamage(0)))
 
     @JvmField
     val KOKIRI_SWORD = registerItem("kokiri_sword", SwordItem(ToolMaterials.IRON, 3, -3.0f, FabricItemSettings().maxDamage(200)))
