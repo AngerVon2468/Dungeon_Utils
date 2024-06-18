@@ -14,7 +14,7 @@
     "GarnishHat"
   ],
   "license": "All-Rights-Reserved",
-  "icon": "assets/dungeon_utils/icon.png",
+  "icon": "assets/dungeon_utils/hookshot.png",
   "environment": "*",
   "entrypoints": {
     "main": [

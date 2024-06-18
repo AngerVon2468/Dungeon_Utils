@@ -1,0 +1,29 @@
+{
+    "display": {
+        "icon": {
+            "item": "dungeon_utils:hookshot"
+        },
+        "title": {
+            "translate": "advancements.dungeon_utils.root.title"
+        },
+        "description": {
+            "translate": "advancements.dungeon_utils.root.description"
+        },
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false,
+        "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+    },
+    "criteria": {
+        "erm_what_the_sigma": {
+            "trigger": "minecraft:tick"
+        }
+    },
+    "requirements": [
+        [
+            "erm_what_the_sigma"
+        ]
+    ],
+    "sends_telemetry_event": true
+}

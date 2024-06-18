@@ -58,5 +58,8 @@
   "dungeon_utils.midnightconfig.title": "Dungeon Utils Settings",
   "dungeon_utils.midnightconfig.revalisGaleHeight": "Revali's Gale Height:",
   "dungeon_utils.midnightconfig.hookShotRange": "Hookshot Range (Max 1000):",
-  "dungeon_utils.midnightconfig.shouldAddSlowFalling": "Slow Falling At Revali's Gale Peak:"
+  "dungeon_utils.midnightconfig.shouldAddSlowFalling": "Slow Falling At Revali's Gale Peak:",
+
+  "advancements.dungeon_utils.root.title": "Dungeon Utils",
+  "advancements.dungeon_utils.root.description": "Join a world with Dungeon Utils installed"
 }
