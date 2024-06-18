@@ -20,11 +20,11 @@ public class LynelBowFiveXItem extends AbstractBulletTimeBowItem {
     @Override
     public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
         if (user instanceof PlayerEntity playerEntity) {
-            boolean bl = playerEntity.getAbilities().creativeMode || EnchantmentHelper.getLevel(Enchantments.INFINITY, stack) > 0;
+            boolean stackCanBeDecremented = playerEntity.getAbilities().creativeMode || EnchantmentHelper.getLevel(Enchantments.INFINITY, stack) > 0;
             ItemStack arrowStack = user.getProjectileType(stack);
 
             int charge = getMaxUseTime(stack) - remainingUseTicks;
-            boolean bl2 = bl && arrowStack.isOf(Items.ARROW);
+            boolean unknownBooleanValue = stackCanBeDecremented && arrowStack.isOf(Items.ARROW);
             float arrowVelocity = getPullProgress(charge);
             if (arrowVelocity >= 0.1) {
                 if (!world.isClient) {
@@ -45,7 +45,7 @@ public class LynelBowFiveXItem extends AbstractBulletTimeBowItem {
                 }
                 world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_ARROW_SHOOT, SoundCategory.PLAYERS, 1.0F, 1.0F / (user.getRandom().nextFloat() * 0.4F + 1.2F) + arrowVelocity * 0.5F);
 
-                if (!bl2 && !playerEntity.getAbilities().creativeMode) {
+                if (!unknownBooleanValue && !playerEntity.getAbilities().creativeMode) {
                     arrowStack.decrement(1);
                     if (arrowStack.isEmpty()) {
                         playerEntity.getInventory().removeOne(arrowStack);
