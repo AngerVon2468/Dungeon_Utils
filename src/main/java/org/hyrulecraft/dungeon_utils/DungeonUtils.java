@@ -61,23 +61,33 @@ public class DungeonUtils implements ModInitializer {
             try {
                 FileWriter dungeonUtilsConfigWriter = new FileWriter(dungeonUtilsConfig);
                 dungeonUtilsConfigWriter.write("{" + System.getProperty("line.separator"));
-                dungeonUtilsConfigWriter.write("    \"WiiU\": \"good\"" + System.getProperty("line.separator"));
+                dungeonUtilsConfigWriter.write("    \"isWiiUBased\": true" + System.getProperty("line.separator"));
                 dungeonUtilsConfigWriter.write("}");
                 dungeonUtilsConfigWriter.close();
             } catch (IOException e) {
-                e.printStackTrace();
+                LOGGER.info(e.toString());
             }
 
             Object dungeonUtilsObject = JsonParser.parseReader(new FileReader(dungeonUtilsConfig));
 
             JsonObject dungeonUtilsAsJsonObject = (JsonObject) dungeonUtilsObject;
 
-            String WiiU = dungeonUtilsAsJsonObject.get("WiiU").toString();
+            String isWiiUBased = dungeonUtilsAsJsonObject.get("isWiiUBased").toString();
 
-            LOGGER.info("WiiU: " + WiiU);
+            if (isWiiUBased.contains("true")) {
+
+                //
+
+            } else if (isWiiUBased.contains("false")) {
+
+                //
+
+            }
+
+            LOGGER.info("isWiiUBased: " + isWiiUBased);
 
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.info(e.toString());
         }
     }
 }
