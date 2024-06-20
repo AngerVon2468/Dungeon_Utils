@@ -34,8 +34,10 @@ public class DungeonUtilsExperimentalConfig {
          * Use {@link ConfigValues#isWiiuBased} to get the boolean value of this option. <br>
          * <strong>DO NOT CALL ANYTHING FROM THIS SUBCLASS</strong>
          */
-        @Deprecated
-        public static String isWiiUBased = dungeonUtilsAsJsonObject.get("isWiiUBased").toString();
+        public static String isWiiUBased() {
+
+            return dungeonUtilsAsJsonObject == null ? "" : dungeonUtilsAsJsonObject.get("isWiiUBased").toString();
+        }
     }
 
     public static void experimentalConfigTesting() {
@@ -54,13 +56,17 @@ public class DungeonUtilsExperimentalConfig {
                 FileWriter dungeonUtilsConfigWriter = new FileWriter(dungeonUtilsConfig);
 
                 dungeonUtilsConfigWriter.write("{" + System.getProperty("line.separator"));
-                if (isWiiUBased.contains("true")) {
+                if (isWiiUBased().contains("true")) {
 
                     dungeonUtilsConfigWriter.write("    \"isWiiUBased\": true" + System.getProperty("line.separator"));
 
-                } else if (isWiiUBased.contains("false")) {
+                } else if (isWiiUBased().contains("false")) {
 
                     dungeonUtilsConfigWriter.write("    \"isWiiUBased\": false" + System.getProperty("line.separator"));
+
+                } else {
+
+                    dungeonUtilsConfigWriter.write("    \"isWiiUBased\": true" + System.getProperty("line.separator"));
 
                 }
                 dungeonUtilsConfigWriter.write("}");
@@ -74,10 +80,6 @@ public class DungeonUtilsExperimentalConfig {
         }
     }
 
-
-
-
-
     /**
      * The actual return values of the config's options. <br>
      * Only to be called from outside of this class. <br>
@@ -85,6 +87,6 @@ public class DungeonUtilsExperimentalConfig {
      */
     public static class ConfigValues {
 
-        public static boolean isWiiuBased = isWiiUBased.contains("true");
+        public static boolean isWiiuBased = isWiiUBased().contains("true");
     }
 }
