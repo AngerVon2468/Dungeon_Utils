@@ -42,9 +42,6 @@ public class DungeonUtils implements ModInitializer {
 
         // Config.
         MidnightConfig.init(DungeonUtils.MOD_ID, DungeonUtilsConfig.class);
-    }
-
-    public static void main(String[] args) {
 
         String path = System.getProperty("user.home") + System.getProperty("file.separator") + "." + NAME;
         File dungeonUtils = new File(path);
@@ -71,6 +68,5 @@ public class DungeonUtils implements ModInitializer {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 }
