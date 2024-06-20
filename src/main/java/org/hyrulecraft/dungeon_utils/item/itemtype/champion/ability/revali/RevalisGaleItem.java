@@ -38,12 +38,12 @@ public class RevalisGaleItem extends TrinketItem {
 
                 // Why are we still here... just to suffer?
 
-            } else if (!player.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.REVALIS_GALE) && stack.getNbt().contains("dungeon_utils.revalis_gale.anti_spam") && stack.isOf(DungeonUtilsItems.REVALIS_GALE)) {
+            } else if (stack.getNbt() != null && !player.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.REVALIS_GALE) && stack.getNbt().contains("dungeon_utils.revalis_gale.anti_spam") && stack.isOf(DungeonUtilsItems.REVALIS_GALE)) {
 
                 player.playSound(DungeonUtilsSounds.REVALIS_GALE_RECHARGE, SoundCategory.PLAYERS, 1f, 1f);
                 stack.removeSubNbt("dungeon_utils.revalis_gale.anti_spam");
 
-            } else if (player.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.REVALIS_GALE) && !stack.getNbt().contains("dungeon_utils.revalis_gale.anti_spam") && stack.isOf(DungeonUtilsItems.REVALIS_GALE)) {
+            } else if (stack.getNbt() != null && player.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.REVALIS_GALE) && !stack.getNbt().contains("dungeon_utils.revalis_gale.anti_spam") && stack.isOf(DungeonUtilsItems.REVALIS_GALE)) {
 
                 addAntiSpam(player);
 
@@ -65,7 +65,7 @@ public class RevalisGaleItem extends TrinketItem {
             addSecondUsage(user);
             return TypedActionResult.consume(stack);
 
-        } else if (stack.getNbt().contains("dungeon_utils.revalis_gale.usage_two") && !user.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.REVALIS_GALE) && !blockState.isOf(Blocks.AIR)) {
+        } else if (stack.getNbt() != null && stack.getNbt().contains("dungeon_utils.revalis_gale.usage_two") && !user.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.REVALIS_GALE) && !blockState.isOf(Blocks.AIR)) {
 
             user.setVelocity(0, DungeonUtilsConfig.revalisGaleHeight, 0);
             if (DungeonUtilsConfig.shouldAddSlowFalling) {
@@ -74,7 +74,7 @@ public class RevalisGaleItem extends TrinketItem {
             addThirdUsage(user);
             return TypedActionResult.consume(stack);
 
-        } else if (stack.getNbt().contains("dungeon_utils.revalis_gale.usage_three") && !user.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.REVALIS_GALE) && !blockState.isOf(Blocks.AIR)) {
+        } else if (stack.getNbt() != null && stack.getNbt().contains("dungeon_utils.revalis_gale.usage_three") && !user.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.REVALIS_GALE) && !blockState.isOf(Blocks.AIR)) {
 
             user.setVelocity(0, DungeonUtilsConfig.revalisGaleHeight, 0);
             if (DungeonUtilsConfig.shouldAddSlowFalling) {

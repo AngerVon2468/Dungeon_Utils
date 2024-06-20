@@ -88,13 +88,13 @@ public class ChampionEventCallbacks {
                         addSecondUsage(player);
                         return false;
 
-                    } else if (stack.hasNbt() && stack.getNbt().contains("dungeon_utils.daruks_protection.usage_two") && !player.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.DARUKS_PROTECTION)) {
+                    } else if (stack.getNbt() != null && stack.getNbt().contains("dungeon_utils.daruks_protection.usage_two") && !player.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.DARUKS_PROTECTION)) {
 
                         player.playSound(DungeonUtilsSounds.IT_IS_MY_PLEASURE, SoundCategory.PLAYERS, 1f, 1f);
                         addThirdUsage(player);
                         return false;
 
-                    } else if (stack.hasNbt() && stack.getNbt().contains("dungeon_utils.daruks_protection.usage_three") && !player.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.DARUKS_PROTECTION)) {
+                    } else if (stack.getNbt() != null && stack.getNbt().contains("dungeon_utils.daruks_protection.usage_three") && !player.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.DARUKS_PROTECTION)) {
 
                         player.playSound(DungeonUtilsSounds.IT_IS_MY_PLEASURE, SoundCategory.PLAYERS, 1f, 1f);
                         addAntiSpam(player);

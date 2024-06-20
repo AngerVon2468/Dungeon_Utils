@@ -30,12 +30,12 @@ public class RevalisGalePlusItem extends RevalisGaleItem {
 
                 // Why are we still here... just to suffer?
 
-            } else if (!player.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.REVALIS_GALE_PLUS) && stack.getNbt().contains("dungeon_utils.revalis_gale.anti_spam") && stack.isOf(DungeonUtilsItems.REVALIS_GALE_PLUS)) {
+            } else if (stack.getNbt() != null && !player.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.REVALIS_GALE_PLUS) && stack.getNbt().contains("dungeon_utils.revalis_gale.anti_spam") && stack.isOf(DungeonUtilsItems.REVALIS_GALE_PLUS)) {
 
                 player.playSound(DungeonUtilsSounds.REVALIS_GALE_RECHARGE, SoundCategory.PLAYERS, 1f, 1f);
                 stack.removeSubNbt("dungeon_utils.revalis_gale.anti_spam");
 
-            } else if (player.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.REVALIS_GALE_PLUS) && !stack.getNbt().contains("dungeon_utils.revalis_gale.anti_spam") && stack.isOf(DungeonUtilsItems.REVALIS_GALE_PLUS)) {
+            } else if (stack.getNbt() != null && player.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.REVALIS_GALE_PLUS) && !stack.getNbt().contains("dungeon_utils.revalis_gale.anti_spam") && stack.isOf(DungeonUtilsItems.REVALIS_GALE_PLUS)) {
 
                 addAntiSpam(player);
 
@@ -57,7 +57,7 @@ public class RevalisGalePlusItem extends RevalisGaleItem {
             addSecondUsage(user);
             return TypedActionResult.consume(stack);
 
-        } else if (stack.hasNbt() && stack.getNbt().contains("dungeon_utils.revalis_gale.usage_two") && !user.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.REVALIS_GALE_PLUS) && !blockState.isOf(Blocks.AIR)) {
+        } else if (stack.getNbt() != null && stack.getNbt().contains("dungeon_utils.revalis_gale.usage_two") && !user.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.REVALIS_GALE_PLUS) && !blockState.isOf(Blocks.AIR)) {
 
             user.setVelocity(0, DungeonUtilsConfig.revalisGaleHeight, 0);
             if (DungeonUtilsConfig.shouldAddSlowFalling) {
@@ -66,7 +66,7 @@ public class RevalisGalePlusItem extends RevalisGaleItem {
             addThirdUsage(user);
             return TypedActionResult.consume(stack);
 
-        } else if (stack.hasNbt() && stack.getNbt().contains("dungeon_utils.revalis_gale.usage_three") && !user.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.REVALIS_GALE_PLUS) && !blockState.isOf(Blocks.AIR)) {
+        } else if (stack.getNbt() != null && stack.getNbt().contains("dungeon_utils.revalis_gale.usage_three") && !user.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.REVALIS_GALE_PLUS) && !blockState.isOf(Blocks.AIR)) {
 
             user.setVelocity(0, DungeonUtilsConfig.revalisGaleHeight, 0);
             if (DungeonUtilsConfig.shouldAddSlowFalling) {
