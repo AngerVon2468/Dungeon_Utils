@@ -60,11 +60,11 @@ public class DungeonUtils implements ModInitializer {
                 System.out.println("File already exists.");
             }
             try {
-                FileWriter myWriter = new FileWriter(dungeonUtilsConfig);
-                myWriter.write("{" + System.getProperty("line.separator"));
-                myWriter.write("    \"\": \"\"" + System.getProperty("line.separator"));
-                myWriter.write("}");
-                myWriter.close();
+                FileWriter dungeonUtilsConfigWriter = new FileWriter(dungeonUtilsConfig);
+                dungeonUtilsConfigWriter.write("{" + System.getProperty("line.separator"));
+                dungeonUtilsConfigWriter.write("    \"\": \"\"" + System.getProperty("line.separator"));
+                dungeonUtilsConfigWriter.write("}");
+                dungeonUtilsConfigWriter.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
