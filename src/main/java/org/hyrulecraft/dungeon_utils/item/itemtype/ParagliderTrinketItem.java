@@ -38,25 +38,25 @@ public class ParagliderTrinketItem extends TrinketItem {
                 Vec3d playerFacingPos = user.getBlockPos().offset(user.getHorizontalFacing(), 1).toCenterPos();
                 if (user.getHorizontalFacing() == Direction.NORTH && DirectionCheckUtil.facingNorth(playerPos.x, playerFacingPos.x, playerPos.z, playerFacingPos.z)) {
 
-                    user.addVelocity(0, 0,-0.02);
+                    user.addVelocity(0, 0.007,-0.01);
                     user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 10, 10));
 
                 }
                 if (user.getHorizontalFacing() == Direction.SOUTH && DirectionCheckUtil.facingSouth(playerPos.x, playerFacingPos.x, playerPos.z, playerFacingPos.z)) {
 
-                    user.addVelocity(0, 0,0.02);
+                    user.addVelocity(0, 0.007,0.01);
                     user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 10, 10));
 
                 }
                 if (user.getHorizontalFacing() == Direction.EAST && DirectionCheckUtil.facingEast(playerPos.x, playerFacingPos.x, playerPos.z, playerFacingPos.z)) {
 
-                    user.addVelocity(0.02, 0,0);
+                    user.addVelocity(0.01, 0.007,0);
                     user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 10, 10));
 
                 }
                 if (user.getHorizontalFacing() == Direction.WEST && DirectionCheckUtil.facingWest(playerPos.x, playerFacingPos.x, playerPos.z, playerFacingPos.z)) {
 
-                    user.addVelocity(-0.02, 0,0);
+                    user.addVelocity(-0.01, 0.007,0);
                     user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 10, 10));
 
                 }
