@@ -61,10 +61,6 @@ public class ParagliderTrinketItem extends TrinketItem {
 
                 }
 
-            } else {
-
-                //
-
             }
 
         }
