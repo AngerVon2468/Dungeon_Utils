@@ -1,5 +1,7 @@
 package org.hyrulecraft.dungeon_utils;
 
+import com.google.gson.*;
+
 import eu.midnightdust.lib.config.MidnightConfig;
 
 import net.fabricmc.api.ModInitializer;
@@ -59,12 +61,21 @@ public class DungeonUtils implements ModInitializer {
             try {
                 FileWriter dungeonUtilsConfigWriter = new FileWriter(dungeonUtilsConfig);
                 dungeonUtilsConfigWriter.write("{" + System.getProperty("line.separator"));
-                dungeonUtilsConfigWriter.write("    \"\": \"\"" + System.getProperty("line.separator"));
+                dungeonUtilsConfigWriter.write("    \"WiiU\": \"good\"" + System.getProperty("line.separator"));
                 dungeonUtilsConfigWriter.write("}");
                 dungeonUtilsConfigWriter.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
+            Object dungeonUtilsObject = JsonParser.parseReader(new FileReader(dungeonUtilsConfig));
+
+            JsonObject dungeonUtilsAsJsonObject = (JsonObject) dungeonUtilsObject;
+
+            String WiiU = dungeonUtilsAsJsonObject.get("WiiU").toString();
+
+            LOGGER.info("WiiU: " + WiiU);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
