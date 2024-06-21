@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "   ",
+    "aba",
+    "bab"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:leather"
+    },
+    "b": {
+      "item": "minecraft:lime_dye"
+    }
+  },
+  "result": {
+    "item": "dungeon_utils:link_tunic",
+    "count": 1
+  }
+}

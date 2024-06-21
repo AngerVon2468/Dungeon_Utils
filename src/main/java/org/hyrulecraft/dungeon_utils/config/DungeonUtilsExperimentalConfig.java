@@ -42,7 +42,6 @@ public class DungeonUtilsExperimentalConfig {
 
     public static void experimentalConfigTesting() {
 
-
         if (!dungeonUtilsFolder.exists()){
             dungeonUtilsFolder.mkdirs();
         }

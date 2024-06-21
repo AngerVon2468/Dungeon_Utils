@@ -43,11 +43,11 @@ public class DungeonUtils implements ModInitializer {
         DungeonUtilsExperimentalConfig.experimentalConfigTesting();
         if (DungeonUtilsExperimentalConfig.ConfigValues.isWiiuBased) {
 
-            DungeonUtils.LOGGER.info("true");
+            DungeonUtils.LOGGER.info("isWiiUBased: true");
 
         } else {
 
-            DungeonUtils.LOGGER.info("false");
+            DungeonUtils.LOGGER.info("isWiiUBased: false");
 
         }
     }

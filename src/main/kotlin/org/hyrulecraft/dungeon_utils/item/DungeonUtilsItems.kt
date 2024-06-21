@@ -19,8 +19,7 @@ import org.hyrulecraft.dungeon_utils.item.itemtype.champion.ability.daruk.Daruks
 import org.hyrulecraft.dungeon_utils.item.itemtype.champion.ability.mipha.*
 import org.hyrulecraft.dungeon_utils.item.itemtype.champion.ability.revali.*
 import org.hyrulecraft.dungeon_utils.item.itemtype.clothing.glove.*
-import org.hyrulecraft.dungeon_utils.item.itemtype.clothing.link.CapTrinketItem
-import org.hyrulecraft.dungeon_utils.item.itemtype.clothing.link.TunicTrinketItem
+import org.hyrulecraft.dungeon_utils.item.itemtype.clothing.link.*
 import org.hyrulecraft.dungeon_utils.item.itemtype.rupee.ChildRupeeWalletItem
 
 object DungeonUtilsItems {
