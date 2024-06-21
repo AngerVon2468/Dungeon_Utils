@@ -31,7 +31,7 @@ public class DungeonUtilsExperimentalConfig {
     public static class ConfigOutput {
 
         /**
-         * Use {@link ConfigValues#isWiiuBased} to get the boolean value of this option. <br>
+         * Use {@link Config#isWiiuBased} to get the boolean value of this option. <br>
          * <strong>DO NOT CALL ANYTHING FROM THIS SUBCLASS</strong>
          */
         public static String isWiiUBased() {
@@ -84,7 +84,7 @@ public class DungeonUtilsExperimentalConfig {
      * Only to be called from outside of this class. <br>
      * Only use values from here, nothing else from this class should be called, <strong>EVER.</strong>
      */
-    public static class ConfigValues {
+    public static class Config {
 
         public static boolean isWiiuBased = isWiiUBased().contains("true");
     }
