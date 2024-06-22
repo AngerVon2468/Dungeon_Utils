@@ -4,6 +4,7 @@ import de.keksuccino.auudio.audio.AudioClip
 
 import net.fabricmc.fabric.api.client.screen.v1.ScreenEvents.AFTER_INIT
 
+import net.minecraft.client.MinecraftClient
 import net.minecraft.client.gui.screen.*
 import net.minecraft.sound.SoundCategory
 import net.minecraft.util.Identifier
@@ -31,6 +32,8 @@ class LoadScreenCallback {
                     START_GAME_CLIP?.play()
 
                 }
+
+                MinecraftClient.getInstance().window.setTitle("WiiU")
 
             }
         }
