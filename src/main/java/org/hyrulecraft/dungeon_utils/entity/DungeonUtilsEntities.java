@@ -11,7 +11,7 @@ import org.hyrulecraft.dungeon_utils.DungeonUtils;
 public class DungeonUtilsEntities {
 
     public static final EntityType<MasterSwordBeamEntity> MASTER_SWORD_BEAM = Registry.register(
-            Registries.ENTITY_TYPE,
+            RegistryTypes.ENTITY,
             new Identifier(DungeonUtils.MOD_ID, "master_sword_beam"),
             FabricEntityTypeBuilder.create(SpawnGroup.MISC, MasterSwordBeamEntity::new)
                     .dimensions(EntityDimensions.fixed(1f,0.1f))
@@ -20,7 +20,7 @@ public class DungeonUtilsEntities {
     );
 
     public static final EntityType<CrateEntity> CRATE = Registry.register(
-            Registries.ENTITY_TYPE,
+            RegistryTypes.ENTITY,
             new Identifier(DungeonUtils.MOD_ID, "crate"),
             FabricEntityTypeBuilder.create(SpawnGroup.MISC, CrateEntity::new)
                     .dimensions(EntityDimensions.fixed(1f,1f))

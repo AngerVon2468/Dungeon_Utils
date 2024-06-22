@@ -3,7 +3,7 @@ package org.hyrulecraft.dungeon_utils.sound
 import org.hyrulecraft.dungeon_utils.DungeonUtils.*
 
 import net.minecraft.registry.*
-import net.minecraft.sound.SoundEvent
+import net.minecraft.sound.Sound
 import net.minecraft.util.Identifier
 
 class DungeonUtilsSounds {
@@ -35,9 +35,9 @@ class DungeonUtilsSounds {
         @JvmField val KASS_ONE = register("kass_one")
 
         @JvmStatic
-        fun register(id: String?): SoundEvent? {
-            val sound = SoundEvent.of(Identifier(MOD_ID, id))
-            return Registry.register(Registries.SOUND_EVENT, Identifier(MOD_ID, id), sound)
+        fun register(id: String?): Sound? {
+            val sound = Sound.of(Identifier(MOD_ID, id))
+            return Registry.register(RegistryTypes.SOUND, Identifier(MOD_ID, id), sound)
         }
 
         @JvmStatic

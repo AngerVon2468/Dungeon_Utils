@@ -43,7 +43,7 @@ public class GreatEagleBowItem extends AbstractBulletTimeBowItem {
                         world.spawnEntity(arrowEntity);
                     }
                 }
-                world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_ARROW_SHOOT, SoundCategory.PLAYERS, 1.0F, 1.0F / (user.getRandom().nextFloat() * 0.4F + 1.2F) + arrowVelocity * 0.5F);
+                world.playSound(null, user.getX(), user.getY(), user.getZ(), Sounds.ENTITY_ARROW_SHOOT, SoundCategory.PLAYERS, 1.0F, 1.0F / (user.getRandom().nextFloat() * 0.4F + 1.2F) + arrowVelocity * 0.5F);
 
                 if (!unknownBooleanValue && !playerEntity.getAbilities().creativeMode) {
                     arrowStack.decrement(1);

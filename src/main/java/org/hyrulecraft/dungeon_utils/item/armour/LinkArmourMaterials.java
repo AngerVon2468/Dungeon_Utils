@@ -24,8 +24,8 @@ public class LinkArmourMaterials implements ArmorMaterial {
     }
 
     @Override
-    public SoundEvent getEquipSound() {
-        return SoundEvents.ITEM_ARMOR_EQUIP_LEATHER;
+    public Sound getEquipSound() {
+        return Sounds.ITEM_ARMOR_EQUIP_LEATHER;
     }
 
     @Override

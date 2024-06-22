@@ -50,7 +50,7 @@ class DungeonUtilsItemGroups {
     companion object {
 
         val ALL = Registry.register(
-            Registries.ITEM_GROUP, Identifier(MOD_ID, "dungeon_utils"),
+            RegistryTypes.ITEM_GROUP, Identifier(MOD_ID, "dungeon_utils"),
             FabricItemGroup.builder().displayName(Text.translatable("tab.dungeon_utils.dungeon_utils"))
                 .icon { ItemStack(YELLOW_SWITCH_BLOCK) }.entries { displayContext, entries ->
                     entries.add(MEGATON_HAMMER)
@@ -88,7 +88,7 @@ class DungeonUtilsItemGroups {
         )
 
         val CHAMPION_ABILITIES = Registry.register(
-            Registries.ITEM_GROUP, Identifier(MOD_ID, "champion_abilities"),
+            RegistryTypes.ITEM_GROUP, Identifier(MOD_ID, "champion_abilities"),
             FabricItemGroup.builder().displayName(Text.translatable("tab.dungeon_utils.champion_abilities"))
                 .icon { ItemStack(REVALIS_GALE) }.entries { displayContext, entries ->
                     entries.add(REVALIS_GALE)
@@ -100,7 +100,7 @@ class DungeonUtilsItemGroups {
         )
 
         val CLOTHING = Registry.register(
-            Registries.ITEM_GROUP, Identifier(MOD_ID, "clothing"),
+            RegistryTypes.ITEM_GROUP, Identifier(MOD_ID, "clothing"),
             FabricItemGroup.builder().displayName(Text.translatable("tab.dungeon_utils.clothing"))
                 .icon { ItemStack(LINK_CAP) }.entries { displayContext, entries ->
                     entries.add(LINK_CAP)
@@ -117,7 +117,7 @@ class DungeonUtilsItemGroups {
         )
 
         val WEAPONRY = Registry.register(
-            Registries.ITEM_GROUP, Identifier(MOD_ID, "weaponry"),
+            RegistryTypes.ITEM_GROUP, Identifier(MOD_ID, "weaponry"),
             FabricItemGroup.builder().displayName(Text.translatable("tab.dungeon_utils.weaponry"))
                 .icon { ItemStack(KOKIRI_SWORD) }.entries { displayContext, entries ->
                     entries.add(KOKIRI_SWORD)

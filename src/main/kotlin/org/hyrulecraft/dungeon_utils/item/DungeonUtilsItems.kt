@@ -25,7 +25,7 @@ import org.hyrulecraft.dungeon_utils.item.itemtype.rupee.ChildRupeeWalletItem
 object DungeonUtilsItems {
 
     private fun registerItem(name: String, item: Item): Item {
-        return Registry.register(Registries.ITEM, Identifier(DungeonUtils.MOD_ID, name), item)
+        return Registry.register(RegistryTypes.ITEM, Identifier(DungeonUtils.MOD_ID, name), item)
     }
 
     @JvmField

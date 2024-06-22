@@ -5,7 +5,7 @@ import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.particle.ParticleTypes;
+import net.minecraft.particle.Particles;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.world.World;
 
@@ -188,17 +188,17 @@ public class ChampionEventCallbacks {
             double k = player.getY() + random.nextDouble();
             double l = player.getZ() - random.nextDouble();
             //
-            world.addParticle(ParticleTypes.BUBBLE, a, b, c, 0.0, 0.0, 0.0);
-            world.addParticle(ParticleTypes.BUBBLE_POP, a, b, c, 0.0, 0.0, 0.0);
+            world.addParticle(Particles.BUBBLE, a, b, c, 0.0, 0.0, 0.0);
+            world.addParticle(Particles.BUBBLE_POP, a, b, c, 0.0, 0.0, 0.0);
             //
-            world.addParticle(ParticleTypes.BUBBLE, d, e, f, 0.0, 0.0, 0.0);
-            world.addParticle(ParticleTypes.BUBBLE_POP, d, e, f, 0.0, 0.0, 0.0);
+            world.addParticle(Particles.BUBBLE, d, e, f, 0.0, 0.0, 0.0);
+            world.addParticle(Particles.BUBBLE_POP, d, e, f, 0.0, 0.0, 0.0);
             //
-            world.addParticle(ParticleTypes.BUBBLE, g, h, i, 0.0, 0.0, 0.0);
-            world.addParticle(ParticleTypes.BUBBLE_POP, g, h, i, 0.0, 0.0, 0.0);
+            world.addParticle(Particles.BUBBLE, g, h, i, 0.0, 0.0, 0.0);
+            world.addParticle(Particles.BUBBLE_POP, g, h, i, 0.0, 0.0, 0.0);
             //
-            world.addParticle(ParticleTypes.BUBBLE, j, k, l, 0.0, 0.0, 0.0);
-            world.addParticle(ParticleTypes.BUBBLE_POP, j, k, l, 0.0, 0.0, 0.0);
+            world.addParticle(Particles.BUBBLE, j, k, l, 0.0, 0.0, 0.0);
+            world.addParticle(Particles.BUBBLE_POP, j, k, l, 0.0, 0.0, 0.0);
 
         }
     }
