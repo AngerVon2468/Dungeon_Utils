@@ -135,6 +135,9 @@ object DungeonUtilsItems {
     @JvmField
     val YOUNG_LINK = registerItem("young_link", ClothingItem(DungeonUtils.MOD_ID, "young_link", true, FabricItemSettings().maxCount(1).maxDamage(0)))
 
+    @JvmField
+    val SHEIKAH_SLATE = registerItem("sheikah_slate", SheikahSlateItem(FabricItemSettings().maxDamage(0).maxCount(1)))
+
     @JvmStatic
     fun registerModItems() {
         DungeonUtils.LOGGER.info(DungeonUtils.NAME + " has registered its items.")
