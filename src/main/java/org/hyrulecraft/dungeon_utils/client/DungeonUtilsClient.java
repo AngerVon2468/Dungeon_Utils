@@ -1,4 +1,4 @@
-package org.hyrulecraft.dungeon_utils;
+package org.hyrulecraft.dungeon_utils.client;
 
 import dev.emi.trinkets.api.client.*;
 
@@ -8,6 +8,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.*;
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.util.Identifier;
 
+import org.hyrulecraft.dungeon_utils.DungeonUtils;
 import org.hyrulecraft.dungeon_utils.entity.DungeonUtilsEntities;
 import org.hyrulecraft.dungeon_utils.entity.model.CrateEntityModel;
 import org.hyrulecraft.dungeon_utils.entity.renderer.*;
