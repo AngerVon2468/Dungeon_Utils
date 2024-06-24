@@ -1,7 +1,5 @@
 package org.hyrulecraft.dungeon_utils.item.itemtype;
 
-import journeymap.client.waypoint.Waypoint;
-
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
@@ -10,9 +8,9 @@ import net.minecraft.util.hit.*;
 import net.minecraft.util.math.*;
 import net.minecraft.world.World;
 
-import org.jetbrains.annotations.NotNull;
+import org.hyrulecraft.dungeon_utils.client.journeymap.DungeonUtilsJourneymapPlugin;
 
-import java.awt.*;
+import org.jetbrains.annotations.NotNull;
 
 public class SheikahSlateItem extends Item {
 
@@ -42,10 +40,11 @@ public class SheikahSlateItem extends Item {
                 case BLOCK:
 
                     BlockHitResult blockHit = (BlockHitResult) hit;
-                    BlockPos blockPos = blockHit.getBlockPos();
+                    BlockPos blockPos = blockHit.getBlockPos();;
 
-                    Waypoint waypoint = new Waypoint("waypoint", blockPos, Color.PINK, Waypoint.Type.Normal, user.getWorld().getDimension().toString(), true);
-
+                    if (DungeonUtilsJourneymapPlugin.getInstance() != null) {
+                        DungeonUtilsJourneymapPlugin.getInstance().createWaypoint(blockPos, user.getWorld().getRegistryKey());
+                    }
                     break;
             }
 
