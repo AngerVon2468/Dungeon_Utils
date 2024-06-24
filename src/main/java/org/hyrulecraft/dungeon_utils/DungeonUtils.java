@@ -41,7 +41,7 @@ public class DungeonUtils implements ModInitializer {
         // Config.
         MidnightConfig.init(DungeonUtils.MOD_ID, DungeonUtilsConfig.class);
         DungeonUtilsExperimentalConfig.experimentalConfigTesting();
-        if (DungeonUtilsExperimentalConfig.Config.isWiiuBased) {
+        if (DungeonUtilsExperimentalConfig.Config.isWiiUBased) {
 
             DungeonUtils.LOGGER.info("isWiiUBased: true");
 
