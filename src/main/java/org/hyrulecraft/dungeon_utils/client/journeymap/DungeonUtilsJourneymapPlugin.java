@@ -46,13 +46,13 @@ public class DungeonUtilsJourneymapPlugin implements IClientPlugin {
 
             // Waypoint itself
             bedWaypoint = new Waypoint(DungeonUtils.MOD_ID, "dg_test", "DG_Test", dimension, bedLocation)
-                    .setColor(0x00ffff);
+                    .setColor(0x00ffff)
+                    .setPersistent(true);
 
             // Add or update
             this.jmAPI.show(bedWaypoint);
 
-        }
-        catch (Throwable t) {
+        } catch (Throwable t) {
             DungeonUtils.LOGGER.error(t.getMessage(), t);
         }
 
