@@ -24,7 +24,7 @@ public class SheikahSlateItem extends Item {
     public TypedActionResult<ItemStack> use(@NotNull World world, @NotNull PlayerEntity user, @NotNull Hand hand) {
         ItemStack stack = user.getStackInHand(hand);
 
-        if (world.isClient) {
+        if (world.isClient()) {
 
             MinecraftClient client = MinecraftClient.getInstance();
             double maxReach = 1000.0f; // The farthest target the cameraEntity can detect
