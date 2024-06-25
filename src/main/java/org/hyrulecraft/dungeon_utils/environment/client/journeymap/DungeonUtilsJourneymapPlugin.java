@@ -9,6 +9,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils;
+import org.jetbrains.annotations.NotNull;
 
 public class DungeonUtilsJourneymapPlugin implements IClientPlugin {
 
@@ -26,7 +27,7 @@ public class DungeonUtilsJourneymapPlugin implements IClientPlugin {
     }
 
     @Override
-    public void initialize(IClientAPI jmClientApi) {
+    public void initialize(@NotNull IClientAPI jmClientApi) {
         this.jmAPI = jmClientApi;
     }
 
@@ -36,7 +37,7 @@ public class DungeonUtilsJourneymapPlugin implements IClientPlugin {
     }
 
     @Override
-    public void onEvent(ClientEvent event) {
+    public void onEvent(@NotNull ClientEvent event) {
 
     }
 
