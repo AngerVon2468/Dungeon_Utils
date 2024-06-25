@@ -88,6 +88,9 @@ dependencies {
 
     modImplementation group: "info.journeymap", name: "journeymap-api", version: "1.20-1.9-fabric-SNAPSHOT", changing: true
     modRuntimeOnly "curse.maven:journeymap-32274:5457845"
+
+    modImplementation "curse.maven:xaeros-minimap-263420:5394774"
+    modImplementation "curse.maven:xaeros-world-map-317780:5394838"
 }
 
 processResources {

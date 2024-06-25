@@ -42,7 +42,7 @@ public class SheikahSlateItem extends Item {
                 case BLOCK:
 
                     BlockHitResult blockHit = (BlockHitResult) hit;
-                    BlockPos blockPos = blockHit.getBlockPos();;
+                    BlockPos blockPos = blockHit.getBlockPos();
 
                     if (DungeonUtilsJourneymapPlugin.getInstance() != null && FabricLoader.getInstance().isModLoaded("journeymap")) {
                         DungeonUtilsJourneymapPlugin.getInstance().createWaypoint(blockPos, user.getWorld().getRegistryKey());
