@@ -8,7 +8,7 @@
   ],
   "key": {
     "a": {
-      "item": "minecraft:the_hylian_shield"
+      "item": "dungeon_utils:the_hylian_shield"
     },
     "b": {
       "item": "minecraft:nether_star"
