@@ -40,22 +40,22 @@ public class DungeonUtilsJourneymapPlugin implements IClientPlugin {
 
     }
 
-    public Waypoint createWaypoint(BlockPos bedLocation, RegistryKey<World> dimension) {
-        Waypoint bedWaypoint = null;
+    public Waypoint createWaypoint(BlockPos blockPos, RegistryKey<World> dimension) {
+        Waypoint waypoint = null;
         try {
 
             // Waypoint itself
-            bedWaypoint = new Waypoint(DungeonUtils.MOD_ID, "dg_test", "DG_Test", dimension, bedLocation)
+            waypoint = new Waypoint(DungeonUtils.MOD_ID, "dg_test", "DG_Test", dimension, blockPos)
                     .setColor(0x00ffff)
                     .setPersistent(true);
 
             // Add or update
-            this.jmAPI.show(bedWaypoint);
+            this.jmAPI.show(waypoint);
 
         } catch (Throwable t) {
             DungeonUtils.LOGGER.error(t.getMessage(), t);
         }
 
-        return bedWaypoint;
+        return waypoint;
     }
 }
