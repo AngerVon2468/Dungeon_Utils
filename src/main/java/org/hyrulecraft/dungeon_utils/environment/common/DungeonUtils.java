@@ -16,6 +16,7 @@ import org.hyrulecraft.dungeon_utils.util.UtilCollector;
 import org.slf4j.*;
 
 // TODO: Fix all wide skin textures.
+// TODO: Mess with dimensions and custom portal api (https://github.com/kyrptonaught/customportalapi/tree/1.20)
 public class DungeonUtils implements ModInitializer {
 
     public static final String MOD_ID = "dungeon_utils";
