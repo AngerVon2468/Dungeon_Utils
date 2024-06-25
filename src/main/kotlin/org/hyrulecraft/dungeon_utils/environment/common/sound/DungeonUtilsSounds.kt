@@ -1,4 +1,4 @@
-package org.hyrulecraft.dungeon_utils.sound
+package org.hyrulecraft.dungeon_utils.environment.common.sound
 
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils.*
 

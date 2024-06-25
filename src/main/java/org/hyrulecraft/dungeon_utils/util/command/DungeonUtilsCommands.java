@@ -13,8 +13,8 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.*;
 
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils;
-import org.hyrulecraft.dungeon_utils.block.DungeonUtilsBlocks;
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems;
+import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks;
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems;
 
 import java.util.List;
 

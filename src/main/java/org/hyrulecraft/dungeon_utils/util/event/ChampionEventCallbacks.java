@@ -9,8 +9,8 @@ import net.minecraft.particle.Particles;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.world.World;
 
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems;
-import org.hyrulecraft.dungeon_utils.sound.DungeonUtilsSounds;
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems;
+import org.hyrulecraft.dungeon_utils.environment.common.sound.DungeonUtilsSounds;
 import org.hyrulecraft.dungeon_utils.util.InventoryUtil;
 
 import org.jetbrains.annotations.NotNull;

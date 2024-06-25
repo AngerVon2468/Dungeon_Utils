@@ -1,4 +1,4 @@
-package org.hyrulecraft.dungeon_utils.block
+package org.hyrulecraft.dungeon_utils.environment.common.block
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.fabricmc.fabric.api.`object`.builder.v1.block.FabricBlockSettings

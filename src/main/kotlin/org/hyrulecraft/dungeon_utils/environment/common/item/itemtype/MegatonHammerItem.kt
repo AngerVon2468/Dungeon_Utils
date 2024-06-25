@@ -1,4 +1,4 @@
-package org.hyrulecraft.dungeon_utils.item.itemtype
+package org.hyrulecraft.dungeon_utils.environment.common.item.itemtype
 
 import net.minecraft.block.*
 import net.minecraft.entity.LivingEntity
@@ -9,8 +9,8 @@ import net.minecraft.util.*
 import net.minecraft.util.math.BlockPos
 import net.minecraft.world.World
 
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems
-import org.hyrulecraft.dungeon_utils.sound.DungeonUtilsSounds
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems
+import org.hyrulecraft.dungeon_utils.environment.common.sound.DungeonUtilsSounds
 
 class MegatonHammerItem(toolMaterial: ToolMaterial?, attackDamage: Int, attackSpeed: Float, settings: Settings?) : SwordItem
     (toolMaterial, attackDamage, attackSpeed, settings) {

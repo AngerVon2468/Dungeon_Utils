@@ -1,4 +1,4 @@
-package org.hyrulecraft.dungeon_utils.itemgroup
+package org.hyrulecraft.dungeon_utils.environment.common.itemgroup
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup
 
@@ -8,42 +8,42 @@ import net.minecraft.text.Text
 import net.minecraft.util.Identifier
 
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils.*
-import org.hyrulecraft.dungeon_utils.block.DungeonUtilsBlocks.BLUE_SWITCH_BLOCK
-import org.hyrulecraft.dungeon_utils.block.DungeonUtilsBlocks.RUSTY_SWITCH_BLOCK
-import org.hyrulecraft.dungeon_utils.block.DungeonUtilsBlocks.YELLOW_SWITCH_BLOCK
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.ADULT_LINK
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.BLUE_RUPEE
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.BOTW_LINK
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.CHILD_RUPEE_WALLET
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.CLIMBING_GLOVES
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.DARUKS_PROTECTION
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.GILDED_SWORD
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.GREAT_EAGLE_BOW
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.GREEN_RUPEE
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.HEART_CONTAINER
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.KOKIRI_SHIELD
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.KOKIRI_SWORD
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.LINK_CAP
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.LINK_SLEEVES
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.LINK_TUNIC
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.LYNEL_BOW_FIVE_X
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.LYNEL_BOW_THREE_X
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.MEGATON_HAMMER
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.MIPHAS_GRACE
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.MIPHAS_GRACE_PLUS
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.MOGMA_MITTS
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.PARAGLIDER
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.RAZOR_SWORD
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.REVALIS_GALE
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.REVALIS_GALE_PLUS
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.SHADOW_HYLIAN_SHIELD
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.SHADOW_LINK
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.SHADOW_MASTER_SWORD
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.THE_HYLIAN_SHIELD
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.THE_MASTER_SWORD
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.THE_MASTER_SWORD_AWAKENED
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.TOTK_LINK
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems.YOUNG_LINK
+import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.BLUE_SWITCH_BLOCK
+import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.RUSTY_SWITCH_BLOCK
+import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.YELLOW_SWITCH_BLOCK
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.ADULT_LINK
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.BLUE_RUPEE
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.BOTW_LINK
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.CHILD_RUPEE_WALLET
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.CLIMBING_GLOVES
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.DARUKS_PROTECTION
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.GILDED_SWORD
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.GREAT_EAGLE_BOW
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.GREEN_RUPEE
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.HEART_CONTAINER
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.KOKIRI_SHIELD
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.KOKIRI_SWORD
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.LINK_CAP
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.LINK_SLEEVES
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.LINK_TUNIC
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.LYNEL_BOW_FIVE_X
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.LYNEL_BOW_THREE_X
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.MEGATON_HAMMER
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.MIPHAS_GRACE
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.MIPHAS_GRACE_PLUS
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.MOGMA_MITTS
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.PARAGLIDER
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.RAZOR_SWORD
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.REVALIS_GALE
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.REVALIS_GALE_PLUS
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.SHADOW_HYLIAN_SHIELD
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.SHADOW_LINK
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.SHADOW_MASTER_SWORD
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.THE_HYLIAN_SHIELD
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.THE_MASTER_SWORD
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.THE_MASTER_SWORD_AWAKENED
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.TOTK_LINK
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.YOUNG_LINK
 
 class DungeonUtilsItemGroups {
 

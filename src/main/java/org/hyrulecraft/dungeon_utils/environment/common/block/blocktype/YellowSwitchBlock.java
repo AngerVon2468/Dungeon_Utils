@@ -15,8 +15,8 @@ import net.minecraft.util.math.*;
 import net.minecraft.util.shape.*;
 import net.minecraft.world.*;
 
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems;
-import org.hyrulecraft.dungeon_utils.sound.DungeonUtilsSounds;
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems;
+import org.hyrulecraft.dungeon_utils.environment.common.sound.DungeonUtilsSounds;
 
 import org.jetbrains.annotations.*;
 

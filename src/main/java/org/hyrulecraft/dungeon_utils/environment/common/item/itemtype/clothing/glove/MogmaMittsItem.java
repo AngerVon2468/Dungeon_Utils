@@ -10,7 +10,7 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.*;
 import net.minecraft.world.World;
 
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems;
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems;
 
 import org.jetbrains.annotations.NotNull;
 

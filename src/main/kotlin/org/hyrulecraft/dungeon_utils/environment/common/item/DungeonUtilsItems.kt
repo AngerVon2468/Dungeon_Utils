@@ -1,4 +1,4 @@
-package org.hyrulecraft.dungeon_utils.item
+package org.hyrulecraft.dungeon_utils.environment.common.item
 
 import com.github.crimsondawn45.fabricshieldlib.lib.`object`.FabricShieldItem
 

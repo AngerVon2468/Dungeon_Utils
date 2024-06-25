@@ -11,7 +11,7 @@ import net.minecraft.util.math.*;
 import net.minecraft.world.World;
 
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils;
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems;
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems;
 import org.hyrulecraft.dungeon_utils.util.DirectionCheckUtil;
 
 public class ParagliderTrinketItem extends TrinketItem {

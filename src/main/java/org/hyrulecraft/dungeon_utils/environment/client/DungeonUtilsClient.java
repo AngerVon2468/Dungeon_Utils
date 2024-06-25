@@ -13,7 +13,7 @@ import org.hyrulecraft.dungeon_utils.environment.common.entity.DungeonUtilsEntit
 import org.hyrulecraft.dungeon_utils.environment.client.entity.model.CrateEntityModel;
 import org.hyrulecraft.dungeon_utils.environment.client.entity.renderer.CrateEntityRenderer;
 import org.hyrulecraft.dungeon_utils.environment.client.entity.renderer.MasterSwordBeamEntityRenderer;
-import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems;
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems;
 import org.hyrulecraft.dungeon_utils.util.UtilCollector;
 
 public class DungeonUtilsClient implements ClientModInitializer {
