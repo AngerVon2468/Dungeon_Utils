@@ -1,7 +1,6 @@
 {
     "replace": false,
     "values": [
-        "dungeon_utils:pedestal_block",
         "dungeon_utils:yellow_switch_block",
         "dungeon_utils:rusty_switch_block",
         "dungeon_utils:blue_switch_block"

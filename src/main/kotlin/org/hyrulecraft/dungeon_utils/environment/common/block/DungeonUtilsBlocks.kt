@@ -25,21 +25,21 @@ object DungeonUtilsBlocks {
     @JvmField
     val YELLOW_SWITCH_BLOCK = registerBlock("yellow_switch_block",
         YellowSwitchBlock(
-            FabricBlockSettings.create().nonOpaque()
+            FabricBlockSettings.create().nonOpaque().requiresTool().strength(1.1f)
         )
     )
 
     @JvmField
     val RUSTY_SWITCH_BLOCK = registerBlock("rusty_switch_block",
         RustySwitchBlock(
-            FabricBlockSettings.create().nonOpaque()
+            FabricBlockSettings.create().nonOpaque().requiresTool().strength(1.1f)
         )
     )
 
     @JvmField
     val BLUE_SWITCH_BLOCK = registerBlock("blue_switch_block",
         BlueSwitchBlock(
-            FabricBlockSettings.create().nonOpaque()
+            FabricBlockSettings.create().nonOpaque().requiresTool().strength(1.1f)
         )
     )
 
