@@ -1,6 +1,6 @@
 package org.hyrulecraft.dungeon_utils.sound
 
-import org.hyrulecraft.dungeon_utils.DungeonUtils.*
+import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils.*
 
 import net.minecraft.registry.*
 import net.minecraft.sound.Sound

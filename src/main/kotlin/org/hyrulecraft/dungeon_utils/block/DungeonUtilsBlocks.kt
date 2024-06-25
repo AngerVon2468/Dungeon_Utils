@@ -8,7 +8,7 @@ import net.minecraft.item.*
 import net.minecraft.registry.*
 import net.minecraft.util.Identifier
 
-import org.hyrulecraft.dungeon_utils.DungeonUtils
+import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils
 import org.hyrulecraft.dungeon_utils.block.blocktype.*
 
 object DungeonUtilsBlocks {

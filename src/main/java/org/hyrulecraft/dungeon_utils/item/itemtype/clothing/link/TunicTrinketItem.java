@@ -15,7 +15,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 
-import org.hyrulecraft.dungeon_utils.DungeonUtils;
+import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils;
 import org.hyrulecraft.dungeon_utils.model.clothing.LinkTunicModel;
 
 import org.jetbrains.annotations.*;

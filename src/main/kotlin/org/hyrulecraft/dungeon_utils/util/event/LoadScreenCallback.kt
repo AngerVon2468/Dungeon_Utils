@@ -9,7 +9,7 @@ import net.minecraft.client.gui.screen.*
 import net.minecraft.sound.SoundCategory
 import net.minecraft.util.Identifier
 
-import org.hyrulecraft.dungeon_utils.DungeonUtils
+import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils
 
 class LoadScreenCallback {
 

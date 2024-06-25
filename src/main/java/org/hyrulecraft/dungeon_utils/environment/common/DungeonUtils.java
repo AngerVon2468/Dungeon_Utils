@@ -1,4 +1,4 @@
-package org.hyrulecraft.dungeon_utils;
+package org.hyrulecraft.dungeon_utils.environment.common;
 
 import eu.midnightdust.lib.config.MidnightConfig;
 

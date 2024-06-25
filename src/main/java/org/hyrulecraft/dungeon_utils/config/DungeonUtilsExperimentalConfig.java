@@ -2,7 +2,7 @@ package org.hyrulecraft.dungeon_utils.config;
 
 import com.google.gson.*;
 
-import org.hyrulecraft.dungeon_utils.DungeonUtils;
+import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils;
 
 import java.io.*;
 

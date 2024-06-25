@@ -12,7 +12,7 @@ import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.*;
 
-import org.hyrulecraft.dungeon_utils.DungeonUtils;
+import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils;
 import org.hyrulecraft.dungeon_utils.block.DungeonUtilsBlocks;
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems;
 

@@ -18,7 +18,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "org.hyrulecraft.dungeon_utils.DungeonUtils"
+      "org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils"
     ],
     "client": [
       "org.hyrulecraft.dungeon_utils.environment.client.DungeonUtilsClient"

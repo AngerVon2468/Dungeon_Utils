@@ -7,7 +7,7 @@ import net.minecraft.registry.*
 import net.minecraft.text.Text
 import net.minecraft.util.Identifier
 
-import org.hyrulecraft.dungeon_utils.DungeonUtils.*
+import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils.*
 import org.hyrulecraft.dungeon_utils.block.DungeonUtilsBlocks.BLUE_SWITCH_BLOCK
 import org.hyrulecraft.dungeon_utils.block.DungeonUtilsBlocks.RUSTY_SWITCH_BLOCK
 import org.hyrulecraft.dungeon_utils.block.DungeonUtilsBlocks.YELLOW_SWITCH_BLOCK

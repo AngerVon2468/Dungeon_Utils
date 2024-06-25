@@ -8,7 +8,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.*;
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.util.Identifier;
 
-import org.hyrulecraft.dungeon_utils.DungeonUtils;
+import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils;
 import org.hyrulecraft.dungeon_utils.entity.DungeonUtilsEntities;
 import org.hyrulecraft.dungeon_utils.entity.model.CrateEntityModel;
 import org.hyrulecraft.dungeon_utils.entity.renderer.*;

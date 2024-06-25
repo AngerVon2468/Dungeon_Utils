@@ -6,7 +6,7 @@ import net.minecraft.entity.*;
 import net.minecraft.registry.*;
 import net.minecraft.util.Identifier;
 
-import org.hyrulecraft.dungeon_utils.DungeonUtils;
+import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils;
 
 public class DungeonUtilsEntities {
 
