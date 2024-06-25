@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " bc",
+    "ad ",
+    " bc"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:netherite_block"
+    },
+    "b": {
+      "item": "minecraft:gold"
+    },
+    "c": {
+      "item": "minecraft:arrow"
+    },
+    "d": {
+      "item": "dungeon_utils:lynel_bow_three_x"
+    }
+  },
+  "result": {
+    "item": "dungeon_utils:lynel_bow_five_x",
+    "count": 1
+  }
+}

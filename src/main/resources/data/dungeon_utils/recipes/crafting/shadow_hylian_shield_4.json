@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "   ",
+    " a ",
+    " b "
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:the_hylian_shield"
+    },
+    "b": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "result": {
+    "item": "dungeon_utils:shadow_hylian_shield",
+    "count": 1
+  }
+}

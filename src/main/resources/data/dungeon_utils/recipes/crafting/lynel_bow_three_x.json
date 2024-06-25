@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "dab",
+    "cdb",
+    "dab"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:iron_block"
+    },
+    "b": {
+      "item": "minecraft:string"
+    },
+    "c": {
+      "item": "minecraft:diamond"
+    },
+    "d": {
+      "item": "minecraft:arrow"
+    }
+  },
+  "result": {
+    "item": "dungeon_utils:lynel_bow_three_x",
+    "count": 1
+  }
+}
