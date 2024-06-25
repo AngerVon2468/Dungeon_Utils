@@ -15,17 +15,12 @@ import org.hyrulecraft.dungeon_utils.environment.common.item.armour.LinkArmourMa
 import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.*
 import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.bow.lynel.LynelBowFiveXItem
 import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.bow.lynel.LynelBowThreeXItem
-import org.hyrulecraft.dungeon_utils.item.itemtype.*
 import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.champion.weapon.revali.GreatEagleBowItem
 import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.champion.ability.daruk.DaruksProtectionItem
-import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.champion.ability.mipha.MiphasGraceItem
-import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.champion.ability.mipha.MiphasGracePlusItem
-import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.champion.ability.revali.RevalisGaleItem
-import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.champion.ability.revali.RevalisGalePlusItem
-import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.clothing.glove.ClimbingGlovesItem
-import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.clothing.glove.MogmaMittsItem
-import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.clothing.link.CapTrinketItem
-import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.clothing.link.TunicTrinketItem
+import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.champion.ability.mipha.*
+import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.champion.ability.revali.*
+import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.clothing.glove.*
+import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.clothing.link.*
 import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.rupee.ChildRupeeWalletItem
 
 object DungeonUtilsItems {

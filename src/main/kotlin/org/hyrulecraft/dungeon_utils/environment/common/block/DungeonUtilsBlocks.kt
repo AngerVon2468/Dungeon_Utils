@@ -9,10 +9,7 @@ import net.minecraft.registry.*
 import net.minecraft.util.Identifier
 
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils
-import org.hyrulecraft.dungeon_utils.environment.common.block.blocktype.BlueSwitchBlock
-import org.hyrulecraft.dungeon_utils.environment.common.block.blocktype.PedestalBlock
-import org.hyrulecraft.dungeon_utils.environment.common.block.blocktype.RustySwitchBlock
-import org.hyrulecraft.dungeon_utils.environment.common.block.blocktype.YellowSwitchBlock
+import org.hyrulecraft.dungeon_utils.environment.common.block.blocktype.*
 
 object DungeonUtilsBlocks {
 
