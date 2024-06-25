@@ -21,13 +21,13 @@
       "org.hyrulecraft.dungeon_utils.DungeonUtils"
     ],
     "client": [
-      "org.hyrulecraft.dungeon_utils.client.DungeonUtilsClient"
+      "org.hyrulecraft.dungeon_utils.environment.client.DungeonUtilsClient"
     ],
     "server": [
-      "org.hyrulecraft.dungeon_utils.DungeonUtilsServer"
+      "org.hyrulecraft.dungeon_utils.environment.server.DungeonUtilsServer"
     ],
     "journeymap": [
-      "org.hyrulecraft.dungeon_utils.client.journeymap.DungeonUtilsJourneymapPlugin"
+      "org.hyrulecraft.dungeon_utils.environment.client.journeymap.DungeonUtilsJourneymapPlugin"
     ]
   },
   "mixins": [

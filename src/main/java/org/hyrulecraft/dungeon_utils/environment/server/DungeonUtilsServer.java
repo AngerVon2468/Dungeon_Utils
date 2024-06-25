@@ -1,6 +1,8 @@
-package org.hyrulecraft.dungeon_utils;
+package org.hyrulecraft.dungeon_utils.environment.server;
 
 import net.fabricmc.api.DedicatedServerModInitializer;
+
+import org.hyrulecraft.dungeon_utils.DungeonUtils;
 
 public class DungeonUtilsServer implements DedicatedServerModInitializer {
 

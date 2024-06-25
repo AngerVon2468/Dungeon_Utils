@@ -1,4 +1,4 @@
-package org.hyrulecraft.dungeon_utils.client.journeymap;
+package org.hyrulecraft.dungeon_utils.environment.client.journeymap;
 
 import journeymap.client.api.*;
 import journeymap.client.api.display.Waypoint;

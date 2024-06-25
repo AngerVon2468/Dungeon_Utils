@@ -1,5 +1,7 @@
 package org.hyrulecraft.dungeon_utils.item.itemtype;
 
+import net.fabricmc.loader.api.FabricLoader;
+
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
@@ -8,7 +10,7 @@ import net.minecraft.util.hit.*;
 import net.minecraft.util.math.*;
 import net.minecraft.world.World;
 
-import org.hyrulecraft.dungeon_utils.client.journeymap.DungeonUtilsJourneymapPlugin;
+import org.hyrulecraft.dungeon_utils.environment.client.journeymap.DungeonUtilsJourneymapPlugin;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -42,7 +44,7 @@ public class SheikahSlateItem extends Item {
                     BlockHitResult blockHit = (BlockHitResult) hit;
                     BlockPos blockPos = blockHit.getBlockPos();;
 
-                    if (DungeonUtilsJourneymapPlugin.getInstance() != null) {
+                    if (DungeonUtilsJourneymapPlugin.getInstance() != null && FabricLoader.getInstance().isModLoaded("journeymap")) {
                         DungeonUtilsJourneymapPlugin.getInstance().createWaypoint(blockPos, user.getWorld().getRegistryKey());
                     }
                     break;

@@ -1,4 +1,4 @@
-package org.hyrulecraft.dungeon_utils.client;
+package org.hyrulecraft.dungeon_utils.environment.client;
 
 import dev.emi.trinkets.api.client.*;
 
