@@ -9,7 +9,10 @@ import net.minecraft.registry.*
 import net.minecraft.util.Identifier
 
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils
-import org.hyrulecraft.dungeon_utils.block.blocktype.*
+import org.hyrulecraft.dungeon_utils.environment.common.block.blocktype.BlueSwitchBlock
+import org.hyrulecraft.dungeon_utils.environment.common.block.blocktype.PedestalBlock
+import org.hyrulecraft.dungeon_utils.environment.common.block.blocktype.RustySwitchBlock
+import org.hyrulecraft.dungeon_utils.environment.common.block.blocktype.YellowSwitchBlock
 
 object DungeonUtilsBlocks {
 
@@ -24,19 +27,31 @@ object DungeonUtilsBlocks {
 
     @JvmField
     val YELLOW_SWITCH_BLOCK = registerBlock("yellow_switch_block",
-        YellowSwitchBlock(FabricBlockSettings.create().nonOpaque()))
+        YellowSwitchBlock(
+            FabricBlockSettings.create().nonOpaque()
+        )
+    )
 
     @JvmField
     val RUSTY_SWITCH_BLOCK = registerBlock("rusty_switch_block",
-        RustySwitchBlock(FabricBlockSettings.create().nonOpaque()))
+        RustySwitchBlock(
+            FabricBlockSettings.create().nonOpaque()
+        )
+    )
 
     @JvmField
     val BLUE_SWITCH_BLOCK = registerBlock("blue_switch_block",
-        BlueSwitchBlock(FabricBlockSettings.create().nonOpaque()))
+        BlueSwitchBlock(
+            FabricBlockSettings.create().nonOpaque()
+        )
+    )
 
     @JvmField
     val PEDESTAL_BLOCK = registerBlock("pedestal_block",
-        PedestalBlock(FabricBlockSettings.create().nonOpaque()))
+        PedestalBlock(
+            FabricBlockSettings.create().nonOpaque()
+        )
+    )
 
     @JvmStatic
     fun registerModBlocks() {

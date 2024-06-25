@@ -9,9 +9,10 @@ import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.util.Identifier;
 
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils;
-import org.hyrulecraft.dungeon_utils.entity.DungeonUtilsEntities;
-import org.hyrulecraft.dungeon_utils.entity.model.CrateEntityModel;
-import org.hyrulecraft.dungeon_utils.entity.renderer.*;
+import org.hyrulecraft.dungeon_utils.environment.common.entity.DungeonUtilsEntities;
+import org.hyrulecraft.dungeon_utils.environment.client.entity.model.CrateEntityModel;
+import org.hyrulecraft.dungeon_utils.environment.client.entity.renderer.CrateEntityRenderer;
+import org.hyrulecraft.dungeon_utils.environment.client.entity.renderer.MasterSwordBeamEntityRenderer;
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems;
 import org.hyrulecraft.dungeon_utils.util.UtilCollector;
 

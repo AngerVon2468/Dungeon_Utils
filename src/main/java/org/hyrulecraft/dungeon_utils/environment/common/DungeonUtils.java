@@ -5,12 +5,12 @@ import eu.midnightdust.lib.config.MidnightConfig;
 import net.fabricmc.api.ModInitializer;
 
 import org.hyrulecraft.dungeon_utils.config.*;
-import org.hyrulecraft.dungeon_utils.entity.DungeonUtilsEntities;
+import org.hyrulecraft.dungeon_utils.environment.common.entity.DungeonUtilsEntities;
 import org.hyrulecraft.dungeon_utils.item.DungeonUtilsItems;
 import org.hyrulecraft.dungeon_utils.block.DungeonUtilsBlocks;
 import org.hyrulecraft.dungeon_utils.itemgroup.DungeonUtilsItemGroups;
 import org.hyrulecraft.dungeon_utils.sound.DungeonUtilsSounds;
-import org.hyrulecraft.dungeon_utils.tags.DungeonUtilsTags;
+import org.hyrulecraft.dungeon_utils.environment.common.tags.DungeonUtilsTags;
 import org.hyrulecraft.dungeon_utils.util.UtilCollector;
 
 import org.slf4j.*;
