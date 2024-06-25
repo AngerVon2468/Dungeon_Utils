@@ -46,7 +46,7 @@ object DungeonUtilsBlocks {
     @JvmField
     val PEDESTAL_BLOCK = registerBlock("pedestal_block",
         PedestalBlock(
-            FabricBlockSettings.create().nonOpaque()
+            FabricBlockSettings.create().nonOpaque().requiresTool().strength(1.5f)
         )
     )
 

@@ -10,15 +10,15 @@ import static org.hyrulecraft.dungeon_utils.config.DungeonUtilsExperimentalConfi
 
 public class DungeonUtilsExperimentalConfig {
 
-    public static final String dungeonUtilsPath = System.getProperty("user.home") + System.getProperty("file.separator") + "." + DungeonUtils.NAME;
+    public static String dungeonUtilsPath = System.getProperty("user.home") + System.getProperty("file.separator") + "." + DungeonUtils.NAME;
 
-    public static final File dungeonUtilsConfig = new File(dungeonUtilsPath, "config.json");
+    public static File dungeonUtilsConfig = new File(dungeonUtilsPath, "config.json");
 
-    public static final File dungeonUtilsFolder = new File(dungeonUtilsPath);
+    public static File dungeonUtilsFolder = new File(dungeonUtilsPath);
 
     public static Object dungeonUtilsObject;
 
-    public static final JsonObject dungeonUtilsAsJsonObject = (JsonObject) dungeonUtilsObject;
+    public static JsonObject dungeonUtilsAsJsonObject = (JsonObject) dungeonUtilsObject;
 
     static {
         try {

@@ -47,7 +47,7 @@ public class DungeonUtils implements ModInitializer {
 
         } else {
 
-            DungeonUtils.LOGGER.info("isWiiUBased: false");
+            DungeonUtils.LOGGER.error("isWiiUBased: false");
 
         }
     }
