@@ -47,6 +47,8 @@ public class SheikahSlateItem extends Item {
                     if (DungeonUtilsJourneymapPlugin.getInstance() != null && FabricLoader.getInstance().isModLoaded("journeymap")) {
                         DungeonUtilsJourneymapPlugin.getInstance().createWaypoint(blockPos, user.getWorld().getRegistryKey());
                     }
+                    // TODO: Xaeros minimap/worldmap compat? #notmyproblem - Mavity
+                    // (P.S Kafei if you want it, then do it yourself)
                     break;
             }
 
