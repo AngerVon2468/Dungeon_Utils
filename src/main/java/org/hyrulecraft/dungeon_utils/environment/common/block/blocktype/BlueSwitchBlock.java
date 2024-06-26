@@ -7,7 +7,7 @@ import net.minecraft.item.*;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundCategories;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.*;
 import net.minecraft.util.*;
@@ -91,8 +91,8 @@ public class BlueSwitchBlock extends HorizontalFacingBlock {
         ItemStack stack = player.getStackInHand(hand);
         if (stack.isOf(DungeonUtilsItems.MEGATON_HAMMER)) {
 
-            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategory.PLAYERS, 1.0f, 1.0f);
-            player.playSound(DungeonUtilsSounds.SWITCH, SoundCategory.PLAYERS, 1.0f, 1.0f);
+            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategories.PLAYERS, 1.0f, 1.0f);
+            player.playSound(DungeonUtilsSounds.SWITCH, SoundCategories.PLAYERS, 1.0f, 1.0f);
             world.setBlockState(pos, state.with(IS_STEPPED_ON, true));
             this.updateNeighbors(world, pos);
             return ActionResult.SUCCESS;
@@ -149,16 +149,16 @@ public class BlueSwitchBlock extends HorizontalFacingBlock {
         boolean willBeActivatedFromEntites = activationFromEntites > 0;
         if (output != activationFromEntites) {
             BlockState blockState = this.setRedstoneOutput(state, activationFromEntites);
-            world.playSound(null, pos, DungeonUtilsSounds.SWITCH, SoundCategory.PLAYERS, 1.0f, 1.0f);
+            world.playSound(null, pos, DungeonUtilsSounds.SWITCH, SoundCategories.PLAYERS, 1.0f, 1.0f);
             world.setBlockState(pos, blockState, Block.NOTIFY_LISTENERS);
             this.updateNeighbors(world, pos);
             world.scheduleBlockRerenderIfNeeded(pos, state, blockState);
         }
         if (!willBeActivatedFromEntites && isActivated) {
-            world.playSound(null, pos, DungeonUtilsSounds.SWITCH, SoundCategory.PLAYERS, 1.0f, 1.0f);
+            world.playSound(null, pos, DungeonUtilsSounds.SWITCH, SoundCategories.PLAYERS, 1.0f, 1.0f);
             world.emitGameEvent(entity, GameEvent.BLOCK_DEACTIVATE, pos);
         } else if (willBeActivatedFromEntites && !isActivated) {
-            world.playSound(null, pos, DungeonUtilsSounds.SWITCH, SoundCategory.PLAYERS, 1.0f, 1.0f);
+            world.playSound(null, pos, DungeonUtilsSounds.SWITCH, SoundCategories.PLAYERS, 1.0f, 1.0f);
             world.emitGameEvent(entity, GameEvent.BLOCK_ACTIVATE, pos);
         }
         if (willBeActivatedFromEntites) {

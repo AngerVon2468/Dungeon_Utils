@@ -6,7 +6,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.Particles;
-import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundCategories;
 import net.minecraft.world.World;
 
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems;
@@ -30,7 +30,7 @@ public class ChampionEventCallbacks {
                     if (!stack.hasNbt()) {
 
                         player.setHealth(20.0f);
-                        player.playSound(DungeonUtilsSounds.IT_IS_MY_PLEASURE, SoundCategory.PLAYERS, 1f, 1f);
+                        player.playSound(DungeonUtilsSounds.IT_IS_MY_PLEASURE, SoundCategories.PLAYERS, 1f, 1f);
                         addIsUsed(player);
                         player.getItemCooldownManager().set((DungeonUtilsItems.MIPHAS_GRACE), ( 20 * 60 ) * 24);
                         return false;
@@ -49,7 +49,7 @@ public class ChampionEventCallbacks {
                     if (!stack2.hasNbt()) {
 
                         player.setHealth(20.0f);
-                        player.playSound(DungeonUtilsSounds.IT_IS_MY_PLEASURE, SoundCategory.PLAYERS, 1f, 1f);
+                        player.playSound(DungeonUtilsSounds.IT_IS_MY_PLEASURE, SoundCategories.PLAYERS, 1f, 1f);
                         addIsUsedPlus(player);
                         player.getItemCooldownManager().set((DungeonUtilsItems.MIPHAS_GRACE_PLUS), ( 20 * 60 ) * 8);
                         return false;
@@ -84,19 +84,19 @@ public class ChampionEventCallbacks {
 
                     if (!stack.hasNbt()) {
 
-                        player.playSound(DungeonUtilsSounds.IT_IS_MY_PLEASURE, SoundCategory.PLAYERS, 1f, 1f);
+                        player.playSound(DungeonUtilsSounds.IT_IS_MY_PLEASURE, SoundCategories.PLAYERS, 1f, 1f);
                         addSecondUsage(player);
                         return false;
 
                     } else if (stack.getNbt() != null && stack.getNbt().contains("dungeon_utils.daruks_protection.usage_two") && !player.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.DARUKS_PROTECTION)) {
 
-                        player.playSound(DungeonUtilsSounds.IT_IS_MY_PLEASURE, SoundCategory.PLAYERS, 1f, 1f);
+                        player.playSound(DungeonUtilsSounds.IT_IS_MY_PLEASURE, SoundCategories.PLAYERS, 1f, 1f);
                         addThirdUsage(player);
                         return false;
 
                     } else if (stack.getNbt() != null && stack.getNbt().contains("dungeon_utils.daruks_protection.usage_three") && !player.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.DARUKS_PROTECTION)) {
 
-                        player.playSound(DungeonUtilsSounds.IT_IS_MY_PLEASURE, SoundCategory.PLAYERS, 1f, 1f);
+                        player.playSound(DungeonUtilsSounds.IT_IS_MY_PLEASURE, SoundCategories.PLAYERS, 1f, 1f);
                         addAntiSpam(player);
                         player.getItemCooldownManager().set((DungeonUtilsItems.DARUKS_PROTECTION), ( 20 * 60 ) * 18);
                         return false;

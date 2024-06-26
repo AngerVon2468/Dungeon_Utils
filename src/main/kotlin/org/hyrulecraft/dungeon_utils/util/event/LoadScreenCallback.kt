@@ -6,7 +6,8 @@ import net.fabricmc.fabric.api.client.screen.v1.ScreenEvents.AFTER_INIT
 
 import net.minecraft.client.MinecraftClient
 import net.minecraft.client.gui.screen.*
-import net.minecraft.sound.SoundCategory
+import net.minecraft.client.gui.screen.world.WorldLoadingScreen
+import net.minecraft.sound.SoundCategories
 import net.minecraft.util.Identifier
 
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils
@@ -15,13 +16,13 @@ class LoadScreenCallback {
 
     companion object {
 
-        var START_GAME_CLIP: AudioClip? = AudioClip.buildInternalClip(Identifier(DungeonUtils.MOD_ID, "sounds/event/game/start_game.ogg"), SoundCategory.MUSIC)
+        var START_GAME_CLIP: AudioClip? = AudioClip.buildInternalClip(Identifier(DungeonUtils.MOD_ID, "sounds/event/game/start_game.ogg"), SoundCategories.MUSIC)
 
         @JvmStatic
         fun loadScreenEvent() {
             AFTER_INIT.register { client, screen, scaledWidth, scaledHeight ->
 
-                if (screen is LevelLoadingScreen) {
+                if (screen is WorldLoadingScreen) {
 
                     START_GAME_CLIP?.play()
 

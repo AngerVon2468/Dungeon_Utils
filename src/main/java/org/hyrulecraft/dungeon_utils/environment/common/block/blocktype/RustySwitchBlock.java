@@ -4,7 +4,7 @@ import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.registry.tag.BlockTags;
-import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundCategories;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.*;
 import net.minecraft.util.*;
@@ -88,8 +88,8 @@ public class RustySwitchBlock extends HorizontalFacingBlock {
         ItemStack stack = player.getStackInHand(hand);
         if (stack.isOf(DungeonUtilsItems.MEGATON_HAMMER) && !state.get(IS_STEPPED_ON)) {
 
-            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategory.PLAYERS, 1.0f, 1.0f);
-            player.playSound(DungeonUtilsSounds.SWITCH, SoundCategory.PLAYERS, 1.0f, 1.0f);
+            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategories.PLAYERS, 1.0f, 1.0f);
+            player.playSound(DungeonUtilsSounds.SWITCH, SoundCategories.PLAYERS, 1.0f, 1.0f);
             world.setBlockState(pos, state.with(IS_STEPPED_ON, true));
             this.updateNeighbors(world, pos);
             return ActionResult.SUCCESS;

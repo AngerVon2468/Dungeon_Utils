@@ -8,7 +8,7 @@ import net.minecraft.entity.effect.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundCategories;
 import net.minecraft.util.*;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
@@ -40,7 +40,7 @@ public class RevalisGaleItem extends TrinketItem {
 
             } else if (stack.getNbt() != null && !player.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.REVALIS_GALE) && stack.getNbt().contains("dungeon_utils.revalis_gale.anti_spam") && stack.isOf(DungeonUtilsItems.REVALIS_GALE)) {
 
-                player.playSound(DungeonUtilsSounds.REVALIS_GALE_RECHARGE, SoundCategory.PLAYERS, 1f, 1f);
+                player.playSound(DungeonUtilsSounds.REVALIS_GALE_RECHARGE, SoundCategories.PLAYERS, 1f, 1f);
                 stack.removeSubNbt("dungeon_utils.revalis_gale.anti_spam");
 
             } else if (stack.getNbt() != null && player.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.REVALIS_GALE) && !stack.getNbt().contains("dungeon_utils.revalis_gale.anti_spam") && stack.isOf(DungeonUtilsItems.REVALIS_GALE)) {

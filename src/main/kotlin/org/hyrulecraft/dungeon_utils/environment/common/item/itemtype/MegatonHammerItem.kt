@@ -4,7 +4,7 @@ import net.minecraft.block.*
 import net.minecraft.entity.LivingEntity
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.*
-import net.minecraft.sound.SoundCategory
+import net.minecraft.sound.SoundCategories
 import net.minecraft.util.*
 import net.minecraft.util.math.BlockPos
 import net.minecraft.world.World
@@ -18,7 +18,7 @@ class MegatonHammerItem(toolMaterial: ToolMaterial?, attackDamage: Int, attackSp
     override fun use(world: World, user: PlayerEntity, hand: Hand): TypedActionResult<ItemStack> {
 
         val stack = user.getStackInHand(hand)
-        user.playSound(DungeonUtilsSounds.HAMMER_SWING, SoundCategory.PLAYERS, 1.0f, 1.0f)
+        user.playSound(DungeonUtilsSounds.HAMMER_SWING, SoundCategories.PLAYERS, 1.0f, 1.0f)
         user.itemCooldownManager[DungeonUtilsItems.MEGATON_HAMMER] = 20
         return TypedActionResult.success(stack)
 
@@ -32,49 +32,49 @@ class MegatonHammerItem(toolMaterial: ToolMaterial?, attackDamage: Int, attackSp
 
         if (blockState.isOf(Blocks.STONE) && !world.isClient) {
 
-            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategory.PLAYERS, 1.0f, 1.0f)
+            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategories.PLAYERS, 1.0f, 1.0f)
             world.setBlockState(blockpos, Blocks.COBBLESTONE.defaultState)
             player.itemCooldownManager[DungeonUtilsItems.MEGATON_HAMMER] = 20
             return ActionResult.SUCCESS
 
         } else if (blockState.isOf(Blocks.STONE_BRICKS) && !world.isClient) {
 
-            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategory.PLAYERS, 1.0f, 1.0f)
+            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategories.PLAYERS, 1.0f, 1.0f)
             world.setBlockState(blockpos, Blocks.CRACKED_STONE_BRICKS.defaultState)
             player.itemCooldownManager[DungeonUtilsItems.MEGATON_HAMMER] = 20
             return ActionResult.SUCCESS
 
         } else if (blockState.isOf(Blocks.DEEPSLATE_BRICKS) && !world.isClient) {
 
-            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategory.PLAYERS, 1.0f, 1.0f)
+            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategories.PLAYERS, 1.0f, 1.0f)
             world.setBlockState(blockpos, Blocks.CRACKED_DEEPSLATE_BRICKS.defaultState)
             player.itemCooldownManager[DungeonUtilsItems.MEGATON_HAMMER] = 20
             return ActionResult.SUCCESS
 
         } else if (blockState.isOf(Blocks.DEEPSLATE_TILES) && !world.isClient) {
 
-            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategory.PLAYERS, 1.0f, 1.0f)
+            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategories.PLAYERS, 1.0f, 1.0f)
             world.setBlockState(blockpos, Blocks.CRACKED_DEEPSLATE_TILES.defaultState)
             player.itemCooldownManager[DungeonUtilsItems.MEGATON_HAMMER] = 20
             return ActionResult.SUCCESS
 
         } else if (blockState.isOf(Blocks.NETHER_BRICKS) && !world.isClient) {
 
-            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategory.PLAYERS, 1.0f, 1.0f)
+            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategories.PLAYERS, 1.0f, 1.0f)
             world.setBlockState(blockpos, Blocks.CRACKED_NETHER_BRICKS.defaultState)
             player.itemCooldownManager[DungeonUtilsItems.MEGATON_HAMMER] = 20
             return ActionResult.SUCCESS
 
         } else if (blockState.isOf(Blocks.POLISHED_BLACKSTONE_BRICKS) && !world.isClient) {
 
-            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategory.PLAYERS, 1.0f, 1.0f)
+            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategories.PLAYERS, 1.0f, 1.0f)
             world.setBlockState(blockpos, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS.defaultState)
             player.itemCooldownManager[DungeonUtilsItems.MEGATON_HAMMER] = 20
             return ActionResult.SUCCESS
 
         } else {
 
-            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategory.PLAYERS, 1.0f, 1.0f)
+            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategories.PLAYERS, 1.0f, 1.0f)
             player.itemCooldownManager[DungeonUtilsItems.MEGATON_HAMMER] = 20
             return ActionResult.SUCCESS
 
@@ -85,7 +85,7 @@ class MegatonHammerItem(toolMaterial: ToolMaterial?, attackDamage: Int, attackSp
         if (!user.itemCooldownManager.isCoolingDown(DungeonUtilsItems.MEGATON_HAMMER)) {
 
             entity.damage(user.damageSources.playerAttack(user), 8.0f)
-            user.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategory.PLAYERS, 1.0f, 1.0f)
+            user.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategories.PLAYERS, 1.0f, 1.0f)
             user.itemCooldownManager[DungeonUtilsItems.MEGATON_HAMMER] = 20
             return ActionResult.SUCCESS
 
