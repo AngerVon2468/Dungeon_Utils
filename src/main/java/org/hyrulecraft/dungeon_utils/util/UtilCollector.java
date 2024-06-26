@@ -2,8 +2,6 @@ package org.hyrulecraft.dungeon_utils.util;
 
 import net.fabricmc.loader.api.FabricLoader;
 
-import org.hyrulecraft.dungeon_utils.util.event.ChampionEventCallbacks;
-import org.hyrulecraft.dungeon_utils.util.event.ClientSendMessageCallbacks;
 import org.hyrulecraft.dungeon_utils.util.event.*;
 import org.hyrulecraft.dungeon_utils.util.command.DungeonUtilsCommands;
 
@@ -14,6 +12,7 @@ public class UtilCollector {
         // Events.
         ChampionEventCallbacks.allowDeathEvent();
         ChampionEventCallbacks.allowDamageEvent();
+        MobDeathEvent.onEntityDiesEvent();
 
         // Commands.
         DungeonUtilsCommands.kys();

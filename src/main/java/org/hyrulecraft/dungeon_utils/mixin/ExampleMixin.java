@@ -1,15 +1,22 @@
 package org.hyrulecraft.dungeon_utils.mixin;
 
-import net.minecraft.server.MinecraftServer;
+import net.minecraft.entity.boss.dragon.*;
+
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems;
+
+import org.jetbrains.annotations.NotNull;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(MinecraftServer.class)
+@Mixin(EnderDragonFight.class)
 public class ExampleMixin {
-	@Inject(at = @At("HEAD"), method = "loadWorld")
-	private void init(CallbackInfo info) {
-		// This code is injected into the start of MinecraftServer.loadWorld()V
+
+	@Inject(at = @At("TAIL"), method = "dragonKilled")
+	private void dragonKilled(@NotNull EnderDragonEntity enderDragonEntity, CallbackInfo ci) {
+
+		enderDragonEntity.dropStack(DungeonUtilsItems.HEART_CONTAINER.getDefaultStack());
+
 	}
 }

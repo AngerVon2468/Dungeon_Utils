@@ -97,6 +97,9 @@ object DungeonUtilsItems {
     val HEART_CONTAINER = registerItem("heart_container", HeartContainerItem(FabricItemSettings().maxCount(1).maxDamage(0)))
 
     @JvmField
+    val HEART_PIECE = registerItem("heart_piece", Item(FabricItemSettings().maxCount(64).maxDamage(0)))
+
+    @JvmField
     val GREAT_EAGLE_BOW = registerItem("great_eagle_bow", GreatEagleBowItem(FabricItemSettings().maxDamage(1500)))
 
     @JvmField
