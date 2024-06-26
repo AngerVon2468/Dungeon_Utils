@@ -48,8 +48,7 @@ public class DungeonUtilsJourneymapPlugin implements IClientPlugin {
 
             waypoint = new Waypoint(DungeonUtils.MOD_ID, blockPos.getX() + "_" + blockPos.getZ(), blockPos.getX() + ", " + blockPos.getZ(), dimension, blockPos)
                     .setColor(0x00ffff)
-                    .setPersistent(true)
-                    .setEditable(false);
+                    .setPersistent(true);
 
             // Add or update
             this.jmAPI.show(waypoint);

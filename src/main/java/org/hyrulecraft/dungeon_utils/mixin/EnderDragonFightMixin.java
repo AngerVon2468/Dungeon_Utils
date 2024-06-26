@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(EnderDragonFight.class)
-public class ExampleMixin {
+public class EnderDragonFightMixin {
 
 	@Inject(at = @At("TAIL"), method = "dragonKilled")
 	private void dragonKilled(@NotNull EnderDragonEntity enderDragonEntity, CallbackInfo ci) {

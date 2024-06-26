@@ -1,0 +1,140 @@
+{
+	"textures": {
+		"0": "dungeon_utils:item/sheikah_slate",
+		"particle": "dungeon_utils:item/sheikah_slate"
+	},
+	"elements": [
+		{
+			"name": "sheikah_slate_0",
+			"from": [1.6, 3.2, 7.5],
+			"to": [13.6, 12.8, 8.3],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 7.5]},
+			"faces": {
+				"north": {"uv": [13.6, 3.2, 1.6, 12.8], "texture": "#0"},
+				"east": {"uv": [12.8, 3.2, 13.6, 12.8], "texture": "#0"},
+				"south": {"uv": [1.6, 3.2, 13.6, 12.8], "texture": "#0"},
+				"west": {"uv": [1.6, 3.2, 2.4, 12.8], "texture": "#0"},
+				"up": {"uv": [1.6, 3.2, 13.6, 4], "texture": "#0"},
+				"down": {"uv": [1.6, 12, 13.6, 12.8], "texture": "#0"}
+			}
+		},
+		{
+			"name": "sheikah_slate_1",
+			"from": [13.6, 9.6, 7.5],
+			"to": [14.4, 12.8, 8.3],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 7.5]},
+			"faces": {
+				"north": {"uv": [14.4, 3.2, 13.6, 6.4], "texture": "#0"},
+				"east": {"uv": [13.6, 3.2, 14.4, 6.4], "texture": "#0"},
+				"south": {"uv": [13.6, 3.2, 14.4, 6.4], "texture": "#0"},
+				"west": {"uv": [13.6, 3.2, 14.4, 6.4], "texture": "#0"},
+				"up": {"uv": [13.6, 3.2, 14.4, 4], "texture": "#0"},
+				"down": {"uv": [13.6, 5.6, 14.4, 6.4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "sheikah_slate_2",
+			"from": [0.8, 4, 7.5],
+			"to": [1.6, 12, 8.3],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 7.5]},
+			"faces": {
+				"north": {"uv": [1.6, 4, 0.8, 12], "texture": "#0"},
+				"east": {"uv": [0.8, 4, 1.6, 12], "texture": "#0"},
+				"south": {"uv": [0.8, 4, 1.6, 12], "texture": "#0"},
+				"west": {"uv": [0.8, 4, 1.6, 12], "texture": "#0"},
+				"up": {"uv": [0.8, 4, 1.6, 4.8], "texture": "#0"},
+				"down": {"uv": [0.8, 11.2, 1.6, 12], "texture": "#0"}
+			}
+		},
+		{
+			"name": "sheikah_slate_3",
+			"from": [14.4, 4, 7.5],
+			"to": [15.2, 12, 8.3],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 7.5]},
+			"faces": {
+				"north": {"uv": [15.2, 4, 14.4, 12], "texture": "#0"},
+				"east": {"uv": [14.4, 4, 15.2, 12], "texture": "#0"},
+				"south": {"uv": [14.4, 4, 15.2, 12], "texture": "#0"},
+				"west": {"uv": [14.4, 4, 15.2, 12], "texture": "#0"},
+				"up": {"uv": [14.4, 4, 15.2, 4.8], "texture": "#0"},
+				"down": {"uv": [14.4, 11.2, 15.2, 12], "texture": "#0"}
+			}
+		},
+		{
+			"name": "sheikah_slate_4",
+			"from": [0, 4.8, 7.5],
+			"to": [0.8, 11.2, 8.3],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 7.5]},
+			"faces": {
+				"north": {"uv": [0.8, 4.8, 0, 11.2], "texture": "#0"},
+				"east": {"uv": [0, 4.8, 0.8, 11.2], "texture": "#0"},
+				"south": {"uv": [0, 4.8, 0.8, 11.2], "texture": "#0"},
+				"west": {"uv": [0, 4.8, 0.8, 11.2], "texture": "#0"},
+				"up": {"uv": [0, 4.8, 0.8, 5.6], "texture": "#0"},
+				"down": {"uv": [0, 10.4, 0.8, 11.2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "sheikah_slate_5",
+			"from": [15.2, 4.8, 7.5],
+			"to": [16, 11.2, 8.3],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 7.5]},
+			"faces": {
+				"north": {"uv": [16, 4.8, 15.2, 11.2], "texture": "#0"},
+				"east": {"uv": [15.2, 4.8, 16, 11.2], "texture": "#0"},
+				"south": {"uv": [15.2, 4.8, 16, 11.2], "texture": "#0"},
+				"west": {"uv": [15.2, 4.8, 16, 11.2], "texture": "#0"},
+				"up": {"uv": [15.2, 4.8, 16, 5.6], "texture": "#0"},
+				"down": {"uv": [15.2, 10.4, 16, 11.2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "sheikah_slate_6",
+			"from": [13.6, 3.2, 7.5],
+			"to": [14.4, 6.4, 8.3],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 7.5]},
+			"faces": {
+				"north": {"uv": [14.4, 9.6, 13.6, 12.8], "texture": "#0"},
+				"east": {"uv": [13.6, 9.6, 14.4, 12.8], "texture": "#0"},
+				"south": {"uv": [13.6, 9.6, 14.4, 12.8], "texture": "#0"},
+				"west": {"uv": [13.6, 9.6, 14.4, 12.8], "texture": "#0"},
+				"up": {"uv": [13.6, 9.6, 14.4, 10.4], "texture": "#0"},
+				"down": {"uv": [13.6, 12, 14.4, 12.8], "texture": "#0"}
+			}
+		}
+	],
+	"gui_light": "front",
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 3.12, 0.35],
+			"scale": [0.65, 0.65, 0.65]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [0, 0, 180],
+			"translation": [0, 3.12, 0.35],
+			"scale": [0.65, 0.65, 0.65]
+		},
+		"firstperson_righthand": {
+			"translation": [0, 1.5, 0]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, -180, 0],
+			"translation": [0, 1.5, 0]
+		},
+		"gui": {
+			"rotation": [1, 0, 0]
+		},
+		"fixed": {
+			"rotation": [0, 180, 0]
+		}
+	},
+	"groups": [
+		{
+			"name": "sheikah_slate",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"nbt": "{}",
+			"children": [0, 1, 2, 3, 4, 5, 6]
+		}
+	]
+}

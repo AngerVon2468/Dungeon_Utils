@@ -3,7 +3,7 @@
     "package": "org.hyrulecraft.dungeon_utils.mixin",
     "compatibilityLevel": "JAVA_17",
     "mixins": [
-        "ExampleMixin"
+        "EnderDragonFightMixin"
     ],
     "injectors": {
         "defaultRequire": 1
