@@ -1,17 +1,23 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "category": "combat",
   "pattern": [
-    " b ",
-    " a ",
-    "   "
+    "ada",
+    "cbc",
+    " a "
   ],
   "key": {
     "a": {
-      "item": "dungeon_utils:the_hylian_shield"
+      "item": "minecraft:iron_block"
     },
     "b": {
       "item": "minecraft:nether_star"
+    },
+    "c": {
+      "item": "minecraft:diamond_block"
+    },
+    "d": {
+      "item": "minecraft:leather"
     }
   },
   "result": {

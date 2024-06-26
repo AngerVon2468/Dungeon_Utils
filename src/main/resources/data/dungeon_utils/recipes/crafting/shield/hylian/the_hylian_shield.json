@@ -1,8 +1,8 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "category": "combat",
   "pattern": [
-    "ada",
+    "a a",
     "cbc",
     " a "
   ],
@@ -14,14 +14,11 @@
       "item": "minecraft:nether_star"
     },
     "c": {
-      "item": "minecraft:diamond"
-    },
-    "d": {
-      "item": "minecraft:leather"
+      "item": "minecraft:diamond_block"
     }
   },
   "result": {
-    "item": "dungeon_utils:shadow_hylian_shield",
+    "item": "dungeon_utils:the_hylian_shield",
     "count": 1
   }
 }

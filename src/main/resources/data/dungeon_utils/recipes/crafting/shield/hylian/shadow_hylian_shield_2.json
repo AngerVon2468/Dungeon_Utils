@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "combat",
+  "ingredients":[
+    {
+      "item": "dungeon_utils:the_hylian_shield"
+    },
+    {
+    "item": "minecraft:leather"
+    }
+  ],
+  "result": {
+    "item": "dungeon_utils:shadow_hylian_shield",
+    "count": 1
+  }
+}
