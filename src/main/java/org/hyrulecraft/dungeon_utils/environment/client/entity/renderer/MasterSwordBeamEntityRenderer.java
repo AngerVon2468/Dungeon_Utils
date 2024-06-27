@@ -21,7 +21,7 @@ import org.joml.*;
 import java.time.*;
 
 @Environment(EnvType.CLIENT)
-public class MasterSwordBeamEntityRenderer<T extends Entity> extends EntityRenderer<MasterSwordBeamEntity> {
+public class MasterSwordBeamEntityRenderer extends EntityRenderer<MasterSwordBeamEntity> {
 
     public MasterSwordBeamEntityRenderer(EntityRendererFactory.Context ctx) {
         super(ctx);
@@ -52,8 +52,8 @@ public class MasterSwordBeamEntityRenderer<T extends Entity> extends EntityRende
     public Identifier getTexture(@NotNull MasterSwordBeamEntity beam) {
 
         Entity owner = beam.getOwner();
-        LocalDate localDate = LocalDate.now();
-        if (localDate.getMonth() == Month.JUNE) {
+        LocalDateTime localDateAndTime = LocalDateTime.now();
+        if (localDateAndTime.getMonth() == Month.JUNE || localDateAndTime.getMonth() == Month.SEPTEMBER && localDateAndTime.getDayOfMonth() == 11) {
 
             return new Identifier(DungeonUtils.MOD_ID, "textures/item/rupee/pride_rupee.png");
 
