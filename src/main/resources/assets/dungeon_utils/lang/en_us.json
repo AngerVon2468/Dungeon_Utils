@@ -27,11 +27,11 @@
   "item.dungeon_utils.shadow_master_sword": "Shadow Master Sword",
   "item.dungeon_utils.shadow_hylian_shield": "Shadow Hylian Shield",
   "item.dungeon_utils.hookshot": "Hookshot",
-  "item.dungeon_utils.child_rupee_wallet": "Child Rupee Wallet (BROKEN, DO NOT USE)",
+  "item.dungeon_utils.child_rupee_wallet": "Child Rupee Wallet",
 
   "tooltip.dungeon_utils.cap_trinket_one": "",
   "tooltip.dungeon_utils.tunic_trinket_one": "",
-  "tooltip.dungeon_utils.rupee_amount": "Rupees: ",
+  "tooltip.dungeon_utils.rupee_amount": "Rupees:",
 
   "tab.dungeon_utils.dungeon_utils": "Dungeon Utils",
   "tab.dungeon_utils.champion_abilities": "Champion Abilities",

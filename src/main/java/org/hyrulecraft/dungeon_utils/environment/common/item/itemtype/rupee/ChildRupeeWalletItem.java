@@ -7,7 +7,7 @@ public class ChildRupeeWalletItem extends AbstractRupeeWalletItem {
     }
 
     @Override
-    public int totalRupees() {
+    public int rupeeWalletLimit() {
         return 99;
     }
 }

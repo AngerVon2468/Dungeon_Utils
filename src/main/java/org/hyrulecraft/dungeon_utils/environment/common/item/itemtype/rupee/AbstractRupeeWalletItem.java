@@ -25,9 +25,7 @@ public abstract class AbstractRupeeWalletItem extends Item {
         super(settings);
     }
 
-    public int totalRupees() {
-        return (Integer) null;
-    }
+    public abstract int rupeeWalletLimit();
 
     @Override
     public TypedActionResult<ItemStack> use(@NotNull World world, @NotNull PlayerEntity user, @NotNull Hand hand) {
@@ -40,15 +38,15 @@ public abstract class AbstractRupeeWalletItem extends Item {
             if (stack.getNbt() != null && stack.getNbt().contains("dungeon_utils.rupee.amount")) {
 
                 int rupeesInWallet = stack.getNbt().getInt("dungeon_utils.rupee.amount");
-                if (rupeesInWallet >= totalRupees()) {
+                if (rupeesInWallet >= rupeeWalletLimit()) {
 
                     return TypedActionResult.fail(stack);
 
-                } else if (rupeesInStack + rupeesInWallet > totalRupees()) {
+                } else if (rupeesInStack + rupeesInWallet > rupeeWalletLimit()) {
 
                     if (rupeesInStack > rupeesInWallet) {
 
-                        int firstAmount = (rupeesInWallet + rupeesInStack) - totalRupees();
+                        int firstAmount = (rupeesInWallet + rupeesInStack) - rupeeWalletLimit();
                         int secondAmount = (rupeesInWallet + rupeesInStack) - rupeesInStack;
                         int removeAmount = secondAmount - firstAmount;
                         rupeeStack.decrement(removeAmount);
@@ -58,9 +56,9 @@ public abstract class AbstractRupeeWalletItem extends Item {
 
                     } else if (rupeesInWallet > rupeesInStack) {
 
-                        int removeAmount = totalRupees() - rupeesInWallet;
+                        int removeAmount = rupeeWalletLimit() - rupeesInWallet;
                         rupeeStack.decrement(removeAmount);
-                        int addAmount = totalRupees();
+                        int addAmount = rupeeWalletLimit();
                         addAmount(user, addAmount);
                         return TypedActionResult.consume(stack);
 
@@ -110,7 +108,7 @@ public abstract class AbstractRupeeWalletItem extends Item {
 
                 int amount = stack.getNbt().getInt("dungeon_utils.rupee.amount");
                 String amountAsString = Integer.toString(amount);
-                String limitAsString = Integer.toString(totalRupees());
+                String limitAsString = Integer.toString(rupeeWalletLimit());
 
                 tooltip.add(Text.literal(amountAsString + " out of " + limitAsString));
 
