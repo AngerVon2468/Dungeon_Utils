@@ -18,6 +18,8 @@ import org.jetbrains.annotations.NotNull;
 
 import org.joml.*;
 
+import java.time.LocalDate;
+
 @Environment(EnvType.CLIENT)
 public class MasterSwordBeamEntityRenderer<T extends Entity> extends EntityRenderer<MasterSwordBeamEntity> {
 
@@ -50,11 +52,16 @@ public class MasterSwordBeamEntityRenderer<T extends Entity> extends EntityRende
     public Identifier getTexture(@NotNull MasterSwordBeamEntity beam) {
 
         Entity owner = beam.getOwner();
-        if (owner instanceof PlayerEntity pOwner && pOwner.getEquippedStack(EquipmentSlot.MAINHAND).isOf(DungeonUtilsItems.THE_MASTER_SWORD_AWAKENED)) {
+        LocalDate localDate = LocalDate.now();
+        if (localDate.getMonth().getValue() == 6) {
+
+            return new Identifier(DungeonUtils.MOD_ID, "textures/item/rupee/pride_rupee.png");
+
+        } else if (owner instanceof PlayerEntity playerOwner && playerOwner.getEquippedStack(EquipmentSlot.MAINHAND).isOf(DungeonUtilsItems.THE_MASTER_SWORD_AWAKENED)) {
 
             return new Identifier(DungeonUtils.MOD_ID, "textures/item/rupee/blue_rupee.png");
 
-        } else if (owner instanceof PlayerEntity pOwner && pOwner.getEquippedStack(EquipmentSlot.MAINHAND).isOf(DungeonUtilsItems.THE_MASTER_SWORD)) {
+        } else if (owner instanceof PlayerEntity playerOwner && playerOwner.getEquippedStack(EquipmentSlot.MAINHAND).isOf(DungeonUtilsItems.THE_MASTER_SWORD)) {
 
             return new Identifier(DungeonUtils.MOD_ID, "textures/item/rupee/green_rupee.png");
 
