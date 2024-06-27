@@ -36,9 +36,9 @@ public abstract class AbstractRupeeWalletItem extends Item {
         // TODO: Fix this.
         if (InventoryUtil.hasPlayerStackInInventory(user, DungeonUtilsItems.GREEN_RUPEE)) {
 
-            ItemStack stack2 = user.getInventory().getStack(InventoryUtil.getFirstInventoryIndex(user, DungeonUtilsItems.GREEN_RUPEE));
-            int rupeesInStack = stack2.getCount();
-            if (stack.getNbt() != null) {
+            ItemStack rupeeStack = user.getInventory().getStack(InventoryUtil.getFirstInventoryIndex(user, DungeonUtilsItems.GREEN_RUPEE));
+            int rupeesInStack = rupeeStack.getCount();
+            if (stack.getNbt() != null && stack.getNbt().contains("dungeon_utils.rupee.amount")) {
 
                 int rupeesInWallet = stack.getNbt().getInt("dungeon_utils.rupee.amount");
                 if (rupeesInWallet >= totalRupees()) {
@@ -49,40 +49,43 @@ public abstract class AbstractRupeeWalletItem extends Item {
 
                     if (rupeesInStack > rupeesInWallet) {
 
-                        // TODO: figure out how to inverse this logic
-                        /*
-                        int removeAmount = totalRupees() - rupeesInWallet;
-                        stack2.decrement(removeAmount);
+                        int firstAmount = (rupeesInWallet + rupeesInStack) - totalRupees();
+                        int secondAmount = (rupeesInWallet + rupeesInStack) - rupeesInStack;
+                        int removeAmount = secondAmount - firstAmount;
+                        rupeeStack.decrement(removeAmount);
                         int addAmount = removeAmount + rupeesInWallet;
                         addAmount(user, addAmount);
-                        */
                         return TypedActionResult.fail(stack);
 
                     } else if (rupeesInWallet > rupeesInStack) {
 
                         int removeAmount = totalRupees() - rupeesInWallet;
-                        stack2.decrement(removeAmount);
+                        rupeeStack.decrement(removeAmount);
                         int addAmount = totalRupees();
                         addAmount(user, addAmount);
                         return TypedActionResult.consume(stack);
 
                     } else {
 
+                        user.sendMessage(Text.literal("An error occurred whilst trying to fill the rupee wallet."));
                         return TypedActionResult.fail(stack);
 
                     }
 
                 } else {
 
-                    return TypedActionResult.fail(stack);
+                    rupeeStack.decrement(rupeesInStack);
+                    int addAmount = rupeesInStack + rupeesInWallet;
+                    addAmount(user, addAmount);
+                    return TypedActionResult.consume(stack);
 
                 }
 
             } else {
 
-                stack2.decrement(rupeesInStack);
+                rupeeStack.decrement(rupeesInStack);
                 addAmount(user, rupeesInStack);
-                return TypedActionResult.fail(stack);
+                return TypedActionResult.consume(stack);
 
             }
 
