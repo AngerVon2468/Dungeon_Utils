@@ -26,7 +26,7 @@ public abstract class AbstractRupeeWalletItem extends Item {
     }
 
     public int totalRupees() {
-        return 500;
+        return (Integer) null;
     }
 
     @Override
@@ -38,59 +38,9 @@ public abstract class AbstractRupeeWalletItem extends Item {
         if (InventoryUtil.hasPlayerStackInInventory(user, DungeonUtilsItems.GREEN_RUPEE)) {
 
             ItemStack stack2 = user.getInventory().getStack(InventoryUtil.getFirstInventoryIndex(user, DungeonUtilsItems.GREEN_RUPEE));
-            int i = stack2.getCount();
+            int stack2Count = stack2.getCount();
 
-            if (i <= totalRupees() && i > 0) {
-
-                if (!stack.hasNbt()) {
-
-                    addAmount(user, i);
-                    stack2.decrement(i);
-                    return TypedActionResult.consume(stack);
-
-                } else if (stack.hasNbt() && stack.getNbt().contains("dungeon_utils.rupee.amount")) {
-
-                    int amount = stack.getNbt().getInt("dungeon_utils.rupee.amount") + i;
-
-                    addAmount(user, amount);
-                    stack2.decrement(i);
-                    return TypedActionResult.consume(stack);
-
-                } else {
-
-                    return TypedActionResult.fail(stack);
-
-                }
-
-            } else if (!stack.hasNbt() && i > totalRupees()) {
-
-                int a = totalRupees();
-
-                addAmount(user, a);
-                stack2.decrement(a);
-
-                return TypedActionResult.consume(stack);
-
-            } else if (i > totalRupees() && stack.hasNbt()) {
-
-                int amount = stack.getNbt().getInt("dungeon_utils.rupee.amount");
-
-                if (amount < totalRupees()) {
-
-                    int a = totalRupees() - amount;
-
-                    addAmount(user, a);
-                    stack2.decrement(a);
-
-                }
-
-                return TypedActionResult.consume(stack);
-
-            } else {
-
-                return TypedActionResult.fail(stack);
-
-            }
+            return TypedActionResult.consume(stack);
 
         } else {
 
@@ -109,7 +59,7 @@ public abstract class AbstractRupeeWalletItem extends Item {
 
                 tooltip.add(Text.literal("0"));
 
-            } else if (stack.hasNbt() && stack.getNbt().contains("dungeon_utils.rupee.amount")) {
+            } else if (stack.hasNbt() && stack.getNbt() != null && stack.getNbt().contains("dungeon_utils.rupee.amount")) {
 
                 int amount = stack.getNbt().getInt("dungeon_utils.rupee.amount");
                 String amountAsString = Integer.toString(amount);
