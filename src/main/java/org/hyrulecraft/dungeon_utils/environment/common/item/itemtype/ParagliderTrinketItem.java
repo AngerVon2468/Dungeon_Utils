@@ -4,7 +4,6 @@ import dev.emi.trinkets.api.*;
 
 import net.minecraft.block.*;
 import net.minecraft.entity.*;
-import net.minecraft.entity.effect.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.*;
@@ -31,33 +30,29 @@ public class ParagliderTrinketItem extends TrinketItem {
         } else {
 
             ItemStack handStack = user.getEquippedStack(EquipmentSlot.MAINHAND);
-            BlockState blockState = world.getBlockState(user.getBlockPos().offset(Direction.DOWN, 1));
-            if (blockState.isOf(Blocks.AIR) && handStack.isOf(DungeonUtilsItems.PARAGLIDER)) {
+            Vec3d playerVec3d = user.getVelocity();
+            if (handStack.isOf(DungeonUtilsItems.PARAGLIDER) && user.isFallFlying()) {
 
                 Vec3d playerPos = user.getBlockPos().toCenterPos();
                 Vec3d playerFacingPos = user.getBlockPos().offset(user.getHorizontalFacing(), 1).toCenterPos();
                 if (user.getHorizontalFacing() == Direction.NORTH && DirectionCheckUtil.facingNorth(playerPos.x, playerFacingPos.x, playerPos.z, playerFacingPos.z)) {
 
-                    user.addVelocity(0, 0.007,-0.01);
-                    user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 10, 10));
+                    user.setVelocity(playerVec3d.x, 0.05, playerVec3d.z);
 
                 }
                 if (user.getHorizontalFacing() == Direction.SOUTH && DirectionCheckUtil.facingSouth(playerPos.x, playerFacingPos.x, playerPos.z, playerFacingPos.z)) {
 
-                    user.addVelocity(0, 0.007,0.01);
-                    user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 10, 10));
+                    user.setVelocity(playerVec3d.x, 0.05, playerVec3d.z);
 
                 }
                 if (user.getHorizontalFacing() == Direction.EAST && DirectionCheckUtil.facingEast(playerPos.x, playerFacingPos.x, playerPos.z, playerFacingPos.z)) {
 
-                    user.addVelocity(0.01, 0.007,0);
-                    user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 10, 10));
+                    user.setVelocity(playerVec3d.x, 0.05, playerVec3d.z);
 
                 }
                 if (user.getHorizontalFacing() == Direction.WEST && DirectionCheckUtil.facingWest(playerPos.x, playerFacingPos.x, playerPos.z, playerFacingPos.z)) {
 
-                    user.addVelocity(-0.01, 0.007,0);
-                    user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 10, 10));
+                    user.setVelocity(playerVec3d.x, 0.05, playerVec3d.z);
 
                 }
 
