@@ -50,6 +50,13 @@ object DungeonUtilsBlocks {
         )
     )
 
+    @JvmField
+    val MALICE = registerBlock("malice",
+        MaliceBlock(
+            FabricBlockSettings.create().nonOpaque()
+        )
+    )
+
     @JvmStatic
     fun registerModBlocks() {
         DungeonUtils.LOGGER.info(DungeonUtils.NAME + " has registered its blocks.")
