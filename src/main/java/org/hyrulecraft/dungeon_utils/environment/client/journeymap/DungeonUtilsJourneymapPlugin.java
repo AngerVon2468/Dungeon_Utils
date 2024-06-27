@@ -53,8 +53,8 @@ public class DungeonUtilsJourneymapPlugin implements IClientPlugin {
             // Add or update
             this.jmAPI.show(waypoint);
 
-        } catch (Throwable t) {
-            DungeonUtils.LOGGER.error(t.getMessage(), t);
+        } catch (Throwable throwable) {
+            DungeonUtils.LOGGER.error(throwable.getMessage(), throwable);
         }
 
         return waypoint;

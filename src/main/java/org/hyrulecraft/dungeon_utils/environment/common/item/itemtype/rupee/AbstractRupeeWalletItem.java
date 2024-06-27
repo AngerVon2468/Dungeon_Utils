@@ -31,9 +31,9 @@ public abstract class AbstractRupeeWalletItem extends Item {
     public TypedActionResult<ItemStack> use(@NotNull World world, @NotNull PlayerEntity user, @NotNull Hand hand) {
         ItemStack stack = user.getStackInHand(hand);
 
-        if (InventoryUtil.hasPlayerStackInInventory(user, DungeonUtilsItems.GREEN_RUPEE)) {
+        if (InventoryUtil.checkPlayerInventoryForItem(user, DungeonUtilsItems.GREEN_RUPEE)) {
 
-            ItemStack rupeeStack = user.getInventory().getStack(InventoryUtil.getFirstInventoryIndex(user, DungeonUtilsItems.GREEN_RUPEE));
+            ItemStack rupeeStack = user.getInventory().getStack(InventoryUtil.getItemStackSlot(user, DungeonUtilsItems.GREEN_RUPEE));
             int rupeesInStack = rupeeStack.getCount();
             if (stack.getNbt() != null && stack.getNbt().contains("dungeon_utils.rupee.amount")) {
 
@@ -50,9 +50,9 @@ public abstract class AbstractRupeeWalletItem extends Item {
                         int secondAmount = (rupeesInWallet + rupeesInStack) - rupeesInStack;
                         int removeAmount = secondAmount - firstAmount;
                         rupeeStack.decrement(removeAmount);
-                        int addAmount = removeAmount + rupeesInWallet;
+                        int addAmount = rupeeWalletLimit();
                         addAmount(user, addAmount);
-                        return TypedActionResult.fail(stack);
+                        return TypedActionResult.consume(stack);
 
                     } else if (rupeesInWallet > rupeesInStack) {
 
@@ -64,8 +64,11 @@ public abstract class AbstractRupeeWalletItem extends Item {
 
                     } else {
 
-                        user.sendMessage(Text.literal("An error occurred whilst trying to fill the rupee wallet."));
-                        return TypedActionResult.fail(stack);
+                        int removeAmount = rupeeWalletLimit() - rupeesInWallet;
+                        rupeeStack.decrement(removeAmount);
+                        int addAmount = rupeeWalletLimit();
+                        addAmount(user, addAmount);
+                        return TypedActionResult.consume(stack);
 
                     }
 
