@@ -2,7 +2,6 @@ package org.hyrulecraft.dungeon_utils.environment.common.item.itemtype;
 
 import dev.emi.trinkets.api.*;
 
-import net.minecraft.block.*;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
