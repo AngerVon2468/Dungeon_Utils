@@ -66,5 +66,9 @@
   "advancements.dungeon_utils.root.title": "Dungeon Utils",
   "advancements.dungeon_utils.root.description": "Join a world with Dungeon Utils installed",
 
-  "death.attack.malice": "%1$s was corrupted by malice"
+  "death.attack.malice": "%1$s was corrupted by malice",
+
+  "title.dungeon_utils.wiiu": "WiiU",
+  "title.dungeon_utils.wiiu.button_yes": "Yes",
+  "title.dungeon_utils.wiiu.button_no": "No"
 }

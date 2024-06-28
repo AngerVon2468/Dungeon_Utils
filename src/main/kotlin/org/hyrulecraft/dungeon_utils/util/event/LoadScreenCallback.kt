@@ -6,10 +6,12 @@ import net.fabricmc.fabric.api.client.screen.v1.ScreenEvents.AFTER_INIT
 
 import net.minecraft.client.MinecraftClient
 import net.minecraft.client.gui.screen.*
+import net.minecraft.client.gui.screen.multiplayer.MultiplayerScreen
 import net.minecraft.client.gui.screen.world.WorldLoadingScreen
 import net.minecraft.sound.SoundCategories
 import net.minecraft.util.Identifier
 
+import org.hyrulecraft.dungeon_utils.environment.client.screen.WiiUScreen
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils
 
 class LoadScreenCallback {
@@ -31,6 +33,12 @@ class LoadScreenCallback {
                 if (screen is ConnectScreen) {
 
                     START_GAME_CLIP?.play()
+
+                }
+
+                if (screen is MultiplayerScreen) {
+
+                    client.setScreen(WiiUScreen(TitleScreen()) as Screen)
 
                 }
 
