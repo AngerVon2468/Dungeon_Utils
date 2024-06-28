@@ -25,6 +25,10 @@ import java.util.function.Predicate;
 public class DungeonUtilsKeybinds {
 
     public static List<LivingEntity> list = new ArrayList<>();
+    public static boolean lockedOn;
+    private static @Nullable LivingEntity targeted;
+    private static final Predicate<LivingEntity> ENTITY_PREDICATE = entity -> entity.isAlive() && entity.isAttackable();
+    private static int cycle = -1;
 
     // Categories (Translation keys)
     public static final String CATEGORY_DUNGEON_UTILS = "key.category.dungeon_utils.dungeon_utils";
@@ -94,9 +98,6 @@ public class DungeonUtilsKeybinds {
         }
     }
 
-    private static final Predicate<LivingEntity> ENTITY_PREDICATE = entity -> entity.isAlive() && entity.isAttackable();
-    private static int cycle = -1;
-
     public static @Nullable LivingEntity findNearby(@NotNull PlayerEntity player) {
 
         int r = 16;
@@ -130,15 +131,11 @@ public class DungeonUtilsKeybinds {
         }
     }
 
-
     private static void leaveLockOn() {
         targeted = null;
         lockedOn = false;
         list.clear();
     }
-
-    public static boolean lockedOn;
-    private static @Nullable LivingEntity targeted;
 
     public static void registerDungeonUtilsKeybinds() {
         registerKeyInputs();
