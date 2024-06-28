@@ -10,6 +10,7 @@ import net.minecraft.text.Text;
 
 import org.jetbrains.annotations.NotNull;
 
+// TODO: Figure out how to move around buttons xD
 @Environment(EnvType.CLIENT)
 public class WiiUScreen extends Screen {
 

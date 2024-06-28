@@ -6,7 +6,6 @@ import net.fabricmc.fabric.api.client.screen.v1.ScreenEvents.AFTER_INIT
 
 import net.minecraft.client.MinecraftClient
 import net.minecraft.client.gui.screen.*
-import net.minecraft.client.gui.screen.multiplayer.MultiplayerScreen
 import net.minecraft.client.gui.screen.multiplayer.MultiplayerWarningScreen
 import net.minecraft.client.gui.screen.world.WorldLoadingScreen
 import net.minecraft.sound.SoundCategories
