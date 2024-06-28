@@ -82,7 +82,9 @@ dependencies {
     modImplementation "curse.maven:cosmetic-lib-1019553:5429299"
     include "curse.maven:cosmetic-lib-1019553:5429299"
 
+    /*
     modImplementation "curse.maven:better-third-person-435044:4596636"
+    */
     modImplementation "curse.maven:embeddium-908741:5410231"
     modImplementation "curse.maven:jade-324717:5339230"
     modImplementation "curse.maven:jei-238222:5419573"

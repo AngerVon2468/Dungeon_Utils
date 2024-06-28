@@ -16,6 +16,7 @@ import org.hyrulecraft.dungeon_utils.environment.client.entity.renderer.CrateEnt
 import org.hyrulecraft.dungeon_utils.environment.client.entity.renderer.MasterSwordBeamEntityRenderer;
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems;
 import org.hyrulecraft.dungeon_utils.util.UtilCollector;
+import org.hyrulecraft.lockon_port.keybinds.DungeonUtilsKeybinds;
 
 public class DungeonUtilsClient implements ClientModInitializer {
 
@@ -33,6 +34,7 @@ public class DungeonUtilsClient implements ClientModInitializer {
         DungeonUtilsClient.registerEntityModelLayers();
         DungeonUtilsClient.registerEntityRenderers();
         DungeonUtilsClient.registerModelPredicates();
+        DungeonUtilsKeybinds.registerDungeonUtilsKeybinds();
     }
 
     public static void registerTrinketRenderers() {
