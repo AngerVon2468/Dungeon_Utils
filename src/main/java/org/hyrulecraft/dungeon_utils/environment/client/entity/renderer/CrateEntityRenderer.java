@@ -5,7 +5,6 @@ import net.fabricmc.api.*;
 import net.minecraft.client.render.*;
 import net.minecraft.client.render.entity.*;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.entity.Entity;
 import net.minecraft.util.Identifier;
 
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils;
@@ -15,7 +14,7 @@ import org.hyrulecraft.dungeon_utils.environment.client.entity.model.CrateEntity
 import org.jetbrains.annotations.NotNull;
 
 @Environment(EnvType.CLIENT)
-public class CrateEntityRenderer<T extends Entity> extends EntityRenderer<CrateEntity> {
+public class CrateEntityRenderer extends EntityRenderer<CrateEntity> {
 
     private final CrateEntityModel<CrateEntity> entityModel;
 
