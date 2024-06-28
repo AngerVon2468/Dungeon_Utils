@@ -10,7 +10,6 @@ import net.minecraft.client.util.InputUtil;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.TargetPredicate;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.text.Text;
 import net.minecraft.util.math.*;
 
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils;
@@ -51,8 +50,6 @@ public class DungeonUtilsKeybinds {
 
             ClientPlayerEntity clientPlayer = client.clientPlayer;
             while (lockOn.isPressed()) {
-
-                clientPlayer.sendMessage(Text.literal("Lock on keybind pressed by " + clientPlayer.getEntityName()));
 
                 if (lockedOn) {
                     leaveLockOn();
