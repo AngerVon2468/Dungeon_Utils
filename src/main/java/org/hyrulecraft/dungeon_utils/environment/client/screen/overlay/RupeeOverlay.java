@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.network.ClientPlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems;
@@ -18,9 +19,18 @@ public class RupeeOverlay {
         int scaledWidth = client.getWindow().getScaledWidth();
         int scaledHeight = client.getWindow().getScaledHeight();
         ClientPlayerEntity clientPlayer = client.clientPlayer;
-        if (clientPlayer.getStackInHand(clientPlayer.getActiveHand()).isOf(DungeonUtilsItems.CHILD_RUPEE_WALLET)) {
+        ItemStack stack = clientPlayer.getStackInHand(clientPlayer.getActiveHand());
+        if (stack.isOf(DungeonUtilsItems.CHILD_RUPEE_WALLET)) {
+
             drawContext.drawText(client.textRenderer, Text.translatable("gui.dungeon_utils.rupee_render_1"), scaledWidth / 2 + -208, scaledHeight / 2 + 104, -1, true);
-            drawContext.drawText(client.textRenderer, Text.translatable("gui.dungeon_utils.rupee_render_2"), scaledWidth / 2 + -170, scaledHeight / 2 + 104, -1, true);
+            if (stack.getNbt() != null) {
+
+                int amount = stack.getNbt().getInt("dungeon_utils.rupee.amount");
+                String amountAsString = Integer.toString(amount);
+                drawContext.drawText(client.textRenderer, Text.translatable(amountAsString), scaledWidth / 2 + -168, scaledHeight / 2 + 104, -1, true);
+
+            }
+
         }
     }
 
