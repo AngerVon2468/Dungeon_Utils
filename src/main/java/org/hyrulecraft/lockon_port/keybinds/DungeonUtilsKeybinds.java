@@ -58,14 +58,25 @@ public class DungeonUtilsKeybinds {
             if (lockOn.isPressed()) {
 
                 if (lockedOn) {
+
                     leaveLockOn();
+
                 } else {
+
                     attemptEnterLockOn(clientPlayer);
+
                 }
 
             }
+            if (!lockOn.isPressed()) {
+
+                leaveLockOn();
+
+            }
             if (tab.isPressed()) {
+
                 tabToNextEnemy(clientPlayer);
+
             }
             tickLockedOn();
         });
