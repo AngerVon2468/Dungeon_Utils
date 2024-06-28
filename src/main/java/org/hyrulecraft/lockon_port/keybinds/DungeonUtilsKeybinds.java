@@ -14,6 +14,8 @@ import net.minecraft.util.math.*;
 
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils;
 
+import org.jetbrains.annotations.*;
+
 import org.lwjgl.glfw.GLFW;
 
 import java.util.ArrayList;
@@ -49,7 +51,7 @@ public class DungeonUtilsKeybinds {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
 
             ClientPlayerEntity clientPlayer = client.clientPlayer;
-            while (lockOn.isPressed()) {
+            if (lockOn.isPressed()) {
 
                 if (lockedOn) {
                     leaveLockOn();
@@ -58,7 +60,7 @@ public class DungeonUtilsKeybinds {
                 }
 
             }
-            while (tab.isPressed()) {
+            if (tab.isPressed()) {
                 tabToNextEnemy(clientPlayer);
             }
             tickLockedOn();
@@ -95,7 +97,7 @@ public class DungeonUtilsKeybinds {
     private static final Predicate<LivingEntity> ENTITY_PREDICATE = entity -> entity.isAlive() && entity.isAttackable();
     private static int cycle = -1;
 
-    public static LivingEntity findNearby(PlayerEntity player) {
+    public static @Nullable LivingEntity findNearby(@NotNull PlayerEntity player) {
 
         int r = 16;
 
@@ -136,7 +138,7 @@ public class DungeonUtilsKeybinds {
     }
 
     public static boolean lockedOn;
-    private static LivingEntity targeted;
+    private static @Nullable LivingEntity targeted;
 
     public static void registerDungeonUtilsKeybinds() {
         registerKeyInputs();
