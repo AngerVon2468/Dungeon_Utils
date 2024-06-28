@@ -3,6 +3,7 @@
   "block.dungeon_utils.rusty_switch_block": "Rusty Switch",
   "block.dungeon_utils.blue_switch_block": "Blue Switch",
   "block.dungeon_utils.pedestal_block": "Sword Pedestal",
+  "block.dungeon_utils.malice": "Malice",
 
   "item.dungeon_utils.megaton_hammer": "Megaton Hammer",
   "item.dungeon_utils.lynel_bow_five_x": "Lynel Bow (5x)",
@@ -63,5 +64,7 @@
   "dungeon_utils.midnightconfig.shouldAddSlowFalling": "Slow Falling At Revali's Gale Peak:",
 
   "advancements.dungeon_utils.root.title": "Dungeon Utils",
-  "advancements.dungeon_utils.root.description": "Join a world with Dungeon Utils installed"
+  "advancements.dungeon_utils.root.description": "Join a world with Dungeon Utils installed",
+
+  "death.attack.malice": "%1$s was corrupted by malice"
 }
