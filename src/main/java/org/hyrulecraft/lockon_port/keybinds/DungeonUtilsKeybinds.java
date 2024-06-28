@@ -51,11 +51,16 @@ public class DungeonUtilsKeybinds {
             CATEGORY_DUNGEON_UTILS
     ));
 
+    public static void registerDungeonUtilsKeybinds() {
+        registerKeyInputs();
+        DungeonUtils.LOGGER.info(DungeonUtils.NAME + " has registered its keybinds.");
+    }
+
     public static void registerKeyInputs() {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
 
             ClientPlayerEntity clientPlayer = client.clientPlayer;
-            if (lockOn.isPressed()) {
+            if (lockOn.wasPressed()) {
 
                 if (lockedOn) {
 
@@ -68,12 +73,7 @@ public class DungeonUtilsKeybinds {
                 }
 
             }
-            if (!lockOn.isPressed()) {
-
-                leaveLockOn();
-
-            }
-            if (tab.isPressed()) {
+            if (tab.wasPressed() && lockedOn) {
 
                 tabToNextEnemy(clientPlayer);
 
@@ -146,11 +146,6 @@ public class DungeonUtilsKeybinds {
         targeted = null;
         lockedOn = false;
         list.clear();
-    }
-
-    public static void registerDungeonUtilsKeybinds() {
-        registerKeyInputs();
-        DungeonUtils.LOGGER.info(DungeonUtils.NAME + " has registered its keybinds.");
     }
 
     private static void attemptEnterLockOn(PlayerEntity player) {
