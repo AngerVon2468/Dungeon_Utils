@@ -4,7 +4,6 @@ import net.fabricmc.api.*;
 
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.gui.screen.TitleScreen;
 import net.minecraft.client.gui.screen.multiplayer.MultiplayerScreen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.text.Text;
@@ -14,7 +13,8 @@ import org.jetbrains.annotations.NotNull;
 @Environment(EnvType.CLIENT)
 public class WiiUScreen extends Screen {
 
-    private final Screen parent;
+    private Screen parent;
+    private Screen nextScreen;
 
     public WiiUScreen(Screen parent) {
         super(Text.translatable("title.dungeon_utils.wiiu"));
@@ -29,13 +29,11 @@ public class WiiUScreen extends Screen {
     }
 
     public ButtonWidget buttonYes = ButtonWidget.builder(Text.translatable("title.dungeon_utils.wiiu.button_yes"), button -> {
-                System.out.println("You clicked yes!");
-                client.setScreen(new MultiplayerScreen(new TitleScreen()));
+                newScreen(new MultiplayerScreen(parent));
             })
             .dimensions(width / 2 - 205, 20, 200, 20)
             .build();
     public ButtonWidget buttonNo = ButtonWidget.builder(Text.translatable("title.dungeon_utils.wiiu.button_no"), button -> {
-                System.out.println("You clicked no!");
                 throw new RuntimeException("fuck you");
             })
             .dimensions(width / 2 + 5, 20, 200, 20)
@@ -50,8 +48,21 @@ public class WiiUScreen extends Screen {
         addDrawableChild(buttonNo);
     }
 
+    public void newScreen(Screen screen) {
+        nextScreen = screen;
+        close();
+    }
+
     @Override
     public void close() {
-        client.setScreen(parent);
+        if (nextScreen != null) {
+
+            client.setScreen(nextScreen);
+
+        } else {
+
+            client.setScreen(parent);
+
+        }
     }
 }
