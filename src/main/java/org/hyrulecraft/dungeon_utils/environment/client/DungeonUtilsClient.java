@@ -8,6 +8,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.*;
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.util.Identifier;
 
+import org.hyrulecraft.dungeon_utils.environment.client.screen.overlay.RupeeOverlay;
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils;
 import org.hyrulecraft.dungeon_utils.environment.common.entity.DungeonUtilsEntities;
 import org.hyrulecraft.dungeon_utils.environment.client.entity.model.CrateEntityModel;
@@ -25,6 +26,7 @@ public class DungeonUtilsClient implements ClientModInitializer {
 
         // Initializing classes.
         UtilCollector.registerAllUtilClassesInClient();
+        RupeeOverlay.registerOverlay();
 
         // Rendering and models.
         DungeonUtilsClient.registerTrinketRenderers();
