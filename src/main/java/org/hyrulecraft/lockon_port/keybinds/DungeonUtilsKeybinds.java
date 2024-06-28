@@ -34,18 +34,18 @@ public class DungeonUtilsKeybinds {
     public static final String CATEGORY_DUNGEON_UTILS = "key.category.dungeon_utils.dungeon_utils";
 
     // Keybinds (Translation keys)
-    public static final String DEBUG = "key.dungeon_utils.lock_on";
-    public static final String TAB = "key.dungeon_utils.tab";
+    public static final String LOCK_ON_KEY = "key.dungeon_utils.lock_on";
+    public static final String SWITCH_TARGET_KEY = "key.dungeon_utils.switch_target";
 
     // Keybinds
-    public static KeyBinding lockOn = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-            DEBUG,
+    public static KeyBinding LOCK_ON = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+            LOCK_ON_KEY,
             InputUtil.Type.KEYSYM,
             GLFW.GLFW_KEY_Z,
             CATEGORY_DUNGEON_UTILS
     ));
-    public static KeyBinding tab = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-            TAB,
+    public static KeyBinding SWITCH_TARGET = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+            SWITCH_TARGET_KEY,
             InputUtil.Type.KEYSYM,
             GLFW.GLFW_KEY_TAB,
             CATEGORY_DUNGEON_UTILS
@@ -60,7 +60,7 @@ public class DungeonUtilsKeybinds {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
 
             ClientPlayerEntity clientPlayer = client.clientPlayer;
-            if (lockOn.wasPressed()) {
+            if (LOCK_ON.wasPressed()) {
 
                 if (lockedOn) {
 
@@ -73,7 +73,7 @@ public class DungeonUtilsKeybinds {
                 }
 
             }
-            if (tab.wasPressed() && lockedOn) {
+            if (SWITCH_TARGET.wasPressed() && lockedOn) {
 
                 tabToNextEnemy(clientPlayer);
 
