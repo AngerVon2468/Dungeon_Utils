@@ -1,11 +1,11 @@
-package org.hyrulecraft.dungeon_utils.mixin;
-
-import com.llamalad7.mixinextras.sugar.Local;
+package org.hyrulecraft.all.mixin;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.Mouse;
 
 import org.hyrulecraft.lockon_port.keybinds.DungeonUtilsKeybinds;
+
+import com.llamalad7.mixinextras.sugar.Local;
 
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.*;

@@ -1,4 +1,4 @@
-package org.hyrulecraft.dungeon_utils.mixin;
+package org.hyrulecraft.all.mixin;
 
 import net.minecraft.entity.boss.dragon.*;
 
