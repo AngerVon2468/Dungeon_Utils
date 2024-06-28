@@ -72,6 +72,5 @@
   "title.dungeon_utils.wiiu.button_yes": "Yes",
   "title.dungeon_utils.wiiu.button_no": "No",
 
-  "gui.dungeon_utils.rupee_render_1": "Rupees:",
-  "gui.dungeon_utils.rupee_render_2": "1"
+  "gui.dungeon_utils.rupee_render_1": "Rupees:"
 }

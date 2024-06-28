@@ -27,7 +27,7 @@ public class RupeeOverlay {
 
                 int amount = stack.getNbt().getInt("dungeon_utils.rupee.amount");
                 String amountAsString = Integer.toString(amount);
-                drawContext.drawText(client.textRenderer, Text.translatable(amountAsString), scaledWidth / 2 + -168, scaledHeight / 2 + 104, -1, true);
+                drawContext.drawText(client.textRenderer, Text.literal(amountAsString), scaledWidth / 2 + -168, scaledHeight / 2 + 104, -1, true);
 
             }
 
