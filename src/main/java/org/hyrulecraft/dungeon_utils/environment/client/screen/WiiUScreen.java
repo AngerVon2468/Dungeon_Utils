@@ -10,7 +10,6 @@ import net.minecraft.text.Text;
 
 import org.jetbrains.annotations.NotNull;
 
-// TODO: Figure out how to move around buttons xD
 @Environment(EnvType.CLIENT)
 public class WiiUScreen extends Screen {
 
@@ -24,7 +23,7 @@ public class WiiUScreen extends Screen {
 
     @Override
     public void render(@NotNull DrawContext context, int mouseX, int mouseY, float delta) {
-        context.drawCenteredTextWithShadow(textRenderer, Text.literal("WiiU is based"), width / 2, height / 2, 0xffffff);
+        context.drawCenteredTextWithShadow(textRenderer, Text.literal("WiiU is based"), width / 2, height - 100, 0xffffff);
         this.renderBackground(context);
         super.render(context, mouseX, mouseY, delta);
     }
@@ -42,8 +41,8 @@ public class WiiUScreen extends Screen {
 
     @Override
     protected void init() {
-        buttonYes.setPosition(width / 2 - 205, 20);
-        buttonNo.setPosition(width / 2 + 5, 20);
+        buttonYes.setPosition(width / 2 - 205, 220);
+        buttonNo.setPosition(width / 2 + 5, 220);
 
         addDrawableChild(buttonYes);
         addDrawableChild(buttonNo);
