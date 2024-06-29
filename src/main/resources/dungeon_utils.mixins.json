@@ -5,10 +5,6 @@
     "mixins": [
         "EnderDragonFightMixin"
     ],
-    "client": [
-        "EntityRenderDispatcherMixin",
-        "MouseMixin"
-    ],
     "injectors": {
         "defaultRequire": 1
     }

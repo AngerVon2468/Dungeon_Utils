@@ -72,10 +72,5 @@
   "title.dungeon_utils.wiiu.button_yes": "Yes",
   "title.dungeon_utils.wiiu.button_no": "No",
 
-  "gui.dungeon_utils.rupee_render_1": "Rupees:",
-
-  "key.category.dungeon_utils.dungeon_utils": "Dungeon Utils",
-
-  "key.dungeon_utils.lock_on": "Lock On",
-  "key.dungeon_utils.switch_target": "Switch Target"
+  "gui.dungeon_utils.rupee_render_1": "Rupees:"
 }
