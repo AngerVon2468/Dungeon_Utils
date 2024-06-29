@@ -22,6 +22,7 @@ public class RupeeOverlay {
         ItemStack stack = clientPlayer.getStackInHand(clientPlayer.getActiveHand());
         if (stack.isOf(DungeonUtilsItems.CHILD_RUPEE_WALLET)) {
 
+            drawContext.drawItem(DungeonUtilsItems.GREEN_RUPEE.getDefaultStack(), scaledWidth / 2 + -225, scaledHeight / 2 + 100, -1);
             drawContext.drawText(client.textRenderer, Text.translatable("gui.dungeon_utils.rupee_render_1"), scaledWidth / 2 + -208, scaledHeight / 2 + 104, -1, true);
             if (stack.getNbt() != null) {
 
