@@ -2,18 +2,19 @@ package org.hyrulecraft.dungeon_utils.environment.common.itemgroup
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup
 
-import net.minecraft.item.ItemStack
+import net.minecraft.item.*
 import net.minecraft.registry.*
 import net.minecraft.text.Text
 import net.minecraft.util.Identifier
 
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils.*
 import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.BLUE_SWITCH_BLOCK
-import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.BONEPILE
-import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.DIRTBONEPILE
-import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.FLESHYBONEPILE
+import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.BONE_PILE
+import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.DIRT_BONE_PILE
+import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.FLESHY_BONE_PILE
+import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.MALICE
 import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.RUSTY_SWITCH_BLOCK
-import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.STONEBONEPILE
+import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.STONE_BONE_PILE
 import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.YELLOW_SWITCH_BLOCK
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.ADULT_LINK
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.BLUE_RUPEE
@@ -53,7 +54,7 @@ class DungeonUtilsItemGroups {
 
     companion object {
 
-        val ALL = Registry.register(
+        val ALL: ItemGroup = Registry.register(
             RegistryTypes.ITEM_GROUP, Identifier(MOD_ID, "dungeon_utils"),
             FabricItemGroup.builder().displayName(Text.translatable("tab.dungeon_utils.dungeon_utils"))
                 .icon { ItemStack(YELLOW_SWITCH_BLOCK) }.entries { displayContext, entries ->
@@ -91,7 +92,7 @@ class DungeonUtilsItemGroups {
                 }.build()
         )
 
-        val CHAMPION_ABILITIES = Registry.register(
+        val CHAMPION_ABILITIES: ItemGroup = Registry.register(
             RegistryTypes.ITEM_GROUP, Identifier(MOD_ID, "champion_abilities"),
             FabricItemGroup.builder().displayName(Text.translatable("tab.dungeon_utils.champion_abilities"))
                 .icon { ItemStack(REVALIS_GALE) }.entries { displayContext, entries ->
@@ -103,7 +104,7 @@ class DungeonUtilsItemGroups {
                 }.build()
         )
 
-        val CLOTHING = Registry.register(
+        val CLOTHING: ItemGroup = Registry.register(
             RegistryTypes.ITEM_GROUP, Identifier(MOD_ID, "clothing"),
             FabricItemGroup.builder().displayName(Text.translatable("tab.dungeon_utils.clothing"))
                 .icon { ItemStack(LINK_CAP) }.entries { displayContext, entries ->
@@ -120,7 +121,7 @@ class DungeonUtilsItemGroups {
                 }.build()
         )
 
-        val WEAPONRY = Registry.register(
+        val WEAPONRY: ItemGroup = Registry.register(
             RegistryTypes.ITEM_GROUP, Identifier(MOD_ID, "weaponry"),
             FabricItemGroup.builder().displayName(Text.translatable("tab.dungeon_utils.weaponry"))
                 .icon { ItemStack(KOKIRI_SWORD) }.entries { displayContext, entries ->
@@ -145,14 +146,18 @@ class DungeonUtilsItemGroups {
                 }.build()
         )
 
-        var BLOCKS = Registry.register(
-            RegistryTypes.ITEM_GROUP, Identifier(MOD_ID, "blocks"),
+        var BLOCKS: ItemGroup = Registry.register(
+            RegistryTypes.ITEM_GROUP, /* identifier = */ Identifier(MOD_ID, "blocks"),
             FabricItemGroup.builder().displayName(Text.translatable("tab.dungeon_utils.blocks"))
-                .icon { ItemStack(BONEPILE) }.entries { displayContext, entries ->
-                    entries.add(BONEPILE)
-                    entries.add(STONEBONEPILE)
-                    entries.add(DIRTBONEPILE)
-                    entries.add(FLESHYBONEPILE)
+                .icon { ItemStack(BONE_PILE) }.entries { displayContext, entries ->
+                    entries.add(BONE_PILE)
+                    entries.add(STONE_BONE_PILE)
+                    entries.add(DIRT_BONE_PILE)
+                    entries.add(FLESHY_BONE_PILE)
+                    entries.add(MALICE)
+                    entries.add(YELLOW_SWITCH_BLOCK)
+                    entries.add(RUSTY_SWITCH_BLOCK)
+                    entries.add(BLUE_SWITCH_BLOCK)
                 }.build()
         )
 
