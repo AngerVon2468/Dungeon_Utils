@@ -1,20 +1,29 @@
 package org.hyrulecraft.lockon_port.keybinds;
 
+import com.mojang.blaze3d.systems.RenderSystem;
+
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.option.KeyBinding;
+import net.minecraft.client.render.*;;
 import net.minecraft.client.util.InputUtil;
-import net.minecraft.entity.LivingEntity;
+import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.TargetPredicate;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.Util;
 import net.minecraft.util.math.*;
 
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils;
 
+import org.hyrulecraft.lockon_port.RenderTypeThingo;
 import org.jetbrains.annotations.*;
+
+import org.joml.Matrix4f;
+import org.joml.Quaternionf;
 
 import org.lwjgl.glfw.GLFW;
 
@@ -126,7 +135,7 @@ public class DungeonUtilsKeybinds {
                 }
             }
 
-            //cycle existing entity
+            // Cycle existing entity
             if (cycle >= list.size()) {
                 cycle = 0;
             }
@@ -157,5 +166,80 @@ public class DungeonUtilsKeybinds {
 
     private static void tabToNextEnemy(PlayerEntity player) {
         targeted = findNearby(player);
+    }
+
+    public static void renderWorldLast(Entity entity, MatrixStack poseStack, VertexConsumerProvider buffers, Quaternionf quaternion) {
+        if (targeted == entity) {
+            VertexConsumer builder = buffers.getBuffer(RenderTypeThingo.RENDER_TYPE);
+            poseStack.push();
+
+            poseStack.translate(0, entity.getHeight() / 2, 0);
+
+            poseStack.multiply(quaternion);
+
+
+            float rotate = (Util.getMeasuringTimeNano() /-8_000_000f);
+
+            poseStack.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(rotate));
+
+
+            float w = (float) 0.9;
+            float h = (float) 0.7;
+
+            int color = 0xffffff00;
+
+            try {
+                color = Integer.decode("#FFFFFF00");
+            } catch (NumberFormatException numberFormatException) {
+                // Oof
+            }
+            RenderSystem.disableCull();
+            fillTriangles(builder, poseStack.peek().getPositionMatrix(), 0, entity.getHeight() / 2f, -w / 2f, h,entity.getHeight() / 2f, 0, color);
+            poseStack.pop();
+        }
+    }
+
+    public enum Dir {
+        up, down, left, right;
+    }
+
+    public static void fillTriangles(VertexConsumer builder, Matrix4f matrix4f, float x, float y, float width, float height, float bbHeight, float z, int aarrggbb) {
+        float a = (aarrggbb >> 24 & 0xff) / 255f;
+        float r = (aarrggbb >> 16 & 0xff) / 255f;
+        float g = (aarrggbb >> 8 & 0xff) / 255f;
+        float b = (aarrggbb & 0xff) / 255f;
+
+        fillTriangle(builder, matrix4f, x, y, width, height, bbHeight, z, r, g, b, a, Dir.up);
+        fillTriangle(builder, matrix4f, x, -y, width, height, bbHeight, z, r, g, b, a, Dir.down);
+        fillTriangle(builder, matrix4f, x, 0, width, height, bbHeight, z, r, g, b, a, Dir.left);
+        fillTriangle(builder, matrix4f, x, 0, width, height, bbHeight, z, r, g, b, a, Dir.right);
+    }
+
+    public static void fillTriangle(VertexConsumer builder, Matrix4f matrix4f, float x, float y, float width, float height,float bbHeight, float z, float r, float g, float b, float a, Dir dir) {
+
+        switch (dir) {
+            case up -> {
+                builder.vertex(matrix4f, x, y, z).color(r, g, b, a).next();
+                builder.vertex(matrix4f, x + width / 2, y + height, z).color(r, g, b, a).next();
+                builder.vertex(matrix4f, x - width / 2, y + height, z).color(r, g, b, a).next();
+            }
+            case down -> {
+                builder.vertex(matrix4f, x, y, z).color(r, g, b, a).next();
+                builder.vertex(matrix4f, x + width / 2, y - height, z).color(r, g, b, a).next();
+                builder.vertex(matrix4f, x - width / 2, y - height, z).color(r, g, b, a).next();
+            }
+
+            case left -> {
+                builder.vertex(matrix4f, x - bbHeight, y, z).color(r, g, b, a).next();
+                builder.vertex(matrix4f, x - bbHeight - height, y - width / 2, z).color(r, g, b, a).next();
+                builder.vertex(matrix4f, x - bbHeight - height, y + width / 2, z).color(r, g, b, a).next();
+            }
+
+            case right -> {
+                builder.vertex(matrix4f, x + bbHeight, y, z).color(r, g, b, a).next();
+                builder.vertex(matrix4f, x + bbHeight + height, y - width / 2, z).color(r, g, b, a).next();
+                builder.vertex(matrix4f, x + bbHeight + height, y + width / 2, z).color(r, g, b, a).next();
+            }
+        }
     }
 }
