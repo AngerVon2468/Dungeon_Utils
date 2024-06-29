@@ -178,7 +178,7 @@ public class DungeonUtilsKeybinds {
             poseStack.multiply(quaternion);
 
 
-            float rotate = (Util.getMeasuringTimeNano() /-8_000_000f);
+            float rotate = (Util.getMeasuringTimeNano() / -8_000_000f);
 
             poseStack.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(rotate));
 
