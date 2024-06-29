@@ -14,6 +14,7 @@ public abstract class AbstractBonePileBlock extends Block {
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     public VoxelShape getOutlineShape(BlockState blockState, BlockView blockView, BlockPos blockPos, ShapeContext shapeContext) {
         return Block.createCuboidShape(0, 0, 0, 16, 15.25, 16);
     }

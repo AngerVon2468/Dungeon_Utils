@@ -34,6 +34,7 @@ public class YellowSwitchBlock extends HorizontalFacingBlock {
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     public VoxelShape getOutlineShape(@NotNull BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
         if (!state.get(IS_STEPPED_ON)) {
             return Stream.of(
@@ -76,6 +77,7 @@ public class YellowSwitchBlock extends HorizontalFacingBlock {
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     public boolean canPlaceAt(BlockState state, @NotNull WorldView world, @NotNull BlockPos pos) {
         BlockState blockState = world.getBlockState(pos.down());
 
@@ -83,6 +85,7 @@ public class YellowSwitchBlock extends HorizontalFacingBlock {
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     public ActionResult onUse(@NotNull BlockState state, World world, BlockPos pos, @NotNull PlayerEntity player, Hand hand, @NotNull BlockHitResult hit) {
         ItemStack stack = player.getStackInHand(hand);
         if (stack.isOf(DungeonUtilsItems.MEGATON_HAMMER) && !state.get(IS_STEPPED_ON)) {
@@ -118,16 +121,19 @@ public class YellowSwitchBlock extends HorizontalFacingBlock {
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     public int getWeakRedstonePower(@NotNull BlockState state, BlockView world, BlockPos pos, Direction direction) {
         return state.get(IS_STEPPED_ON) ? 15 : 0;
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     public int getStrongRedstonePower(@NotNull BlockState state, BlockView world, BlockPos pos, Direction direction) {
         return state.get(IS_STEPPED_ON) ? 15 : 0;
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     public boolean emitsRedstonePower(@NotNull BlockState state) {
         return state.get(IS_STEPPED_ON);
     }

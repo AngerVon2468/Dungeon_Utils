@@ -31,6 +31,7 @@ public class PedestalBlock extends HorizontalFacingBlock {
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     public VoxelShape getOutlineShape(@NotNull BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
         if ((state.get(ITEM) == 2 || state.get(ITEM) == 3) && (state.get(FACING) == Direction.NORTH || state.get(FACING) == Direction.SOUTH)) {
 
@@ -102,6 +103,7 @@ public class PedestalBlock extends HorizontalFacingBlock {
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     public ActionResult onUse(@NotNull BlockState state, World world, BlockPos pos, @NotNull PlayerEntity player, Hand hand, @NotNull BlockHitResult hit) {
         ItemStack stack = player.getStackInHand(hand);
 
@@ -198,6 +200,7 @@ public class PedestalBlock extends HorizontalFacingBlock {
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     public boolean canPlaceAt(BlockState state, @NotNull WorldView world, @NotNull BlockPos pos) {
         BlockState blockState = world.getBlockState(pos.down());
 
