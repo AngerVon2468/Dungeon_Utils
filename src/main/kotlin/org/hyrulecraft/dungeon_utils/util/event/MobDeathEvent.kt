@@ -20,7 +20,7 @@ object MobDeathEvent {
 
             if (damageSource.source?.isAlive == true && damageSource.source is PlayerEntity) {
 
-                    if (entity is WitherEntity) {
+                if (entity is WitherEntity) {
 
                     if (random.nextInt(20) == 0) {
 
