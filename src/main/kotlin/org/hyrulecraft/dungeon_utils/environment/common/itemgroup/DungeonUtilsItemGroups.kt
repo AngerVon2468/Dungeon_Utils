@@ -147,7 +147,7 @@ class DungeonUtilsItemGroups {
         )
 
         var BLOCKS: ItemGroup = Registry.register(
-            RegistryTypes.ITEM_GROUP, /* identifier = */ Identifier(MOD_ID, "blocks"),
+            RegistryTypes.ITEM_GROUP, Identifier(MOD_ID, "blocks"),
             FabricItemGroup.builder().displayName(Text.translatable("tab.dungeon_utils.blocks"))
                 .icon { ItemStack(BONE_PILE) }.entries { displayContext, entries ->
                     entries.add(BONE_PILE)

@@ -82,9 +82,7 @@ dependencies {
     modImplementation "curse.maven:cosmetic-lib-1019553:5429299"
     include "curse.maven:cosmetic-lib-1019553:5429299"
 
-    /*
     modImplementation "curse.maven:better-third-person-435044:4596636"
-    */
     modImplementation "curse.maven:embeddium-908741:5410231"
     modImplementation "curse.maven:jade-324717:5339230"
     modImplementation "curse.maven:jei-238222:5419573"
@@ -98,8 +96,8 @@ dependencies {
     modImplementation 'net.kyrptonaught:customportalapi:0.0.1-beta64-1.20'
     include 'net.kyrptonaught:customportalapi:0.0.1-beta64-1.20'
 
-    modImplementation "curse.maven:lock-on-refabricated-1052671:5484658"
-    include "curse.maven:lock-on-refabricated-1052671:5484658"
+    modImplementation "curse.maven:lock-on-refabricated-1052671:5484917"
+    include "curse.maven:lock-on-refabricated-1052671:5484917"
 }
 
 processResources {

@@ -85,6 +85,13 @@ object DungeonUtilsBlocks {
         )
     )
 
+    @JvmField
+    val CLOVER_PATCH = registerBlock("clover_patch",
+        CloverPatchBlock(
+            FabricBlockSettings.create().breakInstantly()
+        )
+    )
+
     @JvmStatic
     fun registerModBlocks() {
         DungeonUtils.LOGGER.info(DungeonUtils.NAME + " has registered its blocks.")
