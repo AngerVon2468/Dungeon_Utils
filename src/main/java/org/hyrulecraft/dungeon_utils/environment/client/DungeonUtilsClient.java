@@ -3,17 +3,19 @@ package org.hyrulecraft.dungeon_utils.environment.client;
 import dev.emi.trinkets.api.client.*;
 
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.*;
 
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.util.Identifier;
 
 import org.hyrulecraft.dungeon_utils.environment.client.screen.overlay.RupeeOverlay;
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils;
+import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks;
 import org.hyrulecraft.dungeon_utils.environment.common.entity.DungeonUtilsEntities;
 import org.hyrulecraft.dungeon_utils.environment.client.entity.model.CrateEntityModel;
-import org.hyrulecraft.dungeon_utils.environment.client.entity.renderer.CrateEntityRenderer;
-import org.hyrulecraft.dungeon_utils.environment.client.entity.renderer.MasterSwordBeamEntityRenderer;
+import org.hyrulecraft.dungeon_utils.environment.client.entity.renderer.*;
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems;
 import org.hyrulecraft.dungeon_utils.util.UtilCollector;
 
@@ -33,6 +35,8 @@ public class DungeonUtilsClient implements ClientModInitializer {
         DungeonUtilsClient.registerEntityModelLayers();
         DungeonUtilsClient.registerEntityRenderers();
         DungeonUtilsClient.registerModelPredicates();
+
+        BlockRenderLayerMap.INSTANCE.putBlock(DungeonUtilsBlocks.CLOVER_PATCH, RenderLayer.getCutout());
     }
 
     public static void registerTrinketRenderers() {

@@ -1,5 +1,5 @@
 {
     "variants": {
-        "all": { "model": "dungeon_utils:block/bone_piles/pile_of_bones"}
+        "": { "model": "dungeon_utils:block/bone_piles/pile_of_bones"}
     }
 }

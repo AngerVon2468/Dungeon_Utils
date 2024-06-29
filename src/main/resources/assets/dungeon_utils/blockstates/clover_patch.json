@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "": { "model": "dungeon_utils:block/vegetation/clover_patch"}
+    }
+}
