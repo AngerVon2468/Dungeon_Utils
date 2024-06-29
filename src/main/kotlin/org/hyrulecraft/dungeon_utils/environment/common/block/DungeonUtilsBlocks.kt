@@ -88,7 +88,7 @@ object DungeonUtilsBlocks {
     @JvmField
     val CLOVER_PATCH = registerBlock("clover_patch",
         CloverPatchBlock(
-            FabricBlockSettings.create().breakInstantly()
+            FabricBlockSettings.create().breakInstantly().nonOpaque()
         )
     )
 
