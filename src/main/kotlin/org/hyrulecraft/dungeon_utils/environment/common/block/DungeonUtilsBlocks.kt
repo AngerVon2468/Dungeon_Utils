@@ -57,6 +57,34 @@ object DungeonUtilsBlocks {
         )
     )
 
+    @JvmField
+    val BONEPILE = registerBlock("pile_of_bones",
+        BonePileBlock(
+            FabricBlockSettings.create().strength(2f).requiresTool()
+        )
+    )
+
+    @JvmField
+    val STONEBONEPILE = registerBlock("stone_pile_of_bones",
+        StoneBonePileBlock(
+            FabricBlockSettings.create().strength(2f).requiresTool()
+        )
+    )
+
+    @JvmField
+    val DIRTBONEPILE = registerBlock("dirt_pile_of_bones",
+        DirtBonePileBlock(
+            FabricBlockSettings.create().strength(2f).requiresTool()
+        )
+    )
+
+    @JvmField
+    val FLESHYBONEPILE = registerBlock("fleshy_pile_of_bones",
+        FleshyBonePileBlock(
+            FabricBlockSettings.create().strength(2f).requiresTool()
+        )
+    )
+
     @JvmStatic
     fun registerModBlocks() {
         DungeonUtils.LOGGER.info(DungeonUtils.NAME + " has registered its blocks.")

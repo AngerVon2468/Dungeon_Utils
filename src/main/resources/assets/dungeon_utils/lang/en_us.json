@@ -4,6 +4,10 @@
   "block.dungeon_utils.blue_switch_block": "Blue Switch",
   "block.dungeon_utils.pedestal_block": "Sword Pedestal",
   "block.dungeon_utils.malice": "Malice",
+  "block.dungeon_utils.pile_of_bones": "Pile of Bones",
+  "block.dungeon_utils.stone_pile_of_bones": "Fossilized Pile of Bones",
+  "block.dungeon_utils.dirt_pile_of_bones": "Dirty Pile of Bones",
+  "block.dungeon_utils.fleshy_pile_of_bones": "Flehsy Pile of Bones",
 
   "item.dungeon_utils.megaton_hammer": "Megaton Hammer",
   "item.dungeon_utils.lynel_bow_five_x": "Lynel Bow (5x)",

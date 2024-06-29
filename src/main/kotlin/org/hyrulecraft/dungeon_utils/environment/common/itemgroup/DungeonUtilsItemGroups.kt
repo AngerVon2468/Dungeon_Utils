@@ -141,6 +141,17 @@ class DungeonUtilsItemGroups {
                 }.build()
         )
 
+        var BLOCKS = Registry.register(
+            RegistryTypes.ITEM_GROUP, Identifier(MOD_ID, "blocks"),
+            FabricItemGroup.builder().displayName(Text.translatable("tab.dungeon_utils.blocks"))
+                .icon { ItemStack(BONEPILE) }.entries { displayContext, entries ->
+                    entries.add(BONEPILE)
+                    entries.add(STONEBONEPILE)
+                    entries.add(DIRTBONEPILE)
+                    entries.add(FLESHYBONEPILE)
+                }.build()
+        )
+
         @JvmStatic
         fun registerDungeonUtilsItemGroups() {
             LOGGER.info("$NAME has registered its itemgroups.")

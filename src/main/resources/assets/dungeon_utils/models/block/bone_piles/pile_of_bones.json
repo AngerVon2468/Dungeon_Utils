@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "dungeon_utils:block/bone_piles/pure_bone_pile"
+  }
+}
