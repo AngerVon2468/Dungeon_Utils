@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "all": { "model": "dungeon_utils:block/bone_piles/fleshy_pile_of_bones"}
+    }
+}
