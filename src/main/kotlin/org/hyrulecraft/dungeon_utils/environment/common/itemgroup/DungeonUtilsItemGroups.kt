@@ -9,7 +9,11 @@ import net.minecraft.util.Identifier
 
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils.*
 import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.BLUE_SWITCH_BLOCK
+import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.BONEPILE
+import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.DIRTBONEPILE
+import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.FLESHYBONEPILE
 import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.RUSTY_SWITCH_BLOCK
+import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.STONEBONEPILE
 import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.YELLOW_SWITCH_BLOCK
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.ADULT_LINK
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.BLUE_RUPEE
