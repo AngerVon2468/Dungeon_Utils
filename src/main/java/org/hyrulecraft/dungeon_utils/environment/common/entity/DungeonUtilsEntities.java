@@ -30,6 +30,17 @@ public class DungeonUtilsEntities {
                     .build()
     );
 
+    public static final EntityType<BombEntity> BOMB = Registry.register(
+            RegistryTypes.ENTITY,
+            new Identifier(DungeonUtils.MOD_ID, "bomb"),
+            FabricEntityTypeBuilder.create(SpawnGroup.MISC, BombEntity::new)
+                    .dimensions(EntityDimensions.fixed(1f,1f))
+                    .fireImmune()
+                    .trackRangeBlocks(5000)
+                    .spawnableFarFromPlayer()
+                    .build()
+    );
+
     public static void registerDungeonUtilsEntities() {
         DungeonUtils.LOGGER.info(DungeonUtils.NAME + " has registered its entities.");
     }

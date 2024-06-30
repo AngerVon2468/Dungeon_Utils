@@ -1,0 +1,144 @@
+{
+	"credit": "EpicVon2468 and Blockbench",
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "dungeon_utils:item/bomb_flower",
+		"particle": "dungeon_utils:item/bomb_flower"
+	},
+	"elements": [
+		{
+			"from": [4.99, -0.01, 4.99],
+			"to": [11.01, 8.01, 11.01],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 0]},
+			"faces": {
+				"north": {"uv": [7, 6.5, 8.5, 8.5], "texture": "#0"},
+				"east": {"uv": [5.5, 6.5, 7, 8.5], "texture": "#0"},
+				"south": {"uv": [10, 6.5, 11.5, 8.5], "texture": "#0"},
+				"west": {"uv": [8.5, 6.5, 10, 8.5], "texture": "#0"},
+				"up": {"uv": [8.5, 6.5, 7, 5], "texture": "#0"},
+				"down": {"uv": [10, 5, 8.5, 6.5], "texture": "#0"}
+			}
+		},
+		{
+			"from": [3.99, 0.99, 4.99],
+			"to": [12.01, 7.01, 11.01],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 0]},
+			"faces": {
+				"north": {"uv": [1.5, 5, 3.5, 6.5], "texture": "#0"},
+				"east": {"uv": [0, 5, 1.5, 6.5], "texture": "#0"},
+				"south": {"uv": [5, 5, 7, 6.5], "texture": "#0"},
+				"west": {"uv": [3.5, 5, 5, 6.5], "texture": "#0"},
+				"up": {"uv": [3.5, 5, 1.5, 3.5], "texture": "#0"},
+				"down": {"uv": [5.5, 3.5, 3.5, 5], "texture": "#0"}
+			}
+		},
+		{
+			"from": [4.99, 0.99, 3.99],
+			"to": [11.01, 7.01, 12.01],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 0]},
+			"faces": {
+				"north": {"uv": [2, 2, 3.5, 3.5], "texture": "#0"},
+				"east": {"uv": [0, 2, 2, 3.5], "texture": "#0"},
+				"south": {"uv": [5.5, 2, 7, 3.5], "texture": "#0"},
+				"west": {"uv": [3.5, 2, 5.5, 3.5], "texture": "#0"},
+				"up": {"uv": [3.5, 2, 2, 0], "texture": "#0"},
+				"down": {"uv": [5, 0, 3.5, 2], "texture": "#0"}
+			}
+		},
+		{
+			"from": [6.49, 7.99, 6.49],
+			"to": [9.51, 9.01, 9.51],
+			"faces": {
+				"north": {"uv": [6.25, 4.25, 7, 4.5], "texture": "#0"},
+				"east": {"uv": [5.5, 4.25, 6.25, 4.5], "texture": "#0"},
+				"south": {"uv": [7.75, 4.25, 8.5, 4.5], "texture": "#0"},
+				"west": {"uv": [7, 4.25, 7.75, 4.5], "texture": "#0"},
+				"up": {"uv": [7, 4.25, 6.25, 3.5], "texture": "#0"},
+				"down": {"uv": [7.75, 3.5, 7, 4.25], "texture": "#0"}
+			}
+		},
+		{
+			"from": [4.49, 8.49, 4.49],
+			"to": [11.51, 8.52, 11.51],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [5, 1.75, 6.75, 1.75], "texture": "#0"},
+				"east": {"uv": [3.25, 1.75, 5, 1.75], "texture": "#0"},
+				"south": {"uv": [8.5, 1.75, 10.25, 1.75], "texture": "#0"},
+				"west": {"uv": [6.75, 1.75, 8.5, 1.75], "texture": "#0"},
+				"up": {"uv": [6.75, 1.75, 5, 0], "texture": "#0"},
+				"down": {"uv": [8.5, 0, 6.75, 1.75], "texture": "#0"}
+			}
+		},
+		{
+			"from": [-1.51, 8.99, 11.24],
+			"to": [1.51, 13.01, 11.27],
+			"rotation": {"angle": 45, "axis": "y", "origin": [0, 0, 0]},
+			"faces": {
+				"north": {"uv": [0, 0, 0.75, 1], "texture": "#0"},
+				"east": {"uv": [0, 0, 0, 1], "texture": "#0"},
+				"south": {"uv": [0.75, 0, 1.5, 1], "texture": "#0"},
+				"west": {"uv": [0.75, 0, 0.75, 1], "texture": "#0"},
+				"up": {"uv": [0.75, 0, 0, 0], "texture": "#0"},
+				"down": {"uv": [1.5, 0, 0.75, 0], "texture": "#0"}
+			}
+		},
+		{
+			"from": [6.49, 8.99, 7.99],
+			"to": [9.51, 13.01, 8.02],
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 0.75, 1], "texture": "#0"},
+				"east": {"uv": [0, 0, 0, 1], "texture": "#0"},
+				"south": {"uv": [0.75, 0, 1.5, 1], "texture": "#0"},
+				"west": {"uv": [0.75, 0, 0.75, 1], "texture": "#0"},
+				"up": {"uv": [0.75, 0, 0, 0], "texture": "#0"},
+				"down": {"uv": [1.5, 0, 0.75, 0], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 3, 1],
+			"scale": [0.55, 0.55, 0.55]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, 3, 1],
+			"scale": [0.55, 0.55, 0.55]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, -90, 25],
+			"translation": [1.13, 3.2, 1.13],
+			"scale": [0.68, 0.68, 0.68]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, -90, 25],
+			"translation": [1.13, 3.2, 1.13],
+			"scale": [0.68, 0.68, 0.68]
+		},
+		"ground": {
+			"translation": [0, 2, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"gui": {
+			"rotation": [30, 225, 0],
+			"translation": [0, 2.25, 0]
+		},
+		"head": {
+			"rotation": [0, 180, 0],
+			"translation": [0, 12, 0],
+			"scale": [2.3, 2.3, 2.3]
+		},
+		"fixed": {
+			"rotation": [0, 180, 0]
+		}
+	},
+	"groups": [
+		{
+			"name": "bombflower",
+			"origin": [8, 0, 8],
+			"color": 0,
+			"children": [0, 1, 2, 3, 4, 5, 6]
+		}
+	]
+}

@@ -10,6 +10,7 @@ import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.util.Identifier;
 
+import org.hyrulecraft.dungeon_utils.environment.client.entity.model.BombEntityModel;
 import org.hyrulecraft.dungeon_utils.environment.client.screen.overlay.RupeeOverlay;
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils;
 import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks;
@@ -48,12 +49,14 @@ public class DungeonUtilsClient implements ClientModInitializer {
     public static void registerEntityModelLayers() {
 
         EntityModelLayerRegistry.registerModelLayer(CrateEntityModel.LAYER_LOCATION, CrateEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(BombEntityModel.LAYER_LOCATION, BombEntityModel::getTexturedModelData);
     }
 
     public static void registerEntityRenderers() {
 
         EntityRendererRegistry.register(DungeonUtilsEntities.MASTER_SWORD_BEAM, MasterSwordBeamEntityRenderer::new);
         EntityRendererRegistry.register(DungeonUtilsEntities.CRATE, CrateEntityRenderer::new);
+        EntityRendererRegistry.register(DungeonUtilsEntities.BOMB, BombEntityRenderer::new);
     }
 
     public static void registerModelPredicates() {
