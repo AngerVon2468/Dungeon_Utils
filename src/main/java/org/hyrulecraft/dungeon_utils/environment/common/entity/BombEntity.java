@@ -50,16 +50,18 @@ public class BombEntity extends ProjectileEntity {
 
         Vec3d vec3d = this.getVelocity();
         double d = this.getX() + vec3d.x;
-        double e = this.getY() + vec3d.y - vec3d.y / 2;
+        double e = this.getY() - vec3d.y + vec3d.y / 2;
         double f = this.getZ() + vec3d.z;
         this.setPosition(d, e, f);
+        double g = this.getY() + vec3d.y;
+        this.setPosition(d, g, f);
     }
 
     @Override
     protected void onEntityHit(EntityHitResult entityHitResult) {
         super.onEntityHit(entityHitResult);
 
-        world.createExplosion(this, this.getX(), this.getX(), this.getZ(), 5, World.ExplosionSourceType.MOB);
+        world.createExplosion(this, this.getX(), this.getX(), this.getZ(), 2, World.ExplosionSourceType.MOB);
         this.discard();
     }
 

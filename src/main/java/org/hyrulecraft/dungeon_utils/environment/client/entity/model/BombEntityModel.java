@@ -37,9 +37,11 @@ public class BombEntityModel<T extends BombEntity> extends EntityModel<BombEntit
 		main.addChild("cube_r3", ModelPartBuilder.create().uv(13, 0).cuboid(-3.5F, 8.5F, -3.5F, 7.0F, 0.01F, 7.0F, new Dilation(0.01F)), ModelTransform.of(0.0F, 0.0F, 0.0F, 0.0F, -0.7854F, 0.0F));
 		return TexturedModelData.of(modelData, 64, 64);
 	}
+
 	@Override
 	public void setAngles(BombEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 	}
+
 	@Override
 	public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, float red, float green, float blue, float alpha) {
 		main.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
