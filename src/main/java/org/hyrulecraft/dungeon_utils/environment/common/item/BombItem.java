@@ -28,7 +28,6 @@ public class BombItem extends Item {
         Vec3d vec3d = user.getRotationVector();
         bombEntity.setVelocity(vec3d.x, vec3d.y, vec3d.z, 0.5f, 0.0f);
         bombEntity.setYaw(-user.getHeadYaw());
-        bombEntity.setPitch(-user.getPitch());
         world.spawnEntity(bombEntity);
 
         return TypedActionResult.success(stack, true);
