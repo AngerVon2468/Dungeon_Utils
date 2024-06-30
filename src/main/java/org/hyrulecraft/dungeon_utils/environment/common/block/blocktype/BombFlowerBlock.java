@@ -16,6 +16,8 @@ import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems;
 
 public class BombFlowerBlock extends PlantBlock implements Fertilizable {
 
+    java.util.Random javaRandom = new java.util.Random();
+
     public static final IntProperty AGE = Properties.AGE_2;
 
     private static final VoxelShape[] AGE_TO_SHAPE = new VoxelShape[]{Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 2.0, 16.0), Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 4.0, 16.0), Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 6.0, 16.0), Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 8.0, 16.0), Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 10.0, 16.0), Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 12.0, 16.0), Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 14.0, 16.0), Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 16.0, 16.0)};
@@ -59,12 +61,11 @@ public class BombFlowerBlock extends PlantBlock implements Fertilizable {
         if (serverWorld.getBaseLightLevel(blockPos, 0) >= 9) {
             int i = this.getAge(blockState);
             if (i < this.getMaxAge()) {
-                if (random.nextInt(6 / 2) == 0) {
+                if (javaRandom.nextInt(6 / 2) == 0) {
                     serverWorld.setBlockState(blockPos, this.withAge(i + 1), 2);
                 }
             }
         }
-
     }
 
     public void applyGrowth(World world, BlockPos blockPos, BlockState blockState) {
@@ -81,8 +82,9 @@ public class BombFlowerBlock extends PlantBlock implements Fertilizable {
         return MathHelper.nextInt(world.random, 2, 5);
     }
 
+    @Override
     public boolean canPlaceAt(BlockState blockState, WorldView worldView, BlockPos blockPos) {
-        return (worldView.getBaseLightLevel(blockPos, 0) >= 8 || worldView.isSkyVisible(blockPos)) && super.canPlaceAt(blockState, worldView, blockPos);
+        return true;
     }
 
     @SuppressWarnings("deprecation")
