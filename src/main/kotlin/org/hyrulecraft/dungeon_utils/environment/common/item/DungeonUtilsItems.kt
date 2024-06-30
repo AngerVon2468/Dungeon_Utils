@@ -20,7 +20,7 @@ import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.champion.a
 import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.champion.ability.revali.*
 import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.clothing.glove.*
 import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.clothing.link.*
-import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.rupee.ChildRupeeWalletItem
+import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.rupee.*
 
 object DungeonUtilsItems {
 
@@ -110,6 +110,12 @@ object DungeonUtilsItems {
 
     @JvmField
     val CHILD_RUPEE_WALLET = registerItem("child_rupee_wallet", ChildRupeeWalletItem(FabricItemSettings().maxCount(1).maxDamage(0)))
+
+    @JvmField
+    val ADULT_RUPEE_WALLET = registerItem("adult_rupee_wallet", AdultRupeeWallet(FabricItemSettings().maxCount(1).maxDamage(0)))
+
+    @JvmField
+    val GIANT_RUPEE_WALLET = registerItem("giant_rupee_wallet", GiantRupeeWallet(FabricItemSettings().maxCount(1).maxDamage(0)))
 
     @JvmField
     val GREEN_RUPEE = registerItem("green_rupee", Item(FabricItemSettings().maxCount(64)))

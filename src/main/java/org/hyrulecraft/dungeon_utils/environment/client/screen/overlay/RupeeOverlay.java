@@ -10,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems;
+import org.hyrulecraft.dungeon_utils.environment.common.tags.DungeonUtilsTags;
 
 @Environment(EnvType.CLIENT)
 public class RupeeOverlay {
@@ -20,7 +21,7 @@ public class RupeeOverlay {
         int scaledHeight = client.getWindow().getScaledHeight();
         ClientPlayerEntity clientPlayer = client.clientPlayer;
         ItemStack stack = clientPlayer.getStackInHand(clientPlayer.getActiveHand());
-        if (stack.isOf(DungeonUtilsItems.CHILD_RUPEE_WALLET)) {
+        if (stack.isIn(DungeonUtilsTags.Items.RUPEE_WALLETS)) {
 
             drawContext.drawItem(DungeonUtilsItems.GREEN_RUPEE.getDefaultStack(), scaledWidth / 2 + -225, scaledHeight / 2 + 100, -1);
             drawContext.drawText(client.textRenderer, Text.translatable("gui.dungeon_utils.rupee_render_1"), scaledWidth / 2 + -208, scaledHeight / 2 + 104, -1, true);

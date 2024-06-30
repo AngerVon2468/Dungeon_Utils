@@ -1,0 +1,8 @@
+{
+    "replace": false,
+    "values": [
+        "dungeon_utils:child_rupee_wallet",
+        "dungeon_utils:adult_rupee_wallet",
+        "dungeon_utils:giant_rupee_wallet"
+    ]
+}
