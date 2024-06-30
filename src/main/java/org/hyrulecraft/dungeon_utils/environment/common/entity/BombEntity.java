@@ -61,16 +61,18 @@ public class BombEntity extends ProjectileEntity {
     protected void onEntityHit(EntityHitResult entityHitResult) {
         super.onEntityHit(entityHitResult);
 
-        world.createExplosion(this, this.getX(), this.getX(), this.getZ(), 2, World.ExplosionSourceType.MOB);
-        this.discard();
+        if (!world.isClient) {
+            world.createExplosion(this, this.getX(), this.getY(), this.getZ(), 1, World.ExplosionSourceType.MOB);
+            this.discard();
+        }
     }
 
     @Override
     protected void onCollision(HitResult hitResult) {
         super.onCollision(hitResult);
 
-        if (!this.getWorld().isClient) {
-            world.createExplosion(this, this.getX(), this.getX(), this.getZ(), 5, World.ExplosionSourceType.MOB);
+        if (!world.isClient) {
+            world.createExplosion(this, this.getX(), this.getY(), this.getZ(), 1, World.ExplosionSourceType.MOB);
             this.discard();
         }
     }
