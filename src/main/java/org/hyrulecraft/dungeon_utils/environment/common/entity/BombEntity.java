@@ -53,7 +53,7 @@ public class BombEntity extends ProjectileEntity {
         double e = this.getY() - vec3d.y + vec3d.y / 2;
         double f = this.getZ() + vec3d.z;
         this.setPosition(d, e, f);
-        double g = this.getY() + vec3d.y;
+        double g = this.getY() + vec3d.y * 3;
         this.setPosition(d, g, f);
     }
 
