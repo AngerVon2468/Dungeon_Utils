@@ -1,4 +1,4 @@
-package org.hyrulecraft.dungeon_utils.environment.common.block.blocktype;
+package org.hyrulecraft.dungeon_utils.environment.common.block.blocktype.bonepile;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

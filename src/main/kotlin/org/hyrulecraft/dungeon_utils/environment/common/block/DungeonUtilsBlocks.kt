@@ -10,6 +10,8 @@ import net.minecraft.util.Identifier
 
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils
 import org.hyrulecraft.dungeon_utils.environment.common.block.blocktype.*
+import org.hyrulecraft.dungeon_utils.environment.common.block.blocktype.bonepile.*
+import org.hyrulecraft.dungeon_utils.environment.common.block.blocktype.switchblock.*
 
 object DungeonUtilsBlocks {
 

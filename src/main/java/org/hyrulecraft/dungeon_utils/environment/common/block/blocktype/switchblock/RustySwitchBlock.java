@@ -1,4 +1,4 @@
-package org.hyrulecraft.dungeon_utils.environment.common.block.blocktype;
+package org.hyrulecraft.dungeon_utils.environment.common.block.blocktype.switchblock;
 
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
