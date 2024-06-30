@@ -2,8 +2,8 @@
     "replace": false,
     "values": [
         "minecraft:bow",
-        "dungeon_utils:lynel_bow_5x",
-        "dungeon_utils:lynel_bow_3x",
+        "dungeon_utils:lynel_bow_five_x",
+        "dungeon_utils:lynel_bow_three_x",
         "dungeon_utils:great_eagle_bow"
     ]
 }

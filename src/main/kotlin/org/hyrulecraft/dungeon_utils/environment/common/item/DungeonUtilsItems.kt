@@ -145,7 +145,7 @@ object DungeonUtilsItems {
     val SHEIKAH_SLATE = registerItem("sheikah_slate", SheikahSlateItem(FabricItemSettings().maxDamage(0).maxCount(1)))
 
     @JvmField
-    val BOMB = registerItem("bomb", Item(FabricItemSettings().maxDamage(0).maxCount(1)))
+    val BOMB = registerItem("bomb", BombItem(FabricItemSettings().maxDamage(0).maxCount(1)))
 
     @JvmStatic
     fun registerModItems() {

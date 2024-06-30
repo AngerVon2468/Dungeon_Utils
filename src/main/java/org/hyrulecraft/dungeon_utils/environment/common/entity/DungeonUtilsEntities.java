@@ -34,7 +34,7 @@ public class DungeonUtilsEntities {
             RegistryTypes.ENTITY,
             new Identifier(DungeonUtils.MOD_ID, "bomb"),
             FabricEntityTypeBuilder.create(SpawnGroup.MISC, BombEntity::new)
-                    .dimensions(EntityDimensions.fixed(1f,1f))
+                    .dimensions(EntityDimensions.fixed(0.55f,0.75f))
                     .fireImmune()
                     .trackRangeBlocks(5000)
                     .spawnableFarFromPlayer()
