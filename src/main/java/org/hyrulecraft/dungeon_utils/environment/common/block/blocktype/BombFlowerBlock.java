@@ -14,6 +14,7 @@ import net.minecraft.world.*;
 
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems;
 
+// TODO: Fix
 public class BombFlowerBlock extends PlantBlock implements Fertilizable {
 
     java.util.Random javaRandom = new java.util.Random();
