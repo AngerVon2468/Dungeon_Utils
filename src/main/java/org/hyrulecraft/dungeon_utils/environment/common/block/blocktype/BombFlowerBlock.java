@@ -32,10 +32,6 @@ public class BombFlowerBlock extends PlantBlock implements Fertilizable {
         return AGE_TO_SHAPE[this.getAge(blockState)];
     }
 
-    protected boolean canPlantOnTop(BlockState blockState, BlockView blockView, BlockPos blockPos) {
-        return blockState.isOf(Blocks.FARMLAND);
-    }
-
     public int getMaxAge() {
         return 2;
     }
