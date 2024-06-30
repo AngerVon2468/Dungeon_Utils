@@ -94,6 +94,13 @@ object DungeonUtilsBlocks {
         )
     )
 
+    @JvmField
+    val BOMB_FLOWER = registerBlock("bomb_flower",
+        BombFlowerBlock(
+            FabricBlockSettings.create().nonOpaque()
+        )
+    )
+
     @JvmStatic
     fun registerModBlocks() {
         DungeonUtils.LOGGER.info(DungeonUtils.NAME + " has registered its blocks.")

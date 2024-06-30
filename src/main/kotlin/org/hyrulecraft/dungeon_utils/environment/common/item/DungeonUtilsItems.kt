@@ -138,6 +138,9 @@ object DungeonUtilsItems {
     @JvmField
     val SHEIKAH_SLATE = registerItem("sheikah_slate", SheikahSlateItem(FabricItemSettings().maxDamage(0).maxCount(1)))
 
+    @JvmField
+    val BOMB = registerItem("bomb", Item(FabricItemSettings().maxDamage(0).maxCount(1)))
+
     @JvmStatic
     fun registerModItems() {
         DungeonUtils.LOGGER.info(DungeonUtils.NAME + " has registered its items.")
