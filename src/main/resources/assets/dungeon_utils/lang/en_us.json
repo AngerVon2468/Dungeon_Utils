@@ -7,7 +7,8 @@
   "block.dungeon_utils.pile_of_bones": "Pile of Bones",
   "block.dungeon_utils.stone_pile_of_bones": "Fossilized Pile of Bones",
   "block.dungeon_utils.dirt_pile_of_bones": "Dirty Pile of Bones",
-  "block.dungeon_utils.fleshy_pile_of_bones": "Flehsy Pile of Bones",
+  "block.dungeon_utils.fleshy_pile_of_bones": "Fleshy Pile of Bones",
+  "block.dungeon_utils.bomb_flower": "Bomb Flower",
 
   "item.dungeon_utils.megaton_hammer": "Megaton Hammer",
   "item.dungeon_utils.lynel_bow_five_x": "Lynel Bow (5x)",
@@ -35,6 +36,7 @@
   "item.dungeon_utils.child_rupee_wallet": "Child Rupee Wallet",
   "item.dungeon_utils.green_rupee": "Green Rupee",
   "item.dungeon_utils.blue_rupee": "Blue Rupee",
+  "item.dungeon_utils.bomb": "Bomb",
 
   "tooltip.dungeon_utils.cap_trinket_one": "",
   "tooltip.dungeon_utils.tunic_trinket_one": "",
