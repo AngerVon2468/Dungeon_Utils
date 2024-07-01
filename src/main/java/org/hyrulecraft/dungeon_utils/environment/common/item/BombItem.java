@@ -26,8 +26,8 @@ public class BombItem extends Item {
         bombEntity.setOwner(user);
         bombEntity.setPosition(user.getX(), user.getY() + user.getEyeHeight(user.getPose()), user.getZ());
         Vec3d vec3d = user.getRotationVector();
-        bombEntity.setVelocity(vec3d.x, vec3d.y, vec3d.z, 0.5f, 0.0f);
-        bombEntity.setYaw(-user.getHeadYaw());
+        bombEntity.setVelocity(vec3d.x, vec3d.y, vec3d.z);
+        bombEntity.setYaw(user.getHeadYaw());
         bombEntity.pushAwayFrom(user);
         world.spawnEntity(bombEntity);
 

@@ -74,9 +74,4 @@ public class BombEntity extends ProjectileEntity {
             this.discard();
         }
     }
-
-    @Override
-    public boolean isCollidable() {
-        return true;
-    }
 }
