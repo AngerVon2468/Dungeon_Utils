@@ -28,9 +28,7 @@ public class WiiUScreen extends Screen {
         super.render(context, mouseX, mouseY, delta);
     }
 
-    public ButtonWidget buttonYes = ButtonWidget.builder(Text.translatable("title.dungeon_utils.wiiu.button_yes"), button -> {
-                newScreen(new MultiplayerScreen(parent));
-            })
+    public ButtonWidget buttonYes = ButtonWidget.builder(Text.translatable("title.dungeon_utils.wiiu.button_yes"), button -> newScreen(new MultiplayerScreen(parent)))
             .dimensions(width / 2 - 205, 20, 200, 20)
             .build();
     public ButtonWidget buttonNo = ButtonWidget.builder(Text.translatable("title.dungeon_utils.wiiu.button_no"), button -> {
@@ -54,6 +52,7 @@ public class WiiUScreen extends Screen {
     }
 
     @Override
+    @SuppressWarnings("all")
     public void close() {
         if (nextScreen != null) {
 
