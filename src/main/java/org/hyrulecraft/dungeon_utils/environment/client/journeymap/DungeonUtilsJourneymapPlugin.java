@@ -42,6 +42,7 @@ public class DungeonUtilsJourneymapPlugin implements IClientPlugin {
 
     }
 
+    @SuppressWarnings("all")
     public Waypoint createWaypoint(BlockPos blockPos, RegistryKey<World> dimension) {
         Waypoint waypoint = null;
         try {
