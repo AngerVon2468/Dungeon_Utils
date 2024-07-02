@@ -29,7 +29,7 @@ public class BombEntity extends ProjectileEntity {
 
         boolean isInPortal = false;
         if (hitResult.getType() == HitResult.Type.BLOCK) {
-            BlockPos blockPos = ((BlockHitResult)hitResult).getBlockPos();
+            BlockPos blockPos = ((BlockHitResult) hitResult).getBlockPos();
             BlockState blockState = world.getBlockState(blockPos);
             if (blockState.isOf(Blocks.NETHER_PORTAL)) {
                 this.setInNetherPortal(blockPos);
@@ -37,7 +37,7 @@ public class BombEntity extends ProjectileEntity {
             } else if (blockState.isOf(Blocks.END_GATEWAY)) {
                 BlockEntity blockEntity = world.getBlockEntity(blockPos);
                 if (blockEntity instanceof EndGatewayBlockEntity && EndGatewayBlockEntity.canTeleport(this)) {
-                    EndGatewayBlockEntity.tryTeleportingEntity(this.getWorld(), blockPos, blockState, this, (EndGatewayBlockEntity)blockEntity);
+                    EndGatewayBlockEntity.tryTeleportingEntity(this.getWorld(), blockPos, blockState, this, (EndGatewayBlockEntity) blockEntity);
                 }
 
                 isInPortal = true;
@@ -53,6 +53,26 @@ public class BombEntity extends ProjectileEntity {
         double e = this.getY() + vec3d.y;
         double f = this.getZ() + vec3d.z;
         this.updatePosition(d, e, f);
+
+        double x = vec3d.x;
+        if (vec3d.x > 0) {
+
+            x = this.getX() + vec3d.x / 1.5;
+
+        }
+        double y = vec3d.y;
+        if (vec3d.y > 0) {
+
+            y = this.getY() + vec3d.y / 2;
+
+        }
+        double z = vec3d.z;
+        if (vec3d.z > 0) {
+
+            y = this.getZ() + vec3d.z / 1.5;
+
+        }
+        this.setVelocity(x, y, z);
     }
 
     @Override
