@@ -42,6 +42,6 @@ public class CrateEntityModel<T extends CrateEntity> extends EntityModel<CrateEn
 
 	@Override
 	public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, float red, float green, float blue, float alpha) {
-		main.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
+		this.main.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
 	}
 }
