@@ -13,6 +13,10 @@ import org.hyrulecraft.dungeon_utils.environment.common.entity.BombEntity;
 
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * {@link BombEntityModel<T>}<br>
+ * This link is to avoid a stupid warning that I can't be stuffed to remove.
+ */
 @Environment(EnvType.CLIENT)
 public class BombEntityModel<T extends BombEntity> extends EntityModel<BombEntity> {
 

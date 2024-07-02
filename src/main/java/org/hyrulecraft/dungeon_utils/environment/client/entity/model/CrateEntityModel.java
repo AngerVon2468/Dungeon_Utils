@@ -13,6 +13,10 @@ import org.hyrulecraft.dungeon_utils.environment.common.entity.CrateEntity;
 
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * {@link CrateEntityModel<T>}<br>
+ * This link is to avoid a stupid warning that I can't be stuffed to remove.
+ */
 @Environment(EnvType.CLIENT)
 public class CrateEntityModel<T extends CrateEntity> extends EntityModel<CrateEntity> {
 
@@ -24,6 +28,7 @@ public class CrateEntityModel<T extends CrateEntity> extends EntityModel<CrateEn
 		this.main = root.getChild("main");
 	}
 
+	@SuppressWarnings("unused")
 	public static @NotNull TexturedModelData getTexturedModelData() {
 		ModelData modelData = new ModelData();
 		ModelPartData modelPartData = modelData.getRoot();
