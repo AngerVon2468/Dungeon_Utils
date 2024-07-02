@@ -54,6 +54,7 @@ public class BombEntity extends ProjectileEntity {
         double f = this.getZ() + vec3d.z;
         this.updatePosition(d, e, f);
 
+        /*
         double x = vec3d.x;
         if (vec3d.x > 0) {
 
@@ -69,10 +70,11 @@ public class BombEntity extends ProjectileEntity {
         double z = vec3d.z;
         if (vec3d.z > 0) {
 
-            y = this.getZ() + vec3d.z / 1.5;
+            z = this.getZ() + vec3d.z / 1.5;
 
         }
-        this.setVelocity(x, y, z);
+        this.updatePosition(x, y, z);
+        */
     }
 
     @Override
