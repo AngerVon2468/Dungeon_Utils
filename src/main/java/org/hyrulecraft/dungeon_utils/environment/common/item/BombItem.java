@@ -25,8 +25,8 @@ public class BombItem extends Item {
         BombEntity bombEntity = DungeonUtilsEntities.BOMB.create(world);
         bombEntity.setOwner(user);
         bombEntity.setPosition(user.getX(), user.getY() + user.getEyeHeight(user.getPose()), user.getZ());
-        Vec3d vec3d = user.getRotationVector();
-        bombEntity.setVelocity(vec3d.x, vec3d.y, vec3d.z);
+        Vec3d playerFacing = user.getRotationVector();
+        bombEntity.setVelocity(playerFacing.x, playerFacing.y, playerFacing.z);
         bombEntity.setYaw(user.getHeadYaw());
         bombEntity.pushAwayFrom(user);
         world.spawnEntity(bombEntity);

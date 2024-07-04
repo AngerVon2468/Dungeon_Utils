@@ -2,15 +2,20 @@ package org.hyrulecraft.dungeon_utils.environment.common.entity;
 
 import net.minecraft.block.*;
 import net.minecraft.block.entity.*;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.projectile.*;
 import net.minecraft.util.hit.*;
 import net.minecraft.util.math.*;
 import net.minecraft.world.World;
+import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils;
+import org.jetbrains.annotations.Nullable;
 
 public class BombEntity extends ProjectileEntity {
 
     World world = this.getWorld();
+
+    @Nullable Entity owner = this.getOwner();
 
     public BombEntity(EntityType<? extends ProjectileEntity> entityType, World world) {
         super(entityType, world);
@@ -48,33 +53,34 @@ public class BombEntity extends ProjectileEntity {
         }
         this.checkBlockCollision();
 
-        Vec3d vec3d = this.getVelocity();
-        double d = this.getX() + vec3d.x;
-        double e = this.getY() + vec3d.y;
-        double f = this.getZ() + vec3d.z;
-        this.updatePosition(d, e, f);
+        Vec3d bombVec = this.getVelocity();
+        double x = this.getX() + bombVec.x;
+        double y = this.getY();
+        double z = this.getZ() + bombVec.z;
+        if (owner != null) {
 
-        /*
-        double x = vec3d.x;
-        if (vec3d.x > 0) {
+            Vec3d playerRotationVec = owner.getRotationVector();
+            if (playerRotationVec.y > 90) {
 
-            x = this.getX() + vec3d.x / 1.5;
+                y = this.getY() - bombVec.y;
+                this.updatePosition(x, y, z);
+
+            } else if (playerRotationVec.y < 90) {
+
+                y = this.getY() + bombVec.y;
+                this.updatePosition(x, y, z);
+
+            } else {
+
+                this.updatePosition(x, y, z);
+
+            }
+
+        } else {
+
+            DungeonUtils.LOGGER.info("Bomb Entity owner should not be null!");
 
         }
-        double y = vec3d.y;
-        if (vec3d.y > 0) {
-
-            y = this.getY() + vec3d.y / 2;
-
-        }
-        double z = vec3d.z;
-        if (vec3d.z > 0) {
-
-            z = this.getZ() + vec3d.z / 1.5;
-
-        }
-        this.updatePosition(x, y, z);
-        */
     }
 
     @Override
