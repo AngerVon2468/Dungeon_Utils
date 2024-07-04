@@ -54,12 +54,12 @@ public class BombEntity extends ProjectileEntity {
         double z = this.getZ() + bombVec.z;
         if (bombVec.y > 90) {
 
-            y = this.getY() - bombVec.y;
+            y = this.getY() + bombVec.y;
             this.updatePosition(x, y, z);
 
         } else if (bombVec.y < 90) {
 
-            y = this.getY() + bombVec.y;
+            y = this.getY() - bombVec.y;
             this.updatePosition(x, y, z);
 
         } else {

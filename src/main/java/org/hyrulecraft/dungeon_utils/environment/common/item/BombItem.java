@@ -23,7 +23,7 @@ public class BombItem extends Item {
         ItemStack stack = user.getStackInHand(hand);
 
         BombEntity bombEntity = DungeonUtilsEntities.BOMB.create(world);
-        bombEntity.setOwner(user);
+        bombEntity.setOwner(user); // What do you mean this doesn't even work???
         bombEntity.setPosition(user.getX(), user.getY() + user.getEyeHeight(user.getPose()), user.getZ());
         Vec3d playerFacing = user.getRotationVector();
         bombEntity.setVelocity(playerFacing.x, playerFacing.y, playerFacing.z);
