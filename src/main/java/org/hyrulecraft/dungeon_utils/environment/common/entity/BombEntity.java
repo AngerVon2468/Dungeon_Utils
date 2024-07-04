@@ -2,20 +2,15 @@ package org.hyrulecraft.dungeon_utils.environment.common.entity;
 
 import net.minecraft.block.*;
 import net.minecraft.block.entity.*;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.projectile.*;
 import net.minecraft.util.hit.*;
 import net.minecraft.util.math.*;
 import net.minecraft.world.World;
-import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils;
-import org.jetbrains.annotations.Nullable;
 
 public class BombEntity extends ProjectileEntity {
 
     World world = this.getWorld();
-
-    @Nullable Entity owner = this.getOwner();
 
     public BombEntity(EntityType<? extends ProjectileEntity> entityType, World world) {
         super(entityType, world);
@@ -57,28 +52,19 @@ public class BombEntity extends ProjectileEntity {
         double x = this.getX() + bombVec.x;
         double y = this.getY();
         double z = this.getZ() + bombVec.z;
-        if (owner != null) {
+        if (bombVec.y > 90) {
 
-            Vec3d playerRotationVec = owner.getRotationVector();
-            if (playerRotationVec.y > 90) {
+            y = this.getY() - bombVec.y;
+            this.updatePosition(x, y, z);
 
-                y = this.getY() - bombVec.y;
-                this.updatePosition(x, y, z);
+        } else if (bombVec.y < 90) {
 
-            } else if (playerRotationVec.y < 90) {
-
-                y = this.getY() + bombVec.y;
-                this.updatePosition(x, y, z);
-
-            } else {
-
-                this.updatePosition(x, y, z);
-
-            }
+            y = this.getY() + bombVec.y;
+            this.updatePosition(x, y, z);
 
         } else {
 
-            DungeonUtils.LOGGER.info("Bomb Entity owner should not be null!");
+            this.updatePosition(x, y, z);
 
         }
     }

@@ -28,7 +28,6 @@ public class BombItem extends Item {
         Vec3d playerFacing = user.getRotationVector();
         bombEntity.setVelocity(playerFacing.x, playerFacing.y, playerFacing.z);
         bombEntity.setYaw(user.getHeadYaw());
-        bombEntity.pushAwayFrom(user);
         world.spawnEntity(bombEntity);
 
         return TypedActionResult.success(stack, true);
