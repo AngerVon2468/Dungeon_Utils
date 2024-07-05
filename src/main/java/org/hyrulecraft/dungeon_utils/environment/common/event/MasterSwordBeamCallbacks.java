@@ -4,7 +4,7 @@ import net.fabricmc.fabric.api.event.*;
 
 import net.minecraft.entity.player.PlayerEntity;
 
-import org.hyrulecraft.dungeon_utils.environment.common.entity.MasterSwordBeamEntity;
+import org.hyrulecraft.dungeon_utils.environment.common.entity.entity_type.MasterSwordBeamEntity;
 
 public class MasterSwordBeamCallbacks {
 

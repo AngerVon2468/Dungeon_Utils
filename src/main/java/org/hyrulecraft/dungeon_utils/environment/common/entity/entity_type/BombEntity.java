@@ -1,4 +1,4 @@
-package org.hyrulecraft.dungeon_utils.environment.common.entity;
+package org.hyrulecraft.dungeon_utils.environment.common.entity.entity_type;
 
 import net.minecraft.block.*;
 import net.minecraft.block.entity.*;

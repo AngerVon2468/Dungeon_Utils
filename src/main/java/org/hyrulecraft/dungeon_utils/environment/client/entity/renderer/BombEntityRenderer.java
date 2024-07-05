@@ -9,7 +9,7 @@ import net.minecraft.util.Identifier;
 
 import org.hyrulecraft.dungeon_utils.environment.client.entity.model.BombEntityModel;
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils;
-import org.hyrulecraft.dungeon_utils.environment.common.entity.BombEntity;
+import org.hyrulecraft.dungeon_utils.environment.common.entity.entity_type.BombEntity;
 
 import org.jetbrains.annotations.NotNull;
 

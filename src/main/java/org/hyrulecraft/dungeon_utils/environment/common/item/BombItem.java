@@ -8,7 +8,8 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
-import org.hyrulecraft.dungeon_utils.environment.common.entity.*;
+import org.hyrulecraft.dungeon_utils.environment.common.entity.DungeonUtilsEntities;
+import org.hyrulecraft.dungeon_utils.environment.common.entity.entity_type.BombEntity;
 
 import org.jetbrains.annotations.NotNull;
 

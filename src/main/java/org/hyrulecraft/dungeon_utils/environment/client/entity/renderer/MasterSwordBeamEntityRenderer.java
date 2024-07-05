@@ -11,7 +11,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.RotationAxis;
 
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils;
-import org.hyrulecraft.dungeon_utils.environment.common.entity.MasterSwordBeamEntity;
+import org.hyrulecraft.dungeon_utils.environment.common.entity.entity_type.MasterSwordBeamEntity;
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems;
 
 import org.jetbrains.annotations.NotNull;
