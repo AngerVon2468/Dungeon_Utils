@@ -34,8 +34,6 @@ class LoadScreenCallback {
 
                 }
 
-                MinecraftClient.getInstance().window.setTitle("WiiU")
-
             }
         }
     }
