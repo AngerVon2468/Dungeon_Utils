@@ -49,11 +49,11 @@ public class BombEntity extends ProjectileEntity {
         this.checkBlockCollision();
 
         Vec3d bombVec = this.getVelocity();
-        double x = this.getX() + bombVec.x / 3.2;
+        double x = this.getX() + bombVec.x / 2.3;
         double y = this.getY();
-        double z = this.getZ() + bombVec.z / 3.2;
+        double z = this.getZ() + bombVec.z / 2.3;
         this.updatePosition(x, y, z);
-        this.updatePosition(x, y - 0.3, z);
+        this.updatePosition(x, y - 0.22, z);
     }
 
     @Override
