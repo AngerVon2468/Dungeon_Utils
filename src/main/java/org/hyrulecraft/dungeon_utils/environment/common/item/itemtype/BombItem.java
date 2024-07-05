@@ -1,4 +1,4 @@
-package org.hyrulecraft.dungeon_utils.environment.common.item;
+package org.hyrulecraft.dungeon_utils.environment.common.item.itemtype;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
