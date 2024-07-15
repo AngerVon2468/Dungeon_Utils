@@ -36,8 +36,8 @@ public class BombEntity extends ProjectileEntity {
                 isInPortal = true;
             } else if (blockState.isOf(Blocks.END_GATEWAY)) {
                 BlockEntity blockEntity = world.getBlockEntity(blockPos);
-                if (blockEntity instanceof EndGatewayBlockEntity && EndGatewayBlockEntity.canTeleport(this)) {
-                    EndGatewayBlockEntity.tryTeleportingEntity(this.getWorld(), blockPos, blockState, this, (EndGatewayBlockEntity) blockEntity);
+                if (blockEntity instanceof EndGatewayBlockEntity endGatewayBlockEntity && EndGatewayBlockEntity.canTeleport(this)) {
+                    EndGatewayBlockEntity.tryTeleportingEntity(this.getWorld(), blockPos, blockState, this, endGatewayBlockEntity);
                 }
 
                 isInPortal = true;
@@ -49,11 +49,13 @@ public class BombEntity extends ProjectileEntity {
         this.checkBlockCollision();
 
         Vec3d bombVec = this.getVelocity();
-        double x = this.getX() + bombVec.x / 2.3;
-        double y = this.getY();
-        double z = this.getZ() + bombVec.z / 2.3;
+        double x = this.getX() + bombVec.x;
+        double y = this.getY() + bombVec.y;
+        double z = this.getZ() + bombVec.z;
         this.updatePosition(x, y, z);
-        this.updatePosition(x, y - 0.22, z);
+        if (!this.hasNoGravity()) {
+            this.setVelocity(this.getVelocity().add(0.0f, -0.08f, 0.0f));
+        }
     }
 
     @Override
