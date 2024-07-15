@@ -18,7 +18,6 @@ public class BombEntity extends ProjectileEntity {
 
     @Override
     protected void initDataTracker() {
-
     }
 
     @Override
@@ -30,12 +29,12 @@ public class BombEntity extends ProjectileEntity {
         boolean isInPortal = false;
         if (hitResult.getType() == HitResult.Type.BLOCK) {
             BlockPos blockPos = ((BlockHitResult) hitResult).getBlockPos();
-            BlockState blockState = world.getBlockState(blockPos);
+            BlockState blockState = this.world.getBlockState(blockPos);
             if (blockState.isOf(Blocks.NETHER_PORTAL)) {
                 this.setInNetherPortal(blockPos);
                 isInPortal = true;
             } else if (blockState.isOf(Blocks.END_GATEWAY)) {
-                BlockEntity blockEntity = world.getBlockEntity(blockPos);
+                BlockEntity blockEntity = this.world.getBlockEntity(blockPos);
                 if (blockEntity instanceof EndGatewayBlockEntity endGatewayBlockEntity && EndGatewayBlockEntity.canTeleport(this)) {
                     EndGatewayBlockEntity.tryTeleportingEntity(this.getWorld(), blockPos, blockState, this, endGatewayBlockEntity);
                 }

@@ -11,6 +11,8 @@ import net.minecraft.world.World;
 
 public class MasterSwordBeamEntity extends ProjectileEntity {
 
+    World world = this.getWorld();
+
     public MasterSwordBeamEntity(EntityType<? extends ProjectileEntity> entityType, World world) {
         super(entityType, world);
     }
@@ -28,15 +30,15 @@ public class MasterSwordBeamEntity extends ProjectileEntity {
 
         boolean isInPortal = false;
         if (hitResult.getType() == HitResult.Type.BLOCK) {
-            BlockPos blockPos = ((BlockHitResult)hitResult).getBlockPos();
-            BlockState blockState = this.getWorld().getBlockState(blockPos);
+            BlockPos blockPos = ((BlockHitResult) hitResult).getBlockPos();
+            BlockState blockState = this.world.getBlockState(blockPos);
             if (blockState.isOf(Blocks.NETHER_PORTAL)) {
                 this.setInNetherPortal(blockPos);
                 isInPortal = true;
             } else if (blockState.isOf(Blocks.END_GATEWAY)) {
-                BlockEntity blockEntity = this.getWorld().getBlockEntity(blockPos);
-                if (blockEntity instanceof EndGatewayBlockEntity && EndGatewayBlockEntity.canTeleport(this)) {
-                    EndGatewayBlockEntity.tryTeleportingEntity(this.getWorld(), blockPos, blockState, this, (EndGatewayBlockEntity)blockEntity);
+                BlockEntity blockEntity = this.world.getBlockEntity(blockPos);
+                if (blockEntity instanceof EndGatewayBlockEntity endGatewayBlockEntity && EndGatewayBlockEntity.canTeleport(this)) {
+                    EndGatewayBlockEntity.tryTeleportingEntity(this.getWorld(), blockPos, blockState, this, endGatewayBlockEntity);
                 }
 
                 isInPortal = true;
