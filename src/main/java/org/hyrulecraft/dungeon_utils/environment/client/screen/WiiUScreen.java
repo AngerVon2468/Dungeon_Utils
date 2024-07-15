@@ -23,44 +23,44 @@ public class WiiUScreen extends Screen {
 
     @Override
     public void render(@NotNull DrawContext context, int mouseX, int mouseY, float delta) {
-        context.drawCenteredTextWithShadow(textRenderer, Text.literal("WiiU is based"), width / 2, height - 100, 0xffffff);
+        context.drawCenteredTextWithShadow(this.textRenderer, Text.literal("WiiU is based"), this.width / 2, this.height - 100, 0xffffff);
         this.renderBackground(context);
         super.render(context, mouseX, mouseY, delta);
     }
 
-    public ButtonWidget buttonYes = ButtonWidget.builder(Text.translatable("title.dungeon_utils.wiiu.button_yes"), button -> newScreen(new MultiplayerScreen(parent)))
-            .dimensions(width / 2 - 205, 20, 200, 20)
+    public ButtonWidget buttonYes = ButtonWidget.builder(Text.translatable("title.dungeon_utils.wiiu.button_yes"), button -> newScreen(new MultiplayerScreen(this.parent)))
+            .dimensions(this.width / 2 - 205, 20, 200, 20)
             .build();
     public ButtonWidget buttonNo = ButtonWidget.builder(Text.translatable("title.dungeon_utils.wiiu.button_no"), button -> {
                 throw new RuntimeException("fuck you");
             })
-            .dimensions(width / 2 + 5, 20, 200, 20)
+            .dimensions(this.width / 2 + 5, 20, 200, 20)
             .build();
 
     @Override
     protected void init() {
-        buttonYes.setPosition(width / 2 - 205, 220);
-        buttonNo.setPosition(width / 2 + 5, 220);
+        this.buttonYes.setPosition(this.width / 2 - 205, 220);
+        this.buttonNo.setPosition(this.width / 2 + 5, 220);
 
-        addDrawableChild(buttonYes);
-        addDrawableChild(buttonNo);
+        this.addDrawableChild(buttonYes);
+        this.addDrawableChild(buttonNo);
     }
 
     public void newScreen(Screen screen) {
-        nextScreen = screen;
-        close();
+        this.nextScreen = screen;
+        this.close();
     }
 
     @Override
     @SuppressWarnings("all")
     public void close() {
-        if (nextScreen != null) {
+        if (this.nextScreen != null) {
 
-            client.setScreen(nextScreen);
+            this.client.setScreen(nextScreen);
 
         } else {
 
-            client.setScreen(parent);
+            this.client.setScreen(parent);
 
         }
     }
