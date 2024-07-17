@@ -13,6 +13,7 @@ public class UtilCollector {
         ChampionEventCallbacks.allowDeathEvent();
         ChampionEventCallbacks.allowDamageEvent();
         MobDeathEvent.onEntityDiesEvent();
+        CarryOverHeartContainers.onPlayerRespawn();
 
         // Commands.
         DungeonUtilsCommands.kys();

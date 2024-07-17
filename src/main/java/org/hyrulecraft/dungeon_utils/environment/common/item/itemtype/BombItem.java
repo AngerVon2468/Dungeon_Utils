@@ -1,10 +1,8 @@
 package org.hyrulecraft.dungeon_utils.environment.common.item.itemtype;
 
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
+import net.minecraft.item.*;
+import net.minecraft.util.*;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
@@ -24,7 +22,7 @@ public class BombItem extends Item {
         ItemStack stack = user.getStackInHand(hand);
 
         BombEntity bombEntity = DungeonUtilsEntities.BOMB.create(world);
-        bombEntity.setOwner(user); // What do you mean this doesn't even work???
+        bombEntity.setOwner(user);
         bombEntity.setPosition(user.getX(), user.getY() + user.getEyeHeight(user.getPose()), user.getZ());
         Vec3d playerFacing = user.getRotationVector();
         bombEntity.setVelocity(playerFacing.x, playerFacing.y, playerFacing.z);
