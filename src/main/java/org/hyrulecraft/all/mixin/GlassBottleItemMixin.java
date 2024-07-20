@@ -5,14 +5,14 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
-import net.minecraft.sound.SoundCategories;
-import net.minecraft.sound.Sounds;
+import net.minecraft.sound.*;
 import net.minecraft.stat.Stats;
 import net.minecraft.util.*;
 import net.minecraft.util.hit.*;
 import net.minecraft.world.*;
 
 import org.hyrulecraft.dungeon_utils.util.NbtUtil;
+
 import org.jetbrains.annotations.NotNull;
 
 import org.spongepowered.asm.mixin.*;
