@@ -3,7 +3,8 @@
     "package": "org.hyrulecraft.all.mixin",
     "compatibilityLevel": "JAVA_17",
     "mixins": [
-        "EnderDragonFightMixin"
+        "EnderDragonFightMixin",
+        "GlassBottleItemMixin"
     ],
     "client": [
         "MinecraftClientMixin"
