@@ -1,7 +1,8 @@
 package org.hyrulecraft.all.mixin;
 
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.entity.passive.CowEntity;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.passive.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.sound.SoundCategories;
@@ -11,6 +12,7 @@ import net.minecraft.util.*;
 import net.minecraft.util.hit.*;
 import net.minecraft.world.*;
 
+import org.hyrulecraft.dungeon_utils.util.NbtUtil;
 import org.jetbrains.annotations.NotNull;
 
 import org.spongepowered.asm.mixin.*;
@@ -47,10 +49,20 @@ public abstract class GlassBottleItemMixin extends Item {
                 }
                 case ENTITY -> {
                     EntityHitResult entityHitResult = (EntityHitResult) hit;
-                    if (entityHitResult.getEntity() instanceof CowEntity) {
+                    Entity entity = entityHitResult.getEntity();
+                    if (entity instanceof CowEntity) {
 
                         world.playSound(user, user.getX(), user.getY(), user.getZ(), Sounds.ITEM_BOTTLE_FILL, SoundCategories.NEUTRAL, 1.0f, 1.0f);
-                        return TypedActionResult.success(this.fill(stack, user, Items.EGG.getDefaultStack()), world.isClient());
+                        return TypedActionResult.success(this.fill(stack, user, Items.EGG.getDefaultStack()), world.isClient()); // Make a milk bottle item.
+
+                    }
+                    if (entity instanceof FishEntity fish) {
+
+                        world.playSound(user, user.getX(), user.getY(), user.getZ(), Sounds.ITEM_BOTTLE_FILL, SoundCategories.NEUTRAL, 1.0f, 1.0f);
+                        ItemStack fishBottleStack = this.fill(stack, user, Items.BAMBOO.getDefaultStack()); // Make a fish bottle item.
+                        NbtUtil.setNbt(fishBottleStack, "dungeon_utils.fish_bottle.type", fish.getClass().getSimpleName());
+                        fish.discard();
+                        return TypedActionResult.success(fishBottleStack, world.isClient());
 
                     }
                 }
