@@ -41,6 +41,7 @@
   "tooltip.dungeon_utils.cap_trinket_one": "",
   "tooltip.dungeon_utils.tunic_trinket_one": "",
   "tooltip.dungeon_utils.rupee_amount": "Rupees:",
+  "tooltip.dungeon_utils.bomb_amount": "Bombs:",
 
   "tab.dungeon_utils.dungeon_utils": "Dungeon Utils",
   "tab.dungeon_utils.champion_abilities": "Champion Abilities",

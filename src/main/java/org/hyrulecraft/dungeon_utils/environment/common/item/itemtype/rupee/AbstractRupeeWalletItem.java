@@ -31,43 +31,43 @@ public abstract class AbstractRupeeWalletItem extends Item {
     public TypedActionResult<ItemStack> use(@NotNull World world, @NotNull PlayerEntity user, @NotNull Hand hand) {
         ItemStack stack = user.getStackInHand(hand);
 
-        if (InventoryUtil.checkPlayerInventoryForItem(user, DungeonUtilsItems.GREEN_RUPEE)) {
+        if (InventoryUtil.checkPlayerInventoryForItem(user, DungeonUtilsItems.GREEN_RUPEE) && !user.isSneaking()) {
 
             ItemStack rupeeStack = user.getInventory().getStack(InventoryUtil.getItemStackSlot(user, DungeonUtilsItems.GREEN_RUPEE));
             int rupeesInStack = rupeeStack.getCount();
             if (stack.getNbt() != null && stack.getNbt().contains("dungeon_utils.rupee.amount")) {
 
                 int rupeesInWallet = stack.getNbt().getInt("dungeon_utils.rupee.amount");
-                if (rupeesInWallet >= rupeeWalletLimit()) {
+                if (rupeesInWallet >= this.rupeeWalletLimit()) {
 
                     return TypedActionResult.fail(stack);
 
-                } else if (rupeesInStack + rupeesInWallet > rupeeWalletLimit()) {
+                } else if (rupeesInStack + rupeesInWallet > this.rupeeWalletLimit()) {
 
                     if (rupeesInStack > rupeesInWallet) {
 
-                        int firstAmount = (rupeesInWallet + rupeesInStack) - rupeeWalletLimit();
+                        int firstAmount = (rupeesInWallet + rupeesInStack) - this.rupeeWalletLimit();
                         int secondAmount = (rupeesInWallet + rupeesInStack) - rupeesInStack;
                         int removeAmount = secondAmount - firstAmount;
                         rupeeStack.decrement(removeAmount);
-                        int addAmount = rupeeWalletLimit();
-                        addAmount(user, addAmount);
+                        int addAmount = this.rupeeWalletLimit();
+                        this.setAmount(user, addAmount);
                         return TypedActionResult.consume(stack);
 
                     } else if (rupeesInWallet > rupeesInStack) {
 
-                        int removeAmount = rupeeWalletLimit() - rupeesInWallet;
+                        int removeAmount = this.rupeeWalletLimit() - rupeesInWallet;
                         rupeeStack.decrement(removeAmount);
-                        int addAmount = rupeeWalletLimit();
-                        addAmount(user, addAmount);
+                        int addAmount = this.rupeeWalletLimit();
+                        this.setAmount(user, addAmount);
                         return TypedActionResult.consume(stack);
 
                     } else {
 
-                        int removeAmount = rupeeWalletLimit() - rupeesInWallet;
+                        int removeAmount = this.rupeeWalletLimit() - rupeesInWallet;
                         rupeeStack.decrement(removeAmount);
-                        int addAmount = rupeeWalletLimit();
-                        addAmount(user, addAmount);
+                        int addAmount = this.rupeeWalletLimit();
+                        this.setAmount(user, addAmount);
                         return TypedActionResult.consume(stack);
 
                     }
@@ -76,7 +76,7 @@ public abstract class AbstractRupeeWalletItem extends Item {
 
                     rupeeStack.decrement(rupeesInStack);
                     int addAmount = rupeesInStack + rupeesInWallet;
-                    addAmount(user, addAmount);
+                    this.setAmount(user, addAmount);
                     return TypedActionResult.consume(stack);
 
                 }
@@ -84,10 +84,16 @@ public abstract class AbstractRupeeWalletItem extends Item {
             } else {
 
                 rupeeStack.decrement(rupeesInStack);
-                addAmount(user, rupeesInStack);
+                this.setAmount(user, rupeesInStack);
                 return TypedActionResult.consume(stack);
 
             }
+
+        } else if (stack.getNbt() != null && stack.getNbt().contains("dungeon_utils.rupee.amount") && stack.getNbt().getInt("dungeon_utils.rupee.amount") > 0 && user.isSneaking()) {
+
+            this.setAmount(user, stack.getNbt().getInt("dungeon_utils.rupee.amount") - 1);
+            user.getInventory().insertStack(new ItemStack(DungeonUtilsItems.GREEN_RUPEE));
+            return TypedActionResult.consume(stack);
 
         } else {
 
@@ -121,7 +127,7 @@ public abstract class AbstractRupeeWalletItem extends Item {
         }
     }
 
-    public void addAmount(@NotNull PlayerEntity player, int newAmount) {
+    public void setAmount(@NotNull PlayerEntity player, int newAmount) {
         ItemStack stack = player.getStackInHand(player.getActiveHand());
 
         NbtCompound nbtData = new NbtCompound();

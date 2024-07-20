@@ -13,6 +13,7 @@ import net.minecraft.util.Identifier
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils
 import org.hyrulecraft.dungeon_utils.environment.common.item.armour.LinkArmourMaterials
 import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.*
+import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.bomb.BombItem
 import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.bow.lynel.*
 import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.champion.weapon.revali.GreatEagleBowItem
 import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.champion.ability.daruk.DaruksProtectionItem
@@ -145,7 +146,11 @@ object DungeonUtilsItems {
     val SHEIKAH_SLATE = registerItem("sheikah_slate", SheikahSlateItem(FabricItemSettings().maxDamage(0).maxCount(1)))
 
     @JvmField
-    val BOMB = registerItem("bomb", BombItem(FabricItemSettings().maxDamage(0).maxCount(1)))
+    val BOMB = registerItem("bomb",
+        BombItem(
+            FabricItemSettings().maxDamage(0).maxCount(1)
+        )
+    )
 
     @JvmStatic
     fun registerModItems() {
