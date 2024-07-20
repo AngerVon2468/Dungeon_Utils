@@ -33,6 +33,18 @@ public class RupeeOverlay {
 
             }
 
+        } else if (stack.isIn(DungeonUtilsTags.Items.BOMB_BAGS)) {
+
+            drawContext.drawItem(DungeonUtilsItems.BOMB.getDefaultStack(), scaledWidth / 2 + -225, scaledHeight / 2 + 100, -1);
+            drawContext.drawText(client.textRenderer, Text.translatable("gui.dungeon_utils.bomb_render_1"), scaledWidth / 2 + -208, scaledHeight / 2 + 104, -1, true);
+            if (stack.getNbt() != null) {
+
+                int amount = stack.getNbt().getInt("dungeon_utils.bomb.amount");
+                String amountAsString = Integer.toString(amount);
+                drawContext.drawText(client.textRenderer, Text.literal(amountAsString), scaledWidth / 2 + -168, scaledHeight / 2 + 104, -1, true);
+
+            }
+
         }
     }
 

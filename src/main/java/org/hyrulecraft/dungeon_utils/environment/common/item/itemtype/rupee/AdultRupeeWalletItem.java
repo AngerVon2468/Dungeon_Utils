@@ -1,13 +1,13 @@
 package org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.rupee;
 
-public class GiantRupeeWallet extends AbstractRupeeWalletItem {
+public class AdultRupeeWalletItem extends AbstractRupeeWalletItem {
 
-    public GiantRupeeWallet(Settings settings) {
+    public AdultRupeeWalletItem(Settings settings) {
         super(settings);
     }
 
     @Override
     public int rupeeWalletLimit() {
-        return 200;
+        return 500;
     }
 }

@@ -18,16 +18,26 @@ public class BombItem extends Item {
     }
 
     @Override
-    public TypedActionResult<ItemStack> use(World world, @NotNull PlayerEntity user, Hand hand) {
+    public TypedActionResult<ItemStack> use(@NotNull World world, @NotNull PlayerEntity user, Hand hand) {
         ItemStack stack = user.getStackInHand(hand);
 
-        BombEntity bombEntity = DungeonUtilsEntities.BOMB.create(world);
-        bombEntity.setOwner(user);
-        bombEntity.setPosition(user.getX(), user.getY() + user.getEyeHeight(user.getPose()), user.getZ());
-        Vec3d playerFacing = user.getRotationVector();
-        bombEntity.setVelocity(playerFacing.x, playerFacing.y, playerFacing.z);
-        bombEntity.setYaw(user.getHeadYaw());
-        world.spawnEntity(bombEntity);
+        if (!world.isClient()) {
+
+            BombEntity bombEntity = DungeonUtilsEntities.BOMB.create(world);
+            bombEntity.setOwner(user);
+            bombEntity.setPosition(user.getX(), user.getY() + user.getEyeHeight(user.getPose()), user.getZ());
+            Vec3d playerFacing = user.getRotationVector();
+            bombEntity.setVelocity(playerFacing.x, playerFacing.y, playerFacing.z);
+            bombEntity.setYaw(user.getHeadYaw());
+            world.spawnEntity(bombEntity);
+
+            if (!user.isCreative()) {
+
+                stack.decrement(1);
+
+            }
+
+        }
 
         return TypedActionResult.success(stack, true);
     }

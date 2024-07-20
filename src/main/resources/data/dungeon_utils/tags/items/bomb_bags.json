@@ -1,0 +1,8 @@
+{
+    "replace": false,
+    "values": [
+        "dungeon_utils:bomb_bag",
+        "dungeon_utils:big_bomb_bag",
+        "dungeon_utils:biggest_bomb_bag"
+    ]
+}

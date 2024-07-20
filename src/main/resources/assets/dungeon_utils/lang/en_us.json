@@ -37,6 +37,9 @@
   "item.dungeon_utils.green_rupee": "Green Rupee",
   "item.dungeon_utils.blue_rupee": "Blue Rupee",
   "item.dungeon_utils.bomb": "Bomb",
+  "item.dungeon_utils.bomb_bag": "Bomb Bag",
+  "item.dungeon_utils.big_bom_bag": "Big Bomb Bag",
+  "item.dungeon_utils.biggest_bomb_bag": "Biggest Bomb Bag",
 
   "tooltip.dungeon_utils.cap_trinket_one": "",
   "tooltip.dungeon_utils.tunic_trinket_one": "",
@@ -80,5 +83,6 @@
   "title.dungeon_utils.wiiu.button_yes": "Yes",
   "title.dungeon_utils.wiiu.button_no": "No",
 
-  "gui.dungeon_utils.rupee_render_1": "Rupees:"
+  "gui.dungeon_utils.rupee_render_1": "Rupees:",
+  "gui.dungeon_utils.bomb_render_1": "Bombs:"
 }

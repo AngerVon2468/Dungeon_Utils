@@ -13,7 +13,7 @@ import net.minecraft.util.Identifier
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils
 import org.hyrulecraft.dungeon_utils.environment.common.item.armour.LinkArmourMaterials
 import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.*
-import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.bomb.BombItem
+import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.bomb.*
 import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.bow.lynel.*
 import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.champion.weapon.revali.GreatEagleBowItem
 import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.champion.ability.daruk.DaruksProtectionItem
@@ -113,10 +113,19 @@ object DungeonUtilsItems {
     val CHILD_RUPEE_WALLET = registerItem("child_rupee_wallet", ChildRupeeWalletItem(FabricItemSettings().maxCount(1).maxDamage(0)))
 
     @JvmField
-    val ADULT_RUPEE_WALLET = registerItem("adult_rupee_wallet", AdultRupeeWallet(FabricItemSettings().maxCount(1).maxDamage(0)))
+    val ADULT_RUPEE_WALLET = registerItem("adult_rupee_wallet", AdultRupeeWalletItem(FabricItemSettings().maxCount(1).maxDamage(0)))
 
     @JvmField
-    val GIANT_RUPEE_WALLET = registerItem("giant_rupee_wallet", GiantRupeeWallet(FabricItemSettings().maxCount(1).maxDamage(0)))
+    val GIANT_RUPEE_WALLET = registerItem("giant_rupee_wallet", GiantRupeeWalletItem(FabricItemSettings().maxCount(1).maxDamage(0)))
+
+    @JvmField
+    val BOMB_BAG = registerItem("bomb_bag", BombBagItem(FabricItemSettings().maxCount(1).maxDamage(0)))
+
+    @JvmField
+    val BIG_BOMB_BAG = registerItem("big_bomb_bag", BigBombBagItem(FabricItemSettings().maxCount(1).maxDamage(0)))
+
+    @JvmField
+    val BIGGEST_BOMB_BAG = registerItem("biggest_bomb_bag", BiggestBombBagItem(FabricItemSettings().maxCount(1).maxDamage(0)))
 
     @JvmField
     val GREEN_RUPEE = registerItem("green_rupee", Item(FabricItemSettings().maxCount(64)))
@@ -146,11 +155,7 @@ object DungeonUtilsItems {
     val SHEIKAH_SLATE = registerItem("sheikah_slate", SheikahSlateItem(FabricItemSettings().maxDamage(0).maxCount(1)))
 
     @JvmField
-    val BOMB = registerItem("bomb",
-        BombItem(
-            FabricItemSettings().maxDamage(0).maxCount(1)
-        )
-    )
+    val BOMB = registerItem("bomb", BombItem(FabricItemSettings().maxDamage(0).maxCount(1)))
 
     @JvmStatic
     fun registerModItems() {

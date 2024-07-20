@@ -24,6 +24,8 @@ public class DungeonUtilsTags {
         public static final Tag<Item> CHAMPION_ABILITY = Tag.createTag(RegistryKeys.ITEM, new Identifier(DungeonUtils.MOD_ID, "champion_ability"));
 
         public static final Tag<Item> RUPEE_WALLETS = Tag.createTag(RegistryKeys.ITEM, new Identifier(DungeonUtils.MOD_ID, "rupee_wallets"));
+
+        public static final Tag<Item> BOMB_BAGS = Tag.createTag(RegistryKeys.ITEM, new Identifier(DungeonUtils.MOD_ID, "bomb_bags"));
     }
 
     public static void registerDungeonUtilsTags() {
