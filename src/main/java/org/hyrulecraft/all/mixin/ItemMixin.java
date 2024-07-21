@@ -39,6 +39,7 @@ public abstract class ItemMixin {
 
                 world.playSound(user, user.getX(), user.getY(), user.getZ(), Sounds.ITEM_BOTTLE_FILL, SoundCategories.NEUTRAL, 1.0f, 1.0f);
                 ItemStack milkBottleStack = this.fill(stack, user, Items.EGG.getDefaultStack()); // Make a milk bottle item.
+                user.getInventory().insertStack(milkBottleStack);
                 return ActionResult.SUCCESS;
 
             }
@@ -47,6 +48,7 @@ public abstract class ItemMixin {
                 world.playSound(user, user.getX(), user.getY(), user.getZ(), Sounds.ITEM_BOTTLE_FILL, SoundCategories.NEUTRAL, 1.0f, 1.0f);
                 ItemStack fishBottleStack = this.fill(stack, user, Items.BAMBOO.getDefaultStack()); // Make a fish bottle item.
                 NbtUtil.setNbt(fishBottleStack, "dungeon_utils.fish_bottle.type", fish.getClass().getSimpleName());
+                user.getInventory().insertStack(fishBottleStack);
                 fish.discard();
                 return ActionResult.SUCCESS;
 

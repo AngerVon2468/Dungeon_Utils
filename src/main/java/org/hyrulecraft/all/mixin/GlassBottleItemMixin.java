@@ -1,27 +1,39 @@
 package org.hyrulecraft.all.mixin;
 
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
-import net.minecraft.util.*;
-import net.minecraft.world.World;
 
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.*;
 
 import org.spongepowered.asm.mixin.*;
-import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.*;
 
-import com.llamalad7.mixinextras.sugar.Local;
-import com.llamalad7.mixinextras.injector.ModifyReturnValue;
+@Mixin(Items.class)
+public abstract class GlassBottleItemMixin {
 
-@Mixin(GlassBottleItem.class)
-public abstract class GlassBottleItemMixin extends Item {
-
-    public GlassBottleItemMixin(Settings settings) {
-        super(settings);
+    @Contract("_ -> new")
+    @Redirect(
+            slice = @Slice(
+                    from = @At(
+                            value = "CONSTANT",
+                            args= {
+                                    "stringValue=glass_bottle"
+                            },
+                            ordinal = 0
+                    )
+            ),
+            at = @At(
+                    value = "NEW",
+                    target = "Lnet/minecraft/item/GlassBottleItem;",
+                    ordinal = 0
+            ),
+            method = "<clinit>")
+    private static @NotNull GlassBottleItem newBottle(Item.Settings settings) {
+        return glassBottleItem(settings);
     }
 
-    @ModifyReturnValue(method = "use", at = @At(value = "RETURN"))
-    public TypedActionResult<ItemStack> use(TypedActionResult<ItemStack> original, @Local(argsOnly = true) World world, @Local(argsOnly = true) @NotNull PlayerEntity user, @Local(argsOnly = true) Hand hand) {
-        return original;
+    @Contract("_ -> new")
+    @Unique
+    private static @NotNull GlassBottleItem glassBottleItem(Item.@NotNull Settings settings) {
+        return new GlassBottleItem(settings.maxCount(1));
     }
 }
