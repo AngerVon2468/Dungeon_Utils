@@ -10,12 +10,11 @@ import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.util.Identifier;
 
-import org.hyrulecraft.dungeon_utils.environment.client.entity.model.BombEntityModel;
+import org.hyrulecraft.dungeon_utils.environment.client.entity.model.*;
 import org.hyrulecraft.dungeon_utils.environment.client.screen.overlay.RupeeOverlay;
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils;
 import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks;
 import org.hyrulecraft.dungeon_utils.environment.common.entity.DungeonUtilsEntities;
-import org.hyrulecraft.dungeon_utils.environment.client.entity.model.CrateEntityModel;
 import org.hyrulecraft.dungeon_utils.environment.client.entity.renderer.*;
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems;
 import org.hyrulecraft.dungeon_utils.util.UtilCollector;
@@ -50,6 +49,7 @@ public class DungeonUtilsClient implements ClientModInitializer {
 
         EntityModelLayerRegistry.registerModelLayer(CrateEntityModel.LAYER_LOCATION, CrateEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(BombEntityModel.LAYER_LOCATION, BombEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(FairyEntityModel.LAYER_LOCATION, FairyEntityModel::getTexturedModelData);
     }
 
     public static void registerEntityRenderers() {
@@ -57,6 +57,7 @@ public class DungeonUtilsClient implements ClientModInitializer {
         EntityRendererRegistry.register(DungeonUtilsEntities.MASTER_SWORD_BEAM, MasterSwordBeamEntityRenderer::new);
         EntityRendererRegistry.register(DungeonUtilsEntities.CRATE, CrateEntityRenderer::new);
         EntityRendererRegistry.register(DungeonUtilsEntities.BOMB, BombEntityRenderer::new);
+        EntityRendererRegistry.register(DungeonUtilsEntities.FAIRY, FairyEntityRenderer::new);
     }
 
     public static void registerModelPredicates() {

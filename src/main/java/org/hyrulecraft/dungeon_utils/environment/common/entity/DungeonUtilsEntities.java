@@ -1,6 +1,6 @@
 package org.hyrulecraft.dungeon_utils.environment.common.entity;
 
-import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
+import net.fabricmc.fabric.api.object.builder.v1.entity.*;
 
 import net.minecraft.entity.*;
 import net.minecraft.registry.*;
@@ -42,7 +42,16 @@ public class DungeonUtilsEntities {
                     .build()
     );
 
+    public static final EntityType<FairyEntity> FAIRY = Registry.register(
+            RegistryTypes.ENTITY,
+            new Identifier(DungeonUtils.MOD_ID, "fairy"),
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, FairyEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.75f, 0.75f))
+                    .build()
+    );
+
     public static void registerDungeonUtilsEntities() {
         DungeonUtils.LOGGER.info(DungeonUtils.NAME + " has registered its entities.");
+        FabricDefaultAttributeRegistry.register(DungeonUtilsEntities.FAIRY, FairyEntity.createMobAttributes());
     }
 }
