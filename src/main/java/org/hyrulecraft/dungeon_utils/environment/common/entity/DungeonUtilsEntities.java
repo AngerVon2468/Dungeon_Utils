@@ -46,12 +46,12 @@ public class DungeonUtilsEntities {
             RegistryTypes.ENTITY,
             new Identifier(DungeonUtils.MOD_ID, "fairy"),
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, FairyEntity::new)
-                    .dimensions(EntityDimensions.fixed(0.75f, 0.75f))
+                    .dimensions(EntityDimensions.fixed(0.55f, 0.55f))
                     .build()
     );
 
     public static void registerDungeonUtilsEntities() {
         DungeonUtils.LOGGER.info(DungeonUtils.NAME + " has registered its entities.");
-        FabricDefaultAttributeRegistry.register(DungeonUtilsEntities.FAIRY, FairyEntity.createMobAttributes());
+        FabricDefaultAttributeRegistry.register(DungeonUtilsEntities.FAIRY, FairyEntity.createFairyAttributes());
     }
 }

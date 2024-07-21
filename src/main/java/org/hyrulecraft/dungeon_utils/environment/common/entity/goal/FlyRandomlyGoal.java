@@ -29,6 +29,10 @@ public class FlyRandomlyGoal extends Goal {
         }
     }
 
+    public boolean shouldContinue() {
+        return false;
+    }
+
     public void start() {
         Random random = this.entity.getRandom();
         double d = this.entity.getX() + (double)((random.nextFloat() * 2.0F - 1.0F) * 16.0F);
