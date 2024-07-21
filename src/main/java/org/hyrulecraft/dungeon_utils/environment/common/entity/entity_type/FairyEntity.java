@@ -5,9 +5,7 @@ import net.minecraft.entity.ai.control.MoveControl;
 import net.minecraft.entity.attribute.*;
 import net.minecraft.entity.mob.*;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.util.math.Box;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.*;
 import net.minecraft.world.*;
 
 import org.hyrulecraft.dungeon_utils.environment.common.entity.goal.FlyRandomlyGoal;
@@ -83,6 +81,8 @@ public class FairyEntity extends FlyingEntity implements Tameable {
                     Vec3d vec3d = new Vec3d(this.targetX - this.fairy.getX(), this.targetY - this.fairy.getY(), this.targetZ - this.fairy.getZ());
                     double d = vec3d.length();
                     vec3d = vec3d.normalize();
+                    float h = (float)(MathHelper.atan2(vec3d.z, vec3d.x) * 57.2957763671875) - 90.0F;
+                    this.fairy.setYaw(this.wrapDegrees(this.fairy.getYaw(), h, 90.0F));
                     if (this.willCollide(vec3d, MathHelper.ceil(d))) {
                         this.fairy.setVelocity(this.fairy.getVelocity().add(vec3d.multiply(0.1)));
                     } else {
