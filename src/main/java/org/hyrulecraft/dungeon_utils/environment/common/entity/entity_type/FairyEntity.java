@@ -1,14 +1,16 @@
 package org.hyrulecraft.dungeon_utils.environment.common.entity.entity_type;
 
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.mob.PathAwareEntity;
+import net.minecraft.entity.mob.FlyingEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.Arm;
 import net.minecraft.world.World;
 
-public class FairyEntity extends PathAwareEntity {
+import org.hyrulecraft.dungeon_utils.environment.common.entity.goal.FlyRandomlyGoal;
 
-    public FairyEntity(EntityType<? extends PathAwareEntity> type, World world) {
+public class FairyEntity extends FlyingEntity {
+
+    public FairyEntity(EntityType<? extends FlyingEntity> type, World world) {
         super(type, world);
     }
 
@@ -30,5 +32,11 @@ public class FairyEntity extends PathAwareEntity {
     @Override
     public Arm getMainArm() {
         return Arm.RIGHT;
+    }
+
+    @Override
+    protected void initGoals() {
+        super.initGoals();
+        this.goalSelector.add(1, new FlyRandomlyGoal(this));
     }
 }
