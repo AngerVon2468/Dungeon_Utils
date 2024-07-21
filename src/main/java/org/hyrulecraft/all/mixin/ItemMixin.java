@@ -1,6 +1,7 @@
 package org.hyrulecraft.all.mixin;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.mob.*;
 import net.minecraft.entity.passive.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
@@ -50,6 +51,19 @@ public abstract class ItemMixin {
                 return ActionResult.SUCCESS;
 
             }
+            if (entity instanceof EndermiteEntity || entity instanceof SilverfishEntity) {
+
+                world.playSound(user, user.getX(), user.getY(), user.getZ(), Sounds.ITEM_BOTTLE_FILL, SoundCategories.NEUTRAL, 1.0f, 1.0f);
+                stack.decrement(1);
+                ItemStack bugBottleStack = Items.BAMBOO.getDefaultStack(); // Make a bug bottle item.
+                NbtUtil.setNbt(bugBottleStack, "dungeon_utils.bug_bottle.type", entity.getClass().getSimpleName());
+                user.getInventory().insertStack(bugBottleStack);
+                entity.discard();
+                return ActionResult.SUCCESS;
+
+            }
+            // Add vex as poe soul bottle
+            // add fairy (as well as code the entity) and allay as fairy bottle or spirit bottle
         }
         return original;
     }
