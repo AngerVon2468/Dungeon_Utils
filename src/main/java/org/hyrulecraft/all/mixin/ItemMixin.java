@@ -26,11 +26,6 @@ public abstract class ItemMixin {
         return original;
     }
 
-    @Unique
-    public ItemStack fill(ItemStack itemStack, @NotNull PlayerEntity playerEntity, ItemStack itemStack2) {
-        return ItemUsage.exchangeStack(itemStack, playerEntity, itemStack2);
-    }
-
     @ModifyReturnValue(method = "useOnEntity", at = @At(value = "RETURN"))
     public ActionResult useOnEntity(ActionResult original, @Local(argsOnly = true) @NotNull ItemStack stack, @Local(argsOnly = true) @NotNull PlayerEntity user, @Local(argsOnly = true) LivingEntity entity, @Local(argsOnly = true) Hand hand) {
         World world = user.getWorld();
@@ -38,7 +33,8 @@ public abstract class ItemMixin {
             if (entity instanceof CowEntity) {
 
                 world.playSound(user, user.getX(), user.getY(), user.getZ(), Sounds.ITEM_BOTTLE_FILL, SoundCategories.NEUTRAL, 1.0f, 1.0f);
-                ItemStack milkBottleStack = this.fill(stack, user, Items.EGG.getDefaultStack()); // Make a milk bottle item.
+                stack.decrement(1);
+                ItemStack milkBottleStack = Items.EGG.getDefaultStack(); // Make a milk bottle item.
                 user.getInventory().insertStack(milkBottleStack);
                 return ActionResult.SUCCESS;
 
@@ -46,7 +42,8 @@ public abstract class ItemMixin {
             if (entity instanceof FishEntity fish) {
 
                 world.playSound(user, user.getX(), user.getY(), user.getZ(), Sounds.ITEM_BOTTLE_FILL, SoundCategories.NEUTRAL, 1.0f, 1.0f);
-                ItemStack fishBottleStack = this.fill(stack, user, Items.BAMBOO.getDefaultStack()); // Make a fish bottle item.
+                stack.decrement(1);
+                ItemStack fishBottleStack = Items.BAMBOO.getDefaultStack(); // Make a fish bottle item.
                 NbtUtil.setNbt(fishBottleStack, "dungeon_utils.fish_bottle.type", fish.getClass().getSimpleName());
                 user.getInventory().insertStack(fishBottleStack);
                 fish.discard();
