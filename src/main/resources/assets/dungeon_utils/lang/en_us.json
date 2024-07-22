@@ -40,6 +40,10 @@
   "item.dungeon_utils.bomb_bag": "Bomb Bag",
   "item.dungeon_utils.big_bom_bag": "Big Bomb Bag",
   "item.dungeon_utils.biggest_bomb_bag": "Biggest Bomb Bag",
+  "item.dungeon_utils.fairy_bottle": "Fairy Bottle",
+  "item.dungeon_utils.fish_bottle": "Fish Bottle",
+  "item.dungeon_utils.milk_bottle": "Milk Bottle",
+  "item.dungeon_utils.bug_bottle": "Bug Bottle",
 
   "tooltip.dungeon_utils.cap_trinket_one": "",
   "tooltip.dungeon_utils.tunic_trinket_one": "",
@@ -63,6 +67,7 @@
   "entity.dungeon_utils.master_sword_beam": "Master Sword Beam",
   "entity.dungeon_utils.crate": "Crate",
   "entity.dungeon_utils.iron_crate": "Iron Crate",
+  "entity.dungeon_utils.fairy": "Fairy",
 
   "titlescreen.mavity_lib.bottom_left": "Dungeon Utils v1.0.0 BETA",
   "titlescreen.mavity_lib.bottom_right": "",
