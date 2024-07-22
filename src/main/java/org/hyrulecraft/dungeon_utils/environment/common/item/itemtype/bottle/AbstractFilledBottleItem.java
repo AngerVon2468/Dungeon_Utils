@@ -30,7 +30,7 @@ public abstract class AbstractFilledBottleItem extends Item {
 
             ItemStack stack = context.getStack();
             NbtCompound nbt = stack.getNbt();
-            BlockPos pos = context.getBlockPos();
+            BlockPos pos = context.getBlockPos().offset(Direction.UP, 1);
             if (this instanceof FishBottleItem) {
 
                 if (nbt.contains(this.getNbtKey())) {
@@ -39,31 +39,31 @@ public abstract class AbstractFilledBottleItem extends Item {
                     if (s.contains(CodEntity.class.getSimpleName())) {
 
                         CodEntity cod = EntityType.COD.create(world);
-                        cod.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(pos));
+                        cod.refreshPositionAfterTeleport(Vec3d.ofCenter(pos));
                         context.getWorld().spawnEntity(cod);
 
                     } else if (s.contains(PufferfishEntity.class.getSimpleName())) {
 
                         PufferfishEntity pufferfish = EntityType.PUFFERFISH.create(world);
-                        pufferfish.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(pos));
+                        pufferfish.refreshPositionAfterTeleport(Vec3d.ofCenter(pos));
                         context.getWorld().spawnEntity(pufferfish);
 
                     } else if (s.contains(SalmonEntity.class.getSimpleName())) {
 
                         SalmonEntity salmon = EntityType.SALMON.create(world);
-                        salmon.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(pos));
+                        salmon.refreshPositionAfterTeleport(Vec3d.ofCenter(pos));
                         context.getWorld().spawnEntity(salmon);
 
                     } else if (s.contains(TadpoleEntity.class.getSimpleName())) {
 
                         TadpoleEntity tadpole = EntityType.TADPOLE.create(world);
-                        tadpole.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(pos));
+                        tadpole.refreshPositionAfterTeleport(Vec3d.ofCenter(pos));
                         context.getWorld().spawnEntity(tadpole);
 
                     } else if (s.contains(TropicalFishEntity.class.getSimpleName())) {
 
                         TropicalFishEntity tropicalFish = EntityType.TROPICAL_FISH.create(world);
-                        tropicalFish.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(pos));
+                        tropicalFish.refreshPositionAfterTeleport(Vec3d.ofCenter(pos));
                         context.getWorld().spawnEntity(tropicalFish);
 
                     }
@@ -78,13 +78,13 @@ public abstract class AbstractFilledBottleItem extends Item {
                     if (s.contains(FairyEntity.class.getSimpleName())) {
 
                         FairyEntity fairy = DungeonUtilsEntities.FAIRY.create(world);
-                        fairy.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(pos));
+                        fairy.refreshPositionAfterTeleport(Vec3d.ofCenter(pos));
                         context.getWorld().spawnEntity(fairy);
 
                     } else if (s.contains(AllayEntity.class.getSimpleName())) {
 
                         AllayEntity allay = EntityType.ALLAY.create(world);
-                        allay.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(pos));
+                        allay.refreshPositionAfterTeleport(Vec3d.ofCenter(pos));
                         context.getWorld().spawnEntity(allay);
 
                     }
@@ -99,13 +99,13 @@ public abstract class AbstractFilledBottleItem extends Item {
                     if (s.contains(EndermiteEntity.class.getSimpleName())) {
 
                         EndermiteEntity endermite = EntityType.ENDERMITE.create(world);
-                        endermite.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(pos));
+                        endermite.refreshPositionAfterTeleport(Vec3d.ofCenter(pos));
                         context.getWorld().spawnEntity(endermite);
 
                     } else if (s.contains(SilverfishEntity.class.getSimpleName())) {
 
                         SilverfishEntity silverfish = EntityType.SILVERFISH.create(world);
-                        silverfish.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(pos));
+                        silverfish.refreshPositionAfterTeleport(Vec3d.ofCenter(pos));
                         context.getWorld().spawnEntity(silverfish);
 
                     }
@@ -113,6 +113,8 @@ public abstract class AbstractFilledBottleItem extends Item {
                 }
 
             }
+
+            stack.decrement(1);
 
         }
 

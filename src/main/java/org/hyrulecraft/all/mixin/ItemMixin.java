@@ -10,6 +10,7 @@ import net.minecraft.util.*;
 import net.minecraft.world.World;
 
 import org.hyrulecraft.dungeon_utils.environment.common.entity.entity_type.FairyEntity;
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems;
 import org.hyrulecraft.dungeon_utils.util.NbtUtil;
 
 import org.jetbrains.annotations.NotNull;
@@ -36,7 +37,7 @@ public abstract class ItemMixin {
 
                 world.playSound(user, user.getX(), user.getY(), user.getZ(), Sounds.ITEM_BOTTLE_FILL, SoundCategories.NEUTRAL, 1.0f, 1.0f);
                 stack.decrement(1);
-                ItemStack milkBottleStack = Items.EGG.getDefaultStack(); // Make a milk bottle item.
+                ItemStack milkBottleStack = DungeonUtilsItems.MILK_BOTTLE.getDefaultStack(); // Make a milk bottle item.
                 user.getInventory().insertStack(milkBottleStack);
                 return ActionResult.SUCCESS;
 
@@ -45,7 +46,7 @@ public abstract class ItemMixin {
 
                 world.playSound(user, user.getX(), user.getY(), user.getZ(), Sounds.ITEM_BOTTLE_FILL, SoundCategories.NEUTRAL, 1.0f, 1.0f);
                 stack.decrement(1);
-                ItemStack fishBottleStack = Items.BAMBOO.getDefaultStack(); // Make a fish bottle item.
+                ItemStack fishBottleStack = DungeonUtilsItems.FISH_BOTTLE.getDefaultStack(); // Make a fish bottle item.
                 NbtUtil.setNbt(fishBottleStack, "dungeon_utils.fish_bottle.type", fish.getClass().getSimpleName());
                 user.getInventory().insertStack(fishBottleStack);
                 fish.discard();
@@ -56,7 +57,7 @@ public abstract class ItemMixin {
 
                 world.playSound(user, user.getX(), user.getY(), user.getZ(), Sounds.ITEM_BOTTLE_FILL, SoundCategories.NEUTRAL, 1.0f, 1.0f);
                 stack.decrement(1);
-                ItemStack bugBottleStack = Items.HONEYCOMB.getDefaultStack(); // Make a bug bottle item.
+                ItemStack bugBottleStack = DungeonUtilsItems.BUG_BOTTLE.getDefaultStack(); // Make a bug bottle item.
                 NbtUtil.setNbt(bugBottleStack, "dungeon_utils.bug_bottle.type", entity.getClass().getSimpleName());
                 user.getInventory().insertStack(bugBottleStack);
                 entity.discard();
@@ -67,9 +68,9 @@ public abstract class ItemMixin {
 
                 world.playSound(user, user.getX(), user.getY(), user.getZ(), Sounds.ITEM_BOTTLE_FILL, SoundCategories.NEUTRAL, 1.0f, 1.0f);
                 stack.decrement(1);
-                ItemStack milkBottleStack = Items.MAGENTA_BANNER.getDefaultStack(); // Make a fairy bottle item.
-                NbtUtil.setNbt(milkBottleStack, "dungeon_utils.fairy_bottle.type", entity.getClass().getSimpleName());
-                user.getInventory().insertStack(milkBottleStack);
+                ItemStack fairyBottleStack = DungeonUtilsItems.FAIRY_BOTTLE.getDefaultStack(); // Make a fairy bottle item.
+                NbtUtil.setNbt(fairyBottleStack, "dungeon_utils.fairy_bottle.type", entity.getClass().getSimpleName());
+                user.getInventory().insertStack(fairyBottleStack);
                 return ActionResult.SUCCESS;
 
             }

@@ -14,6 +14,7 @@ import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils
 import org.hyrulecraft.dungeon_utils.environment.common.item.armour.LinkArmourMaterials
 import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.*
 import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.bomb.*
+import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.bottle.*
 import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.bow.lynel.*
 import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.champion.weapon.revali.GreatEagleBowItem
 import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.champion.ability.daruk.DaruksProtectionItem
@@ -156,6 +157,18 @@ object DungeonUtilsItems {
 
     @JvmField
     val BOMB = registerItem("bomb", BombItem(FabricItemSettings().maxDamage(0).maxCount(1)))
+
+    @JvmField
+    val BUG_BOTTLE = registerItem("bug_bottle", BugBottleItem(FabricItemSettings().maxDamage(0).maxCount(1)))
+
+    @JvmField
+    val FAIRY_BOTTLE = registerItem("fairy_bottle", FairyBottleItem(FabricItemSettings().maxDamage(0).maxCount(1)))
+
+    @JvmField
+    val FISH_BOTTLE = registerItem("fish_bottle", FishBottleItem(FabricItemSettings().maxDamage(0).maxCount(1)))
+
+    @JvmField
+    val MILK_BOTTLE = registerItem("milk_bottle", Item(FabricItemSettings().maxDamage(0).maxCount(1)))
 
     @JvmStatic
     fun registerModItems() {
