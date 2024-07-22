@@ -9,6 +9,7 @@ import net.minecraft.sound.*;
 import net.minecraft.util.*;
 import net.minecraft.world.World;
 
+import org.hyrulecraft.dungeon_utils.environment.common.entity.entity_type.FairyEntity;
 import org.hyrulecraft.dungeon_utils.util.NbtUtil;
 
 import org.jetbrains.annotations.NotNull;
@@ -55,15 +56,24 @@ public abstract class ItemMixin {
 
                 world.playSound(user, user.getX(), user.getY(), user.getZ(), Sounds.ITEM_BOTTLE_FILL, SoundCategories.NEUTRAL, 1.0f, 1.0f);
                 stack.decrement(1);
-                ItemStack bugBottleStack = Items.BAMBOO.getDefaultStack(); // Make a bug bottle item.
+                ItemStack bugBottleStack = Items.HONEYCOMB.getDefaultStack(); // Make a bug bottle item.
                 NbtUtil.setNbt(bugBottleStack, "dungeon_utils.bug_bottle.type", entity.getClass().getSimpleName());
                 user.getInventory().insertStack(bugBottleStack);
                 entity.discard();
                 return ActionResult.SUCCESS;
 
             }
+            if (entity instanceof FairyEntity || entity instanceof AllayEntity) {
+
+                world.playSound(user, user.getX(), user.getY(), user.getZ(), Sounds.ITEM_BOTTLE_FILL, SoundCategories.NEUTRAL, 1.0f, 1.0f);
+                stack.decrement(1);
+                ItemStack milkBottleStack = Items.MAGENTA_BANNER.getDefaultStack(); // Make a fairy bottle item.
+                NbtUtil.setNbt(milkBottleStack, "dungeon_utils.fairy_bottle.type", entity.getClass().getSimpleName());
+                user.getInventory().insertStack(milkBottleStack);
+                return ActionResult.SUCCESS;
+
+            }
             // Add vex as poe soul bottle
-            // add fairy (as well as code the entity) and allay as fairy bottle or spirit bottle
         }
         return original;
     }
