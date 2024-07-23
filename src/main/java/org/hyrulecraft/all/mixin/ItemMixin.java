@@ -31,24 +31,27 @@ public abstract class ItemMixin {
 
     @ModifyReturnValue(method = "useOnEntity", at = @At(value = "RETURN"))
     public ActionResult useOnEntity(ActionResult original, @Local(argsOnly = true) @NotNull ItemStack stack, @Local(argsOnly = true) @NotNull PlayerEntity user, @Local(argsOnly = true) LivingEntity entity, @Local(argsOnly = true) Hand hand) {
+
         World world = user.getWorld();
         if (stack.isOf(Items.GLASS_BOTTLE) && world != null && !world.isClient()) {
+
+            ItemStack mainHandStack = user.getMainHandStack();
             if (entity instanceof CowEntity) {
 
                 world.playSound(user, user.getX(), user.getY(), user.getZ(), Sounds.ITEM_BOTTLE_FILL, SoundCategories.NEUTRAL, 1.0f, 1.0f);
-                stack.decrement(1);
                 ItemStack milkBottleStack = DungeonUtilsItems.MILK_BOTTLE.getDefaultStack();
                 user.getInventory().insertStack(milkBottleStack);
+                mainHandStack.decrement(1);
                 return ActionResult.SUCCESS;
 
             }
             if (entity instanceof FishEntity fish) {
 
                 world.playSound(user, user.getX(), user.getY(), user.getZ(), Sounds.ITEM_BOTTLE_FILL, SoundCategories.NEUTRAL, 1.0f, 1.0f);
-                stack.decrement(1);
                 ItemStack fishBottleStack = DungeonUtilsItems.FISH_BOTTLE.getDefaultStack();
                 NbtUtil.setNbt(fishBottleStack, "dungeon_utils.fish_bottle.type", fish.getClass().getSimpleName());
                 user.getInventory().insertStack(fishBottleStack);
+                mainHandStack.decrement(1);
                 fish.discard();
                 return ActionResult.SUCCESS;
 
@@ -56,10 +59,10 @@ public abstract class ItemMixin {
             if (entity instanceof EndermiteEntity || entity instanceof SilverfishEntity) {
 
                 world.playSound(user, user.getX(), user.getY(), user.getZ(), Sounds.ITEM_BOTTLE_FILL, SoundCategories.NEUTRAL, 1.0f, 1.0f);
-                stack.decrement(1);
                 ItemStack bugBottleStack = DungeonUtilsItems.BUG_BOTTLE.getDefaultStack();
                 NbtUtil.setNbt(bugBottleStack, "dungeon_utils.bug_bottle.type", entity.getClass().getSimpleName());
                 user.getInventory().insertStack(bugBottleStack);
+                mainHandStack.decrement(1);
                 entity.discard();
                 return ActionResult.SUCCESS;
 
@@ -67,15 +70,18 @@ public abstract class ItemMixin {
             if (entity instanceof FairyEntity || entity instanceof AllayEntity) {
 
                 world.playSound(user, user.getX(), user.getY(), user.getZ(), Sounds.ITEM_BOTTLE_FILL, SoundCategories.NEUTRAL, 1.0f, 1.0f);
-                stack.decrement(1);
                 ItemStack fairyBottleStack = DungeonUtilsItems.FAIRY_BOTTLE.getDefaultStack();
                 NbtUtil.setNbt(fairyBottleStack, "dungeon_utils.fairy_bottle.type", entity.getClass().getSimpleName());
                 user.getInventory().insertStack(fairyBottleStack);
+                mainHandStack.decrement(1);
+                entity.discard();
                 return ActionResult.SUCCESS;
 
             }
+
             // Add vex as poe soul bottle
         }
+
         return original;
     }
 }
