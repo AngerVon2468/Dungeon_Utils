@@ -78,7 +78,11 @@ public class FairyEntity extends FlyingEntity implements Tameable {
             if (this.state == State.MOVE_TO) {
                 if (this.collisionCheckCooldown-- <= 0) {
                     this.collisionCheckCooldown += this.fairy.getRandom().nextInt(5) + 2;
-                    Vec3d vec3d = new Vec3d(this.targetX - this.fairy.getX(), this.targetY - this.fairy.getY(), this.targetZ - this.fairy.getZ());
+
+                    double distance = 0.2; // Adjust this value to control the range of movement
+                    Vec3d targetPosition = new Vec3d(this.targetX, this.targetY, this.targetZ).add(this.fairy.getPos().subtract(this.targetX, this.targetY, this.targetZ).normalize().multiply(distance));
+
+                    Vec3d vec3d = targetPosition.subtract(this.fairy.getPos());
                     double d = vec3d.length();
                     vec3d = vec3d.normalize();
                     float h = (float)(MathHelper.atan2(vec3d.z, vec3d.x) * 57.2957763671875) - 90.0F;
@@ -89,7 +93,6 @@ public class FairyEntity extends FlyingEntity implements Tameable {
                         this.state = State.WAIT;
                     }
                 }
-
             }
         }
 
