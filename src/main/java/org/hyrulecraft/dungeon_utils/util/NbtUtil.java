@@ -9,7 +9,7 @@ public class NbtUtil {
 
     public static void setNbt(@NotNull ItemStack stack, String key, String value) {
 
-        NbtCompound nbt = new NbtCompound();
+        NbtCompound nbt = stack.getOrCreateNbt();
         nbt.putString(key, value);
         stack.setNbt(nbt);
 
