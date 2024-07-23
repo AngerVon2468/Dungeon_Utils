@@ -84,7 +84,7 @@ public class FairyEntity extends FlyingEntity implements Tameable {
                     float h = (float)(MathHelper.atan2(vec3d.z, vec3d.x) * 57.2957763671875) - 90.0F;
                     this.fairy.setYaw(this.wrapDegrees(this.fairy.getYaw(), h, 90.0F));
                     if (this.willCollide(vec3d, MathHelper.ceil(d))) {
-                        this.fairy.setVelocity(this.fairy.getVelocity().add(vec3d.multiply(0.1)));
+                        this.fairy.setVelocity(this.fairy.getVelocity().add(vec3d.multiply(0.04)));
                     } else {
                         this.state = State.WAIT;
                     }
