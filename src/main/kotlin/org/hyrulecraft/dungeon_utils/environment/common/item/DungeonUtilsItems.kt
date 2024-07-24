@@ -22,6 +22,7 @@ import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.champion.a
 import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.champion.ability.revali.*
 import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.clothing.glove.*
 import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.clothing.link.*
+import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.mask.*
 import org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.rupee.*
 
 object DungeonUtilsItems {
@@ -169,6 +170,12 @@ object DungeonUtilsItems {
 
     @JvmField
     val MILK_BOTTLE = registerItem("milk_bottle", Item(FabricItemSettings().maxDamage(0).maxCount(1)))
+
+    @JvmField
+    val BOKOBLIN_HEAD = registerItem("bokoblin_head", BokoblinHeadItem(FabricItemSettings().maxDamage(0).maxCount(1)))
+
+    @JvmField
+    val MAJORAS_MASK = registerItem("majoras_mask", MajorasMaskItem(FabricItemSettings().maxDamage(0).maxCount(1)))
 
     @JvmStatic
     fun registerModItems() {
