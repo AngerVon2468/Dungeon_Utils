@@ -1,79 +1,19 @@
 {
     "variants": {
-        "facing=north,item=1": {
+        "facing=north": {
             "model": "dungeon_utils:block/pedestal_block"
         },
-        "facing=south,item=1": {
+        "facing=south": {
             "model": "dungeon_utils:block/pedestal_block",
             "y": 180
         },
-        "facing=west,item=1": {
-            "model": "dungeon_utils:block/pedestal_block",
-            "y": 270
-        },
-        "facing=east,item=1": {
+        "facing=east": {
             "model": "dungeon_utils:block/pedestal_block",
             "y": 90
         },
-        "facing=north,item=2": {
-            "model": "dungeon_utils:block/master_sword_pedestal"
-        },
-        "facing=south,item=2": {
-            "model": "dungeon_utils:block/master_sword_pedestal",
-            "y": 180
-        },
-        "facing=west,item=2": {
-            "model": "dungeon_utils:block/master_sword_pedestal",
+        "facing=west": {
+            "model": "dungeon_utils:block/pedestal_block",
             "y": 270
-        },
-        "facing=east,item=2": {
-            "model": "dungeon_utils:block/master_sword_pedestal",
-            "y": 90
-        },
-        "facing=north,item=3": {
-            "model": "dungeon_utils:block/master_sword_pedestal_awakened"
-        },
-        "facing=south,item=3": {
-            "model": "dungeon_utils:block/master_sword_pedestal_awakened",
-            "y": 180
-        },
-        "facing=west,item=3": {
-            "model": "dungeon_utils:block/master_sword_pedestal_awakened",
-            "y": 270
-        },
-        "facing=east,item=3": {
-            "model": "dungeon_utils:block/master_sword_pedestal_awakened",
-            "y": 90
-        },
-        "facing=north,item=4": {
-            "model": "dungeon_utils:block/diamond_sword_pedestal"
-        },
-        "facing=south,item=4": {
-            "model": "dungeon_utils:block/diamond_sword_pedestal",
-            "y": 180
-        },
-        "facing=west,item=4": {
-            "model": "dungeon_utils:block/diamond_sword_pedestal",
-            "y": 270
-        },
-        "facing=east,item=4": {
-            "model": "dungeon_utils:block/diamond_sword_pedestal",
-            "y": 90
-        },
-        "facing=north,item=5": {
-            "model": "dungeon_utils:block/netherite_sword_pedestal"
-        },
-        "facing=south,item=5": {
-            "model": "dungeon_utils:block/netherite_sword_pedestal",
-            "y": 180
-        },
-        "facing=west,item=5": {
-            "model": "dungeon_utils:block/netherite_sword_pedestal",
-            "y": 270
-        },
-        "facing=east,item=5": {
-            "model": "dungeon_utils:block/netherite_sword_pedestal",
-            "y": 90
         }
     }
 }

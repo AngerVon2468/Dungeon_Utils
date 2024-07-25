@@ -7,7 +7,7 @@ import net.fabricmc.api.ModInitializer;
 import org.hyrulecraft.dungeon_utils.config.*;
 import org.hyrulecraft.dungeon_utils.environment.common.entity.DungeonUtilsEntities;
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems;
-import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks;
+import org.hyrulecraft.dungeon_utils.environment.common.block.*;
 import org.hyrulecraft.dungeon_utils.environment.common.itemgroup.DungeonUtilsItemGroups;
 import org.hyrulecraft.dungeon_utils.environment.common.sound.DungeonUtilsSounds;
 import org.hyrulecraft.dungeon_utils.environment.common.tags.DungeonUtilsTags;
@@ -38,6 +38,7 @@ public class DungeonUtils implements ModInitializer {
         DungeonUtilsTags.registerDungeonUtilsTags();
         UtilCollector.registerAllUtilClasses();
         DungeonUtilsEntities.registerDungeonUtilsEntities();
+        DungeonUtilsBlockEntities.registerDungeonUtilsBlockEntities();
 
         // Config.
         MidnightConfig.init(DungeonUtils.MOD_ID, DungeonUtilsConfig.class);

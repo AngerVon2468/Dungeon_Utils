@@ -8,12 +8,14 @@ import net.fabricmc.fabric.api.client.rendering.v1.*;
 
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.minecraft.util.Identifier;
 
+import org.hyrulecraft.dungeon_utils.environment.client.block.PedestalBlockEntityRenderer;
 import org.hyrulecraft.dungeon_utils.environment.client.entity.model.*;
 import org.hyrulecraft.dungeon_utils.environment.client.screen.overlay.RupeeOverlay;
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils;
-import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks;
+import org.hyrulecraft.dungeon_utils.environment.common.block.*;
 import org.hyrulecraft.dungeon_utils.environment.common.entity.DungeonUtilsEntities;
 import org.hyrulecraft.dungeon_utils.environment.client.entity.renderer.*;
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems;
@@ -58,6 +60,7 @@ public class DungeonUtilsClient implements ClientModInitializer {
         EntityRendererRegistry.register(DungeonUtilsEntities.CRATE, CrateEntityRenderer::new);
         EntityRendererRegistry.register(DungeonUtilsEntities.BOMB, BombEntityRenderer::new);
         EntityRendererRegistry.register(DungeonUtilsEntities.FAIRY, FairyEntityRenderer::new);
+        BlockEntityRendererFactories.register(DungeonUtilsBlockEntities.PEDESTAL_BLOCK_ENTITY, PedestalBlockEntityRenderer::new);
     }
 
     public static void registerModelPredicates() {
