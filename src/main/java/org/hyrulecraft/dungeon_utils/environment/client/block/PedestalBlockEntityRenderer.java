@@ -1,5 +1,6 @@
 package org.hyrulecraft.dungeon_utils.environment.client.block;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.client.render.*;
 import net.minecraft.client.render.block.entity.*;
 import net.minecraft.client.render.item.ItemRenderer;
@@ -7,9 +8,11 @@ import net.minecraft.client.render.model.json.ModelTransformationMode;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.item.*;
 import net.minecraft.registry.RegistryTypes;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.math.RotationAxis;
+import net.minecraft.util.math.*;
 
+import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks;
 import org.hyrulecraft.dungeon_utils.environment.common.block.blocktype.blockentity.PedestalBlockEntity;
 
 import org.jetbrains.annotations.NotNull;
@@ -21,7 +24,7 @@ public class PedestalBlockEntityRenderer implements BlockEntityRenderer<Pedestal
     private final ItemRenderer itemRenderer;
 
     public PedestalBlockEntityRenderer(BlockEntityRendererFactory. @NotNull Context ctx) {
-        itemRenderer = ctx.getItemRenderer();
+        this.itemRenderer = ctx.getItemRenderer();
     }
 
     @Override
@@ -54,7 +57,20 @@ public class PedestalBlockEntityRenderer implements BlockEntityRenderer<Pedestal
 
         // Rotate the item
         matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(180));
-        matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(90));
+        BlockState state = blockEntity.getWorld().getBlockState(blockEntity.getPos());
+        if (state.isOf(DungeonUtilsBlocks.PEDESTAL_BLOCK)) {
+
+            if (state.get(Properties.HORIZONTAL_FACING) == Direction.NORTH || state.get(Properties.HORIZONTAL_FACING) == Direction.SOUTH) {
+
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(state.get(Properties.HORIZONTAL_FACING).asRotation()));
+
+            } else if (state.get(Properties.HORIZONTAL_FACING) == Direction.EAST || state.get(Properties.HORIZONTAL_FACING) == Direction.WEST) {
+
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(-state.get(Properties.HORIZONTAL_FACING).asRotation()));
+
+            }
+
+        }
 
         // Render the item
         int lightAbove = WorldRenderer.getLightmapCoordinates(blockEntity.getWorld(), blockEntity.getPos().up());

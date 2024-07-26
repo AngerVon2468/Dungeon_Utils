@@ -54,24 +54,11 @@ public class PedestalBlock extends BlockWithEntity {
         BlockEntity pedestal = world.getBlockEntity(hit.getBlockPos());
         if (pedestal instanceof PedestalBlockEntity pedestalBlockEntity && stack.getItem() instanceof SwordItem) {
 
-            if (!world.isClient()) {
-
-                String a = stack.getItem().getTranslationKey().replace("item.", "");
-                String b = a.replace(".", ":");
-                pedestalBlockEntity.pedestal_item_id = b;
-                DungeonUtils.LOGGER.info(b + " (client)");
-                stack.decrement(1);
-
-            }
-            if (world.isClient()) {
-
-                String a = stack.getItem().getTranslationKey().replace("item.", "");
-                String b = a.replace(".", ":");
-                pedestalBlockEntity.pedestal_item_id = b;
-                DungeonUtils.LOGGER.info(b + " (server)");
-                stack.decrement(1);
-
-            }
+            String a = stack.getItem().getTranslationKey().replace("item.", "");
+            String b = a.replace(".", ":");
+            pedestalBlockEntity.pedestal_item_id = b;
+            DungeonUtils.LOGGER.info(b);
+            stack.decrement(1);
 
         }
 
