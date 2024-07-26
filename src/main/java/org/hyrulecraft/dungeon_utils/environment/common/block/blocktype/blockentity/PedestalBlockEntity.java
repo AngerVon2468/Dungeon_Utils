@@ -15,16 +15,25 @@ import org.jetbrains.annotations.*;
 
 public class PedestalBlockEntity extends BlockEntity {
 
+    @Nullable
+    public String pedestal_item_id;
+
     public PedestalBlockEntity(BlockPos pos, BlockState state) {
         super(DungeonUtilsBlockEntities.PEDESTAL_BLOCK_ENTITY, pos, state);
     }
 
     @Override
     protected void writeNbt(@NotNull NbtCompound nbt) {
+        if (this.pedestal_item_id != null) {
+            nbt.putString("pedestal_item_id", this.pedestal_item_id);
+        }
     }
 
     @Override
     public void readNbt(@NotNull NbtCompound nbt) {
+        if (nbt.contains("pedestal_item_id")) {
+            this.pedestal_item_id = nbt.getString("pedestal_item_id");
+        }
     }
 
     @Nullable
