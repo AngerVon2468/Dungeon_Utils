@@ -172,10 +172,13 @@ object DungeonUtilsItems {
     val MILK_BOTTLE = registerItem("milk_bottle", Item(FabricItemSettings().maxDamage(0).maxCount(1)))
 
     @JvmField
-    val BOKOBLIN_HEAD = registerItem("bokoblin_head", BokoblinHeadItem(FabricItemSettings().maxDamage(0).maxCount(1)))
+    val BOKOBLIN_HEAD = registerItem("bokoblin_head", BokoblinHeadItem())
 
     @JvmField
-    val MAJORAS_MASK = registerItem("majoras_mask", MajorasMaskItem(FabricItemSettings().maxDamage(0).maxCount(1)))
+    val MAJORAS_MASK = registerItem("majoras_mask", MajorasMaskItem())
+
+    @JvmField
+    val GIANTS_MASK = registerItem("giants_mask", GiantsMaskItem())
 
     @JvmStatic
     fun registerModItems() {
