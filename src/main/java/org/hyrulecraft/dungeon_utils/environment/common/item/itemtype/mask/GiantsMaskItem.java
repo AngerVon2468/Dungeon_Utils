@@ -12,7 +12,6 @@ public class GiantsMaskItem extends AbstractMaskItem {
         return this;
     }
 
-    /*
     @Override
     public void onEquip(World world, PlayerEntity player) {
         super.onEquip(world, player);
@@ -41,5 +40,4 @@ public class GiantsMaskItem extends AbstractMaskItem {
         ScaleData playerScale = ScaleTypes.BASE.getScaleData(player);
         playerScale.resetScale();
     }
-    */
 }
