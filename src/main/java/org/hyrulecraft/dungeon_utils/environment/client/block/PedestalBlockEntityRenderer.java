@@ -16,6 +16,8 @@ import org.jetbrains.annotations.NotNull;
 
 public class PedestalBlockEntityRenderer implements BlockEntityRenderer<PedestalBlockEntity> {
 
+    public ItemStack stack;
+
     private final ItemRenderer itemRenderer;
 
     public PedestalBlockEntityRenderer(BlockEntityRendererFactory. @NotNull Context ctx) {
@@ -24,19 +26,46 @@ public class PedestalBlockEntityRenderer implements BlockEntityRenderer<Pedestal
 
     @Override
     public void render(@NotNull PedestalBlockEntity blockEntity, float tickDelta, @NotNull MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
-        ItemStack stack = blockEntity.pedestal_item_id == null ? ItemStack.EMPTY : new ItemStack(RegistryTypes.ITEM.get(Identifier.tryParse(blockEntity.pedestal_item_id)));
+
+        if (blockEntity.pedestal_item_id != null) {
+
+            String[] parts = blockEntity.pedestal_item_id.split(":");
+            if (!parts[0].contains("minecraft")) {
+
+                this.stack = new ItemStack(RegistryTypes.ITEM.get(new Identifier(parts[0], parts[1])));
+
+            } else {
+
+                this.stack = new ItemStack(RegistryTypes.ITEM.get(new Identifier(parts[1])));
+
+            }
+
+        } else {
+
+            this.stack = ItemStack.EMPTY;
+
+        }
+
         // Mandatory when doing GL calls
         matrices.push();
+
         // Move the item
-        matrices.translate(0.5, 0.25, 0.5);
+        matrices.translate(0.5, 1.25, 0.5);
 
         // Rotate the item
         matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(180));
         matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(90));
+
+        // Render the item
         int lightAbove = WorldRenderer.getLightmapCoordinates(blockEntity.getWorld(), blockEntity.getPos().up());
-        this.itemRenderer.renderItem(stack, ModelTransformationMode.GROUND, lightAbove, overlay, matrices, vertexConsumers, blockEntity.getWorld(), 0);
+        if (this.stack != null) {
+
+            this.itemRenderer.renderItem(this.stack, ModelTransformationMode.GROUND, lightAbove, overlay, matrices, vertexConsumers, blockEntity.getWorld(), 0);
+
+        }
 
         // Mandatory call after GL calls
         matrices.pop();
+
     }
 }

@@ -24,6 +24,7 @@ public class PedestalBlockEntity extends BlockEntity {
 
     @Override
     protected void writeNbt(@NotNull NbtCompound nbt) {
+        super.writeNbt(nbt);
         if (this.pedestal_item_id != null) {
             nbt.putString("pedestal_item_id", this.pedestal_item_id);
         }
@@ -31,6 +32,7 @@ public class PedestalBlockEntity extends BlockEntity {
 
     @Override
     public void readNbt(@NotNull NbtCompound nbt) {
+        super.readNbt(nbt);
         if (nbt.contains("pedestal_item_id")) {
             this.pedestal_item_id = nbt.getString("pedestal_item_id");
         }

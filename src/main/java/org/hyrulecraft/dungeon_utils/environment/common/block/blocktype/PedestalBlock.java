@@ -49,17 +49,32 @@ public class PedestalBlock extends BlockWithEntity {
     @Override
     @SuppressWarnings("deprecation")
     public ActionResult onUse(@NotNull BlockState state, @NotNull World world, BlockPos pos, @NotNull PlayerEntity player, Hand hand, @NotNull BlockHitResult hit) {
+
         ItemStack stack = player.getMainHandStack();
-        if (!world.isClient()) {
-            BlockEntity pedestal = world.getBlockEntity(hit.getBlockPos());
-            if (pedestal instanceof PedestalBlockEntity pedestalBlockEntity && stack.getItem() instanceof SwordItem) {
+        BlockEntity pedestal = world.getBlockEntity(hit.getBlockPos());
+        if (pedestal instanceof PedestalBlockEntity pedestalBlockEntity && stack.getItem() instanceof SwordItem) {
+
+            if (!world.isClient()) {
+
                 String a = stack.getItem().getTranslationKey().replace("item.", "");
                 String b = a.replace(".", ":");
                 pedestalBlockEntity.pedestal_item_id = b;
-                DungeonUtils.LOGGER.info(b);
+                DungeonUtils.LOGGER.info(b + " (client)");
                 stack.decrement(1);
+
             }
+            if (world.isClient()) {
+
+                String a = stack.getItem().getTranslationKey().replace("item.", "");
+                String b = a.replace(".", ":");
+                pedestalBlockEntity.pedestal_item_id = b;
+                DungeonUtils.LOGGER.info(b + " (server)");
+                stack.decrement(1);
+
+            }
+
         }
+
         return ActionResult.SUCCESS;
     }
 
