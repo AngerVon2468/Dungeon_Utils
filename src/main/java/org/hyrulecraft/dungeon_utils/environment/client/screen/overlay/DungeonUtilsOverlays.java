@@ -13,7 +13,7 @@ import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems;
 import org.hyrulecraft.dungeon_utils.environment.common.tags.DungeonUtilsTags;
 
 @Environment(EnvType.CLIENT)
-public class RupeeOverlay {
+public class DungeonUtilsOverlays {
 
     public static void render(DrawContext drawContext, float tickDelta) {
         MinecraftClient client = MinecraftClient.getInstance();
@@ -48,7 +48,7 @@ public class RupeeOverlay {
         }
     }
 
-    public static void registerOverlay() {
-        HudRenderCallback.EVENT.register(RupeeOverlay::render);
+    public static void registerOverlays() {
+        HudRenderCallback.EVENT.register(DungeonUtilsOverlays::render);
     }
 }

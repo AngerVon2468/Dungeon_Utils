@@ -13,7 +13,7 @@ import net.minecraft.util.Identifier;
 
 import org.hyrulecraft.dungeon_utils.environment.client.block.PedestalBlockEntityRenderer;
 import org.hyrulecraft.dungeon_utils.environment.client.entity.model.*;
-import org.hyrulecraft.dungeon_utils.environment.client.screen.overlay.RupeeOverlay;
+import org.hyrulecraft.dungeon_utils.environment.client.screen.overlay.DungeonUtilsOverlays;
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils;
 import org.hyrulecraft.dungeon_utils.environment.common.block.*;
 import org.hyrulecraft.dungeon_utils.environment.common.entity.DungeonUtilsEntities;
@@ -30,7 +30,7 @@ public class DungeonUtilsClient implements ClientModInitializer {
 
         // Initializing classes.
         UtilCollector.registerAllUtilClassesInClient();
-        RupeeOverlay.registerOverlay();
+        DungeonUtilsOverlays.registerOverlays();
 
         // Rendering and models.
         DungeonUtilsClient.registerTrinketRenderers();
