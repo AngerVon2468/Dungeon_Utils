@@ -1,17 +1,11 @@
 package org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.mask;
 
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
 import net.minecraft.world.World;
 
 import virtuoel.pehkui.api.*;
 
 public class GiantsMaskItem extends AbstractMaskItem {
-
-    @Override
-    Item getItem() {
-        return this;
-    }
 
     @Override
     public void onEquip(World world, PlayerEntity player) {

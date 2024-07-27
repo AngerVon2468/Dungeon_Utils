@@ -18,14 +18,18 @@ import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks
 import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.YELLOW_SWITCH_BLOCK
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.ADULT_LINK
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.BLUE_RUPEE
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.BOKOBLIN_HEAD
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.BOTW_LINK
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.CHILD_RUPEE_WALLET
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.CLIMBING_GLOVES
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.DARUKS_PROTECTION
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.GIANTS_MASK
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.GILDED_SWORD
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.GREAT_EAGLE_BOW
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.GREAT_FAIRY_MASK
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.GREEN_RUPEE
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.HEART_CONTAINER
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.KEATON_MASK
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.KOKIRI_SHIELD
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.KOKIRI_SWORD
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.LINK_CAP
@@ -33,6 +37,7 @@ import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.L
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.LINK_TUNIC
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.LYNEL_BOW_FIVE_X
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.LYNEL_BOW_THREE_X
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.MAJORAS_MASK
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.MEGATON_HAMMER
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.MIPHAS_GRACE
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.MIPHAS_GRACE_PLUS
@@ -158,6 +163,18 @@ class DungeonUtilsItemGroups {
                     entries.add(YELLOW_SWITCH_BLOCK)
                     entries.add(RUSTY_SWITCH_BLOCK)
                     entries.add(BLUE_SWITCH_BLOCK)
+                }.build()
+        )
+
+        val MASKS: ItemGroup = Registry.register(
+            RegistryTypes.ITEM_GROUP, Identifier(MOD_ID, "masks"),
+            FabricItemGroup.builder().displayName(Text.translatable("tab.dungeon_utils.masks"))
+                .icon { ItemStack(MAJORAS_MASK) }.entries { displayContext, entries ->
+                    entries.add(MAJORAS_MASK)
+                    entries.add(GIANTS_MASK)
+                    entries.add(GREAT_FAIRY_MASK)
+                    entries.add(KEATON_MASK)
+                    entries.add(BOKOBLIN_HEAD)
                 }.build()
         )
 

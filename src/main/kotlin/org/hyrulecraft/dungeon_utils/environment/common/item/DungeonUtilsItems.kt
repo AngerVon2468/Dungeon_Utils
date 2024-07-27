@@ -183,6 +183,9 @@ object DungeonUtilsItems {
     @JvmField
     val GREAT_FAIRY_MASK = registerItem("great_fairy_mask", GreatFairyMaskItem())
 
+    @JvmField
+    val KEATON_MASK = registerItem("keaton_mask", KeatonMaskItem())
+
     @JvmStatic
     fun registerDungeonUtilsItems() {
         DungeonUtils.LOGGER.info(DungeonUtils.NAME + " has registered its items.")
