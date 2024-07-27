@@ -102,7 +102,7 @@ object DungeonUtilsBlocks {
     )
 
     @JvmStatic
-    fun registerModBlocks() {
+    fun registerDungeonUtilsBlocks() {
         DungeonUtils.LOGGER.info(DungeonUtils.NAME + " has registered its blocks.")
     }
 }

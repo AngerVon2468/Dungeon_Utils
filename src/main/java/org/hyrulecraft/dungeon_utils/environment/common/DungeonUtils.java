@@ -32,8 +32,8 @@ public class DungeonUtils implements ModInitializer {
 
         // Initializing classes.
         DungeonUtilsItemGroups.registerDungeonUtilsItemGroups();
-        DungeonUtilsItems.registerModItems();
-        DungeonUtilsBlocks.registerModBlocks();
+        DungeonUtilsItems.registerDungeonUtilsItems();
+        DungeonUtilsBlocks.registerDungeonUtilsBlocks();
         DungeonUtilsSounds.registerDungeonUtilsSounds();
         DungeonUtilsTags.registerDungeonUtilsTags();
         UtilCollector.registerAllUtilClasses();
