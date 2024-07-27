@@ -38,10 +38,23 @@ public class GiantsMaskItem extends AbstractMaskItem {
     @Override
     public void onUnequip(World world, PlayerEntity player) {
         ScaleData playerScale = ScaleTypes.BASE.getScaleData(player);
-        playerScale.resetScale();
-        ScaleData playerMotion = ScaleTypes.MOTION.getScaleData(player);
-        playerMotion.resetScale();
+        ScaleData playerDefense = ScaleTypes.DEFENSE.getScaleData(player);
+        ScaleData playerHealth = ScaleTypes.HEALTH.getScaleData(player);
+        ScaleData playerDrops = ScaleTypes.DROPS.getScaleData(player);
+        ScaleData playerSpeed = ScaleTypes.MOTION.getScaleData(player);
+        ScaleData playerDamage = ScaleTypes.ATTACK.getScaleData(player);
+        ScaleData playerReach = ScaleTypes.REACH.getScaleData(player);
         ScaleData playerJumpHeight = ScaleTypes.JUMP_HEIGHT.getScaleData(player);
+        playerScale.resetScale();
+        playerDefense.resetScale();
+        playerHealth.resetScale();
+        playerDrops.resetScale();
+        playerSpeed.resetScale();
+        playerSpeed.resetScale();
+        playerDamage.resetScale();
+        playerDamage.resetScale();
+        playerReach.resetScale();
+        playerReach.resetScale();
         playerJumpHeight.resetScale();
         super.onUnequip(world, player);
     }
