@@ -162,7 +162,7 @@ class DungeonUtilsItemGroups {
                 }.build()
         )
 
-        var BLOCKS: ItemGroup = Registry.register(
+        val BLOCKS: ItemGroup = Registry.register(
             RegistryTypes.ITEM_GROUP, Identifier(MOD_ID, "blocks"),
             FabricItemGroup.builder().displayName(Text.translatable("tab.dungeon_utils.blocks"))
                 .icon { ItemStack(BONE_PILE) }.entries { displayContext, entries ->
@@ -175,14 +175,12 @@ class DungeonUtilsItemGroups {
                     entries.add(RUSTY_SWITCH_BLOCK)
                     entries.add(BLUE_SWITCH_BLOCK)
                     entries.add(GODTRIBE_STONE)
-                    entries.add(GODTRIBE_STONE)
-                    entries.add(POLISHED_GODTRIBE_STONE)
                     entries.add(CHISELED_GODTRIBE_STONE)
+                    entries.add(POLISHED_GODTRIBE_STONE)
                     entries.add(TRIFORCE_PATTERN_GODTRIBE_STONE)
                     entries.add(GODTRIBE_PILLAR)
                     entries.add(CHISELED_GODTRIBE_PILLAR)
                     entries.add(CRACKED_GODTRIBE_PILLAR)
-                    entries.add(TRIFORCE_PATTERN_GODTRIBE_STONE)
                     entries.add(GODTRIBE_BRICKS)
                     entries.add(GODTRIBE_BRICKS_PILLAR)
                     entries.add(SWIRL_PATTERN_GODTRIBE_PILLAR)
