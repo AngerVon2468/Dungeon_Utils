@@ -7,7 +7,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils;
-import org.hyrulecraft.dungeon_utils.environment.common.entity.entity_type.FairyEntity;
+import org.hyrulecraft.dungeon_utils.environment.common.entity.entitytype.FairyEntity;
 
 import org.jetbrains.annotations.NotNull;
 

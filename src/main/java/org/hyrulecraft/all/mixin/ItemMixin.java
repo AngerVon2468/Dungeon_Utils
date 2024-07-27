@@ -9,7 +9,7 @@ import net.minecraft.sound.*;
 import net.minecraft.util.*;
 import net.minecraft.world.World;
 
-import org.hyrulecraft.dungeon_utils.environment.common.entity.entity_type.FairyEntity;
+import org.hyrulecraft.dungeon_utils.environment.common.entity.entitytype.FairyEntity;
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems;
 import org.hyrulecraft.dungeon_utils.util.NbtUtil;
 

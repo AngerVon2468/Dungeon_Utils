@@ -9,7 +9,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils;
-import org.hyrulecraft.dungeon_utils.environment.common.entity.entity_type.CrateEntity;
+import org.hyrulecraft.dungeon_utils.environment.common.entity.entitytype.CrateEntity;
 
 import org.jetbrains.annotations.NotNull;
 

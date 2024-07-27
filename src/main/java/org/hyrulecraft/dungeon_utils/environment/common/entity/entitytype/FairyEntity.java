@@ -1,4 +1,4 @@
-package org.hyrulecraft.dungeon_utils.environment.common.entity.entity_type;
+package org.hyrulecraft.dungeon_utils.environment.common.entity.entitytype;
 
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.control.MoveControl;

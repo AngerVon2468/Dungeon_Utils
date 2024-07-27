@@ -5,7 +5,7 @@ import net.minecraft.util.Identifier;
 
 import org.hyrulecraft.dungeon_utils.environment.client.entity.model.FairyEntityModel;
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils;
-import org.hyrulecraft.dungeon_utils.environment.common.entity.entity_type.FairyEntity;
+import org.hyrulecraft.dungeon_utils.environment.common.entity.entitytype.FairyEntity;
 
 public class FairyEntityRenderer extends MobEntityRenderer<FairyEntity, FairyEntityModel> {
 

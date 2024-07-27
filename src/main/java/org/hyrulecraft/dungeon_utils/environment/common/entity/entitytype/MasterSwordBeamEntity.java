@@ -1,23 +1,25 @@
-package org.hyrulecraft.dungeon_utils.environment.common.entity.entity_type;
+package org.hyrulecraft.dungeon_utils.environment.common.entity.entitytype;
 
 import net.minecraft.block.*;
 import net.minecraft.block.entity.*;
-import net.minecraft.entity.EntityType;
+import net.minecraft.entity.*;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.*;
 import net.minecraft.util.hit.*;
 import net.minecraft.util.math.*;
 import net.minecraft.world.World;
 
-public class BombEntity extends ProjectileEntity {
+public class MasterSwordBeamEntity extends ProjectileEntity {
 
     World world = this.getWorld();
 
-    public BombEntity(EntityType<? extends ProjectileEntity> entityType, World world) {
+    public MasterSwordBeamEntity(EntityType<? extends ProjectileEntity> entityType, World world) {
         super(entityType, world);
     }
 
     @Override
     protected void initDataTracker() {
+
     }
 
     @Override
@@ -47,13 +49,14 @@ public class BombEntity extends ProjectileEntity {
         }
         this.checkBlockCollision();
 
-        Vec3d bombVec = this.getVelocity();
-        double x = this.getX() + bombVec.x;
-        double y = this.getY() + bombVec.y;
-        double z = this.getZ() + bombVec.z;
-        this.updatePosition(x, y, z);
-        if (!this.hasNoGravity()) {
-            this.setVelocity(this.getVelocity().add(0.0f, -0.08f, 0.0f));
+        Vec3d vec3d = this.getVelocity();
+        double d = this.getX() + vec3d.x;
+        double e = this.getY() + vec3d.y;
+        double f = this.getZ() + vec3d.z;
+        this.setPosition(d, e, f);
+
+        if (this.age > (20 * 15)) {
+            this.discard();
         }
     }
 
@@ -61,9 +64,9 @@ public class BombEntity extends ProjectileEntity {
     protected void onEntityHit(EntityHitResult entityHitResult) {
         super.onEntityHit(entityHitResult);
 
-        if (!world.isClient) {
-            world.createExplosion(this, this.getX(), this.getY(), this.getZ(), 1, World.ExplosionSourceType.MOB);
-            this.discard();
+        Entity wiiu = entityHitResult.getEntity();
+        if (this.getOwner() instanceof PlayerEntity player) {
+            wiiu.damage(wiiu.getDamageSources().playerAttack(player), 10);
         }
     }
 
@@ -71,9 +74,13 @@ public class BombEntity extends ProjectileEntity {
     protected void onCollision(HitResult hitResult) {
         super.onCollision(hitResult);
 
-        if (!world.isClient) {
-            world.createExplosion(this, this.getX(), this.getY(), this.getZ(), 1, World.ExplosionSourceType.MOB);
+        if (!this.getWorld().isClient) {
             this.discard();
         }
+    }
+
+    @Override
+    public boolean hasNoGravity() {
+        return true;
     }
 }

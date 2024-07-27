@@ -9,7 +9,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils;
-import org.hyrulecraft.dungeon_utils.environment.common.entity.entity_type.BombEntity;
+import org.hyrulecraft.dungeon_utils.environment.common.entity.entitytype.BombEntity;
 
 import org.jetbrains.annotations.NotNull;
 

@@ -10,7 +10,7 @@ import net.minecraft.util.math.*;
 import net.minecraft.world.World;
 
 import org.hyrulecraft.dungeon_utils.environment.common.entity.DungeonUtilsEntities;
-import org.hyrulecraft.dungeon_utils.environment.common.entity.entity_type.FairyEntity;
+import org.hyrulecraft.dungeon_utils.environment.common.entity.entitytype.FairyEntity;
 
 import org.jetbrains.annotations.NotNull;
 
