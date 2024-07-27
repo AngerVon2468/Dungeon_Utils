@@ -10,11 +10,22 @@ import net.minecraft.util.Identifier
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils.*
 import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.BLUE_SWITCH_BLOCK
 import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.BONE_PILE
+import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.CHISELED_GODTRIBE_PILLAR
+import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.CHISELED_GODTRIBE_STONE
+import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.CRACKED_GODTRIBE_PILLAR
 import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.DIRT_BONE_PILE
 import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.FLESHY_BONE_PILE
+import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.GODTRIBE_BRICKS
+import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.GODTRIBE_BRICKS_PILLAR
+import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.GODTRIBE_PILLAR
+import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.GODTRIBE_STONE
 import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.MALICE
+import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.POLISHED_GODTRIBE_STONE
 import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.RUSTY_SWITCH_BLOCK
 import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.STONE_BONE_PILE
+import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.SWIRL_PATTERN_GODTRIBE_PILLAR
+import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.TILEABLE_GODTRIBE_PATTERN
+import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.TRIFORCE_PATTERN_GODTRIBE_STONE
 import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.YELLOW_SWITCH_BLOCK
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.ADULT_LINK
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.BLUE_RUPEE
@@ -163,6 +174,19 @@ class DungeonUtilsItemGroups {
                     entries.add(YELLOW_SWITCH_BLOCK)
                     entries.add(RUSTY_SWITCH_BLOCK)
                     entries.add(BLUE_SWITCH_BLOCK)
+                    entries.add(GODTRIBE_STONE)
+                    entries.add(GODTRIBE_STONE)
+                    entries.add(POLISHED_GODTRIBE_STONE)
+                    entries.add(CHISELED_GODTRIBE_STONE)
+                    entries.add(TRIFORCE_PATTERN_GODTRIBE_STONE)
+                    entries.add(GODTRIBE_PILLAR)
+                    entries.add(CHISELED_GODTRIBE_PILLAR)
+                    entries.add(CRACKED_GODTRIBE_PILLAR)
+                    entries.add(TRIFORCE_PATTERN_GODTRIBE_STONE)
+                    entries.add(GODTRIBE_BRICKS)
+                    entries.add(GODTRIBE_BRICKS_PILLAR)
+                    entries.add(SWIRL_PATTERN_GODTRIBE_PILLAR)
+                    entries.add(TILEABLE_GODTRIBE_PATTERN)
                 }.build()
         )
 

@@ -11,6 +11,7 @@ import net.minecraft.util.Identifier
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils
 import org.hyrulecraft.dungeon_utils.environment.common.block.blocktype.*
 import org.hyrulecraft.dungeon_utils.environment.common.block.blocktype.bonepile.*
+import org.hyrulecraft.dungeon_utils.environment.common.block.blocktype.godtribe.GodtribeStone
 import org.hyrulecraft.dungeon_utils.environment.common.block.blocktype.switchblock.*
 
 object DungeonUtilsBlocks {
@@ -97,6 +98,90 @@ object DungeonUtilsBlocks {
     @JvmField
     val BOMB_FLOWER = registerBlock("bomb_flower",
         BombFlowerBlock(
+            FabricBlockSettings.create().nonOpaque()
+        )
+    )
+
+    @JvmField
+    val GODTRIBE_STONE = registerBlock("godtribe_stone",
+        GodtribeStone(
+            FabricBlockSettings.create().nonOpaque()
+        )
+    )
+
+    @JvmField
+    val GODTRIBE_PILLAR = registerBlock("godtribe_pillar",
+        GodtribeStone(
+            FabricBlockSettings.create().nonOpaque()
+        )
+    )
+
+    @JvmField
+    val TILEABLE_GODTRIBE_PATTERN = registerBlock("tileable_godtribe_pattern",
+        GodtribeStone(
+            FabricBlockSettings.create().nonOpaque()
+        )
+    )
+
+    @JvmField
+    val CHISELED_GODTRIBE_PILLAR = registerBlock("chiseled_godtribe_pillar",
+        GodtribeStone(
+            FabricBlockSettings.create().nonOpaque()
+        )
+    )
+
+    @JvmField
+    val CHISELED_GODTRIBE_STONE = registerBlock("chiseled_godtribe_stone",
+        GodtribeStone(
+            FabricBlockSettings.create().nonOpaque()
+        )
+    )
+
+    @JvmField
+    val CRACKED_GODTRIBE_PILLAR = registerBlock("cracked_godtribe_pillar",
+        GodtribeStone(
+            FabricBlockSettings.create().nonOpaque()
+        )
+    )
+
+    @JvmField
+    val GODTRIBE_BRICKS = registerBlock("godtribe_bricks",
+        GodtribeStone(
+            FabricBlockSettings.create().nonOpaque()
+        )
+    )
+
+    @JvmField
+    val GODTRIBE_BRICKS_PILLAR = registerBlock("godtribe_bricks_pillar",
+        GodtribeStone(
+            FabricBlockSettings.create().nonOpaque()
+        )
+    )
+
+    @JvmField
+    val POLISHED_GODTRIBE_STONE = registerBlock("polished_godtribe_stone",
+        GodtribeStone(
+            FabricBlockSettings.create().nonOpaque()
+        )
+    )
+
+    @JvmField
+    val SWIRL_PATTERN_GODTRIBE_PILLAR = registerBlock("swirl_pattern_godtribe_pillar",
+        GodtribeStone(
+            FabricBlockSettings.create().nonOpaque()
+        )
+    )
+
+    @JvmField
+    val TRIFORCE_PATTERN_GODTRIBE_PILLAR = registerBlock("triforce_pattern_godtribe_pillar",
+        GodtribeStone(
+            FabricBlockSettings.create().nonOpaque()
+        )
+    )
+
+    @JvmField
+    val TRIFORCE_PATTERN_GODTRIBE_STONE = registerBlock("triforce_pattern_godtribe_stone",
+        GodtribeStone(
             FabricBlockSettings.create().nonOpaque()
         )
     )
