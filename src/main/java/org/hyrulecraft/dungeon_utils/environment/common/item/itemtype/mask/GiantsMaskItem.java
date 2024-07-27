@@ -3,6 +3,7 @@ package org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.mask;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
+
 import virtuoel.pehkui.api.*;
 
 public class GiantsMaskItem extends AbstractMaskItem {
@@ -14,7 +15,6 @@ public class GiantsMaskItem extends AbstractMaskItem {
 
     @Override
     public void onEquip(World world, PlayerEntity player) {
-        super.onEquip(world, player);
         ScaleData playerScale = ScaleTypes.BASE.getScaleData(player);
         ScaleData playerDefense = ScaleTypes.DEFENSE.getScaleData(player);
         ScaleData playerHealth = ScaleTypes.HEALTH.getScaleData(player);
@@ -32,12 +32,17 @@ public class GiantsMaskItem extends AbstractMaskItem {
         playerDamage.setScale(playerSpeed.getBaseScale() + 2.0f);
         playerReach.resetScale();
         playerReach.setScale(playerSpeed.getBaseScale() + 2.0f);
+        super.onEquip(world, player);
     }
 
     @Override
     public void onUnequip(World world, PlayerEntity player) {
-        super.onUnequip(world, player);
         ScaleData playerScale = ScaleTypes.BASE.getScaleData(player);
         playerScale.resetScale();
+        ScaleData playerMotion = ScaleTypes.MOTION.getScaleData(player);
+        playerMotion.resetScale();
+        ScaleData playerJumpHeight = ScaleTypes.JUMP_HEIGHT.getScaleData(player);
+        playerJumpHeight.resetScale();
+        super.onUnequip(world, player);
     }
 }
