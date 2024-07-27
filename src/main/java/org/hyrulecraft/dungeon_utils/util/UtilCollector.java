@@ -24,6 +24,7 @@ public class UtilCollector {
             DungeonUtilsCommands.dungeonUtils();
             DungeonUtilsCommands.wiiu();
         }
+        DungeonUtilsCommands.showoff();
     }
 
     public static void registerAllUtilClassesInClient() {
