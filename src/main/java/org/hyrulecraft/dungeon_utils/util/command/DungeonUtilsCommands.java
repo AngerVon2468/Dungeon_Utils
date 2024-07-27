@@ -3,7 +3,6 @@ package org.hyrulecraft.dungeon_utils.util.command;
 import com.zigythebird.playeranimatorapi.API.PlayerAnimAPI;
 
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
-import net.fabricmc.loader.api.FabricLoader;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.item.ItemStack;
@@ -126,7 +125,7 @@ public class DungeonUtilsCommands {
                 .then(CommandManager.literal("good")
                         .executes(context -> {
 
-                            if (context.getSource().isExecutedByPlayer() && FabricLoader.getInstance().isDevelopmentEnvironment()) {
+                            if (context.getSource().isExecutedByPlayer()) {
 
                                 context.getSource().getPlayer().setHealth(20.0f);
                                 return 1;

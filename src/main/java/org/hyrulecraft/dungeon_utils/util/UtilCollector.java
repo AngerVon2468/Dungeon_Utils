@@ -21,7 +21,6 @@ public class UtilCollector {
         DungeonUtilsCommands.trashHand();
         DungeonUtilsCommands.hcDiscord();
         if (FabricLoader.getInstance().isDevelopmentEnvironment()) {
-            DungeonUtilsCommands.dungeonUtils();
             DungeonUtilsCommands.wiiu();
         }
         DungeonUtilsCommands.showoff();
