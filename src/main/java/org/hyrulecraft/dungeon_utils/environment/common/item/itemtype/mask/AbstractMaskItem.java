@@ -35,9 +35,9 @@ public abstract class AbstractMaskItem extends Item implements Equipment {
 
     @Override
     public TypedActionResult<ItemStack> use(@NotNull World world, @NotNull PlayerEntity player, Hand hand) {
-        if (!world.isClient() && !this.isEquip && !player.getEquippedStack(EquipmentSlot.HEAD).isOf(this.asItem())) {
+        if (!world.isClient() && !this.isEquip && !player.getEquippedStack(EquipmentSlot.HEAD).isOf(this)) {
             this.onEquip(world, player);
-            return this.equipAndSwap(this.asItem(), world, player, hand);
+            return this.equipAndSwap(this, world, player, hand);
         } else {
             return TypedActionResult.fail(player.getMainHandStack());
         }
@@ -47,10 +47,10 @@ public abstract class AbstractMaskItem extends Item implements Equipment {
     public void inventoryTick(ItemStack itemStack, World world, Entity entity, int i, boolean bl) {
         super.inventoryTick(itemStack, world, entity, i, bl);
         if (entity instanceof PlayerEntity player && !world.isClient()) {
-            if (this.isEquip && !player.getEquippedStack(EquipmentSlot.HEAD).isOf(this.asItem())) {
+            if (this.isEquip && !player.getEquippedStack(EquipmentSlot.HEAD).isOf(this)) {
                 this.onUnequip(world, player);
             }
-            if (!this.isEquip && player.getEquippedStack(EquipmentSlot.HEAD).isOf(this.asItem())) {
+            if (!this.isEquip && player.getEquippedStack(EquipmentSlot.HEAD).isOf(this)) {
                 this.onEquip(world, player);
             }
         }
@@ -63,7 +63,7 @@ public abstract class AbstractMaskItem extends Item implements Equipment {
 
     @Override
     public void appendTooltip(ItemStack itemStack, @Nullable World world, @NotNull List<Text> list, TooltipContext tooltipContext) {
-        list.add(Text.translatable("tooltip.dungeon_utils." + this.asItem().getTranslationKey().replace("item.dungeon_utils.", "") + "_1"));
-        list.add(Text.translatable("tooltip.dungeon_utils." + this.asItem().getTranslationKey().replace("item.dungeon_utils.", "") + "_2"));
+        list.add(Text.translatable("tooltip.dungeon_utils." + this.getTranslationKey().replace("item.dungeon_utils.", "") + "_1"));
+        list.add(Text.translatable("tooltip.dungeon_utils." + this.getTranslationKey().replace("item.dungeon_utils.", "") + "_2"));
     }
 }
