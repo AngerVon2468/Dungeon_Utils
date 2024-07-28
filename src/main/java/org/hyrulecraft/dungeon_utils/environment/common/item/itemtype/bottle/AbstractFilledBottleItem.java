@@ -20,6 +20,10 @@ public abstract class AbstractFilledBottleItem extends Item {
         super(settings);
     }
 
+    public AbstractFilledBottleItem() {
+        this(new Settings().maxCount(1).maxDamage(0));
+    }
+
     abstract String getNbtKey();
 
     @Override

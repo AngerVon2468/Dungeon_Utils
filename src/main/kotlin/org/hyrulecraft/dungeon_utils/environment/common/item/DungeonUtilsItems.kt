@@ -160,13 +160,13 @@ object DungeonUtilsItems {
     val BOMB = registerItem("bomb", BombItem(FabricItemSettings().maxDamage(0).maxCount(1)))
 
     @JvmField
-    val BUG_BOTTLE = registerItem("bug_bottle", BugBottleItem(FabricItemSettings().maxDamage(0).maxCount(1)))
+    val BUG_BOTTLE = registerItem("bug_bottle", BugBottleItem())
 
     @JvmField
-    val FAIRY_BOTTLE = registerItem("fairy_bottle", FairyBottleItem(FabricItemSettings().maxDamage(0).maxCount(1)))
+    val FAIRY_BOTTLE = registerItem("fairy_bottle", FairyBottleItem())
 
     @JvmField
-    val FISH_BOTTLE = registerItem("fish_bottle", FishBottleItem(FabricItemSettings().maxDamage(0).maxCount(1)))
+    val FISH_BOTTLE = registerItem("fish_bottle", FishBottleItem())
 
     @JvmField
     val MILK_BOTTLE = registerItem("milk_bottle", Item(FabricItemSettings().maxDamage(0).maxCount(1)))

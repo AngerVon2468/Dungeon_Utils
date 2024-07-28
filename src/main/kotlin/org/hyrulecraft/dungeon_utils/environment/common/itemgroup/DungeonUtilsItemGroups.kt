@@ -33,6 +33,7 @@ import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks
 import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.TRIFORCE_PATTERN_GODTRIBE_STONE
 import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlocks.YELLOW_SWITCH_BLOCK
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.ADULT_LINK
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.ADULT_RUPEE_WALLET
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.BIGGEST_BOMB_BAG
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.BIG_BOMB_BAG
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.BLUE_RUPEE
@@ -41,11 +42,13 @@ import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.B
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.BOMB_BAG
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.BOTW_LINK
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.BUG_BOTTLE
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.CHILD_RUPEE_WALLET
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.CLIMBING_GLOVES
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.DARUKS_PROTECTION
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.FAIRY_BOTTLE
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.FISH_BOTTLE
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.GIANTS_MASK
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.GIANT_RUPEE_WALLET
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.HOOKSHOT
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.LINK_CAP
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.MAJORAS_MASK
@@ -56,6 +59,8 @@ import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.G
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.GREAT_EAGLE_BOW
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.GREAT_FAIRY_MASK
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.GREEN_RUPEE
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.HEART_CONTAINER
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.HEART_PIECE
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.KEATON_MASK
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.KOKIRI_SHIELD
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems.LINK_SLEEVES
@@ -91,6 +96,11 @@ class DungeonUtilsItemGroups {
                     entries.add(GREEN_RUPEE)
                     entries.add(BLUE_RUPEE)
                     entries.add(SHEIKAH_SLATE)
+                    entries.add(CHILD_RUPEE_WALLET)
+                    entries.add(ADULT_RUPEE_WALLET)
+                    entries.add(GIANT_RUPEE_WALLET)
+                    entries.add(HEART_PIECE)
+                    entries.add(HEART_CONTAINER)
                     entries.add(GLASS_BOTTLE)
                     entries.add(BUG_BOTTLE)
                     entries.add(FAIRY_BOTTLE)

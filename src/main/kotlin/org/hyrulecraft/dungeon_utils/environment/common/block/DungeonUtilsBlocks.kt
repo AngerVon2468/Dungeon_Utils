@@ -56,7 +56,7 @@ object DungeonUtilsBlocks {
     @JvmField
     val MALICE = registerBlock("malice",
         MaliceBlock(
-            FabricBlockSettings.create().nonOpaque()
+            FabricBlockSettings.create().nonOpaque().breakInstantly()
         )
     )
 
@@ -105,84 +105,84 @@ object DungeonUtilsBlocks {
     @JvmField
     val GODTRIBE_STONE = registerBlock("godtribe_stone",
         GodtribeStone(
-            FabricBlockSettings.create().nonOpaque()
+            FabricBlockSettings.create().nonOpaque().strength(2f).requiresTool()
         )
     )
 
     @JvmField
     val GODTRIBE_PILLAR = registerBlock("godtribe_pillar",
         GodtribeStone(
-            FabricBlockSettings.create().nonOpaque()
+            FabricBlockSettings.create().nonOpaque().strength(2f).requiresTool()
         )
     )
 
     @JvmField
     val TILEABLE_GODTRIBE_PATTERN = registerBlock("tileable_godtribe_pattern",
         GodtribeStone(
-            FabricBlockSettings.create().nonOpaque()
+            FabricBlockSettings.create().nonOpaque().strength(2f).requiresTool()
         )
     )
 
     @JvmField
     val CHISELED_GODTRIBE_PILLAR = registerBlock("chiseled_godtribe_pillar",
         GodtribeStone(
-            FabricBlockSettings.create().nonOpaque()
+            FabricBlockSettings.create().nonOpaque().strength(2f).requiresTool()
         )
     )
 
     @JvmField
     val CHISELED_GODTRIBE_STONE = registerBlock("chiseled_godtribe_stone",
         GodtribeStone(
-            FabricBlockSettings.create().nonOpaque()
+            FabricBlockSettings.create().nonOpaque().strength(2f).requiresTool()
         )
     )
 
     @JvmField
     val CRACKED_GODTRIBE_PILLAR = registerBlock("cracked_godtribe_pillar",
         GodtribeStone(
-            FabricBlockSettings.create().nonOpaque()
+            FabricBlockSettings.create().nonOpaque().strength(2f).requiresTool()
         )
     )
 
     @JvmField
     val GODTRIBE_BRICKS = registerBlock("godtribe_bricks",
         GodtribeStone(
-            FabricBlockSettings.create().nonOpaque()
+            FabricBlockSettings.create().nonOpaque().strength(2f).requiresTool()
         )
     )
 
     @JvmField
     val GODTRIBE_BRICKS_PILLAR = registerBlock("godtribe_bricks_pillar",
         GodtribeStone(
-            FabricBlockSettings.create().nonOpaque()
+            FabricBlockSettings.create().nonOpaque().strength(2f).requiresTool()
         )
     )
 
     @JvmField
     val POLISHED_GODTRIBE_STONE = registerBlock("polished_godtribe_stone",
         GodtribeStone(
-            FabricBlockSettings.create().nonOpaque()
+            FabricBlockSettings.create().nonOpaque().strength(2f).requiresTool()
         )
     )
 
     @JvmField
     val SWIRL_PATTERN_GODTRIBE_PILLAR = registerBlock("swirl_pattern_godtribe_pillar",
         GodtribeStone(
-            FabricBlockSettings.create().nonOpaque()
+            FabricBlockSettings.create().nonOpaque().strength(2f).requiresTool()
         )
     )
 
     @JvmField
     val TRIFORCE_PATTERN_GODTRIBE_PILLAR = registerBlock("triforce_pattern_godtribe_pillar",
         GodtribeStone(
-            FabricBlockSettings.create().nonOpaque()
+            FabricBlockSettings.create().nonOpaque().strength(2f).requiresTool()
         )
     )
 
     @JvmField
     val TRIFORCE_PATTERN_GODTRIBE_STONE = registerBlock("triforce_pattern_godtribe_stone",
         GodtribeStone(
-            FabricBlockSettings.create().nonOpaque()
+            FabricBlockSettings.create().nonOpaque().strength(2f).requiresTool()
         )
     )
 

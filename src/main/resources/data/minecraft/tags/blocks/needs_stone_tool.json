@@ -1,6 +1,18 @@
 {
     "replace": false,
     "values": [
-        "dungeon_utils:pedestal_block"
+        "dungeon_utils:pedestal_block",
+        "dungeon_utils:godtribe_stone",
+        "dungeon_utils:godtribe_pillar",
+        "dungeon_utils:tileable_godtribe_pattern",
+        "dungeon_utils:chiseled_godtribe_pillar",
+        "dungeon_utils:chiseled_godtribe_stone",
+        "dungeon_utils:cracked_godtribe_pillar",
+        "dungeon_utils:godtribe_bricks",
+        "dungeon_utils:godtribe_bricks_pillar",
+        "dungeon_utils:polished_godtribe_stone",
+        "dungeon_utils:swirl_pattern_godtribe_pillar",
+        "dungeon_utils:triforce_pattern_godtribe_pillar",
+        "dungeon_utils:triforce_pattern_godtribe_stone"
     ]
 }
