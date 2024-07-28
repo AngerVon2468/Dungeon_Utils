@@ -1,10 +1,10 @@
-package org.hyrulecraft.dungeon_utils.util;
+package org.hyrulecraft.dungeon_utils.util.event;
 
 import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
 
 import virtuoel.pehkui.api.*;
 
-public class CarryOverHeartContainers {
+public class HeartContainerCallbacks {
 
     public static void onPlayerRespawn() {
         ServerPlayerEvents.AFTER_RESPAWN.register((oldPlayer, newPlayer, alive) -> {

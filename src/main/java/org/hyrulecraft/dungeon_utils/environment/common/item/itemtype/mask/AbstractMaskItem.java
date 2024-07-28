@@ -20,7 +20,7 @@ public abstract class AbstractMaskItem extends Item implements Equipment {
         super(settings);
     }
 
-    // Constructs the masks with the wanted settings so you don't need to retype out the needed settings.
+    // Constructs the mask items with the normal mask settings.
     public AbstractMaskItem() {
         this(new Settings().maxDamage(0).maxCount(1));
     }
@@ -31,6 +31,12 @@ public abstract class AbstractMaskItem extends Item implements Equipment {
 
     public void onUnequip(World world, PlayerEntity player) {
         this.isEquip = false;
+    }
+
+    public void equipTick(World world, PlayerEntity player) {
+    }
+
+    public void unEquipTick(World world, PlayerEntity player) {
     }
 
     @Override
@@ -52,6 +58,12 @@ public abstract class AbstractMaskItem extends Item implements Equipment {
             }
             if (!this.isEquip && player.getEquippedStack(EquipmentSlot.HEAD).isOf(this)) {
                 this.onEquip(world, player);
+            }
+            if (this.isEquip && player.getEquippedStack(EquipmentSlot.HEAD).isOf(this)) {
+                this.equipTick(world, player);
+            }
+            if (!this.isEquip && !player.getEquippedStack(EquipmentSlot.HEAD).isOf(this)) {
+                this.unEquipTick(world, player);
             }
         }
     }
