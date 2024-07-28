@@ -15,7 +15,6 @@ import org.hyrulecraft.dungeon_utils.util.UtilCollector;
 
 import org.slf4j.*;
 
-// TODO: figure out why revali's gale and potentially all other champion abilities failed
 public class DungeonUtils implements ModInitializer {
 
     public static final String MOD_ID = "dungeon_utils";
