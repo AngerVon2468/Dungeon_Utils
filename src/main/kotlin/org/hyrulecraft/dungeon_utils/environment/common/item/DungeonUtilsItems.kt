@@ -112,13 +112,13 @@ object DungeonUtilsItems {
     val SHADOW_MASTER_SWORD = registerItem("shadow_master_sword", SwordItem(ToolMaterials.DIAMOND, 12, -1.8f, FabricItemSettings().maxDamage(2048)))
 
     @JvmField
-    val CHILD_RUPEE_WALLET = registerItem("child_rupee_wallet", ChildRupeeWalletItem(FabricItemSettings().maxCount(1).maxDamage(0)))
+    val CHILD_RUPEE_WALLET = registerItem("child_rupee_wallet", ChildRupeeWalletItem())
 
     @JvmField
-    val ADULT_RUPEE_WALLET = registerItem("adult_rupee_wallet", AdultRupeeWalletItem(FabricItemSettings().maxCount(1).maxDamage(0)))
+    val ADULT_RUPEE_WALLET = registerItem("adult_rupee_wallet", AdultRupeeWalletItem())
 
     @JvmField
-    val GIANT_RUPEE_WALLET = registerItem("giant_rupee_wallet", GiantRupeeWalletItem(FabricItemSettings().maxCount(1).maxDamage(0)))
+    val GIANT_RUPEE_WALLET = registerItem("giant_rupee_wallet", GiantRupeeWalletItem())
 
     @JvmField
     val BOMB_BAG = registerItem("bomb_bag", BombBagItem(FabricItemSettings().maxCount(1).maxDamage(0)))

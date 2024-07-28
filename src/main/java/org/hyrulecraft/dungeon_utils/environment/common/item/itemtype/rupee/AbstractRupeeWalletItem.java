@@ -25,6 +25,10 @@ public abstract class AbstractRupeeWalletItem extends Item {
         super(settings);
     }
 
+    public AbstractRupeeWalletItem() {
+        this(new Settings().maxCount(1).maxDamage(0));
+    }
+
     public abstract int rupeeWalletLimit();
 
     @Override
