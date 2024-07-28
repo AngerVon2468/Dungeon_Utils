@@ -8,6 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategories;
 import net.minecraft.world.World;
 
+import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems;
 import org.hyrulecraft.dungeon_utils.environment.common.sound.DungeonUtilsSounds;
 import org.hyrulecraft.dungeon_utils.util.event.ChampionEventCallbacks;
 
@@ -30,12 +31,12 @@ public class MiphasGraceItem extends TrinketItem {
 
                 // Why are we still here... just to suffer?
 
-            } else if (!player.getItemCooldownManager().isCoolingDown(this) && stack.getNbt().contains("dungeon_utils.miphas_gale.is_used") && stack.isOf(this)) {
+            } else if (!player.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.MIPHAS_GRACE) && stack.getNbt().contains("dungeon_utils.miphas_gale.is_used") && stack.isOf(DungeonUtilsItems.MIPHAS_GRACE)) {
 
                 player.playSound(DungeonUtilsSounds.MIPHAS_GRACE_RECHARGE, SoundCategories.PLAYERS, 1f, 1f);
                 stack.removeSubNbt("dungeon_utils.miphas_gale.is_used");
 
-            } else if (player.getItemCooldownManager().isCoolingDown(this) && !stack.getNbt().contains("dungeon_utils.miphas_gale.is_used") && stack.isOf(this)) {
+            } else if (player.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.MIPHAS_GRACE) && !stack.getNbt().contains("dungeon_utils.miphas_gale.is_used") && stack.isOf(DungeonUtilsItems.MIPHAS_GRACE)) {
 
                 ChampionEventCallbacks.addIsUsed(player);
 
