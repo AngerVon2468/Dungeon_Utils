@@ -14,7 +14,6 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 
 import org.hyrulecraft.dungeon_utils.config.DungeonUtilsConfig;
-import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems;
 import org.hyrulecraft.dungeon_utils.environment.common.sound.DungeonUtilsSounds;
 
 import org.jetbrains.annotations.NotNull;
@@ -38,12 +37,12 @@ public class RevalisGaleItem extends TrinketItem {
 
                 // Why are we still here... just to suffer?
 
-            } else if (stack.getNbt() != null && !player.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.REVALIS_GALE) && stack.getNbt().contains("dungeon_utils.revalis_gale.anti_spam") && stack.isOf(DungeonUtilsItems.REVALIS_GALE)) {
+            } else if (stack.getNbt() != null && !player.getItemCooldownManager().isCoolingDown(this) && stack.getNbt().contains("dungeon_utils.revalis_gale.anti_spam") && stack.isOf(this)) {
 
                 player.playSound(DungeonUtilsSounds.REVALIS_GALE_RECHARGE, SoundCategories.PLAYERS, 1f, 1f);
                 stack.removeSubNbt("dungeon_utils.revalis_gale.anti_spam");
 
-            } else if (stack.getNbt() != null && player.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.REVALIS_GALE) && !stack.getNbt().contains("dungeon_utils.revalis_gale.anti_spam") && stack.isOf(DungeonUtilsItems.REVALIS_GALE)) {
+            } else if (stack.getNbt() != null && player.getItemCooldownManager().isCoolingDown(this) && !stack.getNbt().contains("dungeon_utils.revalis_gale.anti_spam") && stack.isOf(this)) {
 
                 addAntiSpam(player);
 
@@ -53,10 +52,10 @@ public class RevalisGaleItem extends TrinketItem {
 
     @Override
     public TypedActionResult<ItemStack> use(@NotNull World world, @NotNull PlayerEntity user, @NotNull Hand hand) {
-        ItemStack stack = user.getStackInHand(hand);
+        ItemStack stack = user.getMainHandStack();
         BlockState blockState = world.getBlockState(user.getBlockPos().offset(Direction.DOWN, 1));
 
-        if (!stack.hasNbt() && !user.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.REVALIS_GALE) && !blockState.isOf(Blocks.AIR)) {
+        if (!stack.hasNbt() && !user.getItemCooldownManager().isCoolingDown(this) && !blockState.isOf(Blocks.AIR)) {
 
             user.setVelocity(0, DungeonUtilsConfig.revalisGaleHeight, 0);
             if (DungeonUtilsConfig.shouldAddSlowFalling) {
@@ -65,7 +64,7 @@ public class RevalisGaleItem extends TrinketItem {
             addSecondUsage(user);
             return TypedActionResult.consume(stack);
 
-        } else if (stack.getNbt() != null && stack.getNbt().contains("dungeon_utils.revalis_gale.usage_two") && !user.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.REVALIS_GALE) && !blockState.isOf(Blocks.AIR)) {
+        } else if (stack.getNbt() != null && stack.getNbt().contains("dungeon_utils.revalis_gale.usage_two") && !user.getItemCooldownManager().isCoolingDown(this) && !blockState.isOf(Blocks.AIR)) {
 
             user.setVelocity(0, DungeonUtilsConfig.revalisGaleHeight, 0);
             if (DungeonUtilsConfig.shouldAddSlowFalling) {
@@ -74,17 +73,17 @@ public class RevalisGaleItem extends TrinketItem {
             addThirdUsage(user);
             return TypedActionResult.consume(stack);
 
-        } else if (stack.getNbt() != null && stack.getNbt().contains("dungeon_utils.revalis_gale.usage_three") && !user.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.REVALIS_GALE) && !blockState.isOf(Blocks.AIR)) {
+        } else if (stack.getNbt() != null && stack.getNbt().contains("dungeon_utils.revalis_gale.usage_three") && !user.getItemCooldownManager().isCoolingDown(this) && !blockState.isOf(Blocks.AIR)) {
 
             user.setVelocity(0, DungeonUtilsConfig.revalisGaleHeight, 0);
             if (DungeonUtilsConfig.shouldAddSlowFalling) {
                 user.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 20, 0));
             }
-            user.getItemCooldownManager().set((DungeonUtilsItems.REVALIS_GALE), ( 20 * 60 ) * 6);
+            user.getItemCooldownManager().set(this, ( 20 * 60 ) * 6);
             addAntiSpam(user);
             return TypedActionResult.consume(stack);
 
-        } else if (user.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.REVALIS_GALE)) {
+        } else if (user.getItemCooldownManager().isCoolingDown(this)) {
 
             return TypedActionResult.fail(stack);
 

@@ -10,8 +10,6 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.*;
 import net.minecraft.world.World;
 
-import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems;
-
 import org.jetbrains.annotations.NotNull;
 
 // TODO: Rework literally all of this.
@@ -25,9 +23,9 @@ public class MogmaMittsItem extends Item {
     public ActionResult useOnBlock(@NotNull ItemUsageContext context) {
         PlayerEntity player = context.getPlayer();
         assert player != null;
-        ItemStack stack = player.getStackInHand(player.getActiveHand());
+        ItemStack stack = player.getMainHandStack();
 
-        if (stack.isOf(DungeonUtilsItems.MOGMA_MITTS)) {
+        if (stack.isOf(this)) {
 
             player.setNoGravity(true);
             player.noClip = true;
@@ -47,10 +45,10 @@ public class MogmaMittsItem extends Item {
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         if (entity instanceof PlayerEntity player) {
-            ItemStack stack2 = player.getStackInHand(player.getActiveHand());
+            ItemStack stack2 = player.getMainHandStack();
             BlockState blockState = world.getBlockState(player.getBlockPos());
 
-            if (stack2.isOf(DungeonUtilsItems.MOGMA_MITTS)) {
+            if (stack2.isOf(this)) {
 
                 player.noClip = true;
                 player.setOnGround(false);

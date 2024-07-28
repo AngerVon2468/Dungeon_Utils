@@ -9,7 +9,6 @@ import net.minecraft.util.math.*;
 import net.minecraft.world.World;
 
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils;
-import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems;
 import org.hyrulecraft.dungeon_utils.util.DirectionCheckUtil;
 
 public class ParagliderTrinketItem extends TrinketItem {
@@ -28,9 +27,9 @@ public class ParagliderTrinketItem extends TrinketItem {
 
         } else {
 
-            ItemStack handStack = user.getEquippedStack(EquipmentSlot.MAINHAND);
+            ItemStack handStack = user.getMainHandStack();
             Vec3d playerVec3d = user.getVelocity();
-            if (handStack.isOf(DungeonUtilsItems.PARAGLIDER) && user.isFallFlying()) {
+            if (handStack.isOf(this) && user.isFallFlying()) {
 
                 Vec3d playerPos = user.getBlockPos().toCenterPos();
                 Vec3d playerFacingPos = user.getBlockPos().offset(user.getHorizontalFacing(), 1).toCenterPos();
