@@ -1,0 +1,12 @@
+{
+    "providers": [
+        {
+            "type": "ttf",
+            "file": "dungeon_utils:hyliaserif-regular.ttf",
+			"shift": [0, -0.3],
+			"size": 12.5,
+			"oversample": 20.0,
+			"skip": ""
+        }
+	]
+}
