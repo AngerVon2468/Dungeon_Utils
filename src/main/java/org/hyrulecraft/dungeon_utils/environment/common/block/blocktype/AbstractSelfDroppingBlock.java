@@ -6,7 +6,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class AbstractSelfDroppingBlock extends Block {
+public abstract class AbstractSelfDroppingBlock extends Block {
 
     public AbstractSelfDroppingBlock(Settings settings) {
         super(settings);

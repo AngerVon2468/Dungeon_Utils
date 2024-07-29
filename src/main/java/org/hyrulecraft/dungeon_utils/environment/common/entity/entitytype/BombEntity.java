@@ -8,12 +8,21 @@ import net.minecraft.util.hit.*;
 import net.minecraft.util.math.*;
 import net.minecraft.world.World;
 
+import org.hyrulecraft.dungeon_utils.environment.common.entity.DungeonUtilsEntities;
+
+import org.jetbrains.annotations.*;
+
 public class BombEntity extends ProjectileEntity {
 
     World world = this.getWorld();
 
     public BombEntity(EntityType<? extends ProjectileEntity> entityType, World world) {
         super(entityType, world);
+    }
+
+    @Contract("_ -> new")
+    public static @NotNull BombEntity create(World world) {
+        return new BombEntity(DungeonUtilsEntities.BOMB, world);
     }
 
     @Override
@@ -61,7 +70,7 @@ public class BombEntity extends ProjectileEntity {
     protected void onEntityHit(EntityHitResult entityHitResult) {
         super.onEntityHit(entityHitResult);
 
-        if (!world.isClient) {
+        if (!world.isClient()) {
             world.createExplosion(this, this.getX(), this.getY(), this.getZ(), 1, World.ExplosionSourceType.MOB);
             this.discard();
         }
@@ -71,7 +80,7 @@ public class BombEntity extends ProjectileEntity {
     protected void onCollision(HitResult hitResult) {
         super.onCollision(hitResult);
 
-        if (!world.isClient) {
+        if (!world.isClient()) {
             world.createExplosion(this, this.getX(), this.getY(), this.getZ(), 1, World.ExplosionSourceType.MOB);
             this.discard();
         }
