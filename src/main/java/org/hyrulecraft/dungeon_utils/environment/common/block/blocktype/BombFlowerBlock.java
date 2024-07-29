@@ -9,11 +9,9 @@ import net.minecraft.text.Text;
 import net.minecraft.util.*;
 import net.minecraft.util.function.BooleanBiFunction;
 import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.util.shape.VoxelShapes;
-import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
+import net.minecraft.util.math.*;
+import net.minecraft.util.shape.*;
+import net.minecraft.world.*;
 
 import org.hyrulecraft.dungeon_utils.environment.common.block.DungeonUtilsBlockEntities;
 import org.hyrulecraft.dungeon_utils.environment.common.block.blocktype.blockentity.BombFlowerBlockEntity;
@@ -42,7 +40,7 @@ public class BombFlowerBlock extends BlockWithEntity {
             if (state.get(IS_GROWN)) {
                 world.setBlockState(pos, state.with(IS_GROWN, false));
                 BombEntity bombEntity = BombEntity.create(world);
-                bombEntity.refreshPositionAfterTeleport(pos.getX(), pos.getY(), pos.getZ());
+                bombEntity.refreshPositionAfterTeleport(Vec3d.ofCenter(pos).offset(Direction.DOWN, 0.45));
                 world.spawnEntity(bombEntity);
             }
         }
