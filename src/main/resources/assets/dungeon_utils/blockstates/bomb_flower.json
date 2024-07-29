@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "is_grown=true": {
+            "model": "dungeon_utils:block/bomb_flower"
+        },
+        "is_grown=false": {
+            "model": "dungeon_utils:block/bomb_flower"
+        }
+    }
+}
