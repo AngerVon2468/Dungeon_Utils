@@ -39,6 +39,7 @@ public class DungeonUtilsClient implements ClientModInitializer {
         DungeonUtilsClient.registerModelPredicates();
 
         BlockRenderLayerMap.INSTANCE.putBlock(DungeonUtilsBlocks.CLOVER_PATCH, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(DungeonUtilsBlocks.BOMB_FLOWER, RenderLayer.getCutout());
     }
 
     public static void registerTrinketRenderers() {

@@ -81,6 +81,22 @@ public class BombEntity extends ProjectileEntity {
         super.onCollision(hitResult);
 
         if (!world.isClient()) {
+
+            switch (hitResult.getType()) {
+
+                case BLOCK:
+
+                    break;
+
+                case ENTITY:
+
+                    break;
+
+                case MISS:
+
+                    break;
+
+            }
             world.createExplosion(this, this.getX(), this.getY(), this.getZ(), 1, World.ExplosionSourceType.MOB);
             this.discard();
         }
