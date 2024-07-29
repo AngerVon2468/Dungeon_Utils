@@ -7,7 +7,7 @@ import net.minecraft.registry.*;
 import net.minecraft.util.Identifier;
 
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils;
-import org.hyrulecraft.dungeon_utils.environment.common.block.blocktype.blockentity.PedestalBlockEntity;
+import org.hyrulecraft.dungeon_utils.environment.common.block.blocktype.blockentity.*;
 
 public class DungeonUtilsBlockEntities {
 
@@ -15,6 +15,12 @@ public class DungeonUtilsBlockEntities {
             RegistryTypes.BLOCK_ENTITY,
             new Identifier(DungeonUtils.MOD_ID, "pedestal_block_entity"),
             FabricBlockEntityTypeBuilder.create(PedestalBlockEntity::new, DungeonUtilsBlocks.PEDESTAL_BLOCK).build()
+    );
+
+    public static final BlockEntityType<BombFlowerBlockEntity> BOMB_FLOWER_BLOCK_ENTITY = Registry.register(
+            RegistryTypes.BLOCK_ENTITY,
+            new Identifier(DungeonUtils.MOD_ID, "bomb_flower_block_entity"),
+            FabricBlockEntityTypeBuilder.create(BombFlowerBlockEntity::new, DungeonUtilsBlocks.BOMB_FLOWER).build()
     );
 
     public static void registerDungeonUtilsBlockEntities() {
