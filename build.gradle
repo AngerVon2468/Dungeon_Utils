@@ -34,6 +34,24 @@ repositories {
     maven { url = "https://jitpack.io" }
 }
 
+/**
+ *
+ * Mods in .jar form:
+ * amendments-1.20-1.2.8-fabric.jar
+ * appleskin-fabric-mc1.20.1-2.5.1.jar
+ * authme-7.0.2+1.20.jar
+ * bobby-5.0.1.jar
+ * e4mc_minecraft-5.1.0.jar
+ * embeddium-fabric-0.3.25+mc1.20.1.jar
+ * entity_model_features_fabric_1.20.1-2.1.3.jar
+ * entity_texture_features_fabric_1.20.1-6.1.3.jar
+ * iris-1.7.2+mc1.20.1.jar
+ * moonlight-1.20-2.12.9-fabric.jar
+ * nvidium-0.2.6-beta.jar
+ * supplementaries-1.20-2.8.17-fabric.jar
+ * suppsquared-1.20-1.1.14-fabric.jar
+ *
+ */
 dependencies {
     // To change the versions see the gradle.properties file
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
@@ -93,7 +111,6 @@ dependencies {
     include "curse.maven:cosmetic-lib-1019553:5429299"
 
     modImplementation "curse.maven:better-third-person-435044:4596636"
-    modImplementation "curse.maven:embeddium-908741:5410231"
     modImplementation "curse.maven:jade-324717:5339230"
     modImplementation "curse.maven:jei-238222:5419573"
 
