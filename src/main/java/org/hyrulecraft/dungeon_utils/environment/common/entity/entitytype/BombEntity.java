@@ -2,6 +2,7 @@ package org.hyrulecraft.dungeon_utils.environment.common.entity.entitytype;
 
 import net.minecraft.block.*;
 import net.minecraft.block.entity.*;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.*;
@@ -94,6 +95,8 @@ public class BombEntity extends ProjectileEntity {
         if (!this.world.isClient() && !this.isFromBombFlower) {
             this.world.createExplosion(this, this.getX(), this.getY(), this.getZ(), 1, World.ExplosionSourceType.MOB);
             this.discard();
+        } else {
+            this.setVelocity(Vec3d.ZERO);
         }
     }
 
@@ -102,15 +105,17 @@ public class BombEntity extends ProjectileEntity {
         if (playerEntity.isSneaking() && !this.world.isClient() && this.isFromBombFlower) {
             BlockState state = this.world.getBlockState(this.getBlockPos());
             if (state.getBlock() instanceof BombFlowerBlock block && block.blockEntity != null) {
-                if (state.get(BombFlowerBlock.IS_GROWN)) {
-                    world.setBlockState(this.getBlockPos(), state.with(BombFlowerBlock.IS_GROWN, false));
-                    block.blockEntity.beforeGrown = true;
-                    block.blockEntity.growth = 0;
-                }
+                block.blockEntity.beforeGrown = true;
+                block.blockEntity.growth = 0;
             }
             this.discard();
             playerEntity.giveItemStack(DungeonUtilsItems.BOMB.getDefaultStack());
         }
         return ActionResult.SUCCESS;
+    }
+
+    @Override
+    public boolean canHit() {
+        return true;
     }
 }

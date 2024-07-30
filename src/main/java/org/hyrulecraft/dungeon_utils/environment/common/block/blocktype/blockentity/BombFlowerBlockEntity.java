@@ -54,7 +54,7 @@ public class BombFlowerBlockEntity extends BlockEntity {
     public void serverTick(World world, BlockPos pos, BlockState state, BombFlowerBlockEntity blockEntity) {
         if (this.growth < (20 * 7) && this.beforeGrown) {
             this.growth++;
-        } else if (this.beforeGrown) {
+        } else if (this.beforeGrown && this.growth == (20 * 7)) {
             world.setBlockState(pos, state.with(BombFlowerBlock.IS_GROWN, true));
             this.beforeGrown = false;
         }
