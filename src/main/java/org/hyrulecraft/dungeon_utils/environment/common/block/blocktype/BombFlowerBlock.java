@@ -39,7 +39,7 @@ public class BombFlowerBlock extends BlockWithEntity {
             player.sendMessage(Text.literal("Growth: " + this.blockEntity.growth));
             if (state.get(IS_GROWN)) {
                 world.setBlockState(pos, state.with(IS_GROWN, false));
-                BombEntity bombEntity = BombEntity.create(world);
+                BombEntity bombEntity = BombEntity.create(world, true);
                 bombEntity.refreshPositionAfterTeleport(Vec3d.ofCenter(pos).offset(Direction.DOWN, 0.45));
                 world.spawnEntity(bombEntity);
             }

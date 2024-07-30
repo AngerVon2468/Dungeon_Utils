@@ -18,26 +18,26 @@ public class BombFlowerBlockEntity extends BlockEntity {
 
     public int growth;
 
-    public boolean antiLag;
+    public boolean beforeGrown;
 
     public BombFlowerBlockEntity(BlockPos pos, BlockState state) {
         super(DungeonUtilsBlockEntities.BOMB_FLOWER_BLOCK_ENTITY, pos, state);
         this.growth = 0;
-        this.antiLag = false;
+        this.beforeGrown = true;
     }
 
     @Override
     protected void writeNbt(@NotNull NbtCompound nbt) {
         super.writeNbt(nbt);
         nbt.putInt("growth", this.growth);
-        nbt.putBoolean("anti_lag", this.antiLag);
+        nbt.putBoolean("before_grown", this.beforeGrown);
     }
 
     @Override
     public void readNbt(@NotNull NbtCompound nbt) {
         super.readNbt(nbt);
         this.growth = nbt.getInt("growth");
-        this.antiLag = nbt.getBoolean("anti_lag");
+        this.beforeGrown = nbt.getBoolean("before_grown");
     }
 
     @Nullable
@@ -52,11 +52,11 @@ public class BombFlowerBlockEntity extends BlockEntity {
     }
 
     public void serverTick(World world, BlockPos pos, BlockState state, BombFlowerBlockEntity blockEntity) {
-        if (this.growth < (20 * 7)) {
+        if (this.growth < (20 * 7) && this.beforeGrown) {
             this.growth++;
-        } else if (!this.antiLag) {
+        } else if (this.beforeGrown) {
             world.setBlockState(pos, state.with(BombFlowerBlock.IS_GROWN, true));
-            this.antiLag = true;
+            this.beforeGrown = false;
         }
     }
 }

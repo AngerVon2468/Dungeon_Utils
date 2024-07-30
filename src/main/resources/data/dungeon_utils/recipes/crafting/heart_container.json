@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa ",
+    "aa ",
+    "   "
+  ],
+  "key": {
+    "a": {
+      "item": "dungeon_utils:heart_piece"
+    }
+  },
+  "result": {
+    "item": "dungeon_utils:heart_container",
+    "count": 1
+  }
+}

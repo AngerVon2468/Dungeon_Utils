@@ -6,7 +6,6 @@ import net.minecraft.util.*;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
-import org.hyrulecraft.dungeon_utils.environment.common.entity.DungeonUtilsEntities;
 import org.hyrulecraft.dungeon_utils.environment.common.entity.entitytype.BombEntity;
 
 import org.jetbrains.annotations.NotNull;
@@ -23,7 +22,7 @@ public class BombItem extends Item {
 
         if (!world.isClient()) {
 
-            BombEntity bombEntity = DungeonUtilsEntities.BOMB.create(world);
+            BombEntity bombEntity = BombEntity.create(world, false);
             bombEntity.setOwner(user);
             bombEntity.setPosition(user.getX(), user.getY() + user.getEyeHeight(user.getPose()), user.getZ());
             Vec3d playerFacing = user.getRotationVector();
