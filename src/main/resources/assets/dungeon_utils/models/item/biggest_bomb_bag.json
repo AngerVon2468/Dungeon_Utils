@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "dungeon_utils:item/biggest_bomb_bag"
+  }
+}
