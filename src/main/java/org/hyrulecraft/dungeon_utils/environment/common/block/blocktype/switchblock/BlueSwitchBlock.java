@@ -128,6 +128,13 @@ public class BlueSwitchBlock extends HorizontalFacingBlock {
     protected void updateNeighbors(@NotNull World world, BlockPos pos) {
         world.updateNeighborsAlways(pos, this);
         world.updateNeighborsAlways(pos.down(), this);
+        world.updateNeighborsAlways(pos.down().down(), this);
+    }
+
+    @Override
+    public void onBreak(World world, BlockPos blockPos, BlockState blockState, PlayerEntity playerEntity) {
+        super.onBreak(world, blockPos, blockState, playerEntity);
+        this.updateNeighbors(world, blockPos);
     }
 
     @Override
@@ -187,6 +194,7 @@ public class BlueSwitchBlock extends HorizontalFacingBlock {
     }
 
     protected static final Box BOX = new Box(0.0625, 0.0, 0.0625, 0.9375, 0.7, 0.9375);
+
     protected int getRedstoneOutput(World world, BlockPos pos) {
         Class<Entity> entityClass = Entity.class;
         return getEntityCount(world, BOX.offset(pos), entityClass) > 0 ? 15 : 0;

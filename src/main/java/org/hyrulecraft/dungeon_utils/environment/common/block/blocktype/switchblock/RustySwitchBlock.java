@@ -105,6 +105,12 @@ public class RustySwitchBlock extends HorizontalFacingBlock {
     }
 
     @Override
+    public void onBreak(World world, BlockPos blockPos, BlockState blockState, PlayerEntity playerEntity) {
+        super.onBreak(world, blockPos, blockState, playerEntity);
+        this.updateNeighbors(world, blockPos);
+    }
+
+    @Override
     @SuppressWarnings("deprecation")
     public int getWeakRedstonePower(@NotNull BlockState state, BlockView world, BlockPos pos, Direction direction) {
         return state.get(IS_STEPPED_ON) ? 15 : 0;
@@ -125,5 +131,6 @@ public class RustySwitchBlock extends HorizontalFacingBlock {
     protected void updateNeighbors(@NotNull World world, BlockPos pos) {
         world.updateNeighborsAlways(pos, this);
         world.updateNeighborsAlways(pos.down(), this);
+        world.updateNeighborsAlways(pos.down().down(), this);
     }
 }

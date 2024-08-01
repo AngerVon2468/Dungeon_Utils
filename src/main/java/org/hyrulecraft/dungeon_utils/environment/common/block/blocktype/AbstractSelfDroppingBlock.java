@@ -13,9 +13,9 @@ public abstract class AbstractSelfDroppingBlock extends Block {
     }
 
     @Override
-    public void onBreak(World world, BlockPos blockPos, BlockState blockState, PlayerEntity playerEntity) {
-        super.onBreak(world, blockPos, blockState, playerEntity);
-        if (!world.isClient()) {
+    public void onBreak(World world, BlockPos blockPos, BlockState blockState, PlayerEntity player) {
+        super.onBreak(world, blockPos, blockState, player);
+        if (!world.isClient() && !player.isCreative()) {
             ItemEntity itemEntity = new ItemEntity(world, blockPos.getX(), blockPos.getY(), blockPos.getZ(), this.asItem().getDefaultStack());
             world.spawnEntity(itemEntity);
         }
