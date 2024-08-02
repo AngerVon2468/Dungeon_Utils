@@ -2,7 +2,7 @@
 	"credit": "By Boko Bro",
 	"textures": {
 		"5": "dungeon_utils:block/godtribe/ancient_godtribe_stone_polished",
-		"particle": "dungeon_utils:block/godtribe/ancient_godtribe_stone_polished"
+		"particle": "dungeon_utils:block/godtribe/polished_godtribe_stone_polished"
 	},
 	"elements": [
 		{

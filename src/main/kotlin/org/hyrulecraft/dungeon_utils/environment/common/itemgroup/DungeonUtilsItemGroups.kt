@@ -238,31 +238,44 @@ class DungeonUtilsItemGroups {
             RegistryTypes.ITEM_GROUP, Identifier(MOD_ID, "blocks"),
             FabricItemGroup.builder().displayName(Text.translatable("tab.dungeon_utils.blocks"))
                 .icon { ItemStack(TRIFORCE_PATTERN_GODTRIBE_STONE) }.entries { displayContext, entries ->
-                    entries.add(TRIFORCE_PATTERN_GODTRIBE_STONE)
-                    entries.add(TRIFORCE_PATTERN_GODTRIBE_PILLAR)
-                    entries.add(SWIRL_PATTERN_GODTRIBE_PILLAR)
-                    entries.add(POLISHED_GODTRIBE_STONE)
-                    entries.add(GODTRIBE_BRICKS_PILLAR)
-                    entries.add(GODTRIBE_BRICKS)
-                    entries.add(CRACKED_GODTRIBE_PILLAR)
-                    entries.add(CHISELED_GODTRIBE_STONE)
-                    entries.add(CHISELED_GODTRIBE_PILLAR)
-                    entries.add(TILEABLE_GODTRIBE_PATTERN)
-                    entries.add(GODTRIBE_PILLAR)
                     entries.add(GODTRIBE_STONE)
-                    entries.add(BOMB_FLOWER)
-                    entries.add(CLOVER_PATCH)
+                    entries.add(POLISHED_GODTRIBE_STONE)
+                    entries.add(TRIFORCE_PATTERN_GODTRIBE_STONE)
+                    entries.add(GODTRIBE_PILLAR)
+                    entries.add(CHISELED_GODTRIBE_PILLAR)
+                    entries.add(CRACKED_GODTRIBE_PILLAR)
+                    entries.add(SWIRL_PATTERN_GODTRIBE_PILLAR)
+                    entries.add(TRIFORCE_PATTERN_GODTRIBE_PILLAR)
+                    entries.add(GODTRIBE_BRICKS)
+                    entries.add(GODTRIBE_BRICKS_PILLAR)
+                    entries.add(TILEABLE_GODTRIBE_PATTERN)
                     entries.add(FLESHY_BONE_PILE)
                     entries.add(DIRT_BONE_PILE)
                     entries.add(STONE_BONE_PILE)
                     entries.add(BONE_PILE)
                     entries.add(MALICE)
+                }.build()
+        )
+
+        val FOLIAGE: ItemGroup = Registry.register(
+            RegistryTypes.ITEM_GROUP, Identifier(MOD_ID, "foliage"),
+            FabricItemGroup.builder().displayName(Text.translatable("tab.dungeon_utils.foliage"))
+                .icon { ItemStack(CLOVER_PATCH) }.entries { displayContext, entries ->
+                    entries.add(BOMB_FLOWER)
+                    entries.add(CLOVER_PATCH)
+                }.build()
+        );
+
+        val FUNCTIONAL_BLOCKS: ItemGroup = Registry.register(
+            RegistryTypes.ITEM_GROUP, Identifier(MOD_ID, "functional_blocks"),
+            FabricItemGroup.builder().displayName(Text.translatable("tab.dungeon_utils.functional_blocks"))
+                .icon { ItemStack(YELLOW_SWITCH_BLOCK) }.entries { displayContext, entries ->
                     entries.add(PEDESTAL_BLOCK)
                     entries.add(BLUE_SWITCH_BLOCK)
                     entries.add(RUSTY_SWITCH_BLOCK)
                     entries.add(YELLOW_SWITCH_BLOCK)
                 }.build()
-        )
+        );
 
         val MASKS: ItemGroup = Registry.register(
             RegistryTypes.ITEM_GROUP, Identifier(MOD_ID, "masks"),
