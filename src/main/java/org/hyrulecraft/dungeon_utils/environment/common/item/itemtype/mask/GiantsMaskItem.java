@@ -5,7 +5,20 @@ import net.minecraft.world.World;
 
 import virtuoel.pehkui.api.*;
 
+import org.jetbrains.annotations.*;
+
 public class GiantsMaskItem extends AbstractMaskItem {
+
+    @Override
+    public boolean canBeEquip(@Nullable PlayerEntity player) {
+        return player != null && player.getMana() > 0;
+    }
+
+    @Override
+    public void equipTick(World world, @NotNull PlayerEntity player) {
+        super.equipTick(world, player);
+        player.removeMana(1);
+    }
 
     @Override
     public void onEquip(World world, PlayerEntity player) {

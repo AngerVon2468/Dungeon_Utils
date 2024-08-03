@@ -1,6 +1,7 @@
 package org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.mask;
 
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
@@ -14,7 +15,20 @@ import java.util.List;
 
 public abstract class AbstractMaskItem extends Item implements Equipment {
 
+    public void unequipAndSwap(@NotNull PlayerEntity playerEntity) {
+        EquipmentSlot equipmentSlot = EquipmentSlot.HEAD;
+        ItemStack equippedStack = playerEntity.getEquippedStack(equipmentSlot);
+        if (!EnchantmentHelper.hasBindingCurse(equippedStack)) {
+            ItemStack itemStack3 = equippedStack.copyAndEmpty();
+            playerEntity.giveItemStack(itemStack3);
+        }
+    }
+
     public boolean isEquip = false;
+
+    public boolean canBeEquip(@Nullable PlayerEntity player) {
+        return true;
+    }
 
     public AbstractMaskItem(Settings settings) {
         super(settings);
@@ -34,6 +48,10 @@ public abstract class AbstractMaskItem extends Item implements Equipment {
     }
 
     public void equipTick(World world, PlayerEntity player) {
+        if (!this.canBeEquip(player)) {
+            this.unequipAndSwap(player);
+            this.onUnequip(world, player);
+        }
     }
 
     public void unEquipTick(World world, PlayerEntity player) {
@@ -41,7 +59,7 @@ public abstract class AbstractMaskItem extends Item implements Equipment {
 
     @Override
     public TypedActionResult<ItemStack> use(@NotNull World world, @NotNull PlayerEntity player, Hand hand) {
-        if (!world.isClient() && !this.isEquip && !player.getEquippedStack(EquipmentSlot.HEAD).isOf(this)) {
+        if (!world.isClient() && !this.isEquip && !player.getEquippedStack(EquipmentSlot.HEAD).isOf(this) && this.canBeEquip(player)) {
             this.onEquip(world, player);
             return this.equipAndSwap(this, world, player, hand);
         } else {
@@ -56,7 +74,7 @@ public abstract class AbstractMaskItem extends Item implements Equipment {
             if (this.isEquip && !player.getEquippedStack(EquipmentSlot.HEAD).isOf(this)) {
                 this.onUnequip(world, player);
             }
-            if (!this.isEquip && player.getEquippedStack(EquipmentSlot.HEAD).isOf(this)) {
+            if (!this.isEquip && player.getEquippedStack(EquipmentSlot.HEAD).isOf(this) && this.canBeEquip(player)) {
                 this.onEquip(world, player);
             }
             if (this.isEquip && player.getEquippedStack(EquipmentSlot.HEAD).isOf(this)) {

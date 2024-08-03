@@ -1,13 +1,17 @@
 package org.hyrulecraft.dungeon_utils.util.command;
 
+import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.zigythebird.playeranimatorapi.API.PlayerAnimAPI;
 
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.command.argument.EntityArgumentType;
+import net.minecraft.command.argument.ItemStackArgumentType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.CommandManager;
+import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.*;
 import net.minecraft.util.Identifier;
@@ -36,6 +40,58 @@ public class DungeonUtilsCommands {
                             }
 
                 })
+        ));
+    }
+
+    public static void addMana() {
+        CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> dispatcher.register(CommandManager.literal("addMana")
+                .executes(context -> {
+
+                    return -1;
+
+                }).then(CommandManager.argument("amount", IntegerArgumentType.integer())
+                        .executes((context) -> {
+                            if (context.getSource().isExecutedByPlayer()) {
+
+                                int amount = IntegerArgumentType.getInteger(context, "amount");
+                                context.getSource().getPlayer().addMana(amount);
+                                return 1;
+
+                            } else {
+
+                                context.getSource().sendFeedback(() -> Text.literal("Command was run by an non-player source."), true);
+                                DungeonUtils.LOGGER.error("Command was run by an non-player source.");
+                                return -1;
+
+                            }
+                        }
+                ))
+        ));
+    }
+
+    public static void setMana() {
+        CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> dispatcher.register(CommandManager.literal("setMana")
+                .executes(context -> {
+
+                    return -1;
+
+                }).then(CommandManager.argument("amount", IntegerArgumentType.integer())
+                        .executes((context) -> {
+                                    if (context.getSource().isExecutedByPlayer()) {
+
+                                        int amount = IntegerArgumentType.getInteger(context, "amount");
+                                        context.getSource().getPlayer().setMana(amount);
+                                        return 1;
+
+                                    } else {
+
+                                        context.getSource().sendFeedback(() -> Text.literal("Command was run by an non-player source."), true);
+                                        DungeonUtils.LOGGER.error("Command was run by an non-player source.");
+                                        return -1;
+
+                                    }
+                                }
+                        ))
         ));
     }
 
