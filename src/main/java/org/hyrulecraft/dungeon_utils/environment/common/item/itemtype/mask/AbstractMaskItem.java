@@ -8,13 +8,13 @@ import net.minecraft.text.Text;
 import net.minecraft.util.*;
 import net.minecraft.world.World;
 
-import org.hyrulecraft.dungeon_utils.util.IEquipmentUtil;
+import org.hyrulecraft.dungeon_utils.util.IMaskUtil;
 
 import org.jetbrains.annotations.*;
 
 import java.util.List;
 
-public abstract class AbstractMaskItem extends Item implements IEquipmentUtil {
+public abstract class AbstractMaskItem extends Item implements IMaskUtil {
 
     public boolean isEquip = false;
 
@@ -53,7 +53,7 @@ public abstract class AbstractMaskItem extends Item implements IEquipmentUtil {
     public TypedActionResult<ItemStack> use(@NotNull World world, @NotNull PlayerEntity player, Hand hand) {
         if (!world.isClient() && !this.isEquip && !player.getEquippedStack(EquipmentSlot.HEAD).isOf(this) && this.canBeEquip(player)) {
             this.onEquip(world, player);
-            return this.equipAndSwap(this, world, player, hand);
+            return this.equipAndSwap(this, world, player);
         } else {
             return TypedActionResult.fail(player.getMainHandStack());
         }
