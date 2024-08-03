@@ -1,11 +1,18 @@
 {
-  "type": "minecraft:stonecutting",
+  "type": "minecraft:crafting_shaped",
   "category": "building",
-  "ingredient": {
-    "item": "dungeon_utils:godtribe_stone"
+  "pattern": [
+    "##",
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "dungeon_utils:godtribe_stone"
+    }
   },
   "result": {
     "id": "dungeon_utils:godtribe_pillar",
-    "count": 1
+    "count": 6
   }
 }

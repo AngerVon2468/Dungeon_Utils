@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:stonecutting",
+  "category": "building",
+  "ingredient": [
+    {
+      "item": "dungeon_utils:godtribe_stone"
+    },
+    {
+      "item": "dungeon_utils:polished_godtribe_stone"
+    },
+    {
+      "item": "dungeon_utils:cracked_godtribe_pillar"
+    },
+    {
+      "item": "dungeon_utils:godtribe_bricks"
+    },
+    {
+      "item": "dungeon_utils:godtribe_bricks_pillar"
+    },
+    {
+      "item": "dungeon_utils:godtribe_pillar"
+    }
+  ],
+  "result": "dungeon_utils:tileable_godtribe_pattern",
+  "count": 1
+}

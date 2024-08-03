@@ -32,15 +32,6 @@ public class CloverPatchBlock extends Block {
     @Override
     @SuppressWarnings("deprecation")
     public VoxelShape getOutlineShape(BlockState blockState, BlockView blockView, BlockPos blockPos, ShapeContext shapeContext) {
-        return Stream.of(
-                Block.createCuboidShape(0, 5, 0, 16, 5.01, 16),
-                Block.createCuboidShape(0, 4.5, 0, 16, 4.51, 16),
-                Block.createCuboidShape(0, 4, 0, 16, 4.01, 16),
-                Block.createCuboidShape(0, 3.5, 0, 16, 3.51, 16),
-                Block.createCuboidShape(-0.5, 0, 2, 15.5, 4, 2.01),
-                Block.createCuboidShape(0.5, 0, 14, 16.5, 4, 14.01),
-                Block.createCuboidShape(2, 0, -0.5, 2.01, 4, 15.5),
-                Block.createCuboidShape(14, 0, -0.5, 14.01, 4, 15.5)
-        ).reduce((v1, v2) -> VoxelShapes.combineAndSimplify(v1, v2, BooleanBiFunction.OR)).get();
+        return Block.createCuboidShape(0, 0, 0, 16, 5.01, 16);
     }
 }

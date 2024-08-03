@@ -1,1 +1,17 @@
-NO!
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "dungeon_utils:godtribe_stone"
+    }
+  },
+  "result": {
+    "id": "dungeon_utils:polished_godtribe_stone",
+    "count": 4
+  }
+}
