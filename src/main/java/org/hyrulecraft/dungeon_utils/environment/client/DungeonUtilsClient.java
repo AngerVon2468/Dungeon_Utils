@@ -4,6 +4,7 @@ import dev.emi.trinkets.api.client.*;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.render.fluid.v1.*;
 import net.fabricmc.fabric.api.client.rendering.v1.*;
 
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
@@ -18,6 +19,7 @@ import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils;
 import org.hyrulecraft.dungeon_utils.environment.common.block.*;
 import org.hyrulecraft.dungeon_utils.environment.common.entity.DungeonUtilsEntities;
 import org.hyrulecraft.dungeon_utils.environment.client.entity.renderer.*;
+import org.hyrulecraft.dungeon_utils.environment.common.fluid.DungeonUtilsFluids;
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems;
 import org.hyrulecraft.dungeon_utils.util.UtilCollector;
 
@@ -39,7 +41,16 @@ public class DungeonUtilsClient implements ClientModInitializer {
         DungeonUtilsClient.registerModelPredicates();
 
         BlockRenderLayerMap.INSTANCE.putBlock(DungeonUtilsBlocks.CLOVER_PATCH, RenderLayer.getCutout());
+
         BlockRenderLayerMap.INSTANCE.putBlock(DungeonUtilsBlocks.BOMB_FLOWER, RenderLayer.getCutout());
+
+        BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
+                DungeonUtilsFluids.STILL_SPRING_WATER,
+                DungeonUtilsFluids.FLOWING_SPRING_WATER
+        );
+
+        FluidRenderHandlerRegistry.INSTANCE.register(DungeonUtilsFluids.STILL_SPRING_WATER, DungeonUtilsFluids.FLOWING_SPRING_WATER,
+                SimpleFluidRenderHandler.coloredWater(0x00e7ff));
     }
 
     public static void registerTrinketRenderers() {

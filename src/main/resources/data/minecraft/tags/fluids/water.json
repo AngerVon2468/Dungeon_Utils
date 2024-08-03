@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "dungeon_utils:flowing_spring_water",
+    "dungeon_utils:spring_water"
+  ]
+}
