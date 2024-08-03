@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "##",
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "dungeon_utils:godtribe_bricks"
+    }
+  },
+  "result": {
+    "id": "dungeon_utils:godtribe_bricks_pillar",
+    "count": 6
+  }
+}

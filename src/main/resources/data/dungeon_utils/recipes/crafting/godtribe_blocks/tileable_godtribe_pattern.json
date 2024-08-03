@@ -2,17 +2,17 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "pattern": [
-    "###",
+    " # ",
     "# #",
-    "###"
+    " # "
   ],
   "key": {
     "#": {
-      "item": "minecraft:chiseled_stone_bricks"
+      "item": "dungeon_utils:godtribe_stone"
     }
   },
   "result": {
-    "id": "dungeon_utils:godtribe_stone",
-    "count": 8
+    "id": "dungeon_utils:tileable_godtribe_pattern",
+    "count": 9
   }
 }

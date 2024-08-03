@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:stonecutting",
+  "category": "building",
+  "ingredient": {
+    "item": "dungeon_utils:godtribe_stone"
+  },
+  "result": "dungeon_utils:chiseled_godtribe_pillar",
+  "count": 1
+}

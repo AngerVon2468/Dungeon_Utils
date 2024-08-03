@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "dungeon_utils:cracked_godtribe_pillar"
+  },
+  "result": "minecraft:acacia_saplingdungeon_utils:cracked_godtribe_pillar"
+}

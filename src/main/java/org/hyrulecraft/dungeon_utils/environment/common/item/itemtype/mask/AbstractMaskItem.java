@@ -63,6 +63,12 @@ public abstract class AbstractMaskItem extends Item implements IEquipmentUtil {
     public void inventoryTick(ItemStack itemStack, World world, Entity entity, int i, boolean bl) {
         super.inventoryTick(itemStack, world, entity, i, bl);
         if (entity instanceof PlayerEntity player && !world.isClient()) {
+
+            if (!this.canBeEquip(player) && player.getEquippedStack(EquipmentSlot.HEAD).isOf(this)) {
+                this.unequipAndSwap(player);
+                this.onUnequip(world, player);
+            }
+
             if (this.isEquip && !player.getEquippedStack(EquipmentSlot.HEAD).isOf(this)) {
                 this.onUnequip(world, player);
             }
