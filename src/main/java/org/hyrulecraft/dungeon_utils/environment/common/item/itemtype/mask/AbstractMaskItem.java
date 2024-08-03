@@ -1,7 +1,6 @@
 package org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.mask;
 
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
@@ -9,20 +8,13 @@ import net.minecraft.text.Text;
 import net.minecraft.util.*;
 import net.minecraft.world.World;
 
+import org.hyrulecraft.dungeon_utils.util.IEquipmentUtil;
+
 import org.jetbrains.annotations.*;
 
 import java.util.List;
 
-public abstract class AbstractMaskItem extends Item implements Equipment {
-
-    public void unequipAndSwap(@NotNull PlayerEntity playerEntity) {
-        EquipmentSlot equipmentSlot = EquipmentSlot.HEAD;
-        ItemStack equippedStack = playerEntity.getEquippedStack(equipmentSlot);
-        if (!EnchantmentHelper.hasBindingCurse(equippedStack)) {
-            ItemStack itemStack3 = equippedStack.copyAndEmpty();
-            playerEntity.giveItemStack(itemStack3);
-        }
-    }
+public abstract class AbstractMaskItem extends Item implements IEquipmentUtil {
 
     public boolean isEquip = false;
 
