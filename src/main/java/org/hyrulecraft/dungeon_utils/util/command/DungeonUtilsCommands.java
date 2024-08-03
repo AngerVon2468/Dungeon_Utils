@@ -40,6 +40,7 @@ public class DungeonUtilsCommands {
         ));
     }
 
+    /*
     public static void addMana() {
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> dispatcher.register(CommandManager.literal("addMana")
                 .executes(context -> {
@@ -91,6 +92,7 @@ public class DungeonUtilsCommands {
                         ))
         ));
     }
+    */
 
     public static void kys() {
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> dispatcher.register(CommandManager.literal("kys")

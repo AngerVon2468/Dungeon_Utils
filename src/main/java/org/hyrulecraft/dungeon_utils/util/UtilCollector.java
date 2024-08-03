@@ -22,8 +22,6 @@ public class UtilCollector {
         DungeonUtilsCommands.hcDiscord();
         if (FabricLoader.getInstance().isDevelopmentEnvironment()) {
             DungeonUtilsCommands.wiiu();
-            DungeonUtilsCommands.addMana();
-            DungeonUtilsCommands.setMana();
         }
         DungeonUtilsCommands.showoff();
     }

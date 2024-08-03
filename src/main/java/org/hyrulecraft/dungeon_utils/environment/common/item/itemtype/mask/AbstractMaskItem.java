@@ -46,7 +46,7 @@ public abstract class AbstractMaskItem extends Item implements IEquipmentUtil {
         }
     }
 
-    public void unEquipTick(World world, PlayerEntity player) {
+    public void unequipTick(World world, PlayerEntity player) {
     }
 
     @Override
@@ -73,7 +73,7 @@ public abstract class AbstractMaskItem extends Item implements IEquipmentUtil {
                 this.equipTick(world, player);
             }
             if (!this.isEquip && !player.getEquippedStack(EquipmentSlot.HEAD).isOf(this)) {
-                this.unEquipTick(world, player);
+                this.unequipTick(world, player);
             }
         }
     }
