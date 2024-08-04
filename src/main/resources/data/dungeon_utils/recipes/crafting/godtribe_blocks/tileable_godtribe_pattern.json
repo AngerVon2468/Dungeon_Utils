@@ -12,7 +12,7 @@
     }
   },
   "result": {
-    "id": "dungeon_utils:tileable_godtribe_pattern",
+    "item": "dungeon_utils:tileable_godtribe_pattern",
     "count": 4
   }
 }

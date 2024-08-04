@@ -11,7 +11,7 @@
     }
   },
   "result": {
-    "id": "dungeon_utils:chiseled_godtribe_pillar",
+    "item": "dungeon_utils:chiseled_godtribe_pillar",
     "count": 4
   }
 }

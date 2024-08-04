@@ -12,7 +12,7 @@
     }
   },
   "result": {
-    "id": "dungeon_utils:godtribe_bricks",
+    "item": "dungeon_utils:godtribe_bricks",
     "count": 9
   }
 }

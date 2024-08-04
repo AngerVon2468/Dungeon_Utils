@@ -15,7 +15,7 @@
     }
   },
   "result": {
-    "id": "dungeon_utils:triforce_pattern_godtribe_pillar",
+    "item": "dungeon_utils:triforce_pattern_godtribe_pillar",
     "count": 8
   }
 }
