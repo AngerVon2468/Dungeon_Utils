@@ -43,6 +43,5 @@ public class DungeonUtils implements ModInitializer {
 
         // Config.
         MidnightConfig.init(DungeonUtils.MOD_ID, DungeonUtilsConfig.class);
-        DungeonUtilsSecondaryConfig.genConfig();
     }
 }

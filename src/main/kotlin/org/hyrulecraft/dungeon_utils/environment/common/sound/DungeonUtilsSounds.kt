@@ -35,7 +35,7 @@ class DungeonUtilsSounds {
         @JvmField val KASS_ONE = register("kass_one")
 
         @JvmStatic
-        fun register(id: String?): Sound? {
+        fun register(id: String): Sound {
             val sound = Sound.of(Identifier(MOD_ID, id))
             return Registry.register(RegistryTypes.SOUND, Identifier(MOD_ID, id), sound)
         }

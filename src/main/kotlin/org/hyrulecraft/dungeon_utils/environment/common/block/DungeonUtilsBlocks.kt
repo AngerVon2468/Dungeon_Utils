@@ -16,11 +16,12 @@ import org.hyrulecraft.dungeon_utils.environment.common.block.blocktype.switchbl
 
 object DungeonUtilsBlocks {
 
-    private fun registerBlock(name: String?, block: Block?): Block? { registerBlockItem(name, block)
+    private fun registerBlock(name: String, block: Block): Block {
+        this.registerBlockItem(name, block)
         return Registry.register(RegistryTypes.BLOCK, Identifier(DungeonUtils.MOD_ID, name), block)
     }
 
-    private fun registerBlockItem(name: String?, block: Block?): Item {
+    private fun registerBlockItem(name: String, block: Block): Item {
         return Registry.register(RegistryTypes.ITEM, Identifier(DungeonUtils.MOD_ID, name),
             BlockItem(block, FabricItemSettings().maxCount(64)))
     }
