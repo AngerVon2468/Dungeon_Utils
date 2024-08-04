@@ -20,14 +20,28 @@ public class DungeonUtilsFluids {
     public static final FlowableFluid STILL_SPRING_WATER = Registry.register(RegistryTypes.FLUID,
             new Identifier(DungeonUtils.MOD_ID, "spring_water"), new SpringWaterFluid.Still());
 
+    public static final FlowableFluid STILL_HOT_SPRING_WATER = Registry.register(RegistryTypes.FLUID,
+            new Identifier(DungeonUtils.MOD_ID, "hot_spring_water"), new HotSpringWaterFluid.Still());
+
     public static final FlowableFluid FLOWING_SPRING_WATER = Registry.register(RegistryTypes.FLUID,
             new Identifier(DungeonUtils.MOD_ID, "flowing_spring_water"), new SpringWaterFluid.Flowing());
+
+    public static final FlowableFluid FLOWING_HOT_SPRING_WATER = Registry.register(RegistryTypes.FLUID,
+            new Identifier(DungeonUtils.MOD_ID, "flowing_hot_spring_water"), new HotSpringWaterFluid.Flowing());
 
     public static final Block SPRING_WATER_BLOCK = Registry.register(RegistryTypes.BLOCK, new Identifier(DungeonUtils.MOD_ID,
             "spring_water_block"), new FluidBlock(DungeonUtilsFluids.STILL_SPRING_WATER, FabricBlockSettings.copyOf(Blocks.WATER)
             .replaceable().liquid()));
 
+    public static final Block HOT_SPRING_WATER_BLOCK = Registry.register(RegistryTypes.BLOCK, new Identifier(DungeonUtils.MOD_ID,
+            "hot_spring_water_block"), new FluidBlock(DungeonUtilsFluids.STILL_HOT_SPRING_WATER, FabricBlockSettings.copyOf(Blocks.WATER)
+            .replaceable().liquid()));
+
     public static final Item SPRING_WATER_BUCKET = Registry.register(RegistryTypes.ITEM, new Identifier(DungeonUtils.MOD_ID,
             "spring_water_bucket"), new BucketItem(DungeonUtilsFluids.STILL_SPRING_WATER,
+            new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1)));
+
+    public static final Item HOT_SPRING_WATER_BUCKET = Registry.register(RegistryTypes.ITEM, new Identifier(DungeonUtils.MOD_ID,
+            "hot_spring_water_bucket"), new BucketItem(DungeonUtilsFluids.STILL_HOT_SPRING_WATER,
             new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1)));
 }

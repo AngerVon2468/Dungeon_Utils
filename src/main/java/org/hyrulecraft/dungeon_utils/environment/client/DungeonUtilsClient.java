@@ -46,10 +46,15 @@ public class DungeonUtilsClient implements ClientModInitializer {
 
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
                 DungeonUtilsFluids.STILL_SPRING_WATER,
-                DungeonUtilsFluids.FLOWING_SPRING_WATER
+                DungeonUtilsFluids.STILL_HOT_SPRING_WATER,
+                DungeonUtilsFluids.FLOWING_SPRING_WATER,
+                DungeonUtilsFluids.FLOWING_HOT_SPRING_WATER
         );
 
         FluidRenderHandlerRegistry.INSTANCE.register(DungeonUtilsFluids.STILL_SPRING_WATER, DungeonUtilsFluids.FLOWING_SPRING_WATER,
+                SimpleFluidRenderHandler.coloredWater(0x00e7ff));
+
+        FluidRenderHandlerRegistry.INSTANCE.register(DungeonUtilsFluids.STILL_HOT_SPRING_WATER, DungeonUtilsFluids.FLOWING_HOT_SPRING_WATER,
                 SimpleFluidRenderHandler.coloredWater(0x00e7ff));
     }
 
