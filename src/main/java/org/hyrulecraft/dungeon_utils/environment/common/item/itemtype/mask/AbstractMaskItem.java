@@ -41,7 +41,7 @@ public abstract class AbstractMaskItem extends Item implements IMaskUtil {
 
     public void equipTick(World world, PlayerEntity player) {
         if (!this.canBeEquip(player)) {
-            this.unequipAndSwap(player);
+            this.unequipAndSwap(world, player);
             this.onUnequip(world, player);
         }
     }
@@ -65,7 +65,7 @@ public abstract class AbstractMaskItem extends Item implements IMaskUtil {
         if (entity instanceof PlayerEntity player && !world.isClient()) {
 
             if (!this.canBeEquip(player) && player.getEquippedStack(EquipmentSlot.HEAD).isOf(this)) {
-                this.unequipAndSwap(player);
+                this.unequipAndSwap(world, player);
                 this.onUnequip(world, player);
             }
 

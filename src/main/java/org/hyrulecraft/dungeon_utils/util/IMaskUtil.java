@@ -13,10 +13,10 @@ import org.jetbrains.annotations.NotNull;
 
 public interface IMaskUtil extends Equipment {
 
-    default void unequipAndSwap(@NotNull PlayerEntity playerEntity) {
+    default void unequipAndSwap(World world, @NotNull PlayerEntity playerEntity) {
         EquipmentSlot equipmentSlot = EquipmentSlot.HEAD;
         ItemStack equippedStack = playerEntity.getEquippedStack(equipmentSlot);
-        if (!EnchantmentHelper.hasBindingCurse(equippedStack)) {
+        if (!EnchantmentHelper.hasBindingCurse(equippedStack) && !world.isClient()) {
             ItemStack itemStack3 = equippedStack.copyAndEmpty();
             playerEntity.giveItemStack(itemStack3);
         }
@@ -26,10 +26,9 @@ public interface IMaskUtil extends Equipment {
         ItemStack mainHandStack = player.getMainHandStack();
         EquipmentSlot equipmentSlot = MobEntity.getPreferredEquipmentSlot(mainHandStack);
         ItemStack equippedStack = player.getEquippedStack(equipmentSlot);
-        if (!EnchantmentHelper.hasBindingCurse(equippedStack) && !ItemStack.areEqual(mainHandStack, equippedStack)) {
+        if (!EnchantmentHelper.hasBindingCurse(equippedStack) && !ItemStack.areEqual(mainHandStack, equippedStack) && !world.isClient()) {
 
-            if (!world.isClient()) player.incrementStat(Stats.USED.getOrCreateStat(item));
-
+            player.incrementStat(Stats.USED.getOrCreateStat(item));
             ItemStack itemStack3 = equippedStack.isEmpty() ? mainHandStack : equippedStack.copyAndEmpty();
             ItemStack itemStack4 = mainHandStack.copyAndEmpty();
             player.equipStack(equipmentSlot, itemStack4);
