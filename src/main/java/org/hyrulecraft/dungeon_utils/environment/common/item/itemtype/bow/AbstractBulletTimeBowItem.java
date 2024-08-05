@@ -1,7 +1,7 @@
 package org.hyrulecraft.dungeon_utils.environment.common.item.itemtype.bow;
 
 import net.minecraft.block.*;
-import net.minecraft.entity.*;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.util.math.*;
