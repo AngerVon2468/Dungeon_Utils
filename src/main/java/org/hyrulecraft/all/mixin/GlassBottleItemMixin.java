@@ -1,39 +1,44 @@
 package org.hyrulecraft.all.mixin;
 
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
+import net.minecraft.sound.*;
+import net.minecraft.util.*;
+import net.minecraft.util.hit.BlockHitResult;
+import net.minecraft.world.World;
 
-import org.jetbrains.annotations.*;
+import org.hyrulecraft.dungeon_utils.environment.common.fluid.DungeonUtilsFluids;
 
-import org.spongepowered.asm.mixin.*;
+import org.jetbrains.annotations.NotNull;
+
+import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.*;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(Items.class)
-public abstract class GlassBottleItemMixin {
+import com.llamalad7.mixinextras.sugar.Local;
 
-    @Contract("_ -> new")
-    @Redirect(
-            slice = @Slice(
-                    from = @At(
-                            value = "CONSTANT",
-                            args= {
-                                    "stringValue=glass_bottle"
-                            },
-                            ordinal = 0
-                    )
-            ),
-            at = @At(
-                    value = "NEW",
-                    target = "Lnet/minecraft/item/GlassBottleItem;",
-                    ordinal = 0
-            ),
-            method = "<clinit>")
-    private static @NotNull GlassBottleItem newBottle(Item.Settings settings) {
-        return glassBottleItem(settings);
-    }
+@Mixin(GlassBottleItem.class)
+public class GlassBottleItemMixin {
 
-    @Contract("_ -> new")
-    @Unique
-    private static @NotNull GlassBottleItem glassBottleItem(Item.@NotNull Settings settings) {
-        return new GlassBottleItem(settings.maxCount(1));
+    @Inject(method = "use", at = @At(value = "INVOKE", target = "Lnet/minecraft/fluid/FluidState;isIn(Lnet/minecraft/registry/tag/Tag;)Z"), cancellable = true)
+    public void use(@NotNull World world, PlayerEntity player, Hand hand, CallbackInfoReturnable<TypedActionResult<ItemStack>> cir, @Local @NotNull BlockHitResult hit) {
+        if (DungeonUtilsFluids.isStateOfSpringWater(world, hit.getBlockPos())) {
+
+            world.playSound(player, hit.getBlockPos(), Sounds.ITEM_BOTTLE_FILL, SoundCategories.BLOCKS, 1.0f, 1.0f);
+            player.getMainHandStack().decrement(1);
+            ItemStack milkBottleStack = DungeonUtilsFluids.SPRING_WATER_BOTTLE.getDefaultStack();
+            player.getInventory().insertStack(milkBottleStack);
+            cir.setReturnValue(TypedActionResult.success(player.getMainHandStack()));
+
+        }
+        if (DungeonUtilsFluids.isStateOfHotSpringWater(world, hit.getBlockPos())) {
+
+            world.playSound(player, hit.getBlockPos(), Sounds.ITEM_BOTTLE_FILL, SoundCategories.BLOCKS, 1.0f, 1.0f);
+            player.getMainHandStack().decrement(1);
+            ItemStack milkBottleStack = DungeonUtilsFluids.HOT_SPRING_WATER_BOTTLE.getDefaultStack();
+            player.getInventory().insertStack(milkBottleStack);
+            cir.setReturnValue(TypedActionResult.success(player.getMainHandStack()));
+
+        }
     }
 }

@@ -127,7 +127,7 @@ public class HotSpringWaterFluid extends FlowableFluid {
 
     @Override
     public Item getBucketItem() {
-        return DungeonUtilsFluids.HOT_SPRING_WATER_BUCKET;
+        return DungeonUtilsFluids.HOT_SPRING_WATER_BOTTLE;
     }
 
     @Override

@@ -41,7 +41,8 @@
     "fabric": "*",
     "minecraft": "~1.20.1",
     "mavity_lib": ">=5.0.1",
-    "auudio": "*"
+    "auudio": "*",
+    "fabric-language-kotlin": "*"
   },
   "recommends": {
     "journeymap": "*"

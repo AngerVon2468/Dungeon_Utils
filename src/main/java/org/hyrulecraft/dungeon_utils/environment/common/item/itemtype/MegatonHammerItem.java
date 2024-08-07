@@ -12,6 +12,8 @@ import net.minecraft.world.World;
 import org.hyrulecraft.dungeon_utils.environment.common.item.DungeonUtilsItems;
 import org.hyrulecraft.dungeon_utils.environment.common.sound.DungeonUtilsSounds;
 
+import org.jetbrains.annotations.NotNull;
+
 public class MegatonHammerItem extends SwordItem {
 
     public MegatonHammerItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
@@ -19,7 +21,7 @@ public class MegatonHammerItem extends SwordItem {
     }
 
     @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+    public TypedActionResult<ItemStack> use(World world, @NotNull PlayerEntity user, Hand hand) {
         ItemStack stack = user.getStackInHand(hand);
         user.playSound(DungeonUtilsSounds.HAMMER_SWING, SoundCategories.PLAYERS, 1.0f, 1.0f);
         user.getItemCooldownManager().set(DungeonUtilsItems.MEGATON_HAMMER, 20);
@@ -27,7 +29,7 @@ public class MegatonHammerItem extends SwordItem {
     }
 
     @Override
-    public ActionResult useOnBlock(ItemUsageContext context) {
+    public ActionResult useOnBlock(@NotNull ItemUsageContext context) {
         World world = context.getWorld();
         BlockPos blockPos = context.getBlockPos();
         BlockState blockState = world.getBlockState(blockPos);
@@ -71,7 +73,7 @@ public class MegatonHammerItem extends SwordItem {
     }
 
     @Override
-    public ActionResult useOnEntity(ItemStack stack, PlayerEntity user, LivingEntity entity, Hand hand) {
+    public ActionResult useOnEntity(ItemStack stack, @NotNull PlayerEntity user, LivingEntity entity, Hand hand) {
         if (!user.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.MEGATON_HAMMER)) {
             entity.damage(user.getDamageSources().playerAttack(user), 8.0f);
             user.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategories.PLAYERS, 1.0f, 1.0f);

@@ -22,14 +22,13 @@ public class HeartContainerItem extends Item {
 
     @Override
     public TypedActionResult<ItemStack> use(@NotNull World world, @NotNull PlayerEntity user, @NotNull Hand hand) {
+
         if (!world.isClient()) {
 
             ItemStack stack = user.getStackInHand(hand);
             ScaleData playerHealth = ScaleTypes.HEALTH.getScaleData(user);
-
             playerHealth.setScale(playerHealth.getScale() + 0.1f);
             stack.decrement(1);
-
             return TypedActionResult.consume(stack);
 
         } else {

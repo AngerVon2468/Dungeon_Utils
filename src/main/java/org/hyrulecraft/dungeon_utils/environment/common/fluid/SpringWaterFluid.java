@@ -51,7 +51,7 @@ public class SpringWaterFluid extends FlowableFluid {
 
     @Override
     public Item getBucketItem() {
-        return DungeonUtilsFluids.SPRING_WATER_BUCKET;
+        return DungeonUtilsFluids.SPRING_WATER_BOTTLE;
     }
 
     @Override

@@ -20,8 +20,8 @@ public class MasterSwordItem extends SwordItem {
 
     @Override
     public TypedActionResult<ItemStack> use(@NotNull World world, @NotNull PlayerEntity user, @NotNull Hand hand) {
-        ItemStack stack = user.getStackInHand(hand);
 
+        ItemStack stack = user.getMainHandStack();
         if (user.isSneaking()) {
 
             MasterSwordBeamEntity masterSwordBeamEntity = DungeonUtilsEntities.MASTER_SWORD_BEAM.create(world);
