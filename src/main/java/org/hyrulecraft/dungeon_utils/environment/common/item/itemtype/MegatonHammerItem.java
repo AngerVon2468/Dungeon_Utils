@@ -30,11 +30,12 @@ public class MegatonHammerItem extends SwordItem {
 
     @Override
     public ActionResult useOnBlock(@NotNull ItemUsageContext context) {
+
         World world = context.getWorld();
         BlockPos blockPos = context.getBlockPos();
         BlockState blockState = world.getBlockState(blockPos);
         PlayerEntity player = context.getPlayer();
-
+        assert player != null;
         if (blockState.isOf(Blocks.STONE) && !world.isClient()) {
             player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategories.PLAYERS, 1.0f, 1.0f);
             world.setBlockState(blockPos, Blocks.COBBLESTONE.getDefaultState());
