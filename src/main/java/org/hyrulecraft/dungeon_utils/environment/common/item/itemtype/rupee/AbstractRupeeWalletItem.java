@@ -33,8 +33,8 @@ public abstract class AbstractRupeeWalletItem extends Item {
 
     @Override
     public TypedActionResult<ItemStack> use(@NotNull World world, @NotNull PlayerEntity user, @NotNull Hand hand) {
-        ItemStack stack = user.getStackInHand(hand);
 
+        ItemStack stack = user.getMainHandStack();
         if (InventoryUtil.checkPlayerInventoryForItem(user, DungeonUtilsItems.GREEN_RUPEE) && !user.isSneaking()) {
 
             ItemStack rupeeStack = user.getInventory().getStack(InventoryUtil.getItemStackSlot(user, DungeonUtilsItems.GREEN_RUPEE));
@@ -131,8 +131,8 @@ public abstract class AbstractRupeeWalletItem extends Item {
         }
     }
 
-    public void setAmount(@NotNull PlayerEntity player, int newAmount) {
-        ItemStack stack = player.getStackInHand(player.getActiveHand());
+    public void setAmount(@NotNull PlayerEntity user, int newAmount) {
+        ItemStack stack = user.getMainHandStack();
 
         NbtCompound nbtData = new NbtCompound();
         nbtData.putInt("dungeon_utils.rupee.amount", newAmount);

@@ -7,11 +7,14 @@ import net.minecraft.world.World;
 
 import org.hyrulecraft.dungeon_utils.environment.common.DungeonUtils;
 
+import org.jetbrains.annotations.*;
+
 public class DungeonUtilsDamageTypes {
 
     public static final RegistryKey<DamageType> MALICE = RegistryKey.of(RegistryKeys.DAMAGE, new Identifier(DungeonUtils.MOD_ID, "malice"));
 
-    public static DamageSource of(World world, RegistryKey<DamageType> key) {
+    @Contract("_, _ -> new")
+    public static @NotNull DamageSource of(@NotNull World world, RegistryKey<DamageType> key) {
         return new DamageSource(world.getRegistryManager().get(RegistryKeys.DAMAGE).entryOf(key));
     }
 }
