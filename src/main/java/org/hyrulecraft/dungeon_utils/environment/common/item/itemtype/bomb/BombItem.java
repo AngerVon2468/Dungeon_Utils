@@ -18,8 +18,8 @@ public class BombItem extends Item {
 
     @Override
     public TypedActionResult<ItemStack> use(@NotNull World world, @NotNull PlayerEntity user, Hand hand) {
-        ItemStack stack = user.getStackInHand(hand);
 
+        ItemStack stack = user.getMainHandStack();
         if (!world.isClient()) {
 
             BombEntity bombEntity = BombEntity.create(world, false);
@@ -29,7 +29,6 @@ public class BombItem extends Item {
             bombEntity.setVelocity(playerFacing.x, playerFacing.y, playerFacing.z);
             bombEntity.setYaw(user.getHeadYaw());
             world.spawnEntity(bombEntity);
-
             if (!user.isCreative()) {
 
                 stack.decrement(1);

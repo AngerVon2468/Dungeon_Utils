@@ -22,10 +22,19 @@ public class MegatonHammerItem extends SwordItem {
 
     @Override
     public TypedActionResult<ItemStack> use(World world, @NotNull PlayerEntity user, Hand hand) {
-        ItemStack stack = user.getStackInHand(hand);
-        user.playSound(DungeonUtilsSounds.HAMMER_SWING, SoundCategories.PLAYERS, 1.0f, 1.0f);
-        user.getItemCooldownManager().set(DungeonUtilsItems.MEGATON_HAMMER, 20);
-        return TypedActionResult.success(stack);
+
+        ItemStack stack = user.getMainHandStack();
+        if (!user.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.MEGATON_HAMMER)) {
+
+            user.playSound(DungeonUtilsSounds.HAMMER_SWING, SoundCategories.PLAYERS, 1.0f, 1.0f);
+            user.getItemCooldownManager().set(DungeonUtilsItems.MEGATON_HAMMER, 20);
+            return TypedActionResult.success(stack);
+
+        } else {
+
+            return TypedActionResult.fail(stack);
+
+        }
     }
 
     @Override
@@ -36,40 +45,62 @@ public class MegatonHammerItem extends SwordItem {
         BlockState blockState = world.getBlockState(blockPos);
         PlayerEntity player = context.getPlayer();
         assert player != null;
-        if (blockState.isOf(Blocks.STONE) && !world.isClient()) {
-            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategories.PLAYERS, 1.0f, 1.0f);
-            world.setBlockState(blockPos, Blocks.COBBLESTONE.getDefaultState());
-            player.getItemCooldownManager().set(DungeonUtilsItems.MEGATON_HAMMER, 20);
-            return ActionResult.SUCCESS;
-        } else if (blockState.isOf(Blocks.STONE_BRICKS) && !world.isClient()) {
-            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategories.PLAYERS, 1.0f, 1.0f);
-            world.setBlockState(blockPos, Blocks.CRACKED_STONE_BRICKS.getDefaultState());
-            player.getItemCooldownManager().set(DungeonUtilsItems.MEGATON_HAMMER, 20);
-            return ActionResult.SUCCESS;
-        } else if (blockState.isOf(Blocks.DEEPSLATE_BRICKS) && !world.isClient()) {
-            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategories.PLAYERS, 1.0f, 1.0f);
-            world.setBlockState(blockPos, Blocks.CRACKED_DEEPSLATE_BRICKS.getDefaultState());
-            player.getItemCooldownManager().set(DungeonUtilsItems.MEGATON_HAMMER, 20);
-            return ActionResult.SUCCESS;
-        } else if (blockState.isOf(Blocks.DEEPSLATE_TILES) && !world.isClient()) {
-            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategories.PLAYERS, 1.0f, 1.0f);
-            world.setBlockState(blockPos, Blocks.CRACKED_DEEPSLATE_TILES.getDefaultState());
-            player.getItemCooldownManager().set(DungeonUtilsItems.MEGATON_HAMMER, 20);
-            return ActionResult.SUCCESS;
-        } else if (blockState.isOf(Blocks.NETHER_BRICKS) && !world.isClient()) {
-            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategories.PLAYERS, 1.0f, 1.0f);
-            world.setBlockState(blockPos, Blocks.CRACKED_NETHER_BRICKS.getDefaultState());
-            player.getItemCooldownManager().set(DungeonUtilsItems.MEGATON_HAMMER, 20);
-            return ActionResult.SUCCESS;
-        } else if (blockState.isOf(Blocks.POLISHED_BLACKSTONE_BRICKS) && !world.isClient()) {
-            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategories.PLAYERS, 1.0f, 1.0f);
-            world.setBlockState(blockPos, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS.getDefaultState());
-            player.getItemCooldownManager().set(DungeonUtilsItems.MEGATON_HAMMER, 20);
-            return ActionResult.SUCCESS;
+        if (!player.getItemCooldownManager().isCoolingDown(DungeonUtilsItems.MEGATON_HAMMER)) {
+
+            if (blockState.isOf(Blocks.STONE) && !world.isClient()) {
+
+                player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategories.PLAYERS, 1.0f, 1.0f);
+                world.setBlockState(blockPos, Blocks.COBBLESTONE.getDefaultState());
+                player.getItemCooldownManager().set(DungeonUtilsItems.MEGATON_HAMMER, 20);
+                return ActionResult.SUCCESS;
+
+            } else if (blockState.isOf(Blocks.STONE_BRICKS) && !world.isClient()) {
+
+                player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategories.PLAYERS, 1.0f, 1.0f);
+                world.setBlockState(blockPos, Blocks.CRACKED_STONE_BRICKS.getDefaultState());
+                player.getItemCooldownManager().set(DungeonUtilsItems.MEGATON_HAMMER, 20);
+                return ActionResult.SUCCESS;
+
+            } else if (blockState.isOf(Blocks.DEEPSLATE_BRICKS) && !world.isClient()) {
+
+                player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategories.PLAYERS, 1.0f, 1.0f);
+                world.setBlockState(blockPos, Blocks.CRACKED_DEEPSLATE_BRICKS.getDefaultState());
+                player.getItemCooldownManager().set(DungeonUtilsItems.MEGATON_HAMMER, 20);
+                return ActionResult.SUCCESS;
+
+            } else if (blockState.isOf(Blocks.DEEPSLATE_TILES) && !world.isClient()) {
+
+                player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategories.PLAYERS, 1.0f, 1.0f);
+                world.setBlockState(blockPos, Blocks.CRACKED_DEEPSLATE_TILES.getDefaultState());
+                player.getItemCooldownManager().set(DungeonUtilsItems.MEGATON_HAMMER, 20);
+                return ActionResult.SUCCESS;
+
+            } else if (blockState.isOf(Blocks.NETHER_BRICKS) && !world.isClient()) {
+
+                player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategories.PLAYERS, 1.0f, 1.0f);
+                world.setBlockState(blockPos, Blocks.CRACKED_NETHER_BRICKS.getDefaultState());
+                player.getItemCooldownManager().set(DungeonUtilsItems.MEGATON_HAMMER, 20);
+                return ActionResult.SUCCESS;
+
+            } else if (blockState.isOf(Blocks.POLISHED_BLACKSTONE_BRICKS) && !world.isClient()) {
+
+                player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategories.PLAYERS, 1.0f, 1.0f);
+                world.setBlockState(blockPos, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS.getDefaultState());
+                player.getItemCooldownManager().set(DungeonUtilsItems.MEGATON_HAMMER, 20);
+                return ActionResult.SUCCESS;
+
+            } else {
+
+                player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategories.PLAYERS, 1.0f, 1.0f);
+                player.getItemCooldownManager().set(DungeonUtilsItems.MEGATON_HAMMER, 20);
+                return ActionResult.SUCCESS;
+
+            }
+
         } else {
-            player.playSound(DungeonUtilsSounds.HAMMER_HIT, SoundCategories.PLAYERS, 1.0f, 1.0f);
-            player.getItemCooldownManager().set(DungeonUtilsItems.MEGATON_HAMMER, 20);
-            return ActionResult.SUCCESS;
+
+            return ActionResult.FAIL;
+
         }
     }
 

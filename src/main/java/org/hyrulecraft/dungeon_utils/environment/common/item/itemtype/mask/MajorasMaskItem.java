@@ -22,7 +22,14 @@ public class MajorasMaskItem extends AbstractMaskItem {
 
     @Override
     public void onUnequip(World world, @NotNull PlayerEntity player) {
-        player.clearStatusEffects();
+        // Changed to only remove the effects that were added, to avoid breaking other mods.
+        player.removeStatusEffect(StatusEffects.BLINDNESS);
+        player.removeStatusEffect(StatusEffects.NIGHT_VISION);
+        player.removeStatusEffect(StatusEffects.HUNGER);
+        player.removeStatusEffect(StatusEffects.BAD_OMEN);
+        player.removeStatusEffect(StatusEffects.SPEED);
+        player.removeStatusEffect(StatusEffects.STRENGTH);
+        player.removeStatusEffect(StatusEffects.ABSORPTION);
         super.onUnequip(world, player);
     }
 }
