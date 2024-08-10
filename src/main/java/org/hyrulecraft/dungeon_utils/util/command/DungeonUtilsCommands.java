@@ -40,14 +40,10 @@ public class DungeonUtilsCommands {
         ));
     }
 
-    /*
     public static void addMana() {
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> dispatcher.register(CommandManager.literal("addMana")
-                .executes(context -> {
-
-                    return -1;
-
-                }).then(CommandManager.argument("amount", IntegerArgumentType.integer())
+                .requires(source -> source.hasPermissionLevel(2))
+                .executes(context -> -1).then(CommandManager.argument("amount", IntegerArgumentType.integer())
                         .executes((context) -> {
                             if (context.getSource().isExecutedByPlayer()) {
 
@@ -69,11 +65,8 @@ public class DungeonUtilsCommands {
 
     public static void setMana() {
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> dispatcher.register(CommandManager.literal("setMana")
-                .executes(context -> {
-
-                    return -1;
-
-                }).then(CommandManager.argument("amount", IntegerArgumentType.integer())
+                .requires(source -> source.hasPermissionLevel(2))
+                .executes(context -> -1).then(CommandManager.argument("amount", IntegerArgumentType.integer())
                         .executes((context) -> {
                                     if (context.getSource().isExecutedByPlayer()) {
 
@@ -92,7 +85,6 @@ public class DungeonUtilsCommands {
                         ))
         ));
     }
-    */
 
     public static void kys() {
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> dispatcher.register(CommandManager.literal("kys")
@@ -172,11 +164,7 @@ public class DungeonUtilsCommands {
 
     public static void wiiu() {
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> dispatcher.register(CommandManager.literal("wiiu")
-                .executes(context -> {
-
-                    return -1;
-
-                })
+                .executes(context -> -1)
                 .then(CommandManager.literal("good")
                         .executes(context -> {
 

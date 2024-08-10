@@ -20,6 +20,8 @@ public class UtilCollector {
         DungeonUtilsCommands.suicide();
         DungeonUtilsCommands.trashHand();
         DungeonUtilsCommands.hcDiscord();
+        DungeonUtilsCommands.setMana();
+        DungeonUtilsCommands.addMana();
         if (FabricLoader.getInstance().isDevelopmentEnvironment()) {
             DungeonUtilsCommands.wiiu();
         }
