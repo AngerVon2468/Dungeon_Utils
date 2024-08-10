@@ -96,29 +96,29 @@ public class RevalisGaleItem extends TrinketItem {
     }
 
     public void addAntiSpam(@NotNull PlayerEntity player) {
-        ItemStack stack = player.getStackInHand(player.getActiveHand());
+        ItemStack stack = player.getMainHandStack();
 
-        NbtCompound nbtData = new NbtCompound();
-        nbtData.putString("dungeon_utils.revalis_gale.anti_spam", "anti_spam");
+        NbtCompound nbt = new NbtCompound();
+        nbt.putString("dungeon_utils.revalis_gale.anti_spam", "anti_spam");
 
-        stack.setNbt(nbtData);
+        stack.setNbt(nbt);
     }
 
     public void addSecondUsage(@NotNull PlayerEntity player) {
-        ItemStack stack = player.getStackInHand(player.getActiveHand());
+        ItemStack stack = player.getMainHandStack();
 
-        NbtCompound nbtData = new NbtCompound();
-        nbtData.putString("dungeon_utils.revalis_gale.usage_two", "two");
+        NbtCompound nbt = new NbtCompound();
+        nbt.putString("dungeon_utils.revalis_gale.usage_two", "two");
 
-        stack.setNbt(nbtData);
+        stack.setNbt(nbt);
     }
 
     public void addThirdUsage(@NotNull PlayerEntity player) {
-        ItemStack stack = player.getStackInHand(player.getActiveHand());
+        ItemStack stack = player.getMainHandStack();
 
-        NbtCompound nbtData = new NbtCompound();
-        nbtData.putString("dungeon_utils.revalis_gale.usage_three", "three");
+        NbtCompound nbt = new NbtCompound();
+        nbt.putString("dungeon_utils.revalis_gale.usage_three", "three");
 
-        stack.setNbt(nbtData);
+        stack.setNbt(nbt);
     }
 }

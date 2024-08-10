@@ -137,6 +137,10 @@ dependencies {
     // Magic Bar Lib
     modImplementation "curse.maven:magicbarlib-1075641:5603030"
     include "curse.maven:magicbarlib-1075641:5603030"
+
+    modImplementation "curse.maven:ftb-ultimine-fabric-448231:5363344"
+    modImplementation "curse.maven:ftb-library-fabric-438495:5567590"
+    modImplementation "curse.maven:architectury-api-419699:5137936"
 }
 
 processResources {
