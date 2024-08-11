@@ -51,6 +51,9 @@ public class DungeonUtilsClient implements ClientModInitializer {
                 DungeonUtilsBlocks.CLOVER_PATCH,
                 DungeonUtilsBlocks.BOMB_FLOWER
         );
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),
+                DungeonUtilsBlocks.COOKING_POT
+        );
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
                 DungeonUtilsFluids.STILL_SPRING_WATER,
                 DungeonUtilsFluids.STILL_HOT_SPRING_WATER,

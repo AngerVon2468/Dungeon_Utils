@@ -187,6 +187,13 @@ object DungeonUtilsBlocks {
         )
     )
 
+    @JvmField
+    val COOKING_POT = registerBlock("cooking_pot",
+        CookingPotBlock(
+            FabricBlockSettings.create()
+        )
+    )
+
     @JvmStatic
     fun registerDungeonUtilsBlocks() {
         DungeonUtils.LOGGER.info(DungeonUtils.NAME + " has registered its blocks.")

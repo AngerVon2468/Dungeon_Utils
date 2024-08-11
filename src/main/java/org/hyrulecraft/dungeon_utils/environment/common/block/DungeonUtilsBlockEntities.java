@@ -23,6 +23,12 @@ public class DungeonUtilsBlockEntities {
             FabricBlockEntityTypeBuilder.create(BombFlowerBlockEntity::new, DungeonUtilsBlocks.BOMB_FLOWER).build()
     );
 
+    public static final BlockEntityType<CookingPotBlockEntity> COOKING_POT_BLOCK_ENTITY = Registry.register(
+            RegistryTypes.BLOCK_ENTITY,
+            new Identifier(DungeonUtils.MOD_ID, "cooking_pot_block_entity"),
+            FabricBlockEntityTypeBuilder.create(CookingPotBlockEntity::new, DungeonUtilsBlocks.COOKING_POT).build()
+    );
+
     public static void registerDungeonUtilsBlockEntities() {
         DungeonUtils.LOGGER.info(DungeonUtils.NAME + " has registered its block entities.");
     }
