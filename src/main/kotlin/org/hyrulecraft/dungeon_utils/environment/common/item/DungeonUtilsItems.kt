@@ -91,10 +91,10 @@ object DungeonUtilsItems {
     val THE_MASTER_SWORD_AWAKENED = registerItem("the_master_sword_awakened", MasterSwordItem(ToolMaterials.DIAMOND, 14, -1.8f, FabricItemSettings().maxDamage(4096)))
 
     @JvmField
-    val THE_HYLIAN_SHIELD = registerItem("the_hylian_shield", FabricShieldItem(FabricItemSettings().maxDamage(8192), 10, 100, Items.DIAMOND))
+    val THE_HYLIAN_SHIELD = registerItem("the_hylian_shield", FabricShieldItem(FabricItemSettings().maxDamage(8192), 10, 0, Items.DIAMOND))
 
     @JvmField
-    val KOKIRI_SHIELD = registerItem("kokiri_shield", ShieldSurfItem(FabricItemSettings().maxDamage(500), 25, 5, Items.OAK_PLANKS))
+    val KOKIRI_SHIELD = registerItem("kokiri_shield", ShieldSurfItem(FabricItemSettings().maxDamage(500), 25, 0, Items.OAK_PLANKS))
 
     @JvmField
     val HEART_CONTAINER = registerItem("heart_container", HeartContainerItem(FabricItemSettings().maxCount(1).maxDamage(0)))
@@ -106,7 +106,7 @@ object DungeonUtilsItems {
     val GREAT_EAGLE_BOW = registerItem("great_eagle_bow", GreatEagleBowItem(FabricItemSettings().maxDamage(1500)))
 
     @JvmField
-    val SHADOW_HYLIAN_SHIELD = registerItem("shadow_hylian_shield", FabricShieldItem(FabricItemSettings().maxDamage(8192), 10, 100, Items.DIAMOND))
+    val SHADOW_HYLIAN_SHIELD = registerItem("shadow_hylian_shield", FabricShieldItem(FabricItemSettings().maxDamage(8192), 10, 0, Items.DIAMOND))
 
     @JvmField
     val SHADOW_MASTER_SWORD = registerItem("shadow_master_sword", SwordItem(ToolMaterials.DIAMOND, 12, -1.8f, FabricItemSettings().maxDamage(2048)))
