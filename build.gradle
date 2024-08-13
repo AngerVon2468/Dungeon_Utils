@@ -103,8 +103,9 @@ dependencies {
 
     modImplementation "curse.maven:auudio-fabric-613072:4581988"
 
-    modImplementation "curse.maven:fabric-shield-lib-380649:4955668"
-    include "curse.maven:fabric-shield-lib-380649:4955668"
+    // Fabric Shield Lib is bugged, so fixed with a private fork stored locally.
+    modImplementation fileTree(dir: "src/main/resources/META-INF/jars", include: "FabricShieldLib-1.7.2-1.20.1.jar")
+    include fileTree(dir: "src/main/resources/META-INF/jars", include: "FabricShieldLib-1.7.2-1.20.1.jar")
 
     modImplementation "com.github.Chocohead:Fabric-ASM:v${project.fabricasm_version}"
     include "com.github.Chocohead:Fabric-ASM:v${project.fabricasm_version}"

@@ -7,7 +7,7 @@
       "element": {
         "location": "dungeon_utils:bokoblin_hut",
         "processors": "minecraft:empty",
-        "projection": "rigid",
+        "projection": "terrain_matching",
         "element_type": "minecraft:single_pool_element"
       }
     }
