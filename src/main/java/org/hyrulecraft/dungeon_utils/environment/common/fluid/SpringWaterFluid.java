@@ -11,7 +11,7 @@ import net.minecraft.world.*;
 
 import org.jetbrains.annotations.NotNull;
 
-public class SpringWaterFluid extends FlowableFluid {
+public abstract class SpringWaterFluid extends FlowableFluid {
 
     @Override
     public Fluid getFlowing() {
@@ -30,7 +30,7 @@ public class SpringWaterFluid extends FlowableFluid {
 
     @Override
     public boolean matchesType(Fluid fluid) {
-        return fluid == getStill() || fluid == getFlowing();
+        return fluid == this.getStill() || fluid == this.getFlowing();
     }
 
     @Override
@@ -72,16 +72,6 @@ public class SpringWaterFluid extends FlowableFluid {
     @Override
     protected BlockState toBlockState(FluidState fluidState) {
         return DungeonUtilsFluids.SPRING_WATER_BLOCK.getDefaultState().with(Properties.LEVEL_15, getBlockStateLevel(fluidState));
-    }
-
-    @Override
-    public boolean isStill(FluidState fluidState) {
-        return false;
-    }
-
-    @Override
-    public int getLevel(FluidState fluidState) {
-        return 0;
     }
 
     public static class Flowing extends SpringWaterFluid {

@@ -94,7 +94,7 @@ public class BombEntity extends ProjectileEntity {
         if (!this.world.isClient() && !this.isFromBombFlower) {
             this.world.createExplosion(this, this.getX(), this.getY(), this.getZ(), 1, World.ExplosionSourceType.MOB);
             this.discard();
-        } else {
+        } else if (!this.world.isClient()) {
             this.setVelocity(Vec3d.ZERO);
         }
     }

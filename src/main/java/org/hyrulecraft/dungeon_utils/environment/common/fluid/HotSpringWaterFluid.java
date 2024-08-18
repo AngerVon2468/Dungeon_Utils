@@ -13,7 +13,7 @@ import net.minecraft.world.*;
 
 import org.jetbrains.annotations.NotNull;
 
-public class HotSpringWaterFluid extends FlowableFluid {
+public abstract class HotSpringWaterFluid extends FlowableFluid {
 
     @Override
     protected void randomDisplayTick(@NotNull World world, @NotNull BlockPos pos, FluidState fluidState, Random random) {
@@ -106,7 +106,7 @@ public class HotSpringWaterFluid extends FlowableFluid {
 
     @Override
     public boolean matchesType(Fluid fluid) {
-        return fluid == getStill() || fluid == getFlowing();
+        return fluid == this.getStill() || fluid == this.getFlowing();
     }
 
     @Override
@@ -148,16 +148,6 @@ public class HotSpringWaterFluid extends FlowableFluid {
     @Override
     protected BlockState toBlockState(FluidState fluidState) {
         return DungeonUtilsFluids.HOT_SPRING_WATER_BLOCK.getDefaultState().with(Properties.LEVEL_15, getBlockStateLevel(fluidState));
-    }
-
-    @Override
-    public boolean isStill(FluidState fluidState) {
-        return false;
-    }
-
-    @Override
-    public int getLevel(FluidState fluidState) {
-        return 0;
     }
 
     public static class Flowing extends HotSpringWaterFluid {
