@@ -6,7 +6,8 @@
         "EnderDragonFightMixin",
         "GlassBottleItemMixin",
         "ItemMixin",
-        "ItemsMixin"
+        "ItemsMixin",
+        "StaminaHolderImpl"
     ],
     "client": [
         "MinecraftClientMixin"
