@@ -15,10 +15,10 @@ public interface IStaminaHolder {
     default void resetMaxStamina() {}
 
     default Float getStamina() {
-        return 0.0f;
+        return 7.3f;
     }
 
     default Float getMaxStamina() {
-        return 0.0f;
+        return 2.9f;
     }
 }

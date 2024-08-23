@@ -14,7 +14,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(PlayerEntity.class)
 public class StaminaHolderImpl implements IStaminaHolder {
 
-    /*
     @Unique
     public Float stamina = 20.0f;
 
@@ -35,32 +34,33 @@ public class StaminaHolderImpl implements IStaminaHolder {
 
     @Override
     public void setStamina(Float amount) {
-        this.stamina = amount;
+        this.stamina = amount <= this.maxStamina && amount >= 0 ? amount : this.stamina;
     }
 
     @Override
     public void setMaxStamina(Float amount) {
-        this.maxStamina = amount;
+        this.maxStamina = amount > 0 ? amount : this.maxStamina;
     }
 
     @Override
     public void addStamina(Float amount) {
-        this.stamina += amount;
+        this.stamina = this.stamina + amount <= this.maxStamina && this.stamina + amount >= 0 ? this.stamina + amount : this.stamina;
     }
 
     @Override
     public void removeStamina(Float amount) {
-        this.stamina -= amount;
+        this.stamina = this.stamina - amount < 0 && this.stamina - amount <= this.maxStamina ? this.stamina - amount : this.stamina;
     }
 
     @Override
     public void resetStamina() {
-        this.stamina = 20.0f;
+        this.stamina = this.getMaxStamina();
     }
 
     @Override
     public void resetMaxStamina() {
         this.maxStamina = 20.0f;
+        this.stamina = this.stamina > this.maxStamina ? this.maxStamina : this.stamina;
     }
 
     @Override
@@ -72,5 +72,4 @@ public class StaminaHolderImpl implements IStaminaHolder {
     public Float getMaxStamina() {
         return this.maxStamina;
     }
-    */
 }

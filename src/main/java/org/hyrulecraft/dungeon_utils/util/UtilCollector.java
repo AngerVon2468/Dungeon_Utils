@@ -26,6 +26,10 @@ public class UtilCollector {
             DungeonUtilsCommands.wiiu();
         }
         DungeonUtilsCommands.showoff();
+        DungeonUtilsCommands.getStamina();
+        DungeonUtilsCommands.setStamina();
+        DungeonUtilsCommands.getMaxStamina();
+        DungeonUtilsCommands.setMaxStamina();
     }
 
     public static void registerAllUtilClassesInClient() {

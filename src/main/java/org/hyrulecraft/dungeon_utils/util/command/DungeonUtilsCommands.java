@@ -1,5 +1,6 @@
 package org.hyrulecraft.dungeon_utils.util.command;
 
+import com.mojang.brigadier.arguments.FloatArgumentType;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.zigythebird.playeranimatorapi.API.PlayerAnimAPI;
 
@@ -37,6 +38,94 @@ public class DungeonUtilsCommands {
                             }
 
                 })
+        ));
+    }
+
+    public static void getStamina() {
+        CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> dispatcher.register(CommandManager.literal("getStamina")
+                .executes(context -> {
+
+                    if (context.getSource().isExecutedByPlayer()) {
+
+                        context.getSource().sendFeedback(() -> Text.literal("Stamina: " + context.getSource().getPlayer().getStamina()), true);
+                        return 1;
+
+                    } else {
+
+                        context.getSource().sendFeedback(() -> Text.literal("Command was run by an non-player source."), true);
+                        DungeonUtils.LOGGER.error("Command was run by an non-player source.");
+                        return -1;
+
+                    }
+
+                })
+        ));
+    }
+
+    public static void setStamina() {
+        CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> dispatcher.register(CommandManager.literal("setStamina")
+                .requires(source -> source.hasPermissionLevel(2))
+                .executes(context -> -1).then(CommandManager.argument("amount", FloatArgumentType.floatArg())
+                        .executes((context) -> {
+                                    if (context.getSource().isExecutedByPlayer()) {
+
+                                        float amount = FloatArgumentType.getFloat(context, "amount");
+                                        context.getSource().getPlayer().setStamina(amount);
+                                        return 1;
+
+                                    } else {
+
+                                        context.getSource().sendFeedback(() -> Text.literal("Command was run by an non-player source."), true);
+                                        DungeonUtils.LOGGER.error("Command was run by an non-player source.");
+                                        return -1;
+
+                                    }
+                                }
+                        ))
+        ));
+    }
+
+    public static void getMaxStamina() {
+        CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> dispatcher.register(CommandManager.literal("getMaxStamina")
+                .executes(context -> {
+
+                    if (context.getSource().isExecutedByPlayer()) {
+
+                        context.getSource().sendFeedback(() -> Text.literal("Stamina: " + context.getSource().getPlayer().getMaxStamina()), true);
+                        return 1;
+
+                    } else {
+
+                        context.getSource().sendFeedback(() -> Text.literal("Command was run by an non-player source."), true);
+                        DungeonUtils.LOGGER.error("Command was run by an non-player source.");
+                        return -1;
+
+                    }
+
+                })
+        ));
+    }
+
+    public static void setMaxStamina() {
+        CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> dispatcher.register(CommandManager.literal("setMaxStamina")
+                .requires(source -> source.hasPermissionLevel(2))
+                .executes(context -> -1).then(CommandManager.argument("amount", FloatArgumentType.floatArg())
+                        .executes((context) -> {
+                                    if (context.getSource().isExecutedByPlayer()) {
+
+                                        float amount = FloatArgumentType.getFloat(context, "amount");
+                                        context.getSource().getPlayer().setMaxStamina(amount);
+                                        return 1;
+
+                                    } else {
+
+                                        context.getSource().sendFeedback(() -> Text.literal("Command was run by an non-player source."), true);
+                                        DungeonUtils.LOGGER.error("Command was run by an non-player source.");
+                                        return -1;
+
+                                    }
+                                }
+                        ))
         ));
     }
 
