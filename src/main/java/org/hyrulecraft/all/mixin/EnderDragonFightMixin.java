@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(EnderDragonFight.class)
 public class EnderDragonFightMixin {
 
-	@Inject(at = @At("TAIL"), method = "dragonKilled")
+	@Inject(method = "dragonKilled", at = @At("TAIL"))
 	private void dragonKilled(@NotNull EnderDragonEntity enderDragonEntity, CallbackInfo ci) {
 
 		enderDragonEntity.dropStack(DungeonUtilsItems.HEART_CONTAINER.getDefaultStack());

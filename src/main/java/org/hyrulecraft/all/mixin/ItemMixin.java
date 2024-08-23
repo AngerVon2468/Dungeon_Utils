@@ -24,12 +24,12 @@ import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 @Mixin(Item.class)
 public abstract class ItemMixin {
 
-    @ModifyReturnValue(method = "useOnBlock", at = @At(value = "RETURN"))
+    @ModifyReturnValue(method = "useOnBlock", at = @At("RETURN"))
     public ActionResult useOnBlock(ActionResult original, @Local(argsOnly = true) ItemUsageContext context) {
         return original;
     }
 
-    @ModifyReturnValue(method = "useOnEntity", at = @At(value = "RETURN"))
+    @ModifyReturnValue(method = "useOnEntity", at = @At("RETURN"))
     public ActionResult useOnEntity(ActionResult original, @Local(argsOnly = true) @NotNull ItemStack stack, @Local(argsOnly = true) @NotNull PlayerEntity user, @Local(argsOnly = true) LivingEntity entity, @Local(argsOnly = true) Hand hand) {
 
         World world = user.getWorld();

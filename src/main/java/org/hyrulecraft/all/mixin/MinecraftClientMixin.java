@@ -13,7 +13,7 @@ import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 public class MinecraftClientMixin {
 
     @Contract(pure = true)
-    @ModifyReturnValue(method = "getWindowTitle", at = @At(value = "RETURN"))
+    @ModifyReturnValue(method = "getWindowTitle", at = @At("RETURN"))
     private @NotNull String getWindowTitle(@NotNull String original) {
         return original.replace("*", "");
     }

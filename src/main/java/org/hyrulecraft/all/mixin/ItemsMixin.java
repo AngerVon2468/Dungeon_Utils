@@ -4,7 +4,7 @@ import net.minecraft.item.*;
 
 import org.jetbrains.annotations.*;
 
-import org.spongepowered.asm.mixin.*;
+import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.*;
 
 @Mixin(Items.class)
@@ -15,7 +15,7 @@ public abstract class ItemsMixin {
             slice = @Slice(
                     from = @At(
                             value = "CONSTANT",
-                            args= {
+                            args = {
                                     "stringValue=glass_bottle"
                             },
                             ordinal = 0
@@ -27,13 +27,7 @@ public abstract class ItemsMixin {
                     ordinal = 0
             ),
             method = "<clinit>")
-    private static @NotNull GlassBottleItem newBottle(Item.Settings settings) {
-        return glassBottleItem(settings);
-    }
-
-    @Contract("_ -> new")
-    @Unique
-    private static @NotNull GlassBottleItem glassBottleItem(Item.@NotNull Settings settings) {
+    private static @NotNull GlassBottleItem newBottle(Item.@NotNull Settings settings) {
         return new GlassBottleItem(settings.maxCount(1));
     }
 }
