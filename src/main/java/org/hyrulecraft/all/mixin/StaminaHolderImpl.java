@@ -23,7 +23,7 @@ public class StaminaHolderImpl implements IStaminaHolder {
     @Inject(method = "readCustomDataFromNbt", at = @At("TAIL"))
     public void readNbt(@NotNull NbtCompound nbtCompound, CallbackInfo ci) {
         this.stamina = nbtCompound.getFloat("stamina");
-        this.maxStamina = nbtCompound.getFloat("maxStamina");
+        this.maxStamina = nbtCompound.getFloat("maxStamina") > 0 ? nbtCompound.getFloat("maxStamina") : this.maxStamina;
     }
 
     @Inject(method = "writeCustomDataToNbt", at = @At("TAIL"))

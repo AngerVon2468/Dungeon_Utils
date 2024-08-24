@@ -47,7 +47,7 @@ public class DungeonUtilsCommands {
 
                     if (context.getSource().isExecutedByPlayer()) {
 
-                        context.getSource().sendFeedback(() -> Text.literal("Stamina: " + context.getSource().getPlayer().getStamina()), true);
+                        context.getSource().sendFeedback(() -> Text.literal("Max Stamina: " + context.getSource().getPlayer().getStamina()), true);
                         return 1;
 
                     } else {
@@ -91,7 +91,7 @@ public class DungeonUtilsCommands {
 
                     if (context.getSource().isExecutedByPlayer()) {
 
-                        context.getSource().sendFeedback(() -> Text.literal("Stamina: " + context.getSource().getPlayer().getMaxStamina()), true);
+                        context.getSource().sendFeedback(() -> Text.literal("Max Stamina: " + context.getSource().getPlayer().getMaxStamina()), true);
                         return 1;
 
                     } else {
