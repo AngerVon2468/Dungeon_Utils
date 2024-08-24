@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 
 @Mixin(MinecraftClient.class)
-public class MinecraftClientMixin {
+public abstract class MinecraftClientMixin {
 
     @Contract(pure = true)
     @ModifyReturnValue(method = "getWindowTitle", at = @At("RETURN"))

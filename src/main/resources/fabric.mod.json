@@ -51,6 +51,9 @@
     "loom:injected_interfaces": {
       "net/minecraft/class_1657": [
         "org/hyrulecraft/dungeon_utils/util/nbt/IStaminaHolder"
+      ],
+      "net/minecraft/class_1297": [
+        "org/hyrulecraft/dungeon_utils/util/nbt/IPersistentDataHolder"
       ]
     }
   }

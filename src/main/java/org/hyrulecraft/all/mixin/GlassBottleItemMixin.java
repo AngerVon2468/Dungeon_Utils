@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import com.llamalad7.mixinextras.sugar.Local;
 
 @Mixin(GlassBottleItem.class)
-public class GlassBottleItemMixin {
+public abstract class GlassBottleItemMixin {
 
     @Inject(method = "use", at = @At(value = "INVOKE", target = "Lnet/minecraft/fluid/FluidState;isIn(Lnet/minecraft/registry/tag/Tag;)Z"), cancellable = true)
     public void use(@NotNull World world, PlayerEntity player, Hand hand, CallbackInfoReturnable<TypedActionResult<ItemStack>> cir, @Local @NotNull BlockHitResult hit) {
