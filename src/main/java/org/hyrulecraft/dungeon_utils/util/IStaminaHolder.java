@@ -6,9 +6,13 @@ public interface IStaminaHolder {
 
     default void setMaxStamina(Float amount) {}
 
-    default void addStamina(Float amount) {}
+    default void increaseStamina(Float amount) {}
 
-    default void removeStamina(Float amount) {}
+    default void decreaseStamina(Float amount) {}
+
+    default void increaseMaxStamina(Float amount) {}
+
+    default void decreaseMaxStamina(Float amount) {}
 
     default void resetStamina() {}
 

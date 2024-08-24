@@ -186,6 +186,9 @@ object DungeonUtilsItems {
     @JvmField
     val KEATON_MASK = registerItem("keaton_mask", KeatonMaskItem())
 
+    @JvmField
+    val STAMINA_CONTAINER = registerItem("stamina_container", StaminaContainerItem(FabricItemSettings().maxCount(1).maxDamage(0)))
+
     @JvmStatic
     fun registerDungeonUtilsItems() {
         DungeonUtils.LOGGER.info(DungeonUtils.NAME + " has registered its items.")

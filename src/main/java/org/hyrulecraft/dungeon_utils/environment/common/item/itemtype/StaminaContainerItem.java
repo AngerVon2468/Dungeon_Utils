@@ -7,11 +7,9 @@ import net.minecraft.world.World;
 
 import org.jetbrains.annotations.NotNull;
 
-import virtuoel.pehkui.api.*;
+public class StaminaContainerItem extends Item {
 
-public class HeartContainerItem extends Item {
-
-    public HeartContainerItem(Settings settings) {
+    public StaminaContainerItem(Settings settings) {
         super(settings);
     }
 
@@ -26,8 +24,7 @@ public class HeartContainerItem extends Item {
         if (!world.isClient()) {
 
             ItemStack stack = user.getMainHandStack();
-            ScaleData playerHealth = ScaleTypes.HEALTH.getScaleData(user);
-            playerHealth.setScale(playerHealth.getScale() + 0.1f);
+            user.increaseMaxStamina(1.0f);
             stack.decrement(1);
             return TypedActionResult.consume(stack);
 

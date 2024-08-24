@@ -43,13 +43,23 @@ public class StaminaHolderImpl implements IStaminaHolder {
     }
 
     @Override
-    public void addStamina(Float amount) {
+    public void increaseStamina(Float amount) {
         this.stamina = this.stamina + amount <= this.maxStamina && this.stamina + amount >= 0 ? this.stamina + amount : this.stamina;
     }
 
     @Override
-    public void removeStamina(Float amount) {
-        this.stamina = this.stamina - amount < 0 && this.stamina - amount <= this.maxStamina ? this.stamina - amount : this.stamina;
+    public void decreaseStamina(Float amount) {
+        this.increaseStamina(-amount);
+    }
+
+    @Override
+    public void increaseMaxStamina(Float amount) {
+        this.maxStamina += amount;
+    }
+
+    @Override
+    public void decreaseMaxStamina(Float amount) {
+        this.increaseMaxStamina(-amount);
     }
 
     @Override
