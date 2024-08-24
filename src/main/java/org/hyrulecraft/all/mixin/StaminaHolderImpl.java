@@ -3,7 +3,7 @@ package org.hyrulecraft.all.mixin;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 
-import org.hyrulecraft.dungeon_utils.util.IStaminaHolder;
+import org.hyrulecraft.dungeon_utils.util.nbt.IStaminaHolder;
 
 import org.jetbrains.annotations.NotNull;
 

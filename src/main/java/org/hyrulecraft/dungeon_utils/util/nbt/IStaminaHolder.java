@@ -1,4 +1,4 @@
-package org.hyrulecraft.dungeon_utils.util;
+package org.hyrulecraft.dungeon_utils.util.nbt;
 
 public interface IStaminaHolder {
 

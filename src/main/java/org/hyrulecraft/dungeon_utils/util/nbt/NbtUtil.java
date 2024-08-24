@@ -1,4 +1,4 @@
-package org.hyrulecraft.dungeon_utils.util;
+package org.hyrulecraft.dungeon_utils.util.nbt;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
