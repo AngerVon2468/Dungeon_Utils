@@ -3,7 +3,6 @@ package org.hyrulecraft.all.mixin;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 
-import org.hyrulecraft.dungeon_utils.util.ObjectsButOnSteroids;
 import org.hyrulecraft.dungeon_utils.util.nbt.IStaminaHolder;
 
 import org.jetbrains.annotations.NotNull;
@@ -23,13 +22,13 @@ public abstract class StaminaHolderImpl implements IStaminaHolder {
 
     @Inject(method = "readCustomDataFromNbt", at = @At("HEAD"))
     public void readNbt(@NotNull NbtCompound nbtCompound, CallbackInfo ci) {
-        this.stamina = nbtCompound.contains("maxStamina") ? nbtCompound.getFloat("stamina") : this.stamina;
+        this.stamina = nbtCompound.contains("stamina") ? nbtCompound.getFloat("stamina") : this.stamina;
         this.maxStamina = nbtCompound.contains("maxStamina") && nbtCompound.getFloat("maxStamina") > 0 ? nbtCompound.getFloat("maxStamina") : this.maxStamina;
     }
 
     @Inject(method = "writeCustomDataToNbt", at = @At("HEAD"))
     public void writeNbt(@NotNull NbtCompound nbtCompound, CallbackInfo ci) {
-        nbtCompound.putFloat("stamina", ObjectsButOnSteroids.requireFirstNonNullOrElse(this.stamina, 0.0f));
+        nbtCompound.putFloat("stamina", this.stamina);
         nbtCompound.putFloat("maxStamina", this.maxStamina);
     }
 
