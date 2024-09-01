@@ -32,7 +32,7 @@
       "org.hyrulecraft.dungeon_utils.environment.client.journeymap.DungeonUtilsJourneymapPlugin"
     ],
     "dungeon_utils": [
-      "org.hyrulecraft.dungeon_utils.util.DungeonUtilsPluginTest"
+      "org.hyrulecraft.dungeon_utils.util.plugin.DungeonUtilsPluginTest"
     ]
   },
   "mixins": [

@@ -14,8 +14,11 @@ import org.hyrulecraft.dungeon_utils.environment.common.block.*;
 import org.hyrulecraft.dungeon_utils.environment.common.itemgroup.DungeonUtilsItemGroups;
 import org.hyrulecraft.dungeon_utils.environment.common.sound.DungeonUtilsSounds;
 import org.hyrulecraft.dungeon_utils.environment.common.tags.DungeonUtilsTags;
-import org.hyrulecraft.dungeon_utils.util.*;
+import org.hyrulecraft.dungeon_utils.util.UtilCollector;
+import org.hyrulecraft.dungeon_utils.util.plugin.IDungeonUtilsPlugin;
 
+import org.hyrulecraft.dungeon_utils.util.plugin.event.lifecycle.PostInitEvent;
+import org.hyrulecraft.dungeon_utils.util.plugin.event.lifecycle.PreInitEvent;
 import org.slf4j.*;
 
 import java.util.*;
@@ -51,11 +54,11 @@ public class DungeonUtils implements ModInitializer {
         MidnightConfig.init(DungeonUtils.MOD_ID, DungeonUtilsConfig.class);
 
         FabricLoader.getInstance().getEntrypointContainers("dungeon_utils", IDungeonUtilsPlugin.class).forEach(plugin -> {
-            plugin.getEntrypoint().onEvent(new Event(Event.Type.PRE_INIT));
+            plugin.getEntrypoint().onEvent(new PreInitEvent());
             plugin.getEntrypoint().init();
-            plugin.getEntrypoint().onEvent(new Event(Event.Type.POST_INIT));
             LOGGER.info("{} has registered a {} plugin. ({})", plugin.getProvider().getMetadata().getName(), DungeonUtils.NAME, plugin.getEntrypoint().getClass().getName());
             PLUGINS.add(plugin.getEntrypoint());
+            plugin.getEntrypoint().onEvent(new PostInitEvent());
         });
     }
 
