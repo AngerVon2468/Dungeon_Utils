@@ -16,9 +16,8 @@ import org.hyrulecraft.dungeon_utils.environment.common.sound.DungeonUtilsSounds
 import org.hyrulecraft.dungeon_utils.environment.common.tags.DungeonUtilsTags;
 import org.hyrulecraft.dungeon_utils.util.UtilCollector;
 import org.hyrulecraft.dungeon_utils.util.plugin.IDungeonUtilsPlugin;
+import org.hyrulecraft.dungeon_utils.util.plugin.event.lifecycle.*;
 
-import org.hyrulecraft.dungeon_utils.util.plugin.event.lifecycle.PostInitEvent;
-import org.hyrulecraft.dungeon_utils.util.plugin.event.lifecycle.PreInitEvent;
 import org.slf4j.*;
 
 import java.util.*;
