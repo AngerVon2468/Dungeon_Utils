@@ -3,6 +3,7 @@ package org.hyrulecraft.dungeon_utils.environment.common;
 import eu.midnightdust.lib.config.MidnightConfig;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.loader.api.FabricLoader;
 
 import org.hyrulecraft.dungeon_utils.config.*;
 import org.hyrulecraft.dungeon_utils.environment.common.entity.DungeonUtilsEntities;
@@ -12,12 +13,16 @@ import org.hyrulecraft.dungeon_utils.environment.common.block.*;
 import org.hyrulecraft.dungeon_utils.environment.common.itemgroup.DungeonUtilsItemGroups;
 import org.hyrulecraft.dungeon_utils.environment.common.sound.DungeonUtilsSounds;
 import org.hyrulecraft.dungeon_utils.environment.common.tags.DungeonUtilsTags;
-import org.hyrulecraft.dungeon_utils.util.UtilCollector;
+import org.hyrulecraft.dungeon_utils.util.*;
 
 import org.slf4j.*;
 
+import java.util.*;
+
 // TODO: Make the master sword disable shields like an axe when used
 public class DungeonUtils implements ModInitializer {
+
+    public static final List<IDungeonUtilsPlugin> PLUGINS = new ArrayList<>();
 
     public static final String MOD_ID = "dungeon_utils";
 
@@ -43,5 +48,10 @@ public class DungeonUtils implements ModInitializer {
 
         // Config.
         MidnightConfig.init(DungeonUtils.MOD_ID, DungeonUtilsConfig.class);
+
+        FabricLoader.getInstance().getEntrypointContainers("dungeon_utils", IDungeonUtilsPlugin.class).forEach(plugin -> {
+            LOGGER.info("{} has registered a {} plugin. ({})", plugin.getProvider().getMetadata().getName(), DungeonUtils.NAME, plugin.getEntrypoint().getClass().getName());
+            PLUGINS.add(plugin.getEntrypoint());
+        });
     }
 }
