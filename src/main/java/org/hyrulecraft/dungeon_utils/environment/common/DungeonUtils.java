@@ -5,6 +5,7 @@ import eu.midnightdust.lib.config.MidnightConfig;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 
+import net.fabricmc.loader.api.entrypoint.EntrypointContainer;
 import org.hyrulecraft.dungeon_utils.config.*;
 import org.hyrulecraft.dungeon_utils.environment.common.entity.DungeonUtilsEntities;
 import org.hyrulecraft.dungeon_utils.environment.common.fluid.DungeonUtilsFluids;
@@ -50,8 +51,15 @@ public class DungeonUtils implements ModInitializer {
         MidnightConfig.init(DungeonUtils.MOD_ID, DungeonUtilsConfig.class);
 
         FabricLoader.getInstance().getEntrypointContainers("dungeon_utils", IDungeonUtilsPlugin.class).forEach(plugin -> {
+            plugin.getEntrypoint().onEvent(new Event(Event.Type.PRE_INIT));
+            plugin.getEntrypoint().init();
+            plugin.getEntrypoint().onEvent(new Event(Event.Type.POST_INIT));
             LOGGER.info("{} has registered a {} plugin. ({})", plugin.getProvider().getMetadata().getName(), DungeonUtils.NAME, plugin.getEntrypoint().getClass().getName());
             PLUGINS.add(plugin.getEntrypoint());
         });
+    }
+
+    public static List<EntrypointContainer<IDungeonUtilsPlugin>> getPlugins() {
+        return FabricLoader.getInstance().getEntrypointContainers("dungeon_utils", IDungeonUtilsPlugin.class);
     }
 }
