@@ -46,8 +46,7 @@ public abstract class AbstractMaskItem extends Item implements IMaskUtil {
         }
     }
 
-    public void unequipTick(World world, PlayerEntity player) {
-    }
+    public void unequipTick(World world, PlayerEntity player) {}
 
     @Override
     public TypedActionResult<ItemStack> use(@NotNull World world, @NotNull PlayerEntity player, Hand hand) {
