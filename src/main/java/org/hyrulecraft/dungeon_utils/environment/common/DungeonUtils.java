@@ -2,10 +2,10 @@ package org.hyrulecraft.dungeon_utils.environment.common;
 
 import eu.midnightdust.lib.config.MidnightConfig;
 
+import net.fabricmc.loader.api.*;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.loader.api.FabricLoader;
-
 import net.fabricmc.loader.api.entrypoint.EntrypointContainer;
+
 import org.hyrulecraft.dungeon_utils.config.*;
 import org.hyrulecraft.dungeon_utils.environment.common.entity.DungeonUtilsEntities;
 import org.hyrulecraft.dungeon_utils.environment.common.fluid.DungeonUtilsFluids;
@@ -25,7 +25,11 @@ import java.util.*;
 // TODO: Make the master sword disable shields like an axe when used
 public class DungeonUtils implements ModInitializer {
 
-    public static final List<IDungeonUtilsPlugin> PLUGINS = new ArrayList<>();
+    private static final List<EntrypointContainer<IDungeonUtilsPlugin>> ENTRYPOINT_CONTAINERS = new ArrayList<>();
+
+    private static final List<ModContainer> MOD_CONTAINERS = new ArrayList<>();
+
+    private static final List<IDungeonUtilsPlugin> PLUGINS = new ArrayList<>();
 
     public static final String MOD_ID = "dungeon_utils";
 
@@ -52,16 +56,28 @@ public class DungeonUtils implements ModInitializer {
         // Config.
         MidnightConfig.init(DungeonUtils.MOD_ID, DungeonUtilsConfig.class);
 
-        FabricLoader.getInstance().getEntrypointContainers("dungeon_utils", IDungeonUtilsPlugin.class).forEach(plugin -> {
-            plugin.getEntrypoint().onEvent(new PreInitEvent());
-            plugin.getEntrypoint().init();
-            LOGGER.info("{} has registered a {} plugin. ({})", plugin.getProvider().getMetadata().getName(), DungeonUtils.NAME, plugin.getEntrypoint().getClass().getName());
-            PLUGINS.add(plugin.getEntrypoint());
-            plugin.getEntrypoint().onEvent(new PostInitEvent());
+        FabricLoader.getInstance().getEntrypointContainers("dungeon_utils", IDungeonUtilsPlugin.class).forEach(entrypointContainer -> {
+            IDungeonUtilsPlugin plugin = entrypointContainer.getEntrypoint();
+            ModContainer container = entrypointContainer.getProvider();
+            plugin.onEvent(new PreInitEvent());
+            plugin.init();
+            PLUGINS.add(plugin);
+            ENTRYPOINT_CONTAINERS.add(entrypointContainer);
+            MOD_CONTAINERS.add(container);
+            LOGGER.info("{} has registered a {} plugin. ({})", container.getMetadata().getName(), DungeonUtils.NAME, plugin.getClass().getName());
+            plugin.onEvent(new PostInitEvent());
         });
     }
 
-    public static List<EntrypointContainer<IDungeonUtilsPlugin>> getPlugins() {
-        return FabricLoader.getInstance().getEntrypointContainers("dungeon_utils", IDungeonUtilsPlugin.class);
+    public static List<EntrypointContainer<IDungeonUtilsPlugin>> getPluginEntrypointContainers() {
+        return ENTRYPOINT_CONTAINERS;
+    }
+
+    public static List<ModContainer> getModContainersWithDungeonUtilsPlugin() {
+        return MOD_CONTAINERS;
+    }
+
+    public static List<IDungeonUtilsPlugin> getPlugins() {
+        return PLUGINS;
     }
 }

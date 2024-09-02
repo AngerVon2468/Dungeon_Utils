@@ -7,8 +7,8 @@
         "GlassBottleItemMixin",
         "ItemMixin",
         "ItemsMixin",
-        "StaminaHolderImpl",
-        "PersistentDataHolderImpl"
+        "PersistentDataHolderImpl",
+        "StaminaHolderImpl"
     ],
     "client": [
         "MinecraftClientMixin"
